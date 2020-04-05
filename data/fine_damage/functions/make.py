@@ -18,6 +18,7 @@ subs["damage_tick"] = "fine_hp.dt"
 subs["mob_base_hp"] = "200"
 subs["name_reset_ticks"] = "fine_hp.dispT"
 subs["name_reset_numticks"] = "200"
+subs["name_swap_space"] = "HandItems[0].tag.display.Name"
 
 subs["health"] = "fine_hp.hp"
 subs["last_health"] = "fine_hp.prev_hp"
