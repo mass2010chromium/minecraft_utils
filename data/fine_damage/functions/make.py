@@ -6,22 +6,33 @@ subs["health_item_name"] = '\'"HP indicator"\''
 subs["health_item_lore"] = '[\'"Helps modify your health."\']'
 
 subs["health_stat"] = "stat.health"
+subs["hunger"] = "stat.hunger"
 subs["absorption_hp"] = "39"
 subs["player_base_hp"] = "180"
-subs["regen_tick"] = "fine_damage.regt"
-subs["regen_amount"] = "fine_damage.ramt"
-subs["hp_check_tick"] = "fine_damage.hpct"
-subs["has_died"] = "fine_damage.die"
+subs["regen_tick"] = "fine_hp.regt"
+subs["regen_amount"] = "fine_hp.ramt"
+subs["regen_frequency"] = "fine_hp.regfreq"
+subs["has_died"] = "fine_hp.die"
+subs["damage_tick"] = "fine_hp.dt"
 
-subs["health"] = "fine_damage.hp"
-subs["max_health"] = "fine_damage.mh"
-subs["damage_tick"] = "fine_damage.dt"
+subs["mob_base_hp"] = "200"
+subs["name_reset_ticks"] = "fine_hp.dispT"
+subs["name_reset_numticks"] = "200"
 
-subs["t0"] = "fine_damage.tmp0"
-subs["t1"] = "fine_damage.tmp1"
-subs["t2"] = "fine_damage.tmp2"
+subs["health"] = "fine_hp.hp"
+subs["last_health"] = "fine_hp.prev_hp"
+subs["max_health"] = "fine_hp.mh"
+subs["hp_check_tick"] = "fine_hp.hpct"
+subs["tracker"] = "fine_hp.tracker"
+subs["mob_death"] = "fine_hp.isdead"
+subs["initialized"] = "fine_hp.init" # unused
+subs["health_fraction"] = "fine_hp.hp_frac"
 
-files = ["loop", "init", "player_healthbar"]
+subs["t0"] = "fine_hp.tmp0"
+subs["t1"] = "fine_hp.tmp1"
+subs["t2"] = "fine_hp.tmp2"
+
+files = ["loop", "init", "common_healthbar", "player_healthbar", "mob_healthbar", "mob_healthbar_helper"]
 
 for f in files:
     with open("{}_template.mcfunction".format(f), "r") as infile:
