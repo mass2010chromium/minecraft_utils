@@ -2,7 +2,7 @@
 scoreboard players set @a[tag=mage] spell.0.power 1
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Fireball Power"']}}}]}] spell.0.power 1 
 # Splash melee
-tag @a[tag=mage,scores={tag=mage,use.golden_hoe=1}] add mage_splash
+tag @a[tag=mage,scores={use.golden_hoe=1}] add mage_splash
 scoreboard players set @a[tag=mage,scores={use.golden_hoe=1}] spell.1.power 2
 execute at @a[tag=mage_splash] run scoreboard players operation @e[distance=0..3,type=!minecraft:player,scores={fine_hp.hp=1..},limit=3,sort=nearest] fine_hp.hp -= @s spell.1.power
 tag @a remove mage_splash
