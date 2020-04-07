@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-give @s stick{Enchantments:[{id:stick,lvl:1}],Unbreakable:1,display:{Name:'{"text":"Kiddie Wand"}',Lore:['{"text":"A wand, but for kids."}']}} 1
-give @s sunflower{Enchantments:[{id:sunflower,lvl:1}],display:{Name:'{"text":"Coin"}'}} 64
-=======
 clear @s
 tag @s remove knight
 tag @s remove archer
@@ -13,4 +9,3 @@ replaceitem entity @s container.1 minecraft:blaze_rod{Enchantments:[{}],display:
 replaceitem entity @s container.2 minecraft:magma_cream{Enchantments:[{}],display:{Name:'"Lightning 1"',Lore:['"Mage: Secondary Spell"']}} 1
 replaceitem entity @s container.3 minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:'"Fiery Staff"',Lore:['"Mage: Staff"', '"+1 Fireball Power"']}} 1
 tag @s add mage
->>>>>>> 1071cba179370fa19cd3284ef30ba4ba0836d465
