@@ -4,7 +4,7 @@ scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[
 # Splash melee
 tag @a[tag=mage,scores={use.golden_hoe=1}] add mage_splash
 scoreboard players set @a[tag=mage,scores={use.golden_hoe=1}] spell.1.power 2
-execute at @a[tag=mage_splash] run scoreboard players operation @e[distance=0..3,type=!minecraft:player,scores={fine_hp.hp=1..},limit=3,sort=nearest] fine_hp.hp -= @s spell.1.power
+execute at @a[tag=mage_splash] run scoreboard players operation @e[distance=0..3,type=!minecraft:player,scores={fine_hp.hp=1..},limit=3,sort=nearest] fine_hp.hp -= @p spell.1.power
 tag @a remove mage_splash
 scoreboard players set @a use.golden_hoe 0 
 # Replenish items

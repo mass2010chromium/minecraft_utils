@@ -7,7 +7,7 @@ tag @a[tag=mage,scores={use.golden_hoe=1}] add mage_splash
 scoreboard players set @a[tag=mage,scores={use.golden_hoe=1}] ##mage_attack_splash_power## 2
 execute at @a[tag=mage_splash] run 
     scoreboard players operation @e[distance=0..3,type=!minecraft:player,scores={fine_hp.hp=1..},limit=3,sort=nearest] fine_hp.hp 
-        -= @s ##mage_attack_splash_power##
+        -= @p ##mage_attack_splash_power##
 tag @a remove mage_splash
 scoreboard players set @a use.golden_hoe 0
 
