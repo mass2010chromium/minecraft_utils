@@ -12,3 +12,7 @@ team modify ##friendlies## collisionRule pushOtherTeams
 scoreboard objectives add replenish_ok dummy
 
 scoreboard objectives add ##mage_fireball_power## dummy
+scoreboard objectives add ##mage_attack_splash_power## dummy
+
+scoreboard objectives remove use.golden_hoe
+scoreboard objectives add use.golden_hoe minecraft.used:minecraft.golden_hoe

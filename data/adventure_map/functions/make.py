@@ -51,6 +51,7 @@ subs["mage_secondary"] = '\'"Mage: Secondary Spell"\''
 
 subs["mage_fireball_boost_1"] = '\'"+1 Fireball Power"\''
 subs["mage_fireball_power"] = "spell.{}.power".format(spell_id())
+subs["mage_attack_splash_power"] = "spell.{}.power".format(spell_id())
 
 subs["mage_basic_staff_name"] = '\'"Basic Staff"\''
 subs["mage_basic_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##mage_basic_staff_name##,Lore:[##mage_melee##]}} 1"""
