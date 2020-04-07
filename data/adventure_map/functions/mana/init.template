@@ -1,0 +1,3 @@
+scoreboard objectives add ##mp## dummy
+scoreboard objectives add ##mp_regen## dummy
+scoreboard objectives add ##mp_regen_base## dummy

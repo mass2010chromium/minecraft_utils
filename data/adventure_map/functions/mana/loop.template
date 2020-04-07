@@ -1,0 +1,31 @@
+execute as @a run scoreboard players operation @s ##mp## += @s ##mp_regen##
+execute as @a run scoreboard players operation @s ##mp_regen## = @s ##mp_regen_base##
+
+scoreboard players set @a ##t0## 1000
+execute as @a run scoreboard players operation @s ##mp## < @s ##t0##
+
+execute as @a store result score @s ##t0## run xp query @s points
+execute as @a run scoreboard players operation @s ##t0## -= @s ##mp##
+execute as @a[scores={##t0##=..-1}] run xp add @s 1 points
+execute as @a[scores={##t0##=1..}] run xp add @s -1 points
+
+execute as @a[scores={##t0##=..-3}] run xp add @s 2 points
+execute as @a[scores={##t0##=3..}] run xp add @s -2 points
+
+execute as @a[scores={##t0##=..-7}] run xp add @s 4 points
+execute as @a[scores={##t0##=7..}] run xp add @s -4 points
+
+execute as @a[scores={##t0##=..-15}] run xp add @s 8 points
+execute as @a[scores={##t0##=15..}] run xp add @s -8 points
+
+execute as @a[scores={##t0##=..-31}] run xp add @s 16 points
+execute as @a[scores={##t0##=31..}] run xp add @s -16 points
+
+execute as @a[scores={##t0##=..-63}] run xp add @s 32 points
+execute as @a[scores={##t0##=63..}] run xp add @s -32 points
+
+execute as @a[scores={##t0##=..-127}] run xp add @s 64 points
+execute as @a[scores={##t0##=127..}] run xp add @s -64 points
+
+execute as @a[scores={##t0##=..-255}] run xp add @s 128 points
+execute as @a[scores={##t0##=255..}] run xp add @s -128 points

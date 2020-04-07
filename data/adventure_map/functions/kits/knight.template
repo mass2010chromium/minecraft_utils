@@ -1,9 +1,9 @@
-clear @s
+clear @s 
 tag @s remove mage
 tag @s remove archer
 xp set @s 129 levels
 xp set @s 0 points
-scoreboard players set @s mana.mana_regb 1
+scoreboard players set @s ##mp_regen_base## 1
 replaceitem entity @s armor.chest minecraft:chainmail_chestplate{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Mail"'}} 1
 replaceitem entity @s armor.legs minecraft:chainmail_leggings{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Leggings"'}} 1
 replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Sabatons"'}} 1

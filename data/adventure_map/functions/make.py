@@ -1,5 +1,6 @@
 subs = dict()
 
+### Fine hp
 subs["health_item"] = "minecraft:golden_helmet"
 subs["health_item_enchants"] = '{id:"minecraft:binding_curse", lvl:1},{id:"minecraft:vanishing_curse",lvl:1}'
 subs["health_item_name"] = '\'"HP indicator"\''
@@ -40,6 +41,14 @@ subs["t0"] = "fine_hp.tmp0"
 subs["t1"] = "fine_hp.tmp1"
 subs["t2"] = "fine_hp.tmp2"
 
+
+### Mana
+subs["mp"] = "mana.mana"
+subs["max_mana"] = "1000"
+subs["mp_regen"] = "mana.mana_regen"
+subs["mp_regen_base"] = "mana.mana_regb"
+
+### Kits
 _replenish_id = -1
 def replenish_id():
     global _replenish_id
@@ -89,12 +98,17 @@ files = [   "fine_damage/loop",
             "fine_damage/mob_healthbar", 
             "fine_damage/mob_healthbar_helper",
             
+            "mana/init", 
+            "mana/loop", 
+            
             "summons/basic_zombie", 
         
             "adventure/adventure_setup", 
         
             "kits/mage", 
             "kits/mage_spells", 
+            "kits/archer", 
+            "kits/knight", 
         ]
 
 for f in files:

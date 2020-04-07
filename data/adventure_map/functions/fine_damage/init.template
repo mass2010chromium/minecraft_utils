@@ -1,12 +1,9 @@
 me Setting up fine_hp...
 tag @a remove ##tracker##
-scoreboard objectives remove ##health_stat##
 scoreboard objectives add ##health_stat## health
 
-scoreboard objectives remove ##damage_tick##
 scoreboard objectives add ##damage_tick## dummy
 
-scoreboard objectives remove ##has_died##
 scoreboard objectives add ##has_died## deathCount
 
 scoreboard objectives add ##hunger## food
@@ -15,10 +12,8 @@ scoreboard objectives add ##health## dummy "Health"
 scoreboard objectives setdisplay list ##health##
 scoreboard objectives setdisplay belowname ##health##
 
-scoreboard objectives remove ##last_health##
 scoreboard objectives add ##last_health## dummy
 
-scoreboard objectives remove ##max_health##
 scoreboard objectives add ##max_health## dummy
 
 scoreboard objectives remove ##physical_damage##
@@ -33,10 +28,8 @@ scoreboard objectives add ##physical_resist## dummy
 scoreboard objectives remove ##magic_resist##
 scoreboard objectives add ##magic_resist## dummy
 
-scoreboard objectives remove ##physical_resist_base##
 scoreboard objectives add ##physical_resist_base## dummy
 
-scoreboard objectives remove ##magic_resist_base##
 scoreboard objectives add ##magic_resist_base## dummy
 
 scoreboard objectives remove ##regen_tick##
@@ -45,10 +38,8 @@ scoreboard objectives add ##regen_tick## dummy
 scoreboard objectives remove ##regen_amount##
 scoreboard objectives add ##regen_amount## dummy
 
-scoreboard objectives remove ##regen_amount_base##
 scoreboard objectives add ##regen_amount_base## dummy
 
-scoreboard objectives remove ##regen_frequency##
 scoreboard objectives add ##regen_frequency## dummy
 
 scoreboard objectives remove ##hp_check_tick##
