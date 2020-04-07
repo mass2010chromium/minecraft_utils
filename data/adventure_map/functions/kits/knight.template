@@ -3,6 +3,8 @@ tag @s remove mage
 tag @s remove archer
 xp set @s 129 levels
 xp set @s 0 points
+scoreboard players operation @s ##last_health## = @s ##max_health##
+scoreboard players operation @s ##health## = @s ##max_health##
 scoreboard players set @s ##mp## 0
 scoreboard players set @s ##mp_regen_base## 1
 scoreboard players set @s ##magic_resist_base## 0

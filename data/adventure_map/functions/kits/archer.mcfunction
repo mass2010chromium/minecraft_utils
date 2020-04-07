@@ -3,6 +3,8 @@ tag @s remove mage
 tag @s remove knight
 xp set @s 129 levels
 xp set @s 0 points
+scoreboard players operation @s fine_hp.prev_hp = @s fine_hp.mh
+scoreboard players operation @s fine_hp.hp = @s fine_hp.mh
 scoreboard players set @s mana.mana 0
 scoreboard players set @s mana.mana_regb 2
 scoreboard players set @s fine_hp.mdmgrb 10
