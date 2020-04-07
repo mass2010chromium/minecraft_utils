@@ -1,0 +1,36 @@
+# ------------------------------------------
+# Handle direct damage sources (magic)
+
+# Apply magic resist (damage = (damage * (100 - magic_resist)) / 100)
+scoreboard players set @s ##t0## 100
+scoreboard players operation @s ##t0## -= @s ##magic_resist##
+scoreboard players operation @s ##t0## *= @s ##magic_damage##
+scoreboard players set @s ##t1## 100
+scoreboard players operation @s ##t0## /= @s ##t1##
+
+# Deal damage
+scoreboard players operation @s ##health## -= @s ##t0##
+
+# Reset magic damage taken, magic resist
+scoreboard players set @s ##magic_damage## 0
+scoreboard players operation @s ##magic_resist## = @s ##magic_resist_base##
+# ------------------------------------------
+
+
+# ------------------------------------------
+# Handle direct damage sources (physical)
+
+# Apply physical resist (damage = (damage * (100 - physical_resist)) / 100)
+scoreboard players set @s ##t0## 100
+scoreboard players operation @s ##t0## -= @s ##physical_resist##
+scoreboard players operation @s ##t0## *= @s ##physical_damage##
+scoreboard players set @s ##t1## 100
+scoreboard players operation @s ##t0## /= @s ##t1##
+
+# Deal damage
+scoreboard players operation @s ##health## -= @s ##t0##
+
+# Reset physical damage taken, physical resist
+scoreboard players set @s ##physical_damage## 0
+scoreboard players operation @s ##physical_resist## = @s ##physical_resist_base##
+# ------------------------------------------

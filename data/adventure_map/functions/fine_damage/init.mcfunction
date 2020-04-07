@@ -14,10 +14,24 @@ scoreboard objectives remove fine_hp.prev_hp
 scoreboard objectives add fine_hp.prev_hp dummy 
 scoreboard objectives remove fine_hp.mh
 scoreboard objectives add fine_hp.mh dummy 
+scoreboard objectives remove fine_hp.dmg
+scoreboard objectives add fine_hp.dmg dummy 
+scoreboard objectives remove fine_hp.mdmg
+scoreboard objectives add fine_hp.mdmg dummy 
+scoreboard objectives remove fine_hp.dmgr
+scoreboard objectives add fine_hp.dmgr dummy 
+scoreboard objectives remove fine_hp.mdmgr
+scoreboard objectives add fine_hp.mdmgr dummy 
+scoreboard objectives remove fine_hp.dmgrb
+scoreboard objectives add fine_hp.dmgrb dummy 
+scoreboard objectives remove fine_hp.mdmgrb
+scoreboard objectives add fine_hp.mdmgrb dummy 
 scoreboard objectives remove fine_hp.regt
 scoreboard objectives add fine_hp.regt dummy 
 scoreboard objectives remove fine_hp.ramt
 scoreboard objectives add fine_hp.ramt dummy 
+scoreboard objectives remove fine_hp.ramtb
+scoreboard objectives add fine_hp.ramtb dummy 
 scoreboard objectives remove fine_hp.regfreq
 scoreboard objectives add fine_hp.regfreq dummy 
 scoreboard objectives remove fine_hp.hpct

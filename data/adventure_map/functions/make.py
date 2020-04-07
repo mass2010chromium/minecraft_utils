@@ -11,6 +11,7 @@ subs["absorption_hp"] = "39"
 subs["player_base_hp"] = "180"
 subs["regen_tick"] = "fine_hp.regt"
 subs["regen_amount"] = "fine_hp.ramt"
+subs["regen_amount_base"] = "fine_hp.ramtb"
 subs["regen_frequency"] = "fine_hp.regfreq"
 subs["has_died"] = "fine_hp.die"
 subs["damage_tick"] = "fine_hp.dt"
@@ -21,6 +22,12 @@ subs["name_reset_numticks"] = "200"
 subs["name_swap_space"] = "HandItems[0].tag.display.Name"
 
 subs["health"] = "fine_hp.hp"
+subs["physical_damage"] = "fine_hp.dmg"
+subs["magic_damage"] = "fine_hp.mdmg"
+subs["physical_resist"] = "fine_hp.dmgr"
+subs["magic_resist"] = "fine_hp.mdmgr"
+subs["physical_resist_base"] = "fine_hp.dmgrb"
+subs["magic_resist_base"] = "fine_hp.mdmgrb"
 subs["last_health"] = "fine_hp.prev_hp"
 subs["max_health"] = "fine_hp.mh"
 subs["hp_check_tick"] = "fine_hp.hpct"
@@ -77,6 +84,7 @@ files = [   "fine_damage/loop",
             "fine_damage/add_player", 
             "fine_damage/remove_player", 
             "fine_damage/common_healthbar", 
+            "fine_damage/common_resist", 
             "fine_damage/player_healthbar", 
             "fine_damage/mob_healthbar", 
             "fine_damage/mob_healthbar_helper",
@@ -90,7 +98,7 @@ files = [   "fine_damage/loop",
         ]
 
 for f in files:
-    with open("{}_template.mcfunction".format(f), "r") as infile:
+    with open("{}.template".format(f), "r") as infile:
         with open(f+".mcfunction", "w") as outfile:
             locals = subs.copy()
             

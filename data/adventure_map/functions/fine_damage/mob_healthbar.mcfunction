@@ -2,7 +2,7 @@ scoreboard players add @s fine_hp.regt 1
 scoreboard players operation @s fine_hp.hp < @s fine_hp.mh 
 execute as @s store result score @s fine_hp.tmp0 run data get entity @s Health
 scoreboard players remove @s fine_hp.tmp0 200
-scoreboard players operation @s fine_hp.hp += @s fine_hp.tmp0 
+scoreboard players operation @s fine_hp.dmg -= @s fine_hp.tmp0 
 scoreboard players operation @s fine_hp.tmp1 = @s fine_hp.prev_hp
 scoreboard players operation @s fine_hp.tmp1 -= @s fine_hp.hp
 scoreboard players operation @s fine_hp.tmp2 = @s fine_hp.hp
