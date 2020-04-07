@@ -10,7 +10,7 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     ],
     HandDropChances:[0.0f,0.0f],
     Health:200.0f,
-    Attributes:[{Name:"generic.maxHealth",Base:200.0f}]
+    Attributes:[{Name:"generic.maxHealth",Base:200.0f},{Name:"generic.attackDamage",Base:20.0f}]
   }
 tag @e[tag=unprocessed,sort=nearest,limit=1] add ##tracker##
 tag @e[tag=unprocessed,sort=nearest,limit=1] remove unprocessed
