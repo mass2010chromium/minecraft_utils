@@ -1,4 +1,5 @@
 me Setting up fine_hp...
+tag @a remove ##tracker##
 scoreboard objectives remove ##health_stat##
 scoreboard objectives add ##health_stat## health
 
@@ -8,7 +9,6 @@ scoreboard objectives add ##damage_tick## dummy
 scoreboard objectives remove ##has_died##
 scoreboard objectives add ##has_died## deathCount
 
-scoreboard objectives remove ##hunger##
 scoreboard objectives add ##hunger## food
 
 scoreboard objectives add ##health## dummy "Health"
