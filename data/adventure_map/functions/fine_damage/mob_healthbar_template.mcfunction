@@ -21,7 +21,7 @@ execute as @s[scores={##t2##=1..,##name_reset_ticks##=0}] run data modify entity
 scoreboard players set @s[scores={##t2##=1..}] ##name_reset_ticks## ##name_reset_numticks##
 
 tag @s[scores={##health_fraction##=..0}] add ##mob_death##
-execute as @s[scores={##name_reset_ticks##=1..}] run function fine_damage:mob_healthbar_helper
+execute as @s[scores={##name_reset_ticks##=1..}] run function adventure_map:fine_damage/mob_healthbar_helper
 
 execute as @s[scores={##name_reset_ticks##=1}] run data modify entity @s CustomName set from entity @s ##name_swap_space##
 scoreboard players remove @s[scores={##name_reset_ticks##=1..}] ##name_reset_ticks## 1

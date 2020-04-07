@@ -11,7 +11,6 @@ scoreboard objectives add ##has_died## deathCount
 scoreboard objectives remove ##hunger##
 scoreboard objectives add ##hunger## food
 
-scoreboard objectives remove ##health##
 scoreboard objectives add ##health## dummy "Health"
 scoreboard objectives setdisplay list ##health##
 scoreboard objectives setdisplay belowname ##health##

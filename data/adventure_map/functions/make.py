@@ -33,7 +33,12 @@ subs["t0"] = "fine_hp.tmp0"
 subs["t1"] = "fine_hp.tmp1"
 subs["t2"] = "fine_hp.tmp2"
 
-files = ["loop", "init", "common_healthbar", "player_healthbar", "mob_healthbar", "mob_healthbar_helper"]
+files = [   "fine_damage/loop", 
+            "fine_damage/init", 
+            "fine_damage/common_healthbar", 
+            "fine_damage/player_healthbar", 
+            "fine_damage/mob_healthbar", 
+            "fine_damage/mob_healthbar_helper"]
 
 for f in files:
     with open("{}_template.mcfunction".format(f), "r") as infile:

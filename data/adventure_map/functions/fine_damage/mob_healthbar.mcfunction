@@ -15,6 +15,6 @@ scoreboard players set @s[scores={fine_hp.tmp1=1..}] fine_hp.dispT 200
 execute as @s[scores={fine_hp.tmp2=1..,fine_hp.dispT=0}] run data modify entity @s HandItems[0].tag.display.Name set from entity @s CustomName
 scoreboard players set @s[scores={fine_hp.tmp2=1..}] fine_hp.dispT 200
 tag @s[scores={fine_hp.hp_frac=..0}] add fine_hp.isdead
-execute as @s[scores={fine_hp.dispT=1..}] run function fine_damage:mob_healthbar_helper
+execute as @s[scores={fine_hp.dispT=1..}] run function adventure_map:fine_damage/mob_healthbar_helper
 execute as @s[scores={fine_hp.dispT=1}] run data modify entity @s CustomName set from entity @s HandItems[0].tag.display.Name
 scoreboard players remove @s[scores={fine_hp.dispT=1..}] fine_hp.dispT 1

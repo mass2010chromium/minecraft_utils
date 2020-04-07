@@ -7,7 +7,6 @@ scoreboard objectives remove fine_hp.die
 scoreboard objectives add fine_hp.die deathCount
 scoreboard objectives remove stat.hunger
 scoreboard objectives add stat.hunger food
-scoreboard objectives remove fine_hp.hp
 scoreboard objectives add fine_hp.hp dummy "Health"
 scoreboard objectives setdisplay list fine_hp.hp
 scoreboard objectives setdisplay belowname fine_hp.hp
