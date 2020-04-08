@@ -2,8 +2,8 @@ summon minecraft:zombie ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##,Persistence
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 50
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 50
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 50
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist## 0
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist## 0
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 0
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist_base## 0
 data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     CustomName:'"Zombie Soldier"',
     CustomNameVisible:1,

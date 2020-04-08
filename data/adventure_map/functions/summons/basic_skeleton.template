@@ -2,8 +2,8 @@ summon minecraft:skeleton ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##,Persisten
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 35
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 35
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 35
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist## 0
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist## 0
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 0
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist_base## 20
 data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     CustomName:'"Undead Ranger"',
     CustomNameVisible:1,
