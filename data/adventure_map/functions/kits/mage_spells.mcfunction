@@ -1,6 +1,6 @@
 # Splash melee
 tag @a[tag=mage,scores={use.golden_hoe=1}] add mage_splash
-execute as @a[tag=mage_splash] at @s positioned ^ ^ ^2 anchored eyes run scoreboard players operation @e[distance=0..3,type=!minecraft:player,scores={fine_hp.hp=1..},limit=3,sort=nearest] fine_hp.mdmg += @p spell.0.power
+execute as @a[tag=mage_splash] at @s positioned ^ ^ ^2 anchored eyes run scoreboard players operation @e[distance=0..3,type=!minecraft:player,scores={fine_hp.hp=1..},limit=3,sort=nearest] fine_hp.mdmg += @s spell.0.power
 tag @a remove mage_splash
 scoreboard players set @a[tag=mage,scores={use.golden_hoe=1}] fine_hp.tmp0 5
 execute as @a[tag=mage,scores={use.golden_hoe=1}] run scoreboard players operation @s fine_hp.tmp0 *= @s mana.mana_regen
@@ -23,6 +23,7 @@ scoreboard players set @a[tag=mage] fine_hp.tmp0 0
 # Trigger fireball summon, and remove mana from player
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Lore:['"Mage: Fireball Spell"']}}}},scores={replenish_ok=1}] run execute at @s run execute at @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={mana.mana=200..}] store success score @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={mana.mana=200..}] fine_hp.tmp0 run tag @s add fireball_summon
 scoreboard players remove @a[tag=mage,scores={fine_hp.tmp0=1}] mana.mana 200 
+execute at @e[tag=fireball_summon] run playsound minecraft:entity.blaze.shoot master @a[distance=0..8] ~ ~ ~
 execute at @e[tag=fireball_summon] run summon minecraft:fireball ~ ~ ~ {direction:[0.0,1.0,0.0],ExplosionPower:0,Tags:["unprocessed","mage_fireball"]}
 execute as @e[tag=fireball_summon] run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] direction set from entity @s Motion
 execute as @e[tag=fireball_summon] run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] direction[1] set value 0.5
@@ -38,7 +39,9 @@ scoreboard players set @a[tag=mage] fine_hp.tmp0 0
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:['"Mage: Zephyr Spell"']}}}},scores={replenish_ok=1}] run execute at @s run execute at @p[tag=mage,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=500..}] store success score @p[tag=mage,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=500..}] fine_hp.tmp0 run tag @s add zephyr_boost
 scoreboard players remove @a[tag=mage,scores={fine_hp.tmp0=1}] mana.mana 500 
 execute as @e[tag=zephyr_boost] at @s store result score @s fine_hp.tmp0 run scoreboard players get @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage] spell.2.power 
+execute at @e[tag=zephyr_boost] run playsound minecraft:block.beacon.power_select master @a[distance=0..8] ~ ~ ~
 execute at @e[tag=zephyr_boost] run effect give @a[distance=0..8] minecraft:speed 80 0
+execute at @e[tag=zephyr_boost] run effect give @a[distance=0..8] minecraft:strength 5 0
 execute at @e[tag=zephyr_boost,scores={fine_hp.tmp0=1}] run effect give @a[distance=0..8] minecraft:speed 5 1
 execute at @e[tag=zephyr_boost,scores={fine_hp.tmp0=2}] run effect give @a[distance=0..8] minecraft:speed 5 2
 execute at @e[tag=zephyr_boost,scores={fine_hp.tmp0=3}] run effect give @a[distance=0..8] minecraft:speed 5 3

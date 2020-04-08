@@ -14,7 +14,7 @@ execute as @a[tag=shotPierce] at @s run scoreboard players operation @e[type=min
 replaceitem entity @a[tag=pa_1,scores={mana.mana=600..}] container.2 minecraft:crossbow{ display:{ Name:'"Piercing Arrow 1"', Lore:['"Archer: Active Spell"', '"Archer: Piercing Arrow Spell"'] }, ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],Charged:1b,Enchantments:[{}] }
 tag @a remove pa_1
 tag @a remove shotPierce 
-execute as @e[type=minecraft:spectral_arrow,tag=!processed] run data merge entity @s {SoundEvent:"minecraft:block.glass.break",PierceLevel:99b,damage:2.0f}
+execute as @e[type=minecraft:spectral_arrow,tag=!processed] run data merge entity @s {SoundEvent:"minecraft:block.glass.break",PierceLevel:5b,damage:2.0f}
 tag @e[type=spectral_arrow] add processed
 execute as @e[type=minecraft:spectral_arrow] at @s run scoreboard players operation @e[team=Enemies,distance=0..3,nbt={ActiveEffects:[{Id:24b}]}] fine_hp.mdmg += @s spell.3.power
 execute at @e[type=minecraft:spectral_arrow] run effect clear @e[team=Enemies,distance=0..3] minecraft:glowing 

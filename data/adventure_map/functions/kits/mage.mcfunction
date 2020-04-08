@@ -10,6 +10,7 @@ scoreboard players set @s mana.mana 0
 scoreboard players set @s mana.mana_regb 3
 scoreboard players set @s fine_hp.mdmgrb 20
 scoreboard players set @s fine_hp.dmgrb 0
+replaceitem entity @s armor.head minecraft:golden_helmet{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:blast_protection,lvl:1}],display:{Name:'"Mage\'s Thinking Cap"'}} 1
 replaceitem entity @s armor.chest minecraft:leather_chestplate{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:"minecraft:fire_protection",lvl:1}],display:{Name:'"Mage\'s Robes"'}} 1
 replaceitem entity @s armor.legs minecraft:iron_leggings{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:"minecraft:fire_protection",lvl:1}],display:{Name:'"Mage\'s Greaves"'}} 1
 replaceitem entity @s armor.feet minecraft:golden_boots{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:"minecraft:fire_protection",lvl:1}],display:{Name:'"Mage\'s Boots"'}} 1

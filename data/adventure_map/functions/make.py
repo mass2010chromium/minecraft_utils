@@ -1,5 +1,13 @@
 subs = dict()
 
+_least = 595045
+_most = 291484
+def get_uuid():
+    global _most
+    global _least
+    _least += 1
+    return "UUIDLeast:{},UUIDMost:{}".format(_least, _most)
+
 ### Fine hp
 subs["health_item"] = "minecraft:golden_helmet"
 subs["health_item_enchants"] = '{id:"minecraft:binding_curse", lvl:1},{id:"minecraft:vanishing_curse",lvl:1}'
@@ -75,7 +83,7 @@ subs["mage_fireball_staff_name"] = '\'"Fiery Staff"\''
 subs["mage_fireball_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{}],display:{Name:##mage_fireball_staff_name##,Lore:[##mage_melee##, ##mage_fireball_boost_1##]}} 1"""
 subs["mage_fireball_staff_replenish"] = "replenish_{}".format(replenish_id())
 subs["mage_whirlwind_staff_name"] = '\'"Whirlwind Staff"\''
-subs["mage_whirlwind_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##mage_whirlwind_staff_name##,Lore:[##mage_melee##, ##mage_zephyr_boost_1##, ##mage_splash_power_boost_2##]}} 1"""
+subs["mage_whirlwind_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##mage_whirlwind_staff_name##,Lore:[##mage_melee##, ##mage_zephyr_boost_1##, ##mage_splash_power_boost_2##]},AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:4,Operation:0,"""+get_uuid()+""",Slot:"mainhand"}]} 1"""
 subs["mage_whirlwind_staff_replenish"] = "replenish_{}".format(replenish_id())
 
 subs["mage_fireball_spell"] = '\'"Mage: Fireball Spell"\'';
