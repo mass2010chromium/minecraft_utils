@@ -1,4 +1,3 @@
-me hi
 tag @s[type=minecraft:item,nbt={Item:{tag:{display:{Name:'"Healing Potion 1"'}}}}] add spell.7.tag
 tag @s[tag=spell.7.tag] add spell.6.tag
 tag @s[tag=spell.7.tag,nbt={Item:{Count:1b}}] add fine_hp.isdead

@@ -1,4 +1,3 @@
-me hi
 tag @s[type=minecraft:item,nbt={Item:{tag:{display:{Name:##potion_heal_1_name##}}}}] add ##potion_heal_1_tag##
 tag @s[tag=##potion_heal_1_tag##] add ##effect_heal_1_tag##
 tag @s[tag=##potion_heal_1_tag##,nbt={Item:{Count:1b}}] add ##mob_death##
