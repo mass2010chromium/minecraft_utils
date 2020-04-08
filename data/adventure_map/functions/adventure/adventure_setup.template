@@ -17,4 +17,8 @@ scoreboard objectives add ##mage_zephyr_power## dummy
 
 scoreboard objectives add ##archer_piercingArrow_power## dummy
 
+scoreboard objectives add ##knight_spear_power## dummy
+scoreboard objectives add ##knight_groundPound_power## dummy
+scoreboard objectives add ##knight_groundPound_riseTime## dummy
+
 scoreboard objectives add use.golden_hoe minecraft.used:minecraft.golden_hoe

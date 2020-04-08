@@ -10,15 +10,15 @@ scoreboard players set @a use.golden_hoe 0
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Mage: Staff"']}}}},tag=!processed] add replenish_0
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Mage: Primary Spell"']}}}},tag=!processed] add replenish_1
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Mage: Secondary Spell"']}}}},tag=!processed] add replenish_2 
-execute as @e[tag=replenish_0] at @s run tag @p[distance=0..4,nbt={Inventory:[{Slot:0b}]},tag=mage,limit=1] add replenish_fail
-execute as @e[tag=replenish_1] at @s run tag @p[distance=0..4,nbt={Inventory:[{Slot:1b}]},tag=mage,limit=1] add replenish_fail
-execute as @e[tag=replenish_2] at @s run tag @p[distance=0..4,nbt={Inventory:[{Slot:2b}]},tag=mage,limit=1] add replenish_fail 
+execute as @e[tag=replenish_0] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:0b}]},tag=mage] add replenish_fail
+execute as @e[tag=replenish_1] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:1b}]},tag=mage] add replenish_fail
+execute as @e[tag=replenish_2] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:2b}]},tag=mage] add replenish_fail 
 # Weapon drop protection
-execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'"Basic Staff"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage,limit=1] container.0 minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:3}],display:{Name:'"Basic Staff"',Lore:['"Mage: Staff"']}} 1
-execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'"Fiery Staff"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage,limit=1] container.0 minecraft:golden_hoe{Unbreakable:1,Enchantments:[{}],display:{Name:'"Fiery Staff"',Lore:['"Mage: Staff"', '"+1 Fireball Power"']}} 1  
+execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'"Basic Staff"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:3}],display:{Name:'"Basic Staff"',Lore:['"Mage: Staff"']}} 1
+execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'"Fiery Staff"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 minecraft:golden_hoe{Unbreakable:1,Enchantments:[{}],display:{Name:'"Fiery Staff"',Lore:['"Mage: Staff"', '"+1 Fireball Power"']}} 1  
 # Fireball spell
-execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'"Fireball 1"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage,limit=1] container.1 minecraft:blaze_rod{Enchantments:[{}],display:{Name:'"Fireball 1"',Lore:['"Mage: Primary Spell"', '"Mage: Fireball Spell"']}} 1
-execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'"Fireball 2"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage,limit=1] container.1 minecraft:blaze_rod{Enchantments:[{}],display:{Name:'"Fireball 2"',Lore:['"Mage: Primary Spell"', '"Mage: Fireball Spell"', '"+1 Fireball Power"']}} 1 
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'"Fireball 1"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 minecraft:blaze_rod{Enchantments:[{}],display:{Name:'"Fireball 1"',Lore:['"Mage: Primary Spell"', '"Mage: Fireball Spell"']}} 1
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'"Fireball 2"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 minecraft:blaze_rod{Enchantments:[{}],display:{Name:'"Fireball 2"',Lore:['"Mage: Primary Spell"', '"Mage: Fireball Spell"', '"+1 Fireball Power"']}} 1 
 scoreboard players set @a[tag=mage] fine_hp.tmp0 0
 # Trigger fireball summon, and remove mana from player
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Lore:['"Mage: Fireball Spell"']}}}},scores={replenish_ok=1}] run execute at @s run execute at @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={mana.mana=200..}] store success score @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={mana.mana=200..}] fine_hp.tmp0 run tag @s add fireball_summon
@@ -33,7 +33,7 @@ execute at @e[tag=fireball_summon] store result entity @e[type=minecraft:firebal
 execute as @e[tag=fireball_summon] run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed
 execute at @e[tag=mage_fireball] run particle flame ~ ~ ~  
 # Zephyr spell
-execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:'"Zephyr 1"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage,limit=1] container.2 minecraft:magma_cream{Enchantments:[{}],display:{Name:'"Zephyr 1"',Lore:['"Mage: Secondary Spell"', '"Mage: Zephyr Spell"']}} 1 
+execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:'"Zephyr 1"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage] container.2 minecraft:magma_cream{Enchantments:[{}],display:{Name:'"Zephyr 1"',Lore:['"Mage: Secondary Spell"', '"Mage: Zephyr Spell"']}} 1 
 scoreboard players set @a[tag=mage] fine_hp.tmp0 0
 # Tag with zephyr speed boost, and remove mana from player
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:['"Mage: Zephyr Spell"']}}}},scores={replenish_ok=1}] run execute at @s run execute at @p[tag=mage,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=500..}] store success score @p[tag=mage,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=500..}] fine_hp.tmp0 run tag @s add zephyr_boost

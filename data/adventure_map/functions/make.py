@@ -57,12 +57,6 @@ subs["mp_regen"] = "mana.mana_regen"
 subs["mp_regen_base"] = "mana.mana_regb"
 
 ### Kits
-_replenish_id = -1
-def replenish_id():
-    global _replenish_id
-    _replenish_id += 1
-    return _replenish_id
-
 _spell_id = -1
 def spell_id():
     global _spell_id
@@ -78,30 +72,24 @@ subs["mage_splash_power_boost_2"] = '\'"+2 Melee Splash Damage"\''
 
 subs["mage_basic_staff_name"] = '\'"Basic Staff"\''
 subs["mage_basic_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:3}],display:{Name:##mage_basic_staff_name##,Lore:[##mage_melee##]}} 1"""
-subs["mage_basic_staff_replenish"] = "replenish_{}".format(replenish_id())
 subs["mage_fireball_staff_name"] = '\'"Fiery Staff"\''
 subs["mage_fireball_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{}],display:{Name:##mage_fireball_staff_name##,Lore:[##mage_melee##, ##mage_fireball_boost_1##]}} 1"""
-subs["mage_fireball_staff_replenish"] = "replenish_{}".format(replenish_id())
 subs["mage_whirlwind_staff_name"] = '\'"Whirlwind Staff"\''
 subs["mage_whirlwind_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##mage_whirlwind_staff_name##,Lore:[##mage_melee##, ##mage_zephyr_boost_1##, ##mage_splash_power_boost_2##]},AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:4,Operation:0,"""+get_uuid()+""",Slot:"mainhand"}]} 1"""
-subs["mage_whirlwind_staff_replenish"] = "replenish_{}".format(replenish_id())
 
 subs["mage_fireball_spell"] = '\'"Mage: Fireball Spell"\'';
 subs["mage_fireball_boost_1"] = '\'"+1 Fireball Power"\''
 subs["mage_fireball_power"] = "spell.{}.power".format(spell_id())
 subs["mage_fireball_1_name"] = '\'"Fireball 1"\''
 subs["mage_fireball_1_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##mage_fireball_1_name##,Lore:[##mage_primary##, ##mage_fireball_spell##]}} 1"""
-subs["mage_fireball_1_replenish"] = "replenish_{}".format(replenish_id())
 subs["mage_fireball_2_name"] = '\'"Fireball 2"\''
 subs["mage_fireball_2_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##mage_fireball_2_name##,Lore:[##mage_primary##, ##mage_fireball_spell##, ##mage_fireball_boost_1##]}} 1"""
-subs["mage_fireball_2_replenish"] = "replenish_{}".format(replenish_id())
 
 subs["mage_zephyr_spell"] = '\'"Mage: Zephyr Spell"\'';
 subs["mage_zephyr_boost_1"] = '\'"+1 Zephyr Speed"\''
 subs["mage_zephyr_power"] = "spell.{}.power".format(spell_id())
 subs["mage_zephyr_1_name"] = '\'"Zephyr 1"\''
 subs["mage_zephyr_1_item"] = """minecraft:magma_cream{Enchantments:[{}],display:{Name:##mage_zephyr_1_name##,Lore:[##mage_secondary##, ##mage_zephyr_spell##]}} 1"""
-subs["mage_zephyr_1_replenish"] = "replenish_{}".format(replenish_id())
 
 
 subs["archer_melee"] = '\'"Archer: Axe"\''
@@ -112,12 +100,44 @@ subs["archer_basic_axe_name"] = '\'"Basic Axe"\''
 subs["archer_basic_axe_item"] = """minecraft:iron_axe{Unbreakable:1,Enchantments:[{id:knockback,lvl:3}],display:{Name:##archer_basic_axe_name##,Lore:['"Archer: Axe"']}} 1"""
 
 subs["archer_basic_bow_name"] = '\'"Basic Bow"\''
-subs["archer_basic_bow_item"] = """minecraft:bow{Unbreakable:1,Enchantments:[{id:infinity,lvl:1},{id:power,lvl:5}],display:{Name:##archer_basic_bow_name##,Lore:['"Archer: Bow"']}} 1"""
+subs["archer_basic_bow_item"] = """minecraft:bow{Unbreakable:1,Enchantments:[{id:infinity,lvl:1},{id:power,lvl:8}],display:{Name:##archer_basic_bow_name##,Lore:['"Archer: Bow"']}} 1"""
 
 subs["archer_piercingArrow_spell"] = '\'"Archer: Piercing Arrow Spell"\'';
 subs["archer_piercingArrow_power"] = "spell.{}.power".format(spell_id())
 subs["archer_piercingArrow_1_name"] = '\'"Piercing Arrow 1"\''
 subs["archer_piercingArrow_1_item"] = """minecraft:crossbow{Enchantments:[{}],display:{Name:##archer_piercingArrow_1_name##,Lore:[##archer_spell##, ##archer_piercingArrow_spell##]}} 1"""
+
+
+subs["knight_melee"] = '\'"Knight: Sword"\''
+subs["knight_spear"] = '\'"Knight: Spear"\''
+subs["knight_spell"] = '\'"Knight: Active Spell"\''
+
+# subs["knight_attack_splash_power"] = "spell.{}.power".format(spell_id())
+# subs["knight_splash_power_boost_2"] = '\'"+2 Melee Splash Daknight"\''
+
+subs["knight_basic_sword_name"] = '\'"Basic Sword"\''
+subs["knight_basic_sword_item"] = """minecraft:stone_sword{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:5},{id:"minecraft:sweeping",lvl:1}],display:{Name:##knight_basic_sword_name##,Lore:[##knight_melee##]}} 1"""
+# subs["knight_fireball_sword_name"] = '\'"Fiery Sword"\''
+# subs["knight_fireball_sword_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{}],display:{Name:##knight_fireball_sword_name##,Lore:[##knight_melee##, ##knight_fireball_boost_1##]}} 1"""
+# subs["knight_fireball_sword_replenish"] = "replenish_{}".format(replenish_id())
+# subs["knight_whirlwind_sword_name"] = '\'"Whirlwind Blade"\''
+# subs["knight_whirlwind_sword_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##knight_whirlwind_sword_name##,Lore:[##knight_melee##, ##knight_zephyr_boost_1##, ##knight_splash_power_boost_2##]},AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:4,Operation:0,"""+get_uuid()+""",Slot:"mainhand"}]} 1"""
+
+subs["knight_spear"] = '\'"Knight: Spear"\'';
+# subs["knight_spear_boost_1"] = '\'"+1 Spear Damage"\''
+subs["knight_spear_power"] = "spell.{}.power".format(spell_id())
+subs["knight_spear_1_name"] = '\'"Spear 1"\''
+subs["knight_spear_1_item"] = """minecraft:trident{Unbreakable:1b,Enchantments:[{id:"minecraft:knockback",lvl:2}],display:{Name:##knight_spear_1_name##,Lore:[##knight_spear##]}} 1"""
+
+subs["knight_groundPound_spell"] = '\'"Knight: Ground Pound Spell"\'';
+knight_groundPound_spellID = spell_id()
+subs["knight_groundPound_boost_1"] = '\'"+1 Ground Pound Power"\''
+subs["knight_groundPound_power"] = "spell.{}.power".format(knight_groundPound_spellID)
+subs["knight_groundPound_riseTime"] = "spell.{}.time".format(knight_groundPound_spellID)
+subs["knight_groundPound_1_name"] = '\'"Ground Pound 1"\''
+subs["knight_groundPound_1_item"] = """minecraft:anvil{Enchantments:[{}],display:{Name:##knight_groundPound_1_name##,Lore:[##knight_spell##, ##knight_groundPound_spell##]}} 1"""
+# subs["knight_fireball_2_name"] = '\'"Fireball 2"\''
+# subs["knight_fireball_2_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##knight_fireball_2_name##,Lore:[##knight_primary##, ##knight_fireball_spell##, ##knight_fireball_boost_1##]}} 1"""
 
 
 subs["enemies"] = "Enemies"
@@ -148,6 +168,7 @@ files = [   "fine_damage/loop",
             "kits/archer", 
             "kits/archer_spells", 
             "kits/knight", 
+            "kits/knight_spells", 
         ]
 
 for f in files:

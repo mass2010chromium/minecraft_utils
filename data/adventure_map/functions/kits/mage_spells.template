@@ -14,22 +14,22 @@ tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:[##mage_melee##]}}}},ta
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:[##mage_primary##]}}}},tag=!processed] add replenish_1
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:[##mage_secondary##]}}}},tag=!processed] add replenish_2
 
-execute as @e[tag=replenish_0] at @s run tag @p[distance=0..4,nbt={Inventory:[{Slot:0b}]},tag=mage,limit=1] add replenish_fail
-execute as @e[tag=replenish_1] at @s run tag @p[distance=0..4,nbt={Inventory:[{Slot:1b}]},tag=mage,limit=1] add replenish_fail
-execute as @e[tag=replenish_2] at @s run tag @p[distance=0..4,nbt={Inventory:[{Slot:2b}]},tag=mage,limit=1] add replenish_fail
+execute as @e[tag=replenish_0] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:0b}]},tag=mage] add replenish_fail
+execute as @e[tag=replenish_1] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:1b}]},tag=mage] add replenish_fail
+execute as @e[tag=replenish_2] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:2b}]},tag=mage] add replenish_fail
 
 # Weapon drop protection
 execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:##mage_basic_staff_name##}}}}] at @s store success score @s replenish_ok run 
-    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage,limit=1] container.0 ##mage_basic_staff_item##
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 ##mage_basic_staff_item##
 execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:##mage_fireball_staff_name##}}}}] at @s store success score @s replenish_ok run 
-    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage,limit=1] container.0 ##mage_fireball_staff_item##
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 ##mage_fireball_staff_item##
 
 
 # Fireball spell
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##mage_fireball_1_name##}}}}] at @s store success score @s replenish_ok run 
-    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage,limit=1] container.1 ##mage_fireball_1_item##
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 ##mage_fireball_1_item##
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##mage_fireball_2_name##}}}}] at @s store success score @s replenish_ok run 
-    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage,limit=1] container.1 ##mage_fireball_2_item##
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 ##mage_fireball_2_item##
     
 scoreboard players set @a[tag=mage] ##t0## 0
 # Trigger fireball summon, and remove mana from player
@@ -62,7 +62,7 @@ execute at @e[tag=mage_fireball] run particle flame ~ ~ ~
 
 # Zephyr spell
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:##mage_zephyr_1_name##}}}}] at @s store success score @s replenish_ok run 
-    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage,limit=1] container.2 ##mage_zephyr_1_item##
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage] container.2 ##mage_zephyr_1_item##
 
 scoreboard players set @a[tag=mage] ##t0## 0
 # Tag with zephyr speed boost, and remove mana from player
