@@ -33,3 +33,9 @@ scoreboard players set @s fine_hp.dmg 0
 scoreboard players operation @s fine_hp.dmgr = @s fine_hp.dmgrb
 # ------------------------------------------  
 # Check if health changed, and if it did, apply instant harming
+# ------------------------------------------
+scoreboard players operation @s[type=player] fine_hp.tmp0 = @s fine_hp.prev_hp
+scoreboard players operation @s[type=player] fine_hp.tmp0 -= @s fine_hp.hp
+effect give @s[type=player,scores={fine_hp.tmp0=1..}] minecraft:instant_damage 1 0
+tag @s[type=player,scores={fine_hp.tmp0=1..}] add noWorldDamage
+# ------------------------------------------

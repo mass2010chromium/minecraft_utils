@@ -78,7 +78,7 @@ subs["mage_whirlwind_staff_name"] = '\'"Whirlwind Staff"\''
 subs["mage_whirlwind_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##mage_whirlwind_staff_name##,Lore:[##mage_melee##, ##mage_zephyr_boost_1##, ##mage_splash_power_boost_2##]},AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:4,Operation:0,"""+get_uuid()+""",Slot:"mainhand"}]} 1"""
 
 subs["mage_fireball_spell"] = '\'"Mage: Fireball Spell"\'';
-subs["mage_fireball_boost_1"] = '\'"+1 Fireball Power"\''
+subs["mage_fireball_boost_1"] = '\'"+10 Fireball Magic Damage"\''
 subs["mage_fireball_power"] = "spell.{}.power".format(spell_id())
 subs["mage_fireball_1_name"] = '\'"Fireball 1"\''
 subs["mage_fireball_1_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##mage_fireball_1_name##,Lore:[##mage_primary##, ##mage_fireball_spell##]}} 1"""

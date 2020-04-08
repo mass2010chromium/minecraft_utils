@@ -15,7 +15,9 @@ scoreboard players operation @s fine_hp.hp < @s fine_hp.mh
 scoreboard players set @s[scores={fine_hp.tmp0=0..}] fine_hp.regt 0
 # set regen amount to base regen amount
 scoreboard players operation @s fine_hp.ramt = @s fine_hp.ramtb
-# ------------------------------------------  
+# ------------------------------------------ 
+scoreboard players set @s[tag=noWorldDamage] damage_blocked 0
+tag @s remove noWorldDamage 
 # ------------------------------------------
 # Handle ingame damage sources
 scoreboard players set @s fine_hp.tmp0 10

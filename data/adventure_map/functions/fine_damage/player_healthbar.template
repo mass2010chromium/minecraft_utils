@@ -17,6 +17,8 @@ scoreboard players set @s[scores={##t0##=0..}] ##regen_tick## 0
 scoreboard players operation @s ##regen_amount## = @s ##regen_amount_base##
 # ------------------------------------------
 
+scoreboard players set @s[tag=noWorldDamage] ##player_world_damage## 0
+tag @s remove noWorldDamage
 
 # ------------------------------------------
 # Handle ingame damage sources
