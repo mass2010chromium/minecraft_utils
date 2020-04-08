@@ -3,5 +3,5 @@ scoreboard players reset @s ##max_health##
 scoreboard players reset @s ##last_health##
 scoreboard players reset @s ##regen_amount_base##
 scoreboard players reset @s ##regen_frequency##
-replaceitem entity @s armor.head minecraft:air
+scoreboard players reset @s ##player_world_damage##
 tag @s remove ##tracker##

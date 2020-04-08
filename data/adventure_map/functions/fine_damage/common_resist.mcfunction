@@ -25,4 +25,5 @@ scoreboard players operation @s fine_hp.hp -= @s fine_hp.tmp0
 # Reset physical damage taken, physical resist
 scoreboard players set @s fine_hp.dmg 0
 scoreboard players operation @s fine_hp.dmgr = @s fine_hp.dmgrb
-# ------------------------------------------
+# ------------------------------------------  
+# Check if health changed, and if it did, apply instant harming

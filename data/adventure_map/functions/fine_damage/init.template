@@ -1,5 +1,4 @@
 me Setting up fine_hp...
-tag @a remove ##tracker##
 scoreboard objectives add ##health_stat## health
 
 scoreboard objectives add ##damage_tick## dummy
@@ -11,6 +10,9 @@ scoreboard objectives add ##hunger## food
 scoreboard objectives add ##health## dummy "Health"
 scoreboard objectives setdisplay list ##health##
 scoreboard objectives setdisplay belowname ##health##
+
+scoreboard objectives remove ##player_world_damage## 
+scoreboard objectives add ##player_world_damage## minecraft.custom:minecraft.damage_resisted
 
 scoreboard objectives add ##last_health## dummy
 

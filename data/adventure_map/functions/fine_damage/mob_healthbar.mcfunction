@@ -1,4 +1,5 @@
-scoreboard players add @s fine_hp.regt 1 
+scoreboard players add @s fine_hp.regt 1
+effect clear @s minecraft:resistance 
 scoreboard players operation @s fine_hp.hp < @s fine_hp.mh 
 execute as @s store result score @s fine_hp.tmp0 run data get entity @s Health
 scoreboard players remove @s fine_hp.tmp0 200
@@ -12,6 +13,7 @@ scoreboard players remove @s fine_hp.dispT 1
 execute as @s[scores={fine_hp.tmp1=1..,fine_hp.dispT=0}] run data modify entity @s HandItems[0].tag.display.Name set from entity @s CustomName
 effect give @s[scores={fine_hp.tmp1=1..}] minecraft:instant_damage 1 0
 effect give @s[scores={fine_hp.tmp1=1..}] minecraft:instant_health 1 0
+effect give @s[scores={fine_hp.tmp1=1..}] minecraft:resistance 1 4 true 
 scoreboard players set @s[scores={fine_hp.tmp1=1..}] fine_hp.dispT 200
 execute as @s[scores={fine_hp.tmp2=1..,fine_hp.dispT=0}] run data modify entity @s HandItems[0].tag.display.Name set from entity @s CustomName
 scoreboard players set @s[scores={fine_hp.tmp2=1..}] fine_hp.dispT 200 

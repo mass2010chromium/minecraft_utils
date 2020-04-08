@@ -1,5 +1,4 @@
 me Setting up fine_hp...
-tag @a remove fine_hp.tracker
 scoreboard objectives add stat.health health 
 scoreboard objectives add fine_hp.dt dummy 
 scoreboard objectives add fine_hp.die deathCount 
@@ -7,6 +6,8 @@ scoreboard objectives add stat.hunger food
 scoreboard objectives add fine_hp.hp dummy "Health"
 scoreboard objectives setdisplay list fine_hp.hp
 scoreboard objectives setdisplay belowname fine_hp.hp 
+scoreboard objectives remove damage_blocked
+scoreboard objectives add damage_blocked minecraft.custom:minecraft.damage_resisted 
 scoreboard objectives add fine_hp.prev_hp dummy 
 scoreboard objectives add fine_hp.mh dummy 
 scoreboard objectives remove fine_hp.dmg

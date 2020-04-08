@@ -3,5 +3,5 @@ scoreboard players set @s ##max_health## 100
 scoreboard players set @s ##last_health## 100
 scoreboard players set @s ##regen_amount_base## 1
 scoreboard players set @s ##regen_frequency## 40
-effect give @s minecraft:absorption 1000 ##absorption_hp##
+scoreboard players reset @s ##player_world_damage##
 tag @s add ##tracker##

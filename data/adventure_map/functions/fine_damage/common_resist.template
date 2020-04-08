@@ -34,3 +34,6 @@ scoreboard players operation @s ##health## -= @s ##t0##
 scoreboard players set @s ##physical_damage## 0
 scoreboard players operation @s ##physical_resist## = @s ##physical_resist_base##
 # ------------------------------------------
+
+
+# Check if health changed, and if it did, apply instant harming

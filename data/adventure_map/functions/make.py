@@ -8,8 +8,7 @@ subs["health_item_lore"] = '[\'"Helps modify your health."\']'
 
 subs["health_stat"] = "stat.health"
 subs["hunger"] = "stat.hunger"
-subs["absorption_hp"] = "39"
-subs["player_base_hp"] = "180"
+subs["player_world_damage"] = "damage_blocked"
 subs["regen_tick"] = "fine_hp.regt"
 subs["regen_amount"] = "fine_hp.ramt"
 subs["regen_amount_base"] = "fine_hp.ramtb"
@@ -115,6 +114,7 @@ files = [   "fine_damage/loop",
             "fine_damage/common_healthbar", 
             "fine_damage/common_resist", 
             "fine_damage/player_healthbar", 
+            "fine_damage/player_healthbar_helper",
             "fine_damage/mob_healthbar", 
             "fine_damage/mob_healthbar_helper",
             

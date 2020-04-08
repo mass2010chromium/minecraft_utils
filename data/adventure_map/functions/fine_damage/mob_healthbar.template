@@ -1,4 +1,5 @@
 scoreboard players add @s ##regen_tick## 1
+effect clear @s minecraft:resistance
 
 scoreboard players operation @s ##health## < @s ##max_health##
 
@@ -17,6 +18,8 @@ scoreboard players remove @s ##name_reset_ticks## 1
 execute as @s[scores={##t1##=1..,##name_reset_ticks##=0}] run data modify entity @s ##name_swap_space## set from entity @s CustomName
 effect give @s[scores={##t1##=1..}] minecraft:instant_damage 1 0
 effect give @s[scores={##t1##=1..}] minecraft:instant_health 1 0
+effect give @s[scores={##t1##=1..}] minecraft:resistance 1 4 true
+
 scoreboard players set @s[scores={##t1##=1..}] ##name_reset_ticks## ##name_reset_numticks##
 execute as @s[scores={##t2##=1..,##name_reset_ticks##=0}] run data modify entity @s ##name_swap_space## set from entity @s CustomName
 scoreboard players set @s[scores={##t2##=1..}] ##name_reset_ticks## ##name_reset_numticks##
