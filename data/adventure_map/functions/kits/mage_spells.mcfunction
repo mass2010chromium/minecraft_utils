@@ -24,13 +24,14 @@ scoreboard players set @a[tag=mage] fine_hp.tmp0 0
 # Trigger fireball summon, and remove mana from player
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Lore:['"Mage: Fireball Spell"']}}}},scores={replenish_ok=1}] run execute at @s run execute at @p[tag=mage,tag=!replenish_fail,distance=0..4,scores={mana.mana=200..}] store success score @p[tag=mage,tag=!replenish_fail,distance=0..4,scores={mana.mana=200..}] fine_hp.tmp0 run tag @s add fireball_summon
 scoreboard players remove @a[tag=mage,scores={fine_hp.tmp0=1}] mana.mana 200 
-execute at @e[tag=fireball_summon] run summon minecraft:fireball ~ ~ ~ {direction:[0.0,1.0,0.0],ExplosionPower:0,Tags:["unprocessed"]}
+execute at @e[tag=fireball_summon] run summon minecraft:fireball ~ ~ ~ {direction:[0.0,1.0,0.0],ExplosionPower:0,Tags:["unprocessed","mage_fireball"]}
 execute as @e[tag=fireball_summon] run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] direction set from entity @s Motion
 execute as @e[tag=fireball_summon] run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] direction[1] set value 0.5
 execute as @e[tag=fireball_summon] run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] power set from entity @s Motion
 execute as @e[tag=fireball_summon] run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] power[1] set value -0.1
 execute at @e[tag=fireball_summon] store result entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] ExplosionPower int 1 run scoreboard players get @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage,limit=1] spell.1.power 
-execute as @e[tag=fireball_summon] run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed  
+execute as @e[tag=fireball_summon] run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed
+execute at @e[tag=mage_fireball] run particle flame ~ ~ ~ 
 # Lightning spell (TODO)
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:'"Lightning 1"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage,limit=1] container.2 minecraft:magma_cream{Enchantments:[{}],display:{Name:'"Lightning 1"',Lore:['"Mage: Secondary Spell"']}} 1 
 tag @e[tag=unprocessed] remove unprocessed  

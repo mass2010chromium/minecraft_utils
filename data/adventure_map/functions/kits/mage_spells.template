@@ -43,7 +43,7 @@ execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Lore:[##mage_fireball_spe
 scoreboard players remove @a[tag=mage,scores={##t0##=1}] ##mp## 200
 
 execute at @e[tag=fireball_summon] 
-    run summon minecraft:fireball ~ ~ ~ {direction:[0.0,1.0,0.0],ExplosionPower:0,Tags:["unprocessed"]}
+    run summon minecraft:fireball ~ ~ ~ {direction:[0.0,1.0,0.0],ExplosionPower:0,Tags:["unprocessed","mage_fireball"]}
 execute as @e[tag=fireball_summon] 
     run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] direction set from entity @s Motion
 execute as @e[tag=fireball_summon] 
@@ -57,7 +57,7 @@ execute at @e[tag=fireball_summon]
     run scoreboard players get @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage,limit=1] ##mage_fireball_power##
     
 execute as @e[tag=fireball_summon] run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed
-
+execute at @e[tag=mage_fireball] run particle flame ~ ~ ~ 
 
 # Lightning spell (TODO)
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:##mage_lightning_1_name##}}}}] at @s store success score @s replenish_ok run 
