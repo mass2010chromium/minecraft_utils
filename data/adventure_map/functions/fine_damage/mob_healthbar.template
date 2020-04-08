@@ -31,3 +31,5 @@ execute as @s[scores={##name_reset_ticks##=1}] run data modify entity @s CustomN
 scoreboard players remove @s[scores={##name_reset_ticks##=1..}] ##name_reset_ticks## 1
 
 data modify entity @s Health set value ##mob_base_hp##
+data modify entity @s Invulnerable set value 0b
+data modify entity @s[scores={##invulnerable_ticks##=1..}] Invulnerable set value 1b

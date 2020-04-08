@@ -22,6 +22,7 @@ subs["name_reset_numticks"] = "200"
 subs["name_swap_space"] = "HandItems[0].tag.display.Name"
 
 subs["health"] = "fine_hp.hp"
+subs["invulnerable_ticks"] = "fine_hp.invul"
 subs["physical_damage"] = "fine_hp.dmg"
 subs["magic_damage"] = "fine_hp.mdmg"
 subs["physical_resist"] = "fine_hp.dmgr"
@@ -64,17 +65,21 @@ subs["mage_melee"] = '\'"Mage: Staff"\''
 subs["mage_primary"] = '\'"Mage: Primary Spell"\''
 subs["mage_secondary"] = '\'"Mage: Secondary Spell"\''
 
-subs["mage_fireball_boost_1"] = '\'"+1 Fireball Power"\''
 subs["mage_attack_splash_power"] = "spell.{}.power".format(spell_id())
+subs["mage_splash_power_boost_2"] = '\'"+2 Melee Splash Damage"\''
 
 subs["mage_basic_staff_name"] = '\'"Basic Staff"\''
-subs["mage_basic_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##mage_basic_staff_name##,Lore:[##mage_melee##]}} 1"""
+subs["mage_basic_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:3}],display:{Name:##mage_basic_staff_name##,Lore:[##mage_melee##]}} 1"""
 subs["mage_basic_staff_replenish"] = "replenish_{}".format(replenish_id())
 subs["mage_fireball_staff_name"] = '\'"Fiery Staff"\''
-subs["mage_fireball_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##mage_fireball_staff_name##,Lore:[##mage_melee##, ##mage_fireball_boost_1##]}} 1"""
+subs["mage_fireball_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{}],display:{Name:##mage_fireball_staff_name##,Lore:[##mage_melee##, ##mage_fireball_boost_1##]}} 1"""
 subs["mage_fireball_staff_replenish"] = "replenish_{}".format(replenish_id())
+subs["mage_whirlwind_staff_name"] = '\'"Whirlwind Staff"\''
+subs["mage_whirlwind_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##mage_whirlwind_staff_name##,Lore:[##mage_melee##, ##mage_zephyr_boost_1##, ##mage_splash_power_boost_2##]}} 1"""
+subs["mage_whirlwind_staff_replenish"] = "replenish_{}".format(replenish_id())
 
 subs["mage_fireball_spell"] = '\'"Mage: Fireball Spell"\'';
+subs["mage_fireball_boost_1"] = '\'"+1 Fireball Power"\''
 subs["mage_fireball_power"] = "spell.{}.power".format(spell_id())
 subs["mage_fireball_1_name"] = '\'"Fireball 1"\''
 subs["mage_fireball_1_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##mage_fireball_1_name##,Lore:[##mage_primary##, ##mage_fireball_spell##]}} 1"""
@@ -83,9 +88,12 @@ subs["mage_fireball_2_name"] = '\'"Fireball 2"\''
 subs["mage_fireball_2_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##mage_fireball_2_name##,Lore:[##mage_primary##, ##mage_fireball_spell##, ##mage_fireball_boost_1##]}} 1"""
 subs["mage_fireball_2_replenish"] = "replenish_{}".format(replenish_id())
 
-subs["mage_lightning_1_name"] = '\'"Lightning 1"\''
-subs["mage_lightning_1_item"] = """minecraft:magma_cream{Enchantments:[{}],display:{Name:##mage_lightning_1_name##,Lore:[##mage_secondary##]}} 1"""
-subs["mage_lightning_1_replenish"] = "replenish_{}".format(replenish_id())
+subs["mage_zephyr_spell"] = '\'"Mage: Zephyr Spell"\'';
+subs["mage_zephyr_boost_1"] = '\'"+1 Zephyr Speed"\''
+subs["mage_zephyr_power"] = "spell.{}.power".format(spell_id())
+subs["mage_zephyr_1_name"] = '\'"Zephyr 1"\''
+subs["mage_zephyr_1_item"] = """minecraft:magma_cream{Enchantments:[{}],display:{Name:##mage_zephyr_1_name##,Lore:[##mage_secondary##, ##mage_zephyr_spell##]}} 1"""
+subs["mage_zephyr_1_replenish"] = "replenish_{}".format(replenish_id())
 
 
 subs["archer_melee"] = '\'"Archer: Axe"\''
@@ -128,6 +136,7 @@ files = [   "fine_damage/loop",
         
             "kits/mage", 
             "kits/mage_spells", 
+            "kits/mage_all_items", 
             "kits/archer", 
             "kits/archer_spells", 
             "kits/knight", 

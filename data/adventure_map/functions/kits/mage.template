@@ -3,6 +3,7 @@ tag @s remove knight
 tag @s remove archer
 xp set @s 129 levels
 xp set @s 0 points
+effect clear @s
 scoreboard players operation @s ##last_health## = @s ##max_health##
 scoreboard players operation @s ##health## = @s ##max_health##
 scoreboard players set @s ##mp## 0
@@ -14,11 +15,7 @@ replaceitem entity @s armor.legs minecraft:iron_leggings{Unbreakable:1,Enchantme
 replaceitem entity @s armor.feet minecraft:golden_boots{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:"minecraft:fire_protection",lvl:1}],display:{Name:'"Mage\'s Boots"'}} 1
 replaceitem entity @s container.0 ##mage_basic_staff_item##
 replaceitem entity @s container.1 ##mage_fireball_1_item##
-replaceitem entity @s container.2 ##mage_lightning_1_item##
-
-# Testing
-replaceitem entity @s container.6 ##mage_fireball_staff_item##
-replaceitem entity @s container.7 ##mage_fireball_2_item##
+replaceitem entity @s container.2 ##mage_zephyr_1_item##
 
 
 replaceitem entity @s container.8 minecraft:cookie{display:{Name:'"Biscuit"',Lore:['"Made of hardtack"']}} 10

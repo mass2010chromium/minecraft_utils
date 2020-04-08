@@ -22,3 +22,5 @@ execute as @s[scores={fine_hp.dispT=1..}] run function adventure_map:fine_damage
 execute as @s[scores={fine_hp.dispT=1}] run data modify entity @s CustomName set from entity @s HandItems[0].tag.display.Name
 scoreboard players remove @s[scores={fine_hp.dispT=1..}] fine_hp.dispT 1 
 data modify entity @s Health set value 200
+data modify entity @s Invulnerable set value 0b
+data modify entity @s[scores={fine_hp.invul=1..}] Invulnerable set value 1b

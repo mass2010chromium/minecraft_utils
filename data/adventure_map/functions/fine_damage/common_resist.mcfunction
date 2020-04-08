@@ -1,4 +1,10 @@
 # ------------------------------------------
+# Apply invulnerability
+scoreboard players remove @s[scores={fine_hp.invul=1..}] fine_hp.invul 1
+scoreboard players set @s[scores={fine_hp.invul=1..}] fine_hp.mdmgr 100
+scoreboard players set @s[scores={fine_hp.invul=1..}] fine_hp.dmgr 100 
+# ------------------------------------------ 
+# ------------------------------------------
 # Handle direct damage sources (magic) 
 # Apply magic resist (damage = (damage * (100 - magic_resist)) / 100)
 scoreboard players set @s fine_hp.tmp0 100

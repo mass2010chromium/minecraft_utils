@@ -18,6 +18,8 @@ scoreboard objectives add ##last_health## dummy
 
 scoreboard objectives add ##max_health## dummy
 
+scoreboard objectives add ##invulnerable_ticks## dummy
+
 scoreboard objectives remove ##physical_damage##
 scoreboard objectives add ##physical_damage## dummy
 

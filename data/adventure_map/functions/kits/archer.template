@@ -3,6 +3,7 @@ tag @s remove mage
 tag @s remove knight
 xp set @s 129 levels
 xp set @s 0 points
+effect clear @s
 scoreboard players operation @s ##last_health## = @s ##max_health##
 scoreboard players operation @s ##health## = @s ##max_health##
 scoreboard players set @s ##mp## 0

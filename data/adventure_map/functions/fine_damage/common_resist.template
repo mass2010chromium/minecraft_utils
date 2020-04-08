@@ -1,4 +1,12 @@
 # ------------------------------------------
+# Apply invulnerability
+scoreboard players remove @s[scores={##invulnerable_ticks##=1..}] ##invulnerable_ticks## 1
+scoreboard players set @s[scores={##invulnerable_ticks##=1..}] ##magic_resist## 100
+scoreboard players set @s[scores={##invulnerable_ticks##=1..}] ##physical_resist## 100
+
+# ------------------------------------------
+
+# ------------------------------------------
 # Handle direct damage sources (magic)
 
 # Apply magic resist (damage = (damage * (100 - magic_resist)) / 100)
