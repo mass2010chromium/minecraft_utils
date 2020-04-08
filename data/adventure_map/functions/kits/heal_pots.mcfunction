@@ -1,0 +1,1 @@
+give @s minecraft:dragon_breath{Enchantments:[{}],display:{Name:'"Healing Potion 1"',Lore:['"+10 HP"']}} 64

@@ -18,6 +18,7 @@ subs["health_stat"] = "stat.health"
 subs["hunger"] = "stat.hunger"
 subs["player_world_damage"] = "damage_blocked"
 subs["regen_tick"] = "fine_hp.regt"
+subs["fast_regen_ticks"] = "fine_hp.potreg"
 subs["regen_amount"] = "fine_hp.ramt"
 subs["regen_amount_base"] = "fine_hp.ramtb"
 subs["regen_frequency"] = "fine_hp.regfreq"
@@ -140,6 +141,16 @@ subs["knight_groundPound_1_item"] = """minecraft:anvil{Enchantments:[{}],display
 # subs["knight_fireball_2_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##knight_fireball_2_name##,Lore:[##knight_primary##, ##knight_fireball_spell##, ##knight_fireball_boost_1##]}} 1"""
 
 
+# Common kit stuff
+    
+subs["effect_heal_1"] = '\'"+10 HP"\''
+subs["effect_heal_1_tag"] = "spell.{}.tag".format(spell_id())
+subs["potion_heal_1_name"] = '\'"Healing Potion 1"\''
+subs["potion_heal_1_item"] = """minecraft:dragon_breath{Enchantments:[{}],display:{Name:##potion_heal_1_name##,Lore:[##effect_heal_1##]}}"""
+subs["potion_heal_1_tag"] = "spell.{}.tag".format(spell_id())
+
+
+
 subs["enemies"] = "Enemies"
 subs["friendlies"] = "Friendlies"
 
@@ -170,6 +181,8 @@ files = [   "fine_damage/loop",
             "kits/archer_spells", 
             "kits/knight", 
             "kits/knight_spells", 
+            "kits/common_spells", 
+            "kits/heal_pots", 
         ]
 
 for f in files:

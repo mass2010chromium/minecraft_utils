@@ -23,6 +23,8 @@ scoreboard objectives add fine_hp.dmgrb dummy
 scoreboard objectives add fine_hp.mdmgrb dummy 
 scoreboard objectives remove fine_hp.regt
 scoreboard objectives add fine_hp.regt dummy 
+scoreboard objectives remove fine_hp.potreg
+scoreboard objectives add fine_hp.potreg dummy 
 scoreboard objectives remove fine_hp.ramt
 scoreboard objectives add fine_hp.ramt dummy 
 scoreboard objectives add fine_hp.ramtb dummy 

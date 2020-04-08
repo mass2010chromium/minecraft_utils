@@ -17,6 +17,11 @@ scoreboard players set @s[scores={##t0##=0..}] ##regen_tick## 0
 scoreboard players operation @s ##regen_amount## = @s ##regen_amount_base##
 # ------------------------------------------
 
+# Potion regen
+scoreboard players add @s[scores={##fast_regen_ticks##=1..}] ##health## 1
+scoreboard players remove @s[scores={##fast_regen_ticks##=1..}] ##fast_regen_ticks## 1
+
+# Sketchy hack for command damage resetting
 scoreboard players set @s[tag=noWorldDamage] ##player_world_damage## 0
 tag @s remove noWorldDamage
 

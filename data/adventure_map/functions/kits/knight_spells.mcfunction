@@ -40,7 +40,16 @@ execute at @e[tag=pounded] run particle minecraft:block iron_block ~ ~1 ~ 0.25 0
 execute as @e[tag=pounded] run data modify entity @s Motion[1] set value 0.8
 tag @e[tag=pounded] remove pounded 
 # Trident throwing (TODO)
-execute as @e[type=trident,tag=!processed] run data modify entity @s SoundEvent set value "minecraft:entity.blaze.hurt" 
+execute as @e[type=trident,tag=!processed] run data modify entity @s SoundEvent set value "minecraft:entity.blaze.hurt"  
+tag @e[tag=replenish_0] add processed
+tag @e[tag=replenish_1] add processed
+tag @e[tag=replenish_2] add processed
+tag @e[tag=replenish_3] add processed
+tag @e[tag=replenish_0] remove replenish_0
+tag @e[tag=replenish_1] remove replenish_1
+tag @e[tag=replenish_2] remove replenish_2
+tag @e[tag=replenish_3] remove replenish_3
+tag @a remove replenish_fail 
 # Apply buffs and such
 scoreboard players set @a[tag=knight] spell.5.power 20
 scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.5.power 10
