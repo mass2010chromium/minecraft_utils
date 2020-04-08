@@ -1,0 +1,25 @@
+summon minecraft:skeleton ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##}
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 35
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 35
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 35
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist## 0
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist## 0
+data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
+    CustomName:'"Undead Ranger"',
+    CustomNameVisible:1,
+    HandItems:[
+        {id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:power",lvl:3}]}}, {}
+    ],
+    ArmorItems:[
+        {},
+        {},
+        {id:"minecraft:iron_chestplate",Count:1b},
+        {}
+    ],
+    HandDropChances:[0.0f,0.0f],
+    ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],
+  }
+data modify entity @e[tag=unprocessed,sort=nearest,limit=1] Attributes[{Name:"generic.MaxHealth"}].Base set value 200
+data modify entity @e[tag=unprocessed,sort=nearest,limit=1] Health set value 200
+tag @e[tag=unprocessed,sort=nearest,limit=1] add ##tracker##
+tag @e[tag=unprocessed,sort=nearest,limit=1] remove unprocessed
