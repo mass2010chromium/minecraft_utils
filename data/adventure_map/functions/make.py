@@ -66,7 +66,6 @@ subs["mage_primary"] = '\'"Mage: Primary Spell"\''
 subs["mage_secondary"] = '\'"Mage: Secondary Spell"\''
 
 subs["mage_fireball_boost_1"] = '\'"+1 Fireball Power"\''
-subs["mage_fireball_power"] = "spell.{}.power".format(spell_id())
 subs["mage_attack_splash_power"] = "spell.{}.power".format(spell_id())
 
 subs["mage_basic_staff_name"] = '\'"Basic Staff"\''
@@ -76,13 +75,34 @@ subs["mage_fireball_staff_name"] = '\'"Fiery Staff"\''
 subs["mage_fireball_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##mage_fireball_staff_name##,Lore:[##mage_melee##, ##mage_fireball_boost_1##]}} 1"""
 subs["mage_fireball_staff_replenish"] = "replenish_{}".format(replenish_id())
 
+subs["mage_fireball_spell"] = '\'"Mage: Fireball Spell"\'';
+subs["mage_fireball_power"] = "spell.{}.power".format(spell_id())
 subs["mage_fireball_1_name"] = '\'"Fireball 1"\''
-subs["mage_fireball_1_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##mage_fireball_1_name##,Lore:[##mage_primary##]}} 1"""
+subs["mage_fireball_1_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##mage_fireball_1_name##,Lore:[##mage_primary##, ##mage_fireball_spell##]}} 1"""
 subs["mage_fireball_1_replenish"] = "replenish_{}".format(replenish_id())
+subs["mage_fireball_2_name"] = '\'"Fireball 2"\''
+subs["mage_fireball_2_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##mage_fireball_2_name##,Lore:[##mage_primary##, ##mage_fireball_spell##, ##mage_fireball_boost_1##]}} 1"""
+subs["mage_fireball_2_replenish"] = "replenish_{}".format(replenish_id())
 
 subs["mage_lightning_1_name"] = '\'"Lightning 1"\''
 subs["mage_lightning_1_item"] = """minecraft:magma_cream{Enchantments:[{}],display:{Name:##mage_lightning_1_name##,Lore:[##mage_secondary##]}} 1"""
 subs["mage_lightning_1_replenish"] = "replenish_{}".format(replenish_id())
+
+
+subs["archer_melee"] = '\'"Archer: Axe"\''
+subs["archer_bow"] = '\'"Archer: Bow"\''
+subs["archer_spell"] = '\'"Archer: Active Spell"\''
+
+subs["archer_basic_axe_name"] = '\'"Basic Axe"\''
+subs["archer_basic_axe_item"] = """minecraft:iron_axe{Unbreakable:1,Enchantments:[{id:knockback,lvl:3}],display:{Name:##archer_basic_axe_name##,Lore:['"Archer: Axe"']}} 1"""
+
+subs["archer_basic_bow_name"] = '\'"Basic Bow"\''
+subs["archer_basic_bow_item"] = """minecraft:bow{Unbreakable:1,Enchantments:[{id:infinity,lvl:1},{id:power,lvl:5}],display:{Name:##archer_basic_bow_name##,Lore:['"Archer: Bow"']}} 1"""
+
+subs["archer_piercingArrow_spell"] = '\'"Archer: Piercing Arrow Spell"\'';
+subs["archer_piercingArrow_power"] = "spell.{}.power".format(spell_id())
+subs["archer_piercingArrow_1_name"] = '\'"Piercing Arrow 1"\''
+subs["archer_piercingArrow_1_item"] = """minecraft:crossbow{Enchantments:[{}],display:{Name:##archer_piercingArrow_1_name##,Lore:[##archer_spell##, ##archer_piercingArrow_spell##]}} 1"""
 
 
 subs["enemies"] = "Enemies"
@@ -102,12 +122,14 @@ files = [   "fine_damage/loop",
             "mana/loop", 
             
             "summons/basic_zombie", 
+            "summons/basic_skeleton", 
         
             "adventure/adventure_setup", 
         
             "kits/mage", 
             "kits/mage_spells", 
             "kits/archer", 
+            "kits/archer_spells", 
             "kits/knight", 
         ]
 

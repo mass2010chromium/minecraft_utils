@@ -1,7 +1,3 @@
-# Apply buffs
-scoreboard players set @a[tag=mage] ##mage_fireball_power## 2
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 1
-
 # Splash melee
 tag @a[tag=mage,scores={use.golden_hoe=1}] add mage_splash
 scoreboard players set @a[tag=mage,scores={use.golden_hoe=1}] ##mage_attack_splash_power## 2
@@ -31,14 +27,17 @@ execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:##mage_fireball_staf
 
 
 # Fireball spell
-scoreboard players set @a[tag=mage] ##t0## 0
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##mage_fireball_1_name##}}}}] at @s store success score @s replenish_ok run 
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage,limit=1] container.1 ##mage_fireball_1_item##
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##mage_fireball_2_name##}}}}] at @s store success score @s replenish_ok run 
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage,limit=1] container.1 ##mage_fireball_2_item##
+    
+scoreboard players set @a[tag=mage] ##t0## 0
 # Trigger fireball summon, and remove mana from player
-execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##mage_fireball_1_name##}}}},scores={replenish_ok=1}] run
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Lore:[##mage_fireball_spell##]}}}},scores={replenish_ok=1}] run
     execute at @s run
-    execute at @p[tag=mage,tag=!replenish_fail,distance=0..4,scores={##mp##=200..},nbt={Inventory:[{Slot:1b,tag:{display:{Name:##mage_fireball_1_name##}}}]}] 
-        store success score @p[tag=mage,tag=!replenish_fail,distance=0..4,scores={##mp##=200..},nbt={Inventory:[{Slot:1b,tag:{display:{Name:##mage_fireball_1_name##}}}]}]
+    execute at @p[tag=mage,tag=!replenish_fail,distance=0..4,scores={##mp##=200..}] 
+        store success score @p[tag=mage,tag=!replenish_fail,distance=0..4,scores={##mp##=200..}]
             ##t0##
     run tag @s add fireball_summon
 scoreboard players remove @a[tag=mage,scores={##t0##=1}] ##mp## 200
@@ -76,3 +75,9 @@ tag @e[tag=replenish_0] remove replenish_0
 tag @e[tag=replenish_1] remove replenish_1
 tag @e[tag=replenish_2] remove replenish_2
 tag @a remove replenish_fail
+
+# Apply buffs
+scoreboard players set @a[tag=mage] ##mage_fireball_power## 2
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 1
