@@ -159,6 +159,7 @@ files = [   "fine_damage/loop",
             
             "summons/basic_zombie", 
             "summons/basic_skeleton", 
+            "summons/basic_spider", 
         
             "adventure/adventure_setup", 
         
