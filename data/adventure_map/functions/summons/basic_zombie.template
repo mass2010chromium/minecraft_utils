@@ -1,4 +1,4 @@
-summon minecraft:zombie ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##}
+summon minecraft:zombie ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##,PersistenceRequired:1}
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 50
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 50
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 50
@@ -14,7 +14,7 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
         {},
         {},
         {id:"minecraft:iron_chestplate",Count:1b},
-        {}
+        {id:"minecraft:chainmail_helmet",Count:1b}
     ],
     HandDropChances:[0.0f,0.0f],
     ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],

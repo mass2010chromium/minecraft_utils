@@ -1,4 +1,4 @@
-summon minecraft:skeleton ~ ~ ~ {Tags:["unprocessed"],Team:Enemies}
+summon minecraft:skeleton ~ ~ ~ {Tags:["unprocessed"],Team:Enemies,PersistenceRequired:1}
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.hp 35
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.mh 35
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.prev_hp 35

@@ -21,7 +21,7 @@ scoreboard players remove @a[tag=knight,scores={fine_hp.tmp0=1}] mana.mana 600
 # Start the lift motion
 execute as @e[tag=cast_pound] at @s run tag @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=knight] add pound_start 
 scoreboard players set @a[tag=pound_start] spell.5.time 6
-effect give @a[tag=pound_start] minecraft:levitation 1 30
+effect give @a[tag=pound_start] minecraft:levitation 1 22
 tag @a[tag=pound_start] add pound
 tag @a[tag=pound_start] remove pound_start
 scoreboard players set @a[tag=pound] fine_hp.invul 5 

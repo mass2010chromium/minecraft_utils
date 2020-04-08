@@ -1,4 +1,4 @@
-summon minecraft:skeleton ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##}
+summon minecraft:skeleton ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##,PersistenceRequired:1}
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 35
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 35
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 35
