@@ -11,7 +11,7 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
         {id:"minecraft:spider_eye",Count:1b}, {}
     ],
     ArmorItems:[
-        {},
+        {id:"minecraft:iron_boots",Count:1b,tag:{Enchantments:[{id:"minecraft:feather_falling",lvl:10}]}},
         {},
         {},
         {}
