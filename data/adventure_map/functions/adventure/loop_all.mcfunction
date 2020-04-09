@@ -6,3 +6,4 @@ function adventure_map:fine_damage/loop
 function adventure_map:mana/loop
 
 kill @e[type=minecraft:experience_orb]
+recipe take @a *
