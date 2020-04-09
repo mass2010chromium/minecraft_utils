@@ -21,24 +21,44 @@ execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'"Fireball 1"'}}}}] 
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'"Fireball 2"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 minecraft:blaze_rod{Enchantments:[{}],display:{Name:'"Fireball 2"',Lore:['"Mage: Primary Spell"', '"Mage: Fireball Spell"', '"+10 Fireball Magic Damage"']}} 1 
 scoreboard players set @a[tag=mage] fine_hp.tmp0 0
 # Trigger fireball summon, and remove mana from player
-execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Lore:['"Mage: Fireball Spell"']}}}},scores={replenish_ok=1}] run execute at @s run execute at @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={mana.mana=200..}] store success score @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={mana.mana=200..}] fine_hp.tmp0 run tag @s add fireball_summon
-scoreboard players remove @a[tag=mage,scores={fine_hp.tmp0=1}] mana.mana 200 
-execute at @e[tag=fireball_summon] run playsound minecraft:entity.blaze.shoot master @a[distance=0..8] ~ ~ ~
-execute at @e[tag=fireball_summon] run summon minecraft:fireball ~ ~ ~ {direction:[0.0,1.0,0.0],ExplosionPower:0,Tags:["unprocessed","mage_fireball"]}
-execute as @e[tag=fireball_summon] run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] direction set from entity @s Motion
-execute as @e[tag=fireball_summon] run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] direction[1] set value 0.3
-execute as @e[tag=fireball_summon] run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] power set from entity @s Motion
-execute as @e[tag=fireball_summon] run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] power[1] set value -0.05
-execute at @e[tag=fireball_summon] store result score @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] spell.1.power run scoreboard players get @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] spell.1.power 
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Lore:['"Mage: Fireball Spell"']}}}},scores={replenish_ok=1}] run execute at @s run execute at @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={mana.mana=200..}] store success score @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={mana.mana=200..}] fine_hp.tmp0 run tag @s add fireball_summon 
+tag @a[tag=mage,scores={fine_hp.tmp0=1}] add fireball_summoner
+scoreboard players remove @a[tag=fireball_summoner] mana.mana 200
+execute as @a[tag=fireball_summoner] at @s run summon minecraft:fireball ^ ^ ^0.1 {direction:[0.0,0.0,0.0],ExplosionPower:0,Tags:["unprocessed","mage_fireball"]}
+execute at @e[tag=fireball_summoner] run playsound minecraft:entity.blaze.shoot master @a[distance=0..8] ~ ~ ~ 
+# Record source x,y,z, and assign damage
+execute as @e[tag=fireball_summoner] at @s store result score @e[tag=mage_fireball,sort=nearest,limit=1,tag=unprocessed] fine_hp.tmp1 run data get entity @s Pos[0] 1000
+execute as @e[tag=fireball_summoner] at @s store result score @e[tag=mage_fireball,sort=nearest,limit=1,tag=unprocessed] fine_hp.tmp2 run data get entity @s Pos[1] 1000
+execute as @e[tag=fireball_summoner] at @s store result score @e[tag=mage_fireball,sort=nearest,limit=1,tag=unprocessed] fine_hp.tmp3 run data get entity @s Pos[2] 1000
+execute as @e[tag=fireball_summoner] at @s run scoreboard players operation @e[tag=mage_fireball,sort=nearest,limit=1,tag=unprocessed] spell.1.power = @s spell.1.power 
+# Start doing vector math
+# t0, t1, t2 are dx, dy, dz
+execute as @e[tag=unprocessed,tag=mage_fireball] store result score @s fine_hp.tmp0 run data get entity @s Pos[0] 1000
+execute as @e[tag=unprocessed,tag=mage_fireball] run scoreboard players operation @s fine_hp.tmp0 -= @s fine_hp.tmp1
+execute as @e[tag=unprocessed,tag=mage_fireball] store result score @s fine_hp.tmp1 run data get entity @s Pos[1] 1000
+execute as @e[tag=unprocessed,tag=mage_fireball] run scoreboard players operation @s fine_hp.tmp1 -= @s fine_hp.tmp2
+scoreboard players add @e[tag=unprocessed,tag=mage_fireball] fine_hp.tmp1 10
+execute as @e[tag=unprocessed,tag=mage_fireball] store result score @s fine_hp.tmp2 run data get entity @s Pos[2] 1000
+execute as @e[tag=unprocessed,tag=mage_fireball] run scoreboard players operation @s fine_hp.tmp2 -= @s fine_hp.tmp3 
+execute as @e[tag=unprocessed,tag=mage_fireball] at @s run tp @s ~ ~1.5 ~
+# Finally store back into entity data.
+execute as @e[tag=mage_fireball] store result entity @s direction[0] double 0.03 run scoreboard players get @s fine_hp.tmp0
+execute as @e[tag=unprocessed,tag=mage_fireball] store result entity @s direction[1] double 0.03 run scoreboard players get @s fine_hp.tmp1
+execute as @e[tag=mage_fireball] store result entity @s direction[2] double 0.03 run scoreboard players get @s fine_hp.tmp2 
+execute as @e[tag=unprocessed,tag=mage_fireball] run data modify entity @s power[1] set value -0.25
+scoreboard players set @e[tag=unprocessed,tag=mage_fireball] fine_hp.tmp3 10
+scoreboard players remove @e[tag=mage_fireball] fine_hp.tmp3 1
+kill @e[tag=mage_fireball,scores={fine_hp.tmp3=0}] 
 execute as @e[tag=fireball_summon] run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed
-execute at @e[tag=mage_fireball] run particle flame ~ ~ ~ 
+execute at @e[tag=mage_fireball] run particle flame ~ ~ ~ 0 0 0 0.05 5 
 execute at @e[tag=mage_fireball] run kill @e[tag=mage_fireball_tracker,limit=1,sort=nearest]
 execute as @e[tag=mage_fireball_tracker] at @s run scoreboard players operation @e[distance=0..3] fine_hp.mdmg += @s spell.1.power
 execute as @e[tag=mage_fireball_tracker] at @s run scoreboard players operation @e[distance=0..5] fine_hp.mdmg += @s spell.1.power
-execute at @e[tag=mage_fireball_tracker] run particle minecraft:explosion_emitter ~ ~ ~ 
+execute at @e[tag=mage_fireball_tracker] run particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force 
 execute at @e[tag=mage_fireball] run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:2s,Tags:["mage_fireball_tracker"]}
 execute as @e[tag=mage_fireball] at @s run scoreboard players operation @e[distance=0..2,sort=nearest,tag=mage_fireball_tracker] spell.1.power = @s spell.1.power 
-tag @e[tag=unprocessed] remove unprocessed  
+tag @e[tag=unprocessed] remove unprocessed
+tag @a[tag=fireball_summoner] remove fireball_summoner  
 # Zephyr spell
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:'"Zephyr 1"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage] container.2 minecraft:magma_cream{Enchantments:[{}],display:{Name:'"Zephyr 1"',Lore:['"Mage: Secondary Spell"', '"Mage: Zephyr Spell"']}} 1 
 scoreboard players set @a[tag=mage] fine_hp.tmp0 0
@@ -63,8 +83,8 @@ execute as @e[tag=arcane_explode] at @s run scoreboard players operation @s fine
 execute at @e[tag=arcane_explode] run playsound minecraft:entity.wither.spawn master @a[distance=0..8] ~ ~ ~
 execute at @e[tag=arcane_explode] run particle minecraft:end_rod ~ ~ ~ 0 0 0 1 150 
 # Record source x and z, and deal damage
-execute at @e[tag=arcane_explode] run execute as @e[team=Enemies,distance=0..8] store result score @s fine_hp.tmp1 run data get entity @e[tag=arcane_explode,limit=1] Pos[0] 100
-execute at @e[tag=arcane_explode] run execute as @e[team=Enemies,distance=0..8] store result score @s fine_hp.tmp2 run data get entity @e[tag=arcane_explode,limit=1] Pos[2] 100
+execute as @e[tag=arcane_explode] at @s store result score @e[team=Enemies,distance=0..8] fine_hp.tmp1 run data get entity @s Pos[0] 100
+execute as @e[tag=arcane_explode] at @s store result score @e[team=Enemies,distance=0..8] fine_hp.tmp2 run data get entity @s Pos[2] 100
 execute as @e[tag=arcane_explode] at @s run scoreboard players operation @e[team=Enemies,distance=0..7] fine_hp.mdmg += @s fine_hp.tmp0
 execute at @e[tag=arcane_explode] run tag @e[team=Enemies,distance=0..7] add repulsed 
 # Start doing vector math

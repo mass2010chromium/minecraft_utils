@@ -16,4 +16,8 @@ scoreboard objectives add spell.5.power dummy
 scoreboard objectives add spell.6.power dummy
 scoreboard objectives add spell.7.power dummy
 scoreboard objectives add spell.7.time dummy 
-scoreboard objectives add use.golden_hoe minecraft.used:minecraft.golden_hoe
+scoreboard objectives add use.golden_hoe minecraft.used:minecraft.golden_hoe 
+gamerule mobGriefing false
+gamerule doMobSpawning false
+gamerule doWeatherCycle false
+gamerule doLimitedCrafting true
