@@ -19,7 +19,7 @@ execute as @e[tag=piercing_arrow,tag=!processed] run data merge entity @s {Sound
 execute as @e[tag=piercing_arrow] at @s run scoreboard players operation @e[team=Enemies,distance=0..4,nbt={ActiveEffects:[{Id:24b}]}] fine_hp.mdmg += @s spell.5.power   
 # Windwalk spell
 tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:'"Windwalk 1"'}}}]}] add ww_1
-scoreboard players set @a[tag=ww_1] spell.4.power 10 
+scoreboard players set @a[tag=ww_1] spell.4.power 5 
 # Different tiers
 replaceitem entity @a[tag=ww_1,scores={mana.mana=..399}] container.2 minecraft:crossbow{ display:{ Name:'"Windwalk 1"', Lore:['"Archer: Active Spell"', '"Archer: Windwalk Spell"']}, Charged:1b } 
 # All windwalk arrow casts
@@ -27,7 +27,7 @@ tag @a[tag=archer,nbt={SelectedItemSlot:2,SelectedItem:{tag:{Charged:0b,display:
 scoreboard players remove @a[tag=shotWind] mana.mana 400
 execute as @a[tag=shotWind] at @s run scoreboard players operation @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] spell.4.power = @s spell.4.power
 execute as @a[tag=shotWind] at @s run tag @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] add windwalk_arrow
-effect give @a[tag=shotWind] minecraft:speed 5 1
+effect give @a[tag=shotWind,scores={spell.4.power=6..}] minecraft:speed 5 1
 effect give @a[tag=shotWind] minecraft:speed 20 0
 execute at @a[tag=shotWind] run effect give @a[distance=0..8] minecraft:speed 10 0 
 # Different tiers

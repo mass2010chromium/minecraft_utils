@@ -24,6 +24,6 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
   }
 tag @e[tag=unprocessed,sort=nearest,limit=1] add ##tracker##
 summon minecraft:snowball ~ ~2.05 ~ {Tags:["aggro_snowball"]}
-data modify entity @e[tag=aggro_snowball,sort=nearest,limit=1] owner.L set from entity @p UUIDLeast
-data modify entity @e[tag=aggro_snowball,sort=nearest,limit=1] owner.M set from entity @p UUIDMost
+data modify entity @e[tag=aggro_snowball,sort=nearest,limit=1] owner.L set from entity @p[gamemode=adventure] UUIDLeast
+data modify entity @e[tag=aggro_snowball,sort=nearest,limit=1] owner.M set from entity @p[gamemode=adventure] UUIDMost
 tag @e[tag=unprocessed,sort=nearest,limit=1] remove unprocessed

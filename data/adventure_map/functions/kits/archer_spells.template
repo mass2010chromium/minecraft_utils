@@ -43,7 +43,7 @@ execute as @e[tag=piercing_arrow] at @s run scoreboard players operation @e[team
 
 # Windwalk spell
 tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:##archer_windwalk_1_name##}}}]}] add ww_1
-scoreboard players set @a[tag=ww_1] ##archer_windwalk_power## 10
+scoreboard players set @a[tag=ww_1] ##archer_windwalk_power## 5
 
 # Different tiers
 replaceitem entity @a[tag=ww_1,scores={##mp##=..399}] container.2 
@@ -60,7 +60,7 @@ scoreboard players remove @a[tag=shotWind] ##mp## 400
 execute as @a[tag=shotWind] at @s run scoreboard players operation 
     @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] ##archer_windwalk_power## = @s ##archer_windwalk_power##
 execute as @a[tag=shotWind] at @s run tag @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] add windwalk_arrow
-effect give @a[tag=shotWind] minecraft:speed 5 1
+effect give @a[tag=shotWind,scores={##archer_windwalk_power##=6..}] minecraft:speed 5 1
 effect give @a[tag=shotWind] minecraft:speed 20 0
 execute at @a[tag=shotWind] run effect give @a[distance=0..8] minecraft:speed 10 0
 
