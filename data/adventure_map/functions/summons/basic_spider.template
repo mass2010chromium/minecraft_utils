@@ -1,7 +1,7 @@
 summon minecraft:spider ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##,PersistenceRequired:1}
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 40
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 40
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 40
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 30
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 30
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 30
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 0
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist_base## 50
 data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
@@ -19,7 +19,8 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     HandDropChances:[0.0f,0.0f],
     ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],
     Health:200.0f,
-    Attributes:[{Name:"generic.maxHealth",Base:200.0f},{Name:"generic.attackDamage",Base:25.0f}]
+    Attributes:[{Name:"generic.maxHealth",Base:200.0f},{Name:"generic.attackDamage",Base:15.0f},
+                {Name:"generic.movementSpeed",Base:0.4f}]
   }
 tag @e[tag=unprocessed,sort=nearest,limit=1] add ##tracker##
 tag @e[tag=unprocessed,sort=nearest,limit=1] remove unprocessed

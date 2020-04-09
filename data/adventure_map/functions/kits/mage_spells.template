@@ -53,12 +53,20 @@ execute as @e[tag=fireball_summon]
 execute as @e[tag=fireball_summon] 
     run data modify entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] power[1] set value -0.1
 execute at @e[tag=fireball_summon] 
-    store result entity @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] ExplosionPower int 1
+    store result score @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] ##mage_fireball_power##
     run scoreboard players get @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] ##mage_fireball_power##
     
 execute as @e[tag=fireball_summon] run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed
 execute at @e[tag=mage_fireball] run particle flame ~ ~ ~ 
 
+execute at @e[tag=mage_fireball] run kill @e[tag=mage_fireball_tracker,limit=1,sort=nearest]
+execute as @e[tag=mage_fireball_tracker] at @s run scoreboard players operation @e[distance=0..4] ##magic_damage## += @s ##mage_fireball_power##
+execute as @e[tag=mage_fireball_tracker] at @s run scoreboard players operation @e[distance=0..6] ##magic_damage## += @s ##mage_fireball_power##
+execute at @e[tag=mage_fireball_tracker] run particle minecraft:explosion_emitter ~ ~ ~
+
+execute at @e[tag=mage_fireball] run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:2s,Tags:["mage_fireball_tracker"]}
+execute as @e[tag=mage_fireball] at @s run 
+    scoreboard players operation @e[distance=0..2,sort=nearest,tag=mage_fireball_tracker] ##mage_fireball_power## = @s ##mage_fireball_power##
 
 # Zephyr spell
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:##mage_zephyr_1_name##}}}}] at @s store success score @s replenish_ok run 
@@ -100,10 +108,10 @@ tag @e[tag=replenish_2] remove replenish_2
 tag @a remove replenish_fail
 
 # Apply buffs
-scoreboard players set @a[tag=mage] ##mage_fireball_power## 2
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 1
+scoreboard players set @a[tag=mage] ##mage_fireball_power## 4
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 5
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 5
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 5
 
 scoreboard players set @a[tag=mage] ##mage_zephyr_power## 1
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_zephyr_boost_1##]}}}]}] ##mage_zephyr_power## 1

@@ -45,3 +45,9 @@ scoreboard players operation @s ##physical_resist## = @s ##physical_resist_base#
 
 
 # Check if health changed, and if it did, apply instant harming
+# ------------------------------------------
+scoreboard players operation @s[type=player] ##t0## = @s ##last_health##
+scoreboard players operation @s[type=player] ##t0## -= @s ##health##
+effect give @s[type=player,scores={##t0##=1..}] minecraft:instant_damage 1 0
+tag @s[type=player,scores={##t0##=1..}] add noWorldDamage
+# ------------------------------------------

@@ -39,6 +39,9 @@ scoreboard objectives add ##magic_resist_base## dummy
 scoreboard objectives remove ##regen_tick##
 scoreboard objectives add ##regen_tick## dummy
 
+scoreboard objectives remove ##fast_regen_ticks##
+scoreboard objectives add ##fast_regen_ticks## dummy
+
 scoreboard objectives remove ##regen_amount##
 scoreboard objectives add ##regen_amount## dummy
 

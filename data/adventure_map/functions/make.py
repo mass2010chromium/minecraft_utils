@@ -16,6 +16,7 @@ subs["health_stat"] = "stat.health"
 subs["hunger"] = "stat.hunger"
 subs["player_world_damage"] = "damage_blocked"
 subs["regen_tick"] = "fine_hp.regt"
+subs["fast_regen_ticks"] = "fine_hp.potreg"
 subs["regen_amount"] = "fine_hp.ramt"
 subs["regen_amount_base"] = "fine_hp.ramtb"
 subs["regen_frequency"] = "fine_hp.regfreq"
@@ -76,7 +77,7 @@ subs["mage_whirlwind_staff_name"] = '\'"Whirlwind Staff"\''
 subs["mage_whirlwind_staff_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##mage_whirlwind_staff_name##,Lore:[##mage_melee##, ##mage_zephyr_boost_1##, ##mage_splash_power_boost_2##]},AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:4,Operation:0,"""+get_uuid()+""",Slot:"mainhand"}]} 1"""
 
 subs["mage_fireball_spell"] = '\'"Mage: Fireball Spell"\'';
-subs["mage_fireball_boost_1"] = '\'"+1 Fireball Power"\''
+subs["mage_fireball_boost_1"] = '\'"+10 Fireball Magic Damage"\''
 subs["mage_fireball_power"] = "spell.{}.power".format(spell_id())
 subs["mage_fireball_1_name"] = '\'"Fireball 1"\''
 subs["mage_fireball_1_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##mage_fireball_1_name##,Lore:[##mage_primary##, ##mage_fireball_spell##]}} 1"""
@@ -138,6 +139,16 @@ subs["knight_groundPound_1_item"] = """minecraft:anvil{Enchantments:[{}],display
 # subs["knight_fireball_2_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##knight_fireball_2_name##,Lore:[##knight_primary##, ##knight_fireball_spell##, ##knight_fireball_boost_1##]}} 1"""
 
 
+# Common kit stuff
+    
+subs["effect_heal_1"] = '\'"+10 HP"\''
+subs["effect_heal_1_tag"] = "spell.{}.tag".format(spell_id())
+subs["potion_heal_1_name"] = '\'"Healing Potion 1"\''
+subs["potion_heal_1_item"] = """minecraft:dragon_breath{Enchantments:[{}],display:{Name:##potion_heal_1_name##,Lore:[##effect_heal_1##]}}"""
+subs["potion_heal_1_tag"] = "spell.{}.tag".format(spell_id())
+
+
+
 subs["enemies"] = "Enemies"
 subs["friendlies"] = "Friendlies"
 
@@ -168,6 +179,8 @@ files = [   "fine_damage/loop",
             "kits/archer_spells", 
             "kits/knight", 
             "kits/knight_spells", 
+            "kits/common_spells", 
+            "kits/heal_pots", 
         ]
 
 for f in files:
