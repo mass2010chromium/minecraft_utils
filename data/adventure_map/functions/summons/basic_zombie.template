@@ -23,7 +23,7 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
                 {Name:"generic.followRange",Base:256.0f}]
   }
 tag @e[tag=unprocessed,sort=nearest,limit=1] add ##tracker##
-summon minecraft:snowball ~ ~2.05 ~ {Tags:["aggro_snowball"]}
+summon minecraft:snowball ~ ~2.25 ~ {Tags:["aggro_snowball"]}
 data modify entity @e[tag=aggro_snowball,sort=nearest,limit=1] owner.L set from entity @p[gamemode=adventure] UUIDLeast
 data modify entity @e[tag=aggro_snowball,sort=nearest,limit=1] owner.M set from entity @p[gamemode=adventure] UUIDMost
 tag @e[tag=unprocessed,sort=nearest,limit=1] remove unprocessed
