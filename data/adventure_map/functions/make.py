@@ -167,6 +167,8 @@ files = [   "fine_damage/loop",
             "mana/loop", 
             
             "summons/basic_zombie", 
+            "summons/well_zombie", 
+            "summons/armored_zombie", 
             "summons/basic_skeleton", 
             "summons/basic_spider", 
         

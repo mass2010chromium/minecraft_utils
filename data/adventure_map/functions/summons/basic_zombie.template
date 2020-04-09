@@ -5,16 +5,16 @@ scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 0
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist_base## 0
 data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
-    CustomName:'"Zombie Soldier"',
+    CustomName:'"Zombie"',
     CustomNameVisible:1,
     HandItems:[
-        {id:"minecraft:iron_shovel",Count:1b}, {}
+        {id:"minecraft:rotten_flesh",Count:1b}, {}
     ],
     ArmorItems:[
         {},
         {},
-        {id:"minecraft:iron_chestplate",Count:1b},
-        {id:"minecraft:chainmail_helmet",Count:1b}
+        {},
+        {id:"minecraft:chainmail_helmet",Count:1b,AttributeModifiers:[]}
     ],
     HandDropChances:[0.0f,0.0f],
     ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],
