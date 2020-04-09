@@ -81,7 +81,7 @@ execute as @e[tag=windwalk_arrow] at @s store success score @s ##t0## run
     scoreboard players operation @e[team=Enemies,distance=0..4,nbt={ActiveEffects:[{Id:24b}]}] fine_hp.mdmg += @s ##archer_windwalk_power##
 execute at @e[tag=windwalk_arrow] run
     execute at @e[team=Enemies,distance=0..4,nbt={ActiveEffects:[{Id:24b}]}] run
-        effect give @e[team=Enemies,distance=0..2] levitation 1 255
+        effect give @e[team=Enemies,distance=0..2] levitation 1 0
 execute at @e[tag=windwalk_arrow,scores={##t0##=1..}] run playsound block.glass.break master @a[distance=0..8]
 tag @e[tag=windwalk_arrow,scores={##t0##=1..}] add ##mob_death##
 

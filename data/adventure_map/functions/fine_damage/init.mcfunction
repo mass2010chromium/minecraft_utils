@@ -9,6 +9,7 @@ scoreboard objectives setdisplay belowname fine_hp.hp
 scoreboard objectives remove damage_blocked
 scoreboard objectives add damage_blocked minecraft.custom:minecraft.damage_resisted 
 scoreboard objectives add fine_hp.prev_hp dummy 
+scoreboard objectives add fine_hp.skhack dummy 
 scoreboard objectives add fine_hp.mh dummy 
 scoreboard objectives add fine_hp.invul dummy 
 scoreboard objectives remove fine_hp.dmg

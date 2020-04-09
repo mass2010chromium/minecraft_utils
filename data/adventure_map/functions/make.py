@@ -24,6 +24,8 @@ subs["has_died"] = "fine_hp.die"
 subs["damage_tick"] = "fine_hp.dt"
 
 subs["mob_base_hp"] = "200"
+subs["skeleton_base_hp"] = "500"
+subs["skeleton_last_base_hp"] = "fine_hp.skhack"
 subs["name_reset_ticks"] = "fine_hp.dispT"
 subs["name_reset_numticks"] = "200"
 subs["name_swap_space"] = "HandItems[0].tag.display.Name"
@@ -175,6 +177,7 @@ files = [   "fine_damage/loop",
             "fine_damage/player_healthbar", 
             "fine_damage/player_healthbar_helper",
             "fine_damage/mob_healthbar", 
+            "fine_damage/skeleton_healthbar", 
             "fine_damage/mob_healthbar_helper",
             
             "mana/init", 

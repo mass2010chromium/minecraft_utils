@@ -2,6 +2,7 @@ summon minecraft:skeleton ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##,Persisten
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 35
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 35
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 35
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##skeleton_last_base_hp## ##skeleton_base_hp##
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 0
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist_base## 20
 data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
@@ -18,8 +19,11 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     ],
     HandDropChances:[0.0f,0.0f],
     ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],
+    Health:500.0f,
+    Attributes:[{Name:"generic.maxHealth",Base:500.0f},{Name:"generic.followRange",Base:256.0f}]
   }
-data modify entity @e[tag=unprocessed,sort=nearest,limit=1] Attributes[{Name:"generic.MaxHealth"}].Base set value 200
-data modify entity @e[tag=unprocessed,sort=nearest,limit=1] Health set value 200
 tag @e[tag=unprocessed,sort=nearest,limit=1] add ##tracker##
+summon minecraft:snowball ~ ~2.05 ~ {Tags:["aggro_snowball"]}
+data modify entity @e[tag=aggro_snowball,sort=nearest,limit=1] owner.L set from entity @p UUIDLeast
+data modify entity @e[tag=aggro_snowball,sort=nearest,limit=1] owner.M set from entity @p UUIDMost
 tag @e[tag=unprocessed,sort=nearest,limit=1] remove unprocessed

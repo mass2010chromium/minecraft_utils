@@ -36,7 +36,7 @@ tag @a remove ww_1
 tag @a remove shotWind 
 execute as @e[tag=windwalk_arrow,tag=!processed] run data merge entity @s {SoundEvent:"minecraft:entity.arrow.shoot",PierceLevel:99b,damage:2.0f}
 execute as @e[tag=windwalk_arrow] at @s store success score @s fine_hp.tmp0 run scoreboard players operation @e[team=Enemies,distance=0..4,nbt={ActiveEffects:[{Id:24b}]}] fine_hp.mdmg += @s spell.4.power
-execute at @e[tag=windwalk_arrow] run execute at @e[team=Enemies,distance=0..4,nbt={ActiveEffects:[{Id:24b}]}] run effect give @e[team=Enemies,distance=0..2] levitation 1 255
+execute at @e[tag=windwalk_arrow] run execute at @e[team=Enemies,distance=0..4,nbt={ActiveEffects:[{Id:24b}]}] run effect give @e[team=Enemies,distance=0..2] levitation 1 0
 execute at @e[tag=windwalk_arrow,scores={fine_hp.tmp0=1..}] run playsound block.glass.break master @a[distance=0..8]
 tag @e[tag=windwalk_arrow,scores={fine_hp.tmp0=1..}] add fine_hp.isdead   
 # General spell stuff

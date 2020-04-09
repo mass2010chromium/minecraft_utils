@@ -16,6 +16,8 @@ scoreboard objectives add ##player_world_damage## minecraft.custom:minecraft.dam
 
 scoreboard objectives add ##last_health## dummy
 
+scoreboard objectives add ##skeleton_last_base_hp## dummy
+
 scoreboard objectives add ##max_health## dummy
 
 scoreboard objectives add ##invulnerable_ticks## dummy
