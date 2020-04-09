@@ -9,8 +9,6 @@ def get_uuid():
     return "UUIDLeast:{},UUIDMost:{}".format(_least, _most)
 
 ### Fine hp
-subs["health_item"] = "minecraft:golden_helmet"
-subs["health_item_enchants"] = '{id:"minecraft:binding_curse", lvl:1},{id:"minecraft:vanishing_curse",lvl:1}'
 subs["health_item_name"] = '\'"HP indicator"\''
 subs["health_item_lore"] = '[\'"Helps modify your health."\']'
 
@@ -171,6 +169,7 @@ files = [   "fine_damage/loop",
             "summons/basic_zombie", 
             "summons/well_zombie", 
             "summons/armored_zombie", 
+            "summons/forest_goon", 
             "summons/basic_skeleton", 
             "summons/basic_spider", 
         
