@@ -27,13 +27,13 @@ tag @a[tag=pound_start] remove pound_start
 scoreboard players set @a[tag=pound] fine_hp.invul 5 
 # Decrement lift time
 scoreboard players remove @a[scores={spell.7.time=1..}] spell.7.time 1
-effect clear @a[scores={spell.7.time=1}] minecraft:levitation
+effect clear @a[scores={spell.7.time=..1}] minecraft:levitation
 # Pound if we hit the ground
 tag @a[tag=pound,nbt={OnGround:1b},scores={spell.7.time=0}] add grounded
 tag @a[tag=grounded] remove pound
 execute at @a[tag=grounded] run particle minecraft:explosion_emitter ~ ~ ~
 execute at @a[tag=grounded] run playsound minecraft:block.anvil.place master @a[distance=0..12] ~ ~ ~
-execute at @a[tag=grounded] run tag @e[team=Enemies,distance=0..6] add pounded
+execute at @a[tag=grounded] run tag @e[team=Enemies,distance=0..4] add pounded
 execute as @a[tag=grounded] at @s run scoreboard players operation @e[tag=pounded] fine_hp.dmg += @s spell.7.power
 tag @a[tag=grounded] remove grounded 
 execute at @e[tag=pounded] run particle minecraft:block iron_block ~ ~1 ~ 0.25 0.5 0.25 0 100
