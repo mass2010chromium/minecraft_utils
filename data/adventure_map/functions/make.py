@@ -99,7 +99,7 @@ subs["archer_basic_axe_name"] = '\'"Basic Axe"\''
 subs["archer_basic_axe_item"] = """minecraft:iron_axe{Unbreakable:1,Enchantments:[{id:knockback,lvl:3}],display:{Name:##archer_basic_axe_name##,Lore:['"Archer: Axe"']}} 1"""
 
 subs["archer_basic_bow_name"] = '\'"Basic Bow"\''
-subs["archer_basic_bow_item"] = """minecraft:bow{Unbreakable:1,Enchantments:[{id:infinity,lvl:1},{id:power,lvl:8}],display:{Name:##archer_basic_bow_name##,Lore:['"Archer: Bow"']}} 1"""
+subs["archer_basic_bow_item"] = """minecraft:bow{Unbreakable:1,Enchantments:[{id:infinity,lvl:1},{id:power,lvl:3}],display:{Name:##archer_basic_bow_name##,Lore:['"Archer: Bow"']}} 1"""
 
 subs["archer_piercingArrow_spell"] = '\'"Archer: Piercing Arrow Spell"\'';
 subs["archer_piercingArrow_power"] = "spell.{}.power".format(spell_id())
