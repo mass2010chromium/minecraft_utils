@@ -40,4 +40,10 @@ scoreboard objectives add fine_hp.tmp0 dummy
 scoreboard objectives remove fine_hp.tmp1
 scoreboard objectives add fine_hp.tmp1 dummy 
 scoreboard objectives remove fine_hp.tmp2
-scoreboard objectives add fine_hp.tmp2 dummy
+scoreboard objectives add fine_hp.tmp2 dummy 
+scoreboard objectives remove fine_hp.tmp3
+scoreboard objectives add fine_hp.tmp3 dummy 
+scoreboard objectives remove fine_hp.tmp4
+scoreboard objectives add fine_hp.tmp4 dummy 
+scoreboard objectives remove fine_hp.tmp5
+scoreboard objectives add fine_hp.tmp5 dummy

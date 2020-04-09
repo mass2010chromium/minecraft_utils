@@ -47,6 +47,9 @@ subs["health_fraction"] = "fine_hp.hp_frac"
 subs["t0"] = "fine_hp.tmp0"
 subs["t1"] = "fine_hp.tmp1"
 subs["t2"] = "fine_hp.tmp2"
+subs["t3"] = "fine_hp.tmp3"
+subs["t4"] = "fine_hp.tmp4"
+subs["t5"] = "fine_hp.tmp5"
 
 
 ### Mana
@@ -84,6 +87,12 @@ subs["mage_fireball_1_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:
 subs["mage_fireball_2_name"] = '\'"Fireball 2"\''
 subs["mage_fireball_2_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##mage_fireball_2_name##,Lore:[##mage_primary##, ##mage_fireball_spell##, ##mage_fireball_boost_1##]}} 1"""
 
+subs["mage_repulse_spell"] = '\'"Mage: Arcane Explosion Spell"\'';
+subs["mage_repulse_boost_1"] = '\'"+5 Arcane Explosion Magic Damage"\''
+subs["mage_repulse_power"] = "spell.{}.power".format(spell_id())
+subs["mage_repulse_1_name"] = '\'"Arcane Explosion 1"\''
+subs["mage_repulse_1_item"] = """minecraft:nether_star{Enchantments:[{}],display:{Name:##mage_repulse_1_name##,Lore:[##mage_secondary##, ##mage_repulse_spell##]}} 1"""
+
 subs["mage_zephyr_spell"] = '\'"Mage: Zephyr Spell"\'';
 subs["mage_zephyr_boost_1"] = '\'"+1 Zephyr Speed"\''
 subs["mage_zephyr_power"] = "spell.{}.power".format(spell_id())
@@ -100,6 +109,11 @@ subs["archer_basic_axe_item"] = """minecraft:iron_axe{Unbreakable:1,Enchantments
 
 subs["archer_basic_bow_name"] = '\'"Basic Bow"\''
 subs["archer_basic_bow_item"] = """minecraft:bow{Unbreakable:1,Enchantments:[{id:infinity,lvl:1},{id:power,lvl:3}],display:{Name:##archer_basic_bow_name##,Lore:['"Archer: Bow"']}} 1"""
+
+subs["archer_windwalk_spell"] = '\'"Archer: Windwalk Spell"\'';
+subs["archer_windwalk_power"] = "spell.{}.power".format(spell_id())
+subs["archer_windwalk_1_name"] = '\'"Windwalk 1"\''
+subs["archer_windwalk_1_item"] = """minecraft:crossbow{Enchantments:[{}],display:{Name:##archer_windwalk_1_name##,Lore:[##archer_spell##, ##archer_windwalk_spell##]}} 1"""
 
 subs["archer_piercingArrow_spell"] = '\'"Archer: Piercing Arrow Spell"\'';
 subs["archer_piercingArrow_power"] = "spell.{}.power".format(spell_id())

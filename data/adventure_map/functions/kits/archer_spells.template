@@ -7,6 +7,7 @@
 # Piercing arrow spell
 tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:##archer_piercingArrow_1_name##}}}]}] add pa_1
 scoreboard players set @a[tag=pa_1] ##archer_piercingArrow_power## 10
+
 # Different tiers
 replaceitem entity @a[tag=pa_1,scores={##mp##=..599}] container.2 
     minecraft:crossbow{
@@ -21,6 +22,7 @@ tag @a[tag=archer,nbt={SelectedItemSlot:2,SelectedItem:{tag:{Charged:0b,display:
 scoreboard players remove @a[tag=shotPierce] ##mp## 600
 execute as @a[tag=shotPierce] at @s run scoreboard players operation 
     @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] ##archer_piercingArrow_power## = @s ##archer_piercingArrow_power##
+execute as @a[tag=shotPierce] at @s run tag @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] add piercing_arrow
 
 # Different tiers
 replaceitem entity @a[tag=pa_1,scores={##mp##=600..}] container.2
@@ -34,10 +36,60 @@ replaceitem entity @a[tag=pa_1,scores={##mp##=600..}] container.2
 tag @a remove pa_1
 tag @a remove shotPierce
 
-execute as @e[type=minecraft:spectral_arrow,tag=!processed] run data merge entity @s {SoundEvent:"minecraft:block.glass.break",PierceLevel:5b,damage:2.0f}
+execute as @e[tag=piercing_arrow,tag=!processed] run data merge entity @s {SoundEvent:"minecraft:block.glass.break",PierceLevel:5b,damage:2.0f}
+execute as @e[tag=piercing_arrow] at @s run scoreboard players operation @e[team=Enemies,distance=0..4,nbt={ActiveEffects:[{Id:24b}]}] fine_hp.mdmg += @s ##archer_piercingArrow_power##
+
+
+
+# Windwalk spell
+tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:##archer_windwalk_1_name##}}}]}] add ww_1
+scoreboard players set @a[tag=ww_1] ##archer_windwalk_power## 10
+
+# Different tiers
+replaceitem entity @a[tag=ww_1,scores={##mp##=..399}] container.2 
+    minecraft:crossbow{
+        display:{
+            Name:##archer_windwalk_1_name##,
+            Lore:[##archer_spell##, ##archer_windwalk_spell##]},
+        Charged:1b
+    }
+
+# All windwalk arrow casts
+tag @a[tag=archer,nbt={SelectedItemSlot:2,SelectedItem:{tag:{Charged:0b,display:{Lore:[##archer_windwalk_spell##]}}}}] add shotWind
+scoreboard players remove @a[tag=shotWind] ##mp## 400
+execute as @a[tag=shotWind] at @s run scoreboard players operation 
+    @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] ##archer_windwalk_power## = @s ##archer_windwalk_power##
+execute as @a[tag=shotWind] at @s run tag @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] add windwalk_arrow
+effect give @a[tag=shotWind] minecraft:speed 5 1
+effect give @a[tag=shotWind] minecraft:speed 20 0
+execute at @a[tag=shotWind] run effect give @a[distance=0..8] minecraft:speed 10 0
+
+# Different tiers
+replaceitem entity @a[tag=ww_1,scores={##mp##=400..}] container.2
+    minecraft:crossbow{
+        display:{
+            Name:##archer_windwalk_1_name##,
+            Lore:[##archer_spell##, ##archer_windwalk_spell##]
+        },
+        ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],Charged:1b,Enchantments:[{}]
+    }
+tag @a remove ww_1
+tag @a remove shotWind
+
+execute as @e[tag=windwalk_arrow,tag=!processed] run data merge entity @s {SoundEvent:"minecraft:entity.arrow.shoot",PierceLevel:99b,damage:2.0f}
+execute as @e[tag=windwalk_arrow] at @s store success score @s ##t0## run 
+    scoreboard players operation @e[team=Enemies,distance=0..4,nbt={ActiveEffects:[{Id:24b}]}] fine_hp.mdmg += @s ##archer_windwalk_power##
+execute at @e[tag=windwalk_arrow] run
+    execute at @e[team=Enemies,distance=0..4,nbt={ActiveEffects:[{Id:24b}]}] run
+        effect give @e[team=Enemies,distance=0..2] levitation 1 255
+execute at @e[tag=windwalk_arrow,scores={##t0##=1..}] run playsound block.glass.break master @a[distance=0..8]
+tag @e[tag=windwalk_arrow,scores={##t0##=1..}] add ##mob_death##
+
+
+
+# General spell stuff
 tag @e[type=spectral_arrow] add processed
-execute as @e[type=minecraft:spectral_arrow] at @s run scoreboard players operation @e[team=Enemies,distance=0..3,nbt={ActiveEffects:[{Id:24b}]}] fine_hp.mdmg += @s ##archer_piercingArrow_power##
-execute at @e[type=minecraft:spectral_arrow] run effect clear @e[team=Enemies,distance=0..3] minecraft:glowing
+execute at @e[type=minecraft:spectral_arrow] run effect clear @e[team=Enemies,distance=0..4] minecraft:glowing
 
 # Kill spell arrows that are in ground
 kill @e[type=minecraft:spectral_arrow,nbt={inGround:1b}]

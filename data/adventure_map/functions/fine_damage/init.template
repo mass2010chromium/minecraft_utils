@@ -66,3 +66,12 @@ scoreboard objectives add ##t1## dummy
 
 scoreboard objectives remove ##t2##
 scoreboard objectives add ##t2## dummy
+
+scoreboard objectives remove ##t3##
+scoreboard objectives add ##t3## dummy
+
+scoreboard objectives remove ##t4##
+scoreboard objectives add ##t4## dummy
+
+scoreboard objectives remove ##t5##
+scoreboard objectives add ##t5## dummy

@@ -10,9 +10,10 @@ team modify Friendlies collisionRule never
 scoreboard objectives add replenish_ok dummy 
 scoreboard objectives add spell.1.power dummy
 scoreboard objectives add spell.0.power dummy
+scoreboard objectives add spell.3.power dummy
 scoreboard objectives add spell.2.power dummy 
-scoreboard objectives add spell.3.power dummy 
-scoreboard objectives add spell.4.power dummy
-scoreboard objectives add spell.5.power dummy
-scoreboard objectives add spell.5.time dummy 
+scoreboard objectives add spell.5.power dummy 
+scoreboard objectives add spell.6.power dummy
+scoreboard objectives add spell.7.power dummy
+scoreboard objectives add spell.7.time dummy 
 scoreboard objectives add use.golden_hoe minecraft.used:minecraft.golden_hoe
