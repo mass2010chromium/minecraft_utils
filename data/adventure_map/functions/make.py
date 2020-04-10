@@ -1,6 +1,8 @@
 import re
 from kits.mage import *
 from kits.archer import *
+from kits.knight import *
+from kits.common import *
 
 subs = dict()
 
@@ -73,46 +75,8 @@ def spell_id():
 
 add_mage_items(subs, spell_id, get_uuid)
 add_archer_items(subs, spell_id, get_uuid)
-
-subs["knight_melee"] = '\'"Knight: Sword"\''
-subs["knight_spear"] = '\'"Knight: Spear"\''
-subs["knight_spell"] = '\'"Knight: Active Spell"\''
-
-# subs["knight_attack_splash_power"] = "spell.{}.power".format(spell_id())
-# subs["knight_splash_power_boost_2"] = '\'"+2 Melee Splash Daknight"\''
-
-subs["knight_basic_sword_name"] = '\'"Basic Sword"\''
-subs["knight_basic_sword_item"] = """minecraft:stone_sword{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:5},{id:"minecraft:sweeping",lvl:1}],display:{Name:##knight_basic_sword_name##,Lore:[##knight_melee##]}} 1"""
-# subs["knight_fireball_sword_name"] = '\'"Fiery Sword"\''
-# subs["knight_fireball_sword_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{}],display:{Name:##knight_fireball_sword_name##,Lore:[##knight_melee##, ##knight_fireball_boost_1##]}} 1"""
-# subs["knight_fireball_sword_replenish"] = "replenish_{}".format(replenish_id())
-# subs["knight_whirlwind_sword_name"] = '\'"Whirlwind Blade"\''
-# subs["knight_whirlwind_sword_item"] = """minecraft:golden_hoe{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:1}],display:{Name:##knight_whirlwind_sword_name##,Lore:[##knight_melee##, ##knight_zephyr_boost_1##, ##knight_splash_power_boost_2##]},AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:4,Operation:0,"""+get_uuid()+""",Slot:"mainhand"}]} 1"""
-
-subs["knight_spear"] = '\'"Knight: Spear"\'';
-# subs["knight_spear_boost_1"] = '\'"+1 Spear Damage"\''
-subs["knight_spear_power"] = "spell.{}.power".format(spell_id())
-subs["knight_spear_1_name"] = '\'"Spear 1"\''
-subs["knight_spear_1_item"] = """minecraft:trident{Unbreakable:1b,Enchantments:[{id:"minecraft:knockback",lvl:2}],display:{Name:##knight_spear_1_name##,Lore:[##knight_spear##]},AttributeModifiers:[]} 1"""
-
-subs["knight_groundPound_spell"] = '\'"Knight: Ground Pound Spell"\'';
-knight_groundPound_spellID = spell_id()
-subs["knight_groundPound_boost_1"] = '\'"+1 Ground Pound Power"\''
-subs["knight_groundPound_power"] = "spell.{}.power".format(knight_groundPound_spellID)
-subs["knight_groundPound_riseTime"] = "spell.{}.time".format(knight_groundPound_spellID)
-subs["knight_groundPound_1_name"] = '\'"Ground Pound 1"\''
-subs["knight_groundPound_1_item"] = """minecraft:anvil{Enchantments:[{}],display:{Name:##knight_groundPound_1_name##,Lore:[##knight_spell##, ##knight_groundPound_spell##]}} 1"""
-# subs["knight_fireball_2_name"] = '\'"Fireball 2"\''
-# subs["knight_fireball_2_item"] = """minecraft:blaze_rod{Enchantments:[{}],display:{Name:##knight_fireball_2_name##,Lore:[##knight_primary##, ##knight_fireball_spell##, ##knight_fireball_boost_1##]}} 1"""
-
-
-# Common kit stuff
-    
-subs["effect_heal_1"] = '\'"+10 HP"\''
-subs["effect_heal_1_tag"] = "spell.{}.tag".format(spell_id())
-subs["potion_heal_1_name"] = '\'"Healing Potion 1"\''
-subs["potion_heal_1_item"] = """minecraft:dragon_breath{Enchantments:[{}],display:{Name:##potion_heal_1_name##,Lore:[##effect_heal_1##]}}"""
-subs["potion_heal_1_tag"] = "spell.{}.tag".format(spell_id())
+add_knight_items(subs, spell_id, get_uuid)
+add_common_items(subs, spell_id, get_uuid)
 
 
 

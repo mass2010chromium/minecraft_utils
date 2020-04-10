@@ -46,9 +46,8 @@ def add_mage_items(subs, spell_id, get_uuid):
                                                             "  dealing 3 physical damage and 10 magic damage.",
                                                             "Damage decreases with distance from explosion center.",
                                                             "A direct hit does even more damage.",
-                                                            "Can hurt self and allies!",
-                                                            "Cost: 200MP"
-                                                            ])
+                                                            "Can hurt self and allies!"
+                                                            ]) + "," + make_cost("Cost: 200MP")
     subs["mage_fireball_boost_1"] = '\'"+10 Fireball Magic Damage"\''
     subs["mage_fireball_power"] = "spell.{}.power".format(spell_id())
     subs["mage_fireball_1_name"] = make_name("Fireball 1")
@@ -76,7 +75,7 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_fireball_2_item"] = """minecraft:blaze_rod{##mage_fireball_2_nbt##} 1"""
 
     subs["mage_repulse_spell"] = '\'"Mage: Arcane Explosion Spell"\'';
-    subs["mage_repulse_extra"] = make_description_text(["Push enemies away.", "Cost: 400MP"])
+    subs["mage_repulse_extra"] = make_description_text(["Push enemies away."]) + "," + make_cost("Cost: 400MP")
     subs["mage_repulse_boost_1"] = '\'"+1 Arcane Explosion Magic Damage"\''
     subs["mage_repulse_power"] = "spell.{}.power".format(spell_id())
     subs["mage_repulse_1_name"] = make_name("Arcane Explosion 1")
@@ -84,7 +83,9 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_repulse_1_item"] = """minecraft:nether_star{##mage_repulse_1_nbt##} 1"""
 
     subs["mage_zephyr_spell"] = '\'"Mage: Zephyr Spell"\'';
-    subs["mage_zephyr_extra"] = make_description_text(["Grant Speed II and Strength I to caster for 5 seconds.", "Grand Speed I to caster and allies for 80 seconds.", "Cost: 400MP"])
+    subs["mage_zephyr_extra"] = make_description_text([ "Grant Speed II and Strength I to caster for 5 seconds.", 
+                                                        "Grant Speed I to caster and allies for 80 seconds."
+                                                        ]) + "," + make_cost("Cost: 500MP")
     subs["mage_zephyr_boost_1"] = '\'"+1 Zephyr Speed"\''
     subs["mage_zephyr_power"] = "spell.{}.power".format(spell_id())
     subs["mage_zephyr_1_name"] = make_name("Zephyr 1")
