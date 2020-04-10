@@ -1,1 +1,28 @@
-/summon villager ~ ~1 ~ {VillagerData:{profession:fletcher,level:2,type:plains},Team:##friendlies##,Invulnerable:1,PersistenceRequired:1,Offers:{Recipes:[{buy:{id:sunflower,Count:15,tag:{Unbreakable:1b,display:{Name:"\"Gold Coin\""}}},sell:{id:bow,Count:1,tag:{display:{Name:"\"Longbow\"",Lore:["\"Better than Basic?\""]},Enchantments:[{id:power,lvl:5},{id:infinity,lvl:1}]}},rewardExp:0b,maxUses:9999999}]},Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:"\"Archer Shop\"",CustomNameVisible:1}
+/summon villager -138.5 65.07 23.5 {
+    VillagerData:{
+        profession:fletcher,level:2,type:plains
+    },
+    Team:##friendlies##,
+    Invulnerable:1,
+    PersistenceRequired:1,
+    Offers:{
+        Recipes:[
+            {
+                buy:{
+                    id:sunflower,Count:15,tag:{Unbreakable:1b,display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:bow,Count:1,tag:{
+                        display:{
+                            Name:"\"Longbow\"",
+                            Lore:["\"Better than Basic?\""]
+                        },
+                        Enchantments:[
+                            {id:power,lvl:5},{id:infinity,lvl:1}
+                        ]
+                    }
+                },rewardExp:0b,maxUses:9999999
+            }
+        ]
+    },
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Archer Shop"',CustomNameVisible:1}

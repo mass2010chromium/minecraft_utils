@@ -201,6 +201,8 @@ files = [   "fine_damage/loop",
             "kits/knight_spells", 
             "kits/common_spells", 
             "kits/heal_pots", 
+            
+            "shops/archer_shop_1", 
         ]
 
 for f in files:
