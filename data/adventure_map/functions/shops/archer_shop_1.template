@@ -1,4 +1,4 @@
-/summon villager ~ ~ ~ {
+summon villager ~ ~ ~ {
     VillagerData:{
         profession:fletcher,level:2,type:plains
     },
