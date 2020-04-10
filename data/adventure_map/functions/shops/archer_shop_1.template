@@ -1,4 +1,4 @@
-summon villager ~ ~ ~ {
+summon villager ~ ~1 ~ {
     VillagerData:{
         profession:fletcher,level:2,type:plains
     },
@@ -9,36 +9,18 @@ summon villager ~ ~ ~ {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:18,tag:{display:{Name:'"Gold Coin"'}}
                 },
                 sell:{
-                    id:bow,Count:1,tag:{
-						Unbreakable:1b,
-                        display:{
-                            Name:"\"Longbow\"",
-                            Lore:["\"Better than Basic?\""]
-                        },
-                        Enchantments:[
-                            {id:power,lvl:5},{id:infinity,lvl:1}
-                        ]
-                    }
+                    id:bow,Count:1,tag:{##archer_longbow_bow_nbt##}
                 },rewardExp:0b,maxUses:9999999
             },
 			{
                 buy:{
-                    id:sunflower,Count:10,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:18,tag:{display:{Name:'"Gold Coin"'}}
                 },
                 sell:{
-                    id:crossbow,Count:1,tag:{
-						Unbreakable:1b,
-                        display:{
-                            Name:"\"Piercing Arrow 1\"",
-                            Lore:["\"Archer Piercing Arrow Spell\""]
-                        },
-                        Enchantments:[
-                            {}
-                        ]
-                    }
+                    id:crossbow,Count:1,tag:{##archer_piercingArrow_1_nbt##}
                 },rewardExp:0b,maxUses:9999999
             }
         ]
