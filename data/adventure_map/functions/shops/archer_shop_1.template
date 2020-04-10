@@ -1,6 +1,6 @@
 summon villager ~ ~1 ~ {
     VillagerData:{
-        profession:fletcher,level:2,type:plains
+        profession:priest,level:2,type:plains
     },
     Team:##friendlies##,
     Invulnerable:1,
