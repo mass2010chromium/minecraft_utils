@@ -13,7 +13,7 @@ scoreboard objectives add spell.0.power dummy
 scoreboard objectives add spell.3.power dummy
 scoreboard objectives add spell.2.power dummy 
 scoreboard objectives add spell.5.power dummy 
-scoreboard objectives add ##knight_spear_power## dummy
+scoreboard objectives add spell.6.power dummy
 scoreboard objectives add spell.8.power dummy
 scoreboard objectives add spell.8.time dummy 
 scoreboard objectives add use.golden_hoe minecraft.used:minecraft.golden_hoe
