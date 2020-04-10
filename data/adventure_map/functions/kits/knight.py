@@ -36,8 +36,8 @@ def add_knight_items(subs, spell_id, get_uuid):
     #Knight Spear 1
     subs["knight_depthsCurse_spell"] = '\'"Knight: Depths\\\' Curse"\''
     subs["knight_depthsCurse_extra"] = make_description_text([
-                                                        "Launch a spear, dealing physical damage to whatever it hits.",
-                                                        "Additionally, deals 6 magic damage to enemies within 4 blocks,"
+                                                        "Spear deals physical damage to whatever it hits.",
+                                                        "Deals 6 magic damage to enemies within 4 blocks",
                                                         "  and applies 10 seconds of slowness."
                                                         ]) + "," + make_cost("Cost: 400MP")
     subs["knight_depthsCurse_boost_1"] = '\'"+6 Depths\\\' Curse Magic Damage"\''
