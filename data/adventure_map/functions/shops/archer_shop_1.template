@@ -1,4 +1,4 @@
-summon villager ~ ~1 ~ {
+summon villager -138.5 65 23.5 {
     VillagerData:{
         profession:priest,level:2,type:plains
     },

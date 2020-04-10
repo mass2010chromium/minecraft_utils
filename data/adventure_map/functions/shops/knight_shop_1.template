@@ -1,0 +1,28 @@
+summon villager -179.5 65 22.5 {
+    VillagerData:{
+        profession:blacksmith,level:2,type:plains
+    },
+    Team:##friendlies##,
+    Invulnerable:1,
+    PersistenceRequired:1,
+    Offers:{
+        Recipes:[
+            {
+                buy:{
+                    id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:iron_sword,Count:1,tag:{##knight_castironsword_sword_nbt##}
+                },rewardExp:0b,maxUses:9999999
+            },
+			{
+                buy:{
+                    id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:tripwire_hook,Count:1,tag:{##knight_mobHook_1_nbt##}
+                },rewardExp:0b,maxUses:9999999
+            }
+        ]
+    },
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Knight Shop"',CustomNameVisible:1}
