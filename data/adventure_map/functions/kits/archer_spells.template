@@ -9,13 +9,7 @@ tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:##archer_piercingA
 scoreboard players set @a[tag=pa_1] ##archer_piercingArrow_power## 10
 
 # Different tiers
-replaceitem entity @a[tag=pa_1,scores={##mp##=..599}] container.2 
-    minecraft:crossbow{
-        display:{
-            Name:##archer_piercingArrow_1_name##,
-            Lore:[##archer_spell##, ##archer_piercingArrow_spell##]},
-        Charged:1b
-    }
+replaceitem entity @a[tag=pa_1,scores={##mp##=..599}] container.2 ##archer_piercingArrow_1_item##
 
 # All piercing arrow casts
 tag @a[tag=archer,nbt={SelectedItemSlot:2,SelectedItem:{tag:{Charged:0b,display:{Lore:[##archer_piercingArrow_spell##]}}}}] add shotPierce
@@ -26,13 +20,7 @@ execute as @a[tag=shotPierce] at @s run tag @e[type=minecraft:spectral_arrow,tag
 
 # Different tiers
 replaceitem entity @a[tag=pa_1,scores={##mp##=600..}] container.2
-    minecraft:crossbow{
-        display:{
-            Name:##archer_piercingArrow_1_name##,
-            Lore:[##archer_spell##, ##archer_piercingArrow_spell##]
-        },
-        ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],Charged:1b,Enchantments:[{}]
-    }
+    minecraft:crossbow{Enchantments:[{}],ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],##archer_piercingArrow_1_nbt##}
 tag @a remove pa_1
 tag @a remove shotPierce
 
@@ -46,13 +34,7 @@ tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:##archer_windwalk_
 scoreboard players set @a[tag=ww_1] ##archer_windwalk_power## 5
 
 # Different tiers
-replaceitem entity @a[tag=ww_1,scores={##mp##=..399}] container.2 
-    minecraft:crossbow{
-        display:{
-            Name:##archer_windwalk_1_name##,
-            Lore:[##archer_spell##, ##archer_windwalk_spell##]},
-        Charged:1b
-    }
+replaceitem entity @a[tag=ww_1,scores={##mp##=..399}] container.2 ##archer_windwalk_1_item##
 
 # All windwalk arrow casts
 tag @a[tag=archer,nbt={SelectedItemSlot:2,SelectedItem:{tag:{Charged:0b,display:{Lore:[##archer_windwalk_spell##]}}}}] add shotWind
@@ -66,13 +48,7 @@ execute at @a[tag=shotWind] run effect give @a[distance=0..8] minecraft:speed 10
 
 # Different tiers
 replaceitem entity @a[tag=ww_1,scores={##mp##=400..}] container.2
-    minecraft:crossbow{
-        display:{
-            Name:##archer_windwalk_1_name##,
-            Lore:[##archer_spell##, ##archer_windwalk_spell##]
-        },
-        ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],Charged:1b,Enchantments:[{}]
-    }
+    minecraft:crossbow{Enchantments:[{}],ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],##archer_windwalk_1_nbt##}
 tag @a remove ww_1
 tag @a remove shotWind
 

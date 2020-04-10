@@ -159,7 +159,7 @@ files = [   "fine_damage/loop",
         ]
 
 for k, v in subs.items():
-    subs[k] = re.sub("\n +", " ", v)
+    subs[k] = re.sub("\n *", " ", v)
 
 changed = True
 while changed:
