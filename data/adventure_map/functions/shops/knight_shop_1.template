@@ -12,28 +12,28 @@ summon villager ~ ~ ~ {
                     id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:bow,Count:1,tag:{
+                    id:iron_sword,Count:1,tag:{
 						Unbreakable:1b,
                         display:{
-                            Name:"\"Longbow\"",
+                            Name:"\"Iron-Cast Sword\"",
                             Lore:["\"Better than Basic?\""]
                         },
                         Enchantments:[
-                            {id:power,lvl:5},{id:infinity,lvl:1}
+                            {id:sharpness,lvl:6},{id:sweeping,lvl:1}
                         ]
                     }
                 },rewardExp:0b,maxUses:9999999
             },
 			{
                 buy:{
-                    id:sunflower,Count:10,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:crossbow,Count:1,tag:{
+                    id:tripwire_hook,Count:1,tag:{
 						Unbreakable:1b,
                         display:{
-                            Name:"\"Piercing Arrow 1\"",
-                            Lore:["\"Archer Piercing Arrow Spell\""]
+                            Name:"\"Mob Hook 1\"",
+                            Lore:["\"Pulls mobs into you.\"","\"Cost: 350MP\"","\"Knight: Active Spell\"","\"Knight: Mob Hook Spell\""]
                         },
                         Enchantments:[
                             {}
@@ -43,4 +43,4 @@ summon villager ~ ~ ~ {
             }
         ]
     },
-    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Archer Shop"',CustomNameVisible:1}
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Knight Shop"',CustomNameVisible:1}
