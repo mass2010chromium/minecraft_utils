@@ -7,7 +7,7 @@ effect clear @s
 scoreboard players operation @s fine_hp.prev_hp = @s fine_hp.mh
 scoreboard players operation @s fine_hp.hp = @s fine_hp.mh
 scoreboard players set @s mana.mana 0
-scoreboard players set @s mana.mana_regb 3
+scoreboard players set @s mana.mana_regb 6
 scoreboard players set @s fine_hp.mdmgrb 20
 scoreboard players set @s fine_hp.dmgrb 0
 replaceitem entity @s armor.head minecraft:golden_helmet{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:blast_protection,lvl:1}],display:{Name:'"Mage\'s Thinking Cap"'}} 1

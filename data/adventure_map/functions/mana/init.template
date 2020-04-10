@@ -1,3 +1,6 @@
 scoreboard objectives add ##mp## dummy
 scoreboard objectives add ##mp_regen## dummy
+scoreboard objectives add ##melee_mp## dummy
 scoreboard objectives add ##mp_regen_base## dummy
+scoreboard objectives add ##mp_regen_ticks## dummy
+scoreboard objectives add ##melee_mp_cooldown## dummy

@@ -7,7 +7,7 @@ effect clear @s
 scoreboard players operation @s fine_hp.prev_hp = @s fine_hp.mh
 scoreboard players operation @s fine_hp.hp = @s fine_hp.mh
 scoreboard players set @s mana.mana 0
-scoreboard players set @s mana.mana_regb 2
+scoreboard players set @s mana.mana_regb 4
 scoreboard players set @s fine_hp.mdmgrb 0
 scoreboard players set @s fine_hp.dmgrb 0
 replaceitem entity @s armor.head minecraft:leather_helmet{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:projectile_protection,lvl:1}],display:{Name:'"Archer\'s Cap"'}} 1

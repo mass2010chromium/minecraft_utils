@@ -64,6 +64,11 @@ subs["t5"] = "fine_hp.tmp5"
 subs["mp"] = "mana.mana"
 subs["max_mana"] = "1000"
 subs["mp_regen"] = "mana.mana_regen"
+subs["melee_mp"] = "mana.mana_steal"
+subs["melee_mp_cooldown"] = "mana.mscd"
+subs["melee_mp_cooldown_ticks"] = "10"
+subs["mp_regen_ticks"] = "mana.regen_tick"
+subs["mp_regen_frequency"] = "2"
 subs["mp_regen_base"] = "mana.mana_regb"
 
 ### Kits

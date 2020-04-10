@@ -118,7 +118,7 @@ execute as @e[tag=repulsed] store result entity @s Motion[0] double 0.001 run sc
 execute as @e[tag=repulsed] run data modify entity @s Motion[1] set value 0.5
 execute as @e[tag=repulsed] store result entity @s Motion[2] double 0.001 run scoreboard players get @s fine_hp.tmp1
 tag @e[tag=repulsed] remove repulsed 
-kill @e[scores={replenish_ok=1},type=!trident] 
+kill @e[scores={replenish_ok=1}] 
 tag @e[tag=replenish_0] add processed
 tag @e[tag=replenish_1] add processed
 tag @e[tag=replenish_2] add processed

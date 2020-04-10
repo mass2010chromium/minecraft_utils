@@ -34,12 +34,26 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_castironsword_sword_item"] = """minecraft:iron_sword{##knight_castironsword_sword_nbt##} 1"""
     
     #Knight Spear 1
-    subs["knight_spear"] = '\'"Knight: Spear"\''
-        # subs["knight_spear_boost_1"] = '\'"+1 Spear Damage"\''
-    subs["knight_spear_power"] = "spell.{}.power".format(spell_id())
-    subs["knight_spear_1_name"] = make_name("Spear 1")
-    subs["knight_spear_1_nbt"] = """Unbreakable:1b,Enchantments:[{id:"minecraft:knockback",lvl:2}],display:{Name:##knight_spear_1_name##,Lore:[##knight_spear##]},AttributeModifiers:[]"""
-    subs["knight_spear_1_item"] = """minecraft:trident{##knight_spear_1_nbt##} 1"""
+    subs["knight_depthsCurse_spell"] = '\'"Knight: Depths\\\' Curse"\''
+    subs["knight_depthsCurse_extra"] = make_description_text([
+                                                        "Launch a spear, dealing physical damage to whatever it hits.",
+                                                        "Additionally, deals 6 magic damage to enemies within 4 blocks,"
+                                                        "  and applies 10 seconds of slowness."
+                                                        ]) + "," + make_cost("Cost: 400MP")
+    subs["knight_depthsCurse_boost_1"] = '\'"+6 Depths\\\' Curse Magic Damage"\''
+    subs["knight_depthsCurse_power"] = "spell.{}.power".format(spell_id())
+    subs["knight_depthsCurse_1_name"] = make_name("Depths\\' Curse 1")
+    subs["knight_depthsCurse_1_nbt"] = """Unbreakable:1b,
+                                    Enchantments:[{}],
+                                    display:{
+                                      Name:##knight_depthsCurse_1_name##,
+                                      Lore:[
+                                        ##knight_depthsCurse_extra##,
+                                        ##knight_spear##,
+                                        ##knight_depthsCurse_spell##
+                                      ]
+                                    },AttributeModifiers:[]"""
+    subs["knight_depthsCurse_1_item"] = """minecraft:trident{##knight_depthsCurse_1_nbt##} 1"""
     
     #Knight Mob Hook 1
     subs["knight_mobHook_spell"] = '\'"Knight: Mob Hook Spell"\'';

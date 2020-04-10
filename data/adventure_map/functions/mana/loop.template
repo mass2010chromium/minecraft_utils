@@ -1,4 +1,7 @@
-execute as @a run scoreboard players operation @s ##mp## += @s ##mp_regen##
+execute as @a[scores={##mp_regen_ticks##=0}] run scoreboard players operation @s ##mp## += @s ##mp_regen##
+scoreboard players add @a ##mp_regen_ticks## 1
+scoreboard players remove @a[scores={##melee_mp_cooldown##=1..}] ##melee_mp_cooldown## 1
+scoreboard players set @a[scores={##mp_regen_ticks##=##mp_regen_frequency##..}] ##mp_regen_ticks## 0
 execute as @a run scoreboard players operation @s ##mp_regen## = @s ##mp_regen_base##
 
 scoreboard players set @a ##t0## 1000
