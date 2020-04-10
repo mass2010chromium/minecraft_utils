@@ -109,6 +109,8 @@ files = [   "fine_damage/loop",
             "summons/forest_goon", 
             "summons/basic_skeleton", 
             "summons/basic_spider", 
+            "summons/dummy_pig",
+            "summons/dummy",
         
             "adventure/adventure_setup", 
         
