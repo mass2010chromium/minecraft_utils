@@ -1,4 +1,5 @@
 tag @s add swapTurn
+data modify entity @s CustomName set value '"FORCE_UPDATE_PLACEHOLDER"'
 execute as @s[scores={fine_hp.hp_frac= 1  }] run data merge block 5 40 -10 {Text1:'[{"text":"|","color":"dark_red"},{"text":"||||||||||||||||||| ","color":"gray"},{"score":{"name":"@e[tag=swapTurn,limit=1]","objective":"fine_hp.hp"}},{"text":"/"},{"score":{"name":"@e[tag=swapTurn,limit=1]","objective":"fine_hp.mh"}}]'}
 execute as @s[scores={fine_hp.hp_frac= 2  }] run data merge block 5 40 -10 {Text1:'[{"text":"||","color":"dark_red"},{"text":"|||||||||||||||||| ","color":"gray"},{"score":{"name":"@e[tag=swapTurn,limit=1]","objective":"fine_hp.hp"}},{"text":"/"},{"score":{"name":"@e[tag=swapTurn,limit=1]","objective":"fine_hp.mh"}}]'}
 execute as @s[scores={fine_hp.hp_frac= 3  }] run data merge block 5 40 -10 {Text1:'[{"text":"|||","color":"red"     },{"text":"||||||||||||||||| ","color":"gray"},{"score":{"name":"@e[tag=swapTurn,limit=1]","objective":"fine_hp.hp"}},{"text":"/"},{"score":{"name":"@e[tag=swapTurn,limit=1]","objective":"fine_hp.mh"}}]'}

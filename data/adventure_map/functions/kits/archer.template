@@ -8,6 +8,8 @@ scoreboard players operation @s ##last_health## = @s ##max_health##
 scoreboard players operation @s ##health## = @s ##max_health##
 scoreboard players set @s ##mp## 0
 scoreboard players set @s ##mp_regen_base## 4
+scoreboard players set @s ##melee_mp## 0
+scoreboard players set @s ##melee_mp_cooldown## 0
 scoreboard players set @s ##magic_resist_base## 0
 scoreboard players set @s ##physical_resist_base## 0
 replaceitem entity @s armor.head minecraft:leather_helmet{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:projectile_protection,lvl:1}],display:{Name:'"Archer\'s Cap"'}} 1
