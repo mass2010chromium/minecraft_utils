@@ -20,21 +20,21 @@ execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:['"Knight: Ground Po
 scoreboard players remove @a[tag=knight,scores={fine_hp.tmp0=1}] mana.mana 600 
 # Start the lift motion
 execute as @e[tag=cast_pound] at @s run tag @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=knight] add pound_start 
-scoreboard players set @a[tag=pound_start] spell.7.time 6
+scoreboard players set @a[tag=pound_start] spell.8.time 6
 effect give @a[tag=pound_start] minecraft:levitation 1 22
 tag @a[tag=pound_start] add pound
 tag @a[tag=pound_start] remove pound_start
 scoreboard players set @a[tag=pound] fine_hp.invul 5 
 # Decrement lift time
-scoreboard players remove @a[scores={spell.7.time=1..}] spell.7.time 1
-effect clear @a[scores={spell.7.time=..1}] minecraft:levitation
+scoreboard players remove @a[scores={spell.8.time=1..}] spell.8.time 1
+effect clear @a[scores={spell.8.time=..1}] minecraft:levitation
 # Pound if we hit the ground
-tag @a[tag=pound,nbt={OnGround:1b},scores={spell.7.time=0}] add grounded
+tag @a[tag=pound,nbt={OnGround:1b},scores={spell.8.time=0}] add grounded
 tag @a[tag=grounded] remove pound
 execute at @a[tag=grounded] run particle minecraft:explosion_emitter ~ ~ ~
 execute at @a[tag=grounded] run playsound minecraft:block.anvil.place master @a[distance=0..12] ~ ~ ~
 execute at @a[tag=grounded] run tag @e[team=Enemies,distance=0..4] add pounded
-execute as @a[tag=grounded] at @s run scoreboard players operation @e[tag=pounded] fine_hp.dmg += @s spell.7.power
+execute as @a[tag=grounded] at @s run scoreboard players operation @e[tag=pounded] fine_hp.dmg += @s spell.8.power
 tag @a[tag=grounded] remove grounded 
 execute at @e[tag=pounded] run particle minecraft:block iron_block ~ ~1 ~ 0.25 0.5 0.25 0 100
 execute as @e[tag=pounded] run data modify entity @s Motion[1] set value 0.8
@@ -51,7 +51,7 @@ tag @e[tag=replenish_2] remove replenish_2
 tag @e[tag=replenish_3] remove replenish_3
 tag @a remove replenish_fail 
 # Apply buffs and such
-scoreboard players set @a[tag=knight] spell.7.power 20
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.7.power 15
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.7.power 15
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.7.power 15
+scoreboard players set @a[tag=knight] spell.8.power 20
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.8.power 15
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.8.power 15
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.8.power 15
