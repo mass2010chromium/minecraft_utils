@@ -1,6 +1,6 @@
-summon villager ~ ~ ~ {
+summon villager -179.5 65 22.5 {
     VillagerData:{
-        profession:fletcher,level:2,type:plains
+        profession:blacksmith,level:2,type:plains
     },
     Team:##friendlies##,
     Invulnerable:1,
@@ -12,16 +12,7 @@ summon villager ~ ~ ~ {
                     id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:iron_sword,Count:1,tag:{
-						Unbreakable:1b,
-                        display:{
-                            Name:"\"Iron-Cast Sword\"",
-                            Lore:["\"Better than Basic?\""]
-                        },
-                        Enchantments:[
-                            {id:sharpness,lvl:6},{id:sweeping,lvl:1}
-                        ]
-                    }
+                    id:iron_sword,Count:1,tag:{##knight_castironsword_sword_nbt##}
                 },rewardExp:0b,maxUses:9999999
             },
 			{
@@ -29,16 +20,7 @@ summon villager ~ ~ ~ {
                     id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:tripwire_hook,Count:1,tag:{
-						Unbreakable:1b,
-                        display:{
-                            Name:"\"Mob Hook 1\"",
-                            Lore:["\"Pulls mobs into you.\"","\"Cost: 350MP\"","\"Knight: Active Spell\"","\"Knight: Mob Hook Spell\""]
-                        },
-                        Enchantments:[
-                            {}
-                        ]
-                    }
+                    id:tripwire_hook,Count:1,tag:{##knight_mobHook_1_nbt##}
                 },rewardExp:0b,maxUses:9999999
             }
         ]
