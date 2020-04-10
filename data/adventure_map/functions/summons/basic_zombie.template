@@ -14,7 +14,7 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
         {},
         {},
         {},
-        {id:"minecraft:chainmail_helmet",Count:1b,AttributeModifiers:[]}
+        {id:"minecraft:chainmail_helmet",Count:1b,AttributeModifiers:[],tag:{Unbreakable:1b}}
     ],
     HandDropChances:[0.0f,0.0f],
     ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],

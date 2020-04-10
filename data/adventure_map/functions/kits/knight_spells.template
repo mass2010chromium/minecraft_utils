@@ -31,7 +31,6 @@ execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##knight_depthsCurse
 # Ground Pound spell
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:##knight_groundPound_1_name##}}}}] at @s store success score @s replenish_ok run 
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=knight] container.1 ##knight_groundPound_1_item##
-
 # Set up spell success temp var
 scoreboard players set @a[tag=knight] ##t0## 0
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:[##knight_groundPound_spell##]}}}},scores={replenish_ok=1}] run
@@ -39,21 +38,17 @@ execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:[##knight_groundPoun
     execute at @p[tag=knight,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={##mp##=600..}] 
         store success score @p[tag=knight,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={##mp##=600..}]
             ##t0##
-    run tag @s add cast_pound
-    
+    run tag @s add cast_pound  
 # Remove mana if successful
 scoreboard players remove @a[tag=knight,scores={##t0##=1}] ##mp## 600
-
 # Start the lift motion
 execute as @e[tag=cast_pound] at @s
     run tag @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=knight] add pound_start
-
 scoreboard players set @a[tag=pound_start] ##knight_groundPound_riseTime## 6
 effect give @a[tag=pound_start] minecraft:levitation 1 22
 tag @a[tag=pound_start] add pound
 tag @a[tag=pound_start] remove pound_start
 scoreboard players set @a[tag=pound] fine_hp.invul 5
-
 # Decrement lift time
 scoreboard players remove @a[scores={##knight_groundPound_riseTime##=1..}] ##knight_groundPound_riseTime## 1
 effect clear @a[scores={##knight_groundPound_riseTime##=..1}] minecraft:levitation
@@ -69,6 +64,9 @@ tag @a[tag=grounded] remove grounded
 execute at @e[tag=pounded] run particle minecraft:block iron_block ~ ~1 ~ 0.25 0.5 0.25 0 100
 execute as @e[tag=pounded] run data modify entity @s Motion[1] set value 0.8
 tag @e[tag=pounded] remove pounded
+
+#Mob Hook Spell
+
 
 
 # Trident throwing (TODO)
