@@ -201,10 +201,10 @@ scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_repulse_boost_1##]}}}]}] ##mage_repulse_power## 1
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_repulse_boost_1##]}}}]}] ##mage_repulse_power## 1
 
-scoreboard players set @a[tag=mage] ##mage_fireball_power## 4
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 5
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 5
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 5
+scoreboard players set @a[tag=mage] ##mage_zephyr_power## 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_zephyr_power## 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_zephyr_power## 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_zephyr_power## 1
 
 scoreboard players set @a[tag=mage] ##mage_attack_splash_power## 2
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_splash_power_boost_2##]}}}]}] ##mage_attack_splash_power## 2
