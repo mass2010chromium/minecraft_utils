@@ -2,7 +2,7 @@
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Knight: Sword"']}}}},tag=!processed] add replenish_0
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Knight: Spear"']}}}},tag=!processed] add replenish_1
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Knight: Active Spell"']}}}},tag=!processed] add replenish_2 
-tag @e[type=minecraft:trident,nbt={Item:{tag:{display:{Lore:['"Knight: Spear"']}}}},tag=!processed] add replenish_3  
+tag @e[type=minecraft:trident,nbt={Trident:{tag:{display:{Lore:['"Knight: Spear"']}}}},tag=!processed] add replenish_3  
 execute as @e[tag=replenish_0] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:0b}]},tag=knight] add replenish_fail
 execute as @e[tag=replenish_1] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:1b}]},tag=knight] add replenish_fail
 execute as @e[tag=replenish_2] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:2b}]},tag=knight] add replenish_fail
@@ -38,8 +38,11 @@ execute as @a[tag=grounded] at @s run scoreboard players operation @e[tag=pounde
 tag @a[tag=grounded] remove grounded 
 execute at @e[tag=pounded] run particle minecraft:block iron_block ~ ~1 ~ 0.25 0.5 0.25 0 100
 execute as @e[tag=pounded] run data modify entity @s Motion[1] set value 0.8
-tag @e[tag=pounded] remove pounded 
+tag @e[tag=pounded] remove pounded  
 # Trident throwing (TODO)
+execute as @e[tag=replenish_3,nbt={Trident:{tag:{display:{Name:'{"text":"Spear 1","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=knight] container.1 minecraft:trident{Unbreakable:1b,Enchantments:[{id:"minecraft:knockback",lvl:2}],display:{Name:'{"text":"Spear 1","italic":false}',Lore:['"Knight: Spear"']},AttributeModifiers:[]} 1  
+execute as @e[type=trident] run data modify entity @s pickup set value 0b
+kill @e[type=trident,nbt={inGround:1b}]
 execute as @e[type=trident,tag=!processed] run data modify entity @s SoundEvent set value "minecraft:entity.blaze.hurt"  
 tag @e[tag=replenish_0] add processed
 tag @e[tag=replenish_1] add processed
