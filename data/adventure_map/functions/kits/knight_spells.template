@@ -80,6 +80,6 @@ tag @a remove replenish_fail
 
 # Apply buffs and such
 scoreboard players set @a[tag=knight] ##knight_groundPound_power## 20
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##knight_groundPound_boost_1##]}}}]}] ##knight_groundPound_power## 10
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##knight_groundPound_boost_1##]}}}]}] ##knight_groundPound_power## 10
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##knight_groundPound_boost_1##]}}}]}] ##knight_groundPound_power## 10
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##knight_groundPound_boost_1##]}}}]}] ##knight_groundPound_power## 15
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##knight_groundPound_boost_1##]}}}]}] ##knight_groundPound_power## 15
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##knight_groundPound_boost_1##]}}}]}] ##knight_groundPound_power## 15

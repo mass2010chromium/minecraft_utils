@@ -1,9 +1,5 @@
-give @s ##mage_basic_staff_item##
-give @s ##mage_fireball_staff_item##
-give @s ##mage_whirlwind_staff_item##
+give @s ##knight_basic_sword_item##
 
-give @s ##mage_fireball_1_item##
-give @s ##mage_fireball_2_item##
+give @s ##knight_spear_1_item##
 
-give @s ##mage_zephyr_1_item##
-give @s ##mage_repulse_1_item##
+give @s ##knight_groundPound_1_item##

@@ -1,18 +1,18 @@
  # Replenish items
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Knight: Sword"']}}}},tag=!processed] add replenish_0
-tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Knight: Spear"']}}}},tag=!processed] add replenish_1
+tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['{"text":"Knight: Spear","italic":false}']}}}},tag=!processed] add replenish_1
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Knight: Active Spell"']}}}},tag=!processed] add replenish_2 
-tag @e[type=minecraft:trident,nbt={Item:{tag:{display:{Lore:['"Knight: Spear"']}}}},tag=!processed] add replenish_3  
+tag @e[type=minecraft:trident,nbt={Item:{tag:{display:{Lore:['{"text":"Knight: Spear","italic":false}']}}}},tag=!processed] add replenish_3  
 execute as @e[tag=replenish_0] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:0b}]},tag=knight] add replenish_fail
 execute as @e[tag=replenish_1] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:1b}]},tag=knight] add replenish_fail
 execute as @e[tag=replenish_2] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:2b}]},tag=knight] add replenish_fail
 # Maybe need a bigger radius
 execute as @e[tag=replenish_3] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:1b}]},tag=knight] add replenish_fail  
 # Weapon drop protection
-execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'"Basic Sword"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=knight] container.0 minecraft:stone_sword{Unbreakable:1,Enchantments:[{id:"minecraft:sharpness",lvl:5},{id:"minecraft:sweeping",lvl:1}],display:{Name:'"Basic Sword"',Lore:['"Knight: Sword"']}} 1 
-execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'"Spear 1"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=knight] container.1 minecraft:trident{Unbreakable:1b,Enchantments:[{id:"minecraft:knockback",lvl:2}],display:{Name:'"Spear 1"',Lore:['"Knight: Spear"']},AttributeModifiers:[]} 1  
+execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'{"text":"Basic Sword","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=knight] container.0 minecraft:stone_sword{Unbreakable:1, Enchantments:[ {id:"minecraft:sharpness",lvl:5},{id:"minecraft:sweeping",lvl:1} ], display:{ Name:'{"text":"Basic Sword","italic":false}', Lore:[ '"Knight: Sword"' ] }} 1 
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'"Spear 1"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=knight] container.1 minecraft:trident{Unbreakable:1b,Enchantments:[{id:"minecraft:knockback",lvl:2}],display:{Name:'"Spear 1"',Lore:['{"text":"Knight: Spear","italic":false}']},AttributeModifiers:[]} 1  
 # Ground Pound spell
-execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:'"Ground Pound 1"'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=knight] container.2 minecraft:anvil{Enchantments:[{}],display:{Name:'"Ground Pound 1"',Lore:['"Knight: Active Spell"', '"Knight: Ground Pound Spell"']}} 1 
+execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:'{"text":"Ground Pound 1","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=knight] container.2 minecraft:anvil{Enchantments:[{}],display:{Name:'{"text":"Ground Pound 1","italic":false}',Lore:['{"text":"Leap in the air and slam back down,","color":"white","italic":false}','{"text":"  launching nearby enemies airborne and","color":"white","italic":false}','{"text":"  dealing 20 physical damage.","color":"white","italic":false}','{"text":"Grants temporary invulnerability while leaping.","color":"white","italic":false}','{"text":"Cost: 600MP","color":"blue","italic":false}', '"Knight: Active Spell"', '"Knight: Ground Pound Spell"']}} 1 
 # Set up spell success temp var
 scoreboard players set @a[tag=knight] fine_hp.tmp0 0
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:['"Knight: Ground Pound Spell"']}}}},scores={replenish_ok=1}] run execute at @s run execute at @p[tag=knight,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=600..}] store success score @p[tag=knight,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=600..}] fine_hp.tmp0 run tag @s add cast_pound 
@@ -52,6 +52,6 @@ tag @e[tag=replenish_3] remove replenish_3
 tag @a remove replenish_fail 
 # Apply buffs and such
 scoreboard players set @a[tag=knight] spell.7.power 20
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.7.power 10
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.7.power 10
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.7.power 10
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.7.power 15
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.7.power 15
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.7.power 15

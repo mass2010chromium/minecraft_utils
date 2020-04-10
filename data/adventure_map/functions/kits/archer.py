@@ -30,11 +30,10 @@ def add_archer_items(subs, spell_id, get_uuid):
     subs["archer_windwalk_spell"] = '\'"Archer: Windwalk Spell"\'';
     subs["archer_windwalk_extra"] = make_description_text([ 
                                                             "Fire an arrow, dealing 5 magic damage",
-                                                            "  and knocking opponents up.",
+                                                            "  and knocking opponents airborne.",
                                                             "Grants speed II to caster for 5s.",
-                                                            "Grants speed I to caster and allies for 20s.",
-                                                            "Cost: 400MP"
-                                                            ])
+                                                            "Grants speed I to caster and allies for 20s."
+                                                            ]) + "," + make_cost("Cost: 400MP")
     subs["archer_windwalk_power"] = "spell.{}.power".format(spell_id())
     subs["archer_windwalk_1_name"] = make_name("Windwalk 1")
     subs["archer_windwalk_1_nbt"] =  """display:{
@@ -51,9 +50,8 @@ def add_archer_items(subs, spell_id, get_uuid):
     subs["archer_piercingArrow_spell"] = '\'"Archer: Piercing Arrow Spell"\'';
     subs["archer_piercingArrow_extra"] = make_description_text([
                                                                 "Fire an arrow that pierces 7 enemies,",
-                                                                "  dealing 10 magic damage and 7-10 physical damage.",
-                                                                "Cost: 600MP"
-                                                                ]);
+                                                                "  dealing 10 magic damage and 7-10 physical damage."
+                                                                ]) + "," + make_cost("Cost: 600MP")
     subs["archer_piercingArrow_power"] = "spell.{}.power".format(spell_id())
     subs["archer_piercingArrow_1_name"] = make_name("Piercing Arrow 1")
     subs["archer_piercingArrow_1_nbt"] = """display:{
