@@ -87,6 +87,7 @@ add_mage_items(subs, spell_id, get_uuid)
 add_archer_items(subs, spell_id, get_uuid)
 add_knight_items(subs, spell_id, get_uuid)
 add_common_items(subs, spell_id, get_uuid)
+add_food_items(subs, spell_id, get_uuid)
 
 subs["current_region"] = "current_region"
 subs["globals"] = "[GLOBALS]"
@@ -136,11 +137,14 @@ files = [   "fine_damage/loop",
             "kits/knight_spells", 
             "kits/knight_all_items", 
             "kits/common_spells", 
+            "kits/all_foods", 
             "kits/heal_pots", 
             
             "shops/archer_shop_1",
             "shops/knight_shop_1",
             "shops/mage_shop_1",
+            "shops/food_shop_1",
+            "shops/potion_shop_1",
         ]
 
 for k, v in subs.items():

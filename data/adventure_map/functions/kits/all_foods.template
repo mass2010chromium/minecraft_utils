@@ -1,0 +1,4 @@
+give @s ##food_biscuit_item## 1
+give @s ##food_cookie_1_item## 1
+give @s ##food_melon_1_item## 1
+give @s ##food_potato_1_item## 1
