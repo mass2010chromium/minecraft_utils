@@ -145,6 +145,9 @@ files = [   "fine_damage/loop",
             "shops/mage_shop_1",
             "shops/food_shop_1",
             "shops/potion_shop_1",
+			
+			"npcs/librarian_1",
+			"npcs/priest_1",
         ]
 
 for k, v in subs.items():
