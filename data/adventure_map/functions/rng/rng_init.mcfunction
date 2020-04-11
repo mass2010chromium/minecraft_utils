@@ -1,0 +1,9 @@
+scoreboard objectives add random dummy
+scoreboard objectives add random.t0 dummy
+scoreboard objectives add random.t1 dummy
+scoreboard objectives add random.t2 dummy 
+kill @e[tag=rng_source] 
+summon minecraft:armor_stand 5 40 -10 {Invulnerable:1b,CustomName:'"RNG_ONE"',CustomNameVisible:1b,Tags:["rng_source","rng_one"]}
+scoreboard players set @e[tag=rng_one] random 1
+summon minecraft:armor_stand 5 40 -10 {Invulnerable:1b,CustomName:'"RNG_ZERO"',CustomNameVisible:1b,Tags:["rng_source","rng_zero"]}
+scoreboard players set @e[tag=rng_zero] random 0

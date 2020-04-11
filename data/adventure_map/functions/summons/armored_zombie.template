@@ -1,4 +1,4 @@
-summon minecraft:zombie ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##,PersistenceRequired:1}
+summon minecraft:zombie ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##}
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 25
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 25
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 25
@@ -22,8 +22,4 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     Attributes:[{Name:"generic.maxHealth",Base:200.0f},{Name:"generic.attackDamage",Base:20.0f},
                 {Name:"generic.movementSpeed",Base:0.35f},{Name:"generic.followRange",Base:256.0f}]
   }
-tag @e[tag=unprocessed,sort=nearest,limit=1] add ##tracker##
-summon minecraft:snowball ~ ~2.25 ~ {Tags:["aggro_snowball"]}
-data modify entity @e[tag=aggro_snowball,sort=nearest,limit=1] owner.L set from entity @p UUIDLeast
-data modify entity @e[tag=aggro_snowball,sort=nearest,limit=1] owner.M set from entity @p UUIDMost
-tag @e[tag=unprocessed,sort=nearest,limit=1] remove unprocessed
+function adventure_map:summons/enemy_common

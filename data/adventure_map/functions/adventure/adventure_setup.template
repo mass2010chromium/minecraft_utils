@@ -9,6 +9,9 @@ team modify ##friendlies## seeFriendlyInvisibles true
 team modify ##friendlies## friendlyFire false
 team modify ##friendlies## collisionRule never
 
+scoreboard objectives add ##current_region## dummy
+scoreboard objectives add ##persistence## dummy
+
 scoreboard objectives add replenish_ok dummy
 
 scoreboard objectives add ##mage_fireball_power## dummy
