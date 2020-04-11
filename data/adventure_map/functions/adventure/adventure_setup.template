@@ -15,6 +15,7 @@ scoreboard objectives add ##persistence## dummy
 scoreboard objectives add replenish_ok dummy
 
 scoreboard objectives add ##mage_fireball_power## dummy
+scoreboard objectives add ##mage_discharge_power## dummy
 scoreboard objectives add ##mage_attack_splash_power## dummy
 scoreboard objectives add ##mage_zephyr_power## dummy
 scoreboard objectives add ##mage_repulse_power## dummy

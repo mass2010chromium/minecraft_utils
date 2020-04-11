@@ -1,8 +1,9 @@
 summon villager -138.5 65 23.5 {
     VillagerData:{
-        profession:priest,level:2,type:plains
+        profession:fletcher,level:2,type:plains
     },
     Team:##friendlies##,
+    Tags:["shops"],
     Invulnerable:1,
     PersistenceRequired:1,
     Offers:{

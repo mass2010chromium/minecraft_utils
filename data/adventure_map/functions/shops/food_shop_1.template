@@ -3,6 +3,7 @@ summon villager ~ ~ ~ {
         profession:shepherd,level:2,type:plains
     },
     Team:##friendlies##,
+    Tags:["shops"],
     Invulnerable:1,
     PersistenceRequired:1,
     Offers:{

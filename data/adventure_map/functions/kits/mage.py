@@ -17,11 +17,35 @@ def add_mage_items(subs, spell_id, get_uuid):
                                         Name:##mage_basic_staff_name##,Lore:[##mage_melee##]
                                       }"""
     subs["mage_basic_staff_item"] =  """minecraft:golden_hoe{##mage_basic_staff_nbt##} 1"""
+    
+    subs["mage_bigger_staff_name"] = make_name("Embiggened Staff")
+    subs["mage_bigger_staff_extra"] = make_description_text(["Is bigger. Apparently."])
+    subs["mage_bigger_staff_nbt"] = """Unbreakable:1,
+                                      Enchantments:[
+                                        {id:"minecraft:sharpness",lvl:4}
+                                      ],
+                                      display:{
+                                        Name:##mage_bigger_staff_name##,
+                                        Lore:[
+                                          ##mage_bigger_staff_extra##,
+                                          ##mage_melee##,
+                                          ##mage_splash_power_boost_2##
+                                        ]
+                                      }"""
+    subs["mage_bigger_staff_item"] =  """minecraft:golden_hoe{##mage_bigger_staff_nbt##} 1"""
+    
     subs["mage_fireball_staff_name"] = make_name("Fiery Staff")
     subs["mage_fireball_staff_nbt"] =    """Unbreakable:1,
                                             Enchantments:[{}],
-                                            display:{Name:##mage_fireball_staff_name##,Lore:[##mage_melee##, ##mage_fireball_boost_1##]}"""
+                                            display:{
+                                              Name:##mage_fireball_staff_name##,
+                                              Lore:[
+                                                ##mage_melee##, 
+                                                ##mage_fireball_boost_1##
+                                              ]
+                                            }"""
     subs["mage_fireball_staff_item"] = """minecraft:golden_hoe{##mage_fireball_staff_nbt##} 1"""
+    
     subs["mage_whirlwind_staff_name"] = make_name("Whirlwind Staff")
     subs["mage_whirlwind_staff_extra"] = make_description_text(["Attacks faster."])
     subs["mage_whirlwind_staff_nbt"] =   """Unbreakable:1,
