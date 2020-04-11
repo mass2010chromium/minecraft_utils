@@ -7,6 +7,8 @@ team modify Friendlies color green
 team modify Friendlies seeFriendlyInvisibles true
 team modify Friendlies friendlyFire false
 team modify Friendlies collisionRule never 
+scoreboard objectives add current_region dummy
+scoreboard objectives add persistence dummy 
 scoreboard objectives add replenish_ok dummy 
 scoreboard objectives add spell.1.power dummy
 scoreboard objectives add spell.0.power dummy

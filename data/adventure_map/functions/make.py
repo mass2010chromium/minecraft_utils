@@ -88,7 +88,9 @@ add_archer_items(subs, spell_id, get_uuid)
 add_knight_items(subs, spell_id, get_uuid)
 add_common_items(subs, spell_id, get_uuid)
 
-
+subs["current_region"] = "current_region"
+subs["globals"] = "[GLOBALS]"
+subs["persistence"] = "persistence"
 
 subs["enemies"] = "Enemies"
 subs["friendlies"] = "Friendlies"
@@ -108,6 +110,9 @@ files = [   "fine_damage/loop",
             "mana/init", 
             "mana/loop", 
             
+            "rng/rng_init", 
+            "rng/rng", 
+            
             "summons/basic_zombie", 
             "summons/well_zombie", 
             "summons/armored_zombie", 
@@ -116,6 +121,8 @@ files = [   "fine_damage/loop",
             "summons/basic_spider", 
             "summons/dummy_pig",
             "summons/dummy",
+            
+            "summons/enemy_common",
         
             "adventure/adventure_setup", 
         
