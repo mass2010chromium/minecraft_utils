@@ -59,6 +59,11 @@ subs["t3"] = "fine_hp.tmp3"
 subs["t4"] = "fine_hp.tmp4"
 subs["t5"] = "fine_hp.tmp5"
 
+subs["random"] = "random"
+subs["rand_t0"] = "random.t0"
+subs["rand_t1"] = "random.t1"
+subs["rand_t2"] = "random.t2"
+
 
 ### Mana
 subs["mp"] = "mana.mana"
