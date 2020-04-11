@@ -10,7 +10,7 @@
 					"functions": [
 						{
 							"function": "minecraft:set_nbt",
-							"tag":"{display:{Name:\”Gold Coin\”}}"
+							"tag": "{display:{Name:'\"Gold Coin\"'}}"
 						}
 					]
                 }
