@@ -1,4 +1,4 @@
-summon minecraft:zombie ~ ~ ~ {Tags:["unprocessed"],Team:Enemies,PersistenceRequired:1}
+summon minecraft:pig ~ ~ ~ {Tags:["unprocessed"],Team:Enemies,PersistenceRequired:1}
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.hp 30
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.mh 30
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.prev_hp 30
