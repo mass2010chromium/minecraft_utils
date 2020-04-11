@@ -108,6 +108,9 @@ files = [   "fine_damage/loop",
             "mana/init", 
             "mana/loop", 
             
+            "rng/rng_init", 
+            "rng/rng", 
+            
             "summons/basic_zombie", 
             "summons/well_zombie", 
             "summons/armored_zombie", 

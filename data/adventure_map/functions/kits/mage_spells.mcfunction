@@ -136,9 +136,9 @@ scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Arcane Explosion Magic Damage"']}}}]}] spell.2.power 1
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Arcane Explosion Magic Damage"']}}}]}] spell.2.power 1 
 scoreboard players set @a[tag=mage] spell.3.power 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+10 Fireball Magic Damage"']}}}]}] spell.3.power 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+10 Fireball Magic Damage"']}}}]}] spell.3.power 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+10 Fireball Magic Damage"']}}}]}] spell.3.power 1 
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[spell.3.power]}}}]}] spell.3.power 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[spell.3.power]}}}]}] spell.3.power 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[spell.3.power]}}}]}] spell.3.power 1 
 scoreboard players set @a[tag=mage] spell.0.power 2
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+2 Melee Splash Damage"']}}}]}] spell.0.power 2
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+2 Melee Splash Damage"']}}}]}] spell.0.power 2
