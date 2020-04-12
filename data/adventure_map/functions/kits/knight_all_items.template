@@ -1,4 +1,5 @@
 give @s ##knight_basic_sword_item##
+give @s ##knight_castironsword_sword_item##
 
 give @s ##knight_depthsCurse_1_item##
 give @s ##knight_mobHook_1_item##

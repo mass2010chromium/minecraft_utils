@@ -1,6 +1,12 @@
 # Apply buffs
 # None rn
 
+
+# Class restriction
+effect give @a[tag=!archer,nbt={SelectedItem:{tag:{display:{Lore:[##archer_melee##]}}}}] slowness 10 9
+effect give @a[tag=!archer,nbt={SelectedItem:{tag:{display:{Lore:[##archer_melee##]}}}}] weakness 10 9
+
+
 # No replenish mechanics for archer
 
 

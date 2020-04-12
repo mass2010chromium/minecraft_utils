@@ -88,5 +88,13 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_groundPound_power"] = "spell.{}.power".format(knight_groundPound_spellID)
     subs["knight_groundPound_riseTime"] = "spell.{}.time".format(knight_groundPound_spellID)
     subs["knight_groundPound_1_name"] = make_name("Ground Pound 1")
-    subs["knight_groundPound_1_nbt"] = """Enchantments:[{}],display:{Name:##knight_groundPound_1_name##,Lore:[##knight_groundPound_extra##, ##knight_spell##, ##knight_groundPound_spell##]}"""
+    subs["knight_groundPound_1_nbt"] =   """Enchantments:[{}],
+                                            display:{
+                                              Name:##knight_groundPound_1_name##,
+                                              Lore:[
+                                                ##knight_groundPound_extra##,
+                                                ##knight_spell##,
+                                                ##knight_groundPound_spell##
+                                              ]
+                                            }"""
     subs["knight_groundPound_1_item"] = """minecraft:anvil{##knight_groundPound_1_nbt##} 1"""

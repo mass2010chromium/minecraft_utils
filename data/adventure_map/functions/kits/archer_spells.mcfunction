@@ -1,5 +1,8 @@
 # Apply buffs
-# None rn 
+# None rn  
+# Class restriction
+effect give @a[tag=!archer,nbt={SelectedItem:{tag:{display:{Lore:['"Archer: Axe"']}}}}] slowness 10 9
+effect give @a[tag=!archer,nbt={SelectedItem:{tag:{display:{Lore:['"Archer: Axe"']}}}}] weakness 10 9  
 # No replenish mechanics for archer  
 # Piercing arrow spell
 tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:'{"text":"Piercing Arrow 1","italic":false}'}}}]}] add pa_1
