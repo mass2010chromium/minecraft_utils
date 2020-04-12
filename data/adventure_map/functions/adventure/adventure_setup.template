@@ -23,6 +23,8 @@ scoreboard objectives add ##mage_repulse_power## dummy
 scoreboard objectives add ##archer_piercingArrow_power## dummy
 
 scoreboard objectives add ##knight_depthsCurse_power## dummy
+scoreboard objectives add ##knight_mobHook_power## dummy
+
 scoreboard objectives add ##knight_groundPound_power## dummy
 scoreboard objectives add ##knight_groundPound_riseTime## dummy
 

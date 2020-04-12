@@ -59,19 +59,21 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_mobHook_spell"] = '\'"Knight: Mob Hook Spell"\'';
     subs["knight_mobHook_extra"] = make_description_text([
                                                           "Shoot a hook that pulls mobs towards you,",
-                                                          "  dealing 8 magic damage and 7-10 physical damage.",
+                                                          "  and deals physical damage.",
                                                           ]) + "," + make_cost("Cost: 350MP")
-    subs["knight_mobHook_1_power"] = "spell.{}.power".format(spell_id())
+    subs["knight_mobHook_power"] = "spell.{}.power".format(spell_id())
     subs["knight_mobHook_1_name"] = make_name("Mob Hook 1")
-    subs["knight_mobHook_1_nbt"] = """display:{
+    subs["knight_mobHook_1_nbt"] = """Unbreakable:1b,
+                                    Enchantments:[{}],
+                                    display:{
                                               Name:##knight_mobHook_1_name##,
                                               Lore:[
                                                 ##knight_mobHook_extra##,
-                                                ##knight_spell##,
+                                                ##knight_spear##,
                                                 ##knight_mobHook_spell##
                                               ]
-                                            }"""
-    subs["knight_mobHook_1_item"] = """minecraft:tripwire_hook{##knight_mobHook_1_nbt##} 1"""
+                                            },AttributeModifiers:[]"""
+    subs["knight_mobHook_1_item"] = """minecraft:trident{##knight_mobHook_1_nbt##} 1"""
     
     #Knight Ground Pound 1
     subs["knight_groundPound_spell"] = '\'"Knight: Ground Pound Spell"\''
