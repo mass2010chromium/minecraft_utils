@@ -108,7 +108,7 @@ def add_mage_items(subs, spell_id, get_uuid):
 
     subs["mage_zephyr_spell"] = '\'"Mage: Zephyr Spell"\'';
     subs["mage_zephyr_extra"] = make_description_text([ "Grant Speed II to caster for 5 seconds.", 
-                                                        "Grant Strength I to caster and allies for 5 seconds."
+                                                        "Grant Strength I to caster and allies for 5 seconds.",
                                                         "Grant Speed I to caster and allies for 80 seconds.",
                                                         ]) + "," + make_cost("Cost: 500MP")
     subs["mage_zephyr_boost_1"] = '\'"+1 Zephyr Speed"\''
