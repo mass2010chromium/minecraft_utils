@@ -23,10 +23,14 @@ execute as @e[tag=replenish_3] at @s run tag @a[distance=0..4,nbt={Inventory:[{S
 # Weapon drop protection
 execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:##knight_basic_sword_name##}}}}] at @s store success score @s replenish_ok run 
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=knight] container.0 ##knight_basic_sword_item##
-    
+
+# Trident drop protection
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##knight_depthsCurse_1_name##}}}}] at @s store success score @s replenish_ok run 
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=knight] container.2 ##knight_depthsCurse_1_item##
     
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##knight_mobHook_1_name##}}}}] at @s store success score @s replenish_ok run 
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=knight] container.2 ##knight_mobHook_1_item##
+
 
 # Ground Pound spell
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:##knight_groundPound_1_name##}}}}] at @s store success score @s replenish_ok run 
@@ -65,11 +69,10 @@ execute at @e[tag=pounded] run particle minecraft:block iron_block ~ ~1 ~ 0.25 0
 execute as @e[tag=pounded] run data modify entity @s Motion[1] set value 0.8
 tag @e[tag=pounded] remove pounded
 
-#Mob Hook Spell
-
 
 
 # Trident throwing (TODO)
+# Depth's Curse
 execute as @e[tag=replenish_3,nbt={Trident:{tag:{display:{Name:##knight_depthsCurse_1_name##}}}}] at @s store success score @s replenish_ok run 
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=knight] container.2 ##knight_depthsCurse_1_item##
     
@@ -82,31 +85,79 @@ execute as @e[tag=replenish_3,nbt={Trident:{tag:{display:{Lore:[##knight_depthsC
     run tag @s add depths_curse
 
 tag @e[tag=depths_curse] add thrown_trident
+scoreboard players remove @a[tag=knight,scores={##t0##=1}] ##mp## 400
+execute as @e[tag=knight,scores={##t0##=1}] at @s run 
+    scoreboard players operation @e[tag=depths_curse,sort=nearest,limit=1,tag=!processed] ##knight_depthsCurse_power## = @s ##knight_depthsCurse_power##
+execute as @e[tag=replenish_3,scores={replenish_ok=0},tag=!depths_curse,nbt={Trident:{tag:{display:{Name:##knight_depthsCurse_1_name##}}}}] at @s run
+    summon item ~ ~ ~ {Item:{id:trident,Count:1b,tag:{##knight_depthsCurse_1_nbt##}}}
+
+execute as @e[tag=depths_curse,tag=!processed] run data modify entity @s SoundEvent set value "minecraft:entity.slime.attack"
+execute as @e[tag=depths_curse,tag=!processed] run data modify entity @s damage set value 0
+
+    
+# Mob Hook
+execute as @e[tag=replenish_3,nbt={Trident:{tag:{display:{Name:##knight_mobHook_1_name##}}}}] at @s store success score @s replenish_ok run 
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=knight] container.2 ##knight_mobHook_1_item##
+    
+scoreboard players set @a[tag=knight] ##t0## 0
+execute as @e[tag=replenish_3,nbt={Trident:{tag:{display:{Lore:[##knight_mobHook_spell##]}}}},scores={replenish_ok=1}] run
+    execute at @s run
+    execute at @p[tag=knight,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={##mp##=350..}] 
+        store success score @p[tag=knight,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={##mp##=350..}]
+            ##t0##
+    run tag @s add mob_hook
+
+tag @e[tag=mob_hook] add thrown_trident
+
+scoreboard players remove @a[tag=knight,scores={##t0##=1}] ##mp## 350
+execute as @e[tag=knight,scores={##t0##=1}] at @s run 
+    scoreboard players operation @e[tag=mob_hook,sort=nearest,limit=1,tag=!processed] ##knight_mobHook_power## = @s ##knight_mobHook_power##
+execute as @e[tag=replenish_3,scores={replenish_ok=0},tag=!mob_hook,nbt={Trident:{tag:{display:{Name:##knight_mobHook_1_name##}}}}] at @s run
+    summon item ~ ~ ~ {Item:{id:trident,Count:1b,tag:{##knight_mobHook_1_nbt##}}}
+
+execute as @e[tag=mob_hook,tag=!processed] run data modify entity @s SoundEvent set value "minecraft:block.tripwire.detach"
+# TODO do power
+execute as @e[tag=mob_hook,tag=!processed] run data modify entity @s damage set value 2.0
+execute as @e[tag=mob_hook,tag=!processed] at @s store result score @s ##t0## run data get entity @s Motion[0] -100
+execute as @e[tag=mob_hook,tag=!processed] at @s store result score @s ##t1## run data get entity @s Motion[2] -100
+
     
 kill @e[tag=replenish_3,scores={replenish_ok=1},tag=!thrown_trident]
 
-# Remove mana if successful
-scoreboard players remove @a[tag=knight,scores={##t0##=1}] ##mp## 400
-
-execute as @e[tag=knight,scores={##t0##=1}] at @s run 
-    scoreboard players operation @e[tag=depths_curse,sort=nearest,limit=1,tag=!processed] ##knight_depthsCurse_power## = @s ##knight_depthsCurse_power##
-
-# Itemify tridents
-execute as @e[tag=replenish_3,tag=!depths_curse,nbt={Trident:{tag:{display:{Name:##knight_depthsCurse_1_name##}}}}] at @s run
-    summon item ~ ~ ~ {Item:{id:trident,Count:1b,tag:{##knight_depthsCurse_1_nbt##}}}
 
 execute as @e[tag=thrown_trident] run data modify entity @s pickup set value 0b
 kill @e[tag=replenish_3,tag=!thrown_trident]
 scoreboard players set @e[tag=thrown_trident] replenish_ok 0
+
 tag @e[tag=thrown_trident,nbt={inGround:1b}] add hit_trident
 tag @e[tag=thrown_trident,nbt={DealtDamage:1b}] add hit_trident
 tag @e[tag=thrown_trident,nbt={DealtDamage:1b}] add hit_mob_trident
-execute as @e[tag=depths_curse,tag=!processed] run data modify entity @s SoundEvent set value "minecraft:entity.slime.attack"
 
+
+# Depths curse check loop
 execute at @e[tag=hit_trident,tag=depths_curse] run effect give @e[team=##enemies##,distance=0..4] minecraft:slowness 10 0
 execute as @e[tag=hit_trident,tag=depths_curse] at @s run scoreboard players operation @e[team=##enemies##,distance=0..4] ##magic_damage## += @s ##knight_depthsCurse_power##
 execute at @e[tag=hit_trident,tag=depths_curse] run particle minecraft:splash ~ ~0.25 ~ 1.5 0.25 1.5 0 200
 execute at @e[tag=hit_trident,tag=depths_curse] run particle minecraft:bubble_pop ~ ~0.25 ~ 1.5 0.25 1.5 0 200
+
+
+# Mob hook check loop
+scoreboard players add @e[tag=mob_hook] ##t2## 1
+execute at @e[tag=hit_mob_trident,tag=mob_hook] run tag @e[team=##enemies##,distance=0..3] add hooked
+effect give @e[tag=hooked] minecraft:slowness 2 4
+execute at @e[tag=hooked] run particle block iron_block ~ ~1 ~ 0.25 0.5 0.25 0.1 100
+execute as @e[tag=hit_mob_trident,tag=mob_hook] run scoreboard players operation @s ##t0## *= @s ##t2##
+execute as @e[tag=hit_mob_trident,tag=mob_hook] run scoreboard players operation @s ##t1## *= @s ##t2##
+execute as @e[tag=hooked] at @s store result entity @s Motion[0] double 0.001 run
+    scoreboard players get @e[tag=hit_mob_trident,tag=mob_hook,sort=nearest,limit=1] ##t0##
+execute as @e[tag=hooked] at @s store result entity @s Motion[2] double 0.001 run
+    scoreboard players get @e[tag=hit_mob_trident,tag=mob_hook,sort=nearest,limit=1] ##t1##
+execute as @e[tag=hooked] run data modify entity @s Motion[1] set value 0.5
+tag @e[tag=hooked] remove hooked
+    
+
+
+
 kill @e[tag=hit_trident]
 
 
