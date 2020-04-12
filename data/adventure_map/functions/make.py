@@ -128,6 +128,7 @@ files = [   "fine_damage/loop",
             "adventure/adventure_setup", 
         
             "spells/mage/discharge",
+            "spells/mage/fireball",
             
             "kits/mage", 
             "kits/mage_spells", 

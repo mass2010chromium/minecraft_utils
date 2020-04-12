@@ -1,0 +1,41 @@
+scoreboard players set @a[tag=mage] ##t0## 0
+# Trigger fireball summon, and remove mana from player
+
+execute at @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={##mp##=200..}] 
+    store success score @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={##mp##=200..}] ##t0##
+    run tag @s add fireball_summon
+    
+tag @p[tag=mage,scores={##t0##=1}] add fireball_summoner
+scoreboard players remove @p[tag=fireball_summoner] ##mp## 200
+execute as @p[tag=fireball_summoner] at @s run 
+    summon minecraft:fireball ^ ^ ^0.1 {direction:[0.0,0.0,0.0],ExplosionPower:0,Tags:["unprocessed","mage_fireball"]}
+execute at @p[tag=fireball_summoner] run playsound minecraft:entity.blaze.shoot master @a[distance=0..8] ~ ~ ~
+
+# Record source x,y,z, and assign damage
+execute as @p[tag=fireball_summoner] at @s store result score @e[tag=mage_fireball,sort=nearest,limit=1,tag=unprocessed] ##t1## run 
+        data get entity @s Pos[0] 1000
+execute as @p[tag=fireball_summoner] at @s store result score @e[tag=mage_fireball,sort=nearest,limit=1,tag=unprocessed] ##t2## run 
+        data get entity @s Pos[1] 1000
+execute as @p[tag=fireball_summoner] at @s store result score @e[tag=mage_fireball,sort=nearest,limit=1,tag=unprocessed] ##t3## run 
+        data get entity @s Pos[2] 1000
+execute as @p[tag=fireball_summoner] at @s run 
+    scoreboard players operation @e[tag=mage_fireball,sort=nearest,limit=1,tag=unprocessed] ##mage_fireball_power## = @s ##mage_fireball_power##
+
+# Start doing vector math
+# t0, t1, t2 are dx, dy, dz
+execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] store result score @s ##t0## run data get entity @s Pos[0] 1000
+execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] run scoreboard players operation @s ##t0## -= @s ##t1##
+execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] store result score @s ##t1## run data get entity @s Pos[1] 1000
+execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] run scoreboard players operation @s ##t1## -= @s ##t2##
+scoreboard players add @e[tag=unprocessed,tag=mage_fireball,limit=1] ##t1## 10
+execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] store result score @s ##t2## run data get entity @s Pos[2] 1000
+execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] run scoreboard players operation @s ##t2## -= @s ##t3##
+# Finally store back into entity data.
+
+execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] run data modify entity @s power[1] set value -0.17
+scoreboard players set @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] ##t3## 10
+
+execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] at @s run tp @s ~ ~1.5 ~
+execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] store result entity @s direction[1] double 0.02 run scoreboard players get @s ##t1##
+execute as @s[tag=fireball_summon] run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed
+tag @p[tag=fireball_summoner] remove fireball_summoner

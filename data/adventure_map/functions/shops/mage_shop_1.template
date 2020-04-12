@@ -13,7 +13,7 @@ summon villager ~ ~ ~ {
                     id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:golden_hoe,Count:1,tag:{##mage_bigger_staff_item##}
+                    id:golden_hoe,Count:1,tag:{##mage_bigger_staff_nbt##}
                 },rewardExp:0b,maxUses:9999999
             },
 			{
@@ -21,7 +21,7 @@ summon villager ~ ~ ~ {
                     id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:end_rod,Count:1,tag:{mage_discharge_1_nbt}
+                    id:end_rod,Count:1,tag:{##mage_discharge_1_nbt##}
                 },rewardExp:0b,maxUses:9999999
             }
         ]
