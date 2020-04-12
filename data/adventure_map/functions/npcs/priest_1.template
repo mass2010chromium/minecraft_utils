@@ -25,4 +25,4 @@ summon villager ~ ~1 ~ {
             }
         ]
     },
-    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Priest Jon (NPC)"',CustomNameVisible:1}
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Priest Jon (NPC)"',CustomNameVisible:1,Tags:["npc"]}
