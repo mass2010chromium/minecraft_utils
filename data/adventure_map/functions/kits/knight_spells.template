@@ -5,6 +5,10 @@ execute as @a[tag=knight_mana_steal] run scoreboard players set @s ##melee_mp_co
 scoreboard players set @a use.stone_sword 0
 tag @a remove knight_mana_steal
 
+# Class restriction
+effect give @a[tag=!knight,nbt={SelectedItem:{tag:{display:{Lore:[##knight_melee##]}}}}] slowness 1 9
+effect give @a[tag=!knight,nbt={SelectedItem:{tag:{display:{Lore:[##knight_melee##]}}}}] weakness 1 9
+
 # Replenish items
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:[##knight_melee##]}}}},tag=!processed] add replenish_0
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:[##knight_spear##]}}}},tag=!processed] add replenish_1
