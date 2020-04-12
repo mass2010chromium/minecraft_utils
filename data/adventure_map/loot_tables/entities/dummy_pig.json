@@ -1,31 +1,26 @@
-{	
-    "pools": [
-        {
-            "rolls": 1,
-            "entries": [
-
-                {
-                    "type": "item",
-                    "name": "minecraft:dragon_breath",
-					"functions": [
-						{
-							"function": "minecraft:set_nbt",
-							"tag": "{Name:{'\"text\"':'\"Healing Potion 1\"','\"italic\"':'\"false\"'},Lore:[{'\"text\"':'\"+10 HP\"','\"color\"':'\"red\"','\"italic\"':'\"false\"'}]}"
-						},
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"min": 0,
-								"max": 1
-							}
-						}
-					]
-                }
-            ]
-
-        }
-
-    ]
-
+{
+   "pools":[
+      {
+         "rolls":1,
+         "entries":[
+            {
+               "type":"item",
+               "name":"minecraft:dragon_breath",
+               "functions":[
+                  {
+                     "function":"minecraft:set_nbt",
+                     "tag":"{Name:{'\"text\":\"Healing Potion 1\",\"italic\":\"false\"'},Lore:[{'\"text\":\"+10 HP\",\"color\":\"red\",\"italic\":\"false\"'}]}"
+                  },
+                  {
+                     "function":"minecraft:set_count",
+                     "count":{
+                        "min":0,
+                        "max":1
+                     }
+                  }
+               ]
+            }
+         ]
+      }
+   ]
 }
-
