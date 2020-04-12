@@ -2,7 +2,7 @@
 tag @a[tag=mage,scores={use.golden_hoe=1}] add mage_splash
 execute as @a[tag=mage_splash] at @s positioned ^ ^ ^2 anchored eyes run scoreboard players operation @e[distance=0..4,type=!minecraft:player,scores={fine_hp.hp=1..},limit=4,sort=nearest] fine_hp.mdmg += @s spell.0.power
 tag @a remove mage_splash
-scoreboard players set @a[tag=mage,scores={use.golden_hoe=1}] fine_hp.tmp0 5
+scoreboard players set @a[tag=mage,scores={use.golden_hoe=1}] fine_hp.tmp0 2
 execute as @a[tag=mage,scores={use.golden_hoe=1}] run scoreboard players operation @s fine_hp.tmp0 *= @s mana.mana_regen
 execute as @a[tag=mage,scores={use.golden_hoe=1}] run scoreboard players operation @s mana.mana += @s fine_hp.tmp0
 scoreboard players set @a use.golden_hoe 0 
