@@ -21,7 +21,7 @@ summon villager -179.5 65 22.5 {
                     id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:tripwire_hook,Count:1,tag:{##knight_mobHook_1_nbt##}
+                    id:trident,Count:1,tag:{##knight_mobHook_1_nbt##}
                 },rewardExp:0b,maxUses:9999999
             }
         ]
