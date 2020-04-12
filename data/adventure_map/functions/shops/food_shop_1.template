@@ -14,7 +14,7 @@ summon villager ~ ~ ~ {
                 },
                 sell:{
                     id:cookie,Count:1,tag:{##food_cookie_1_nbt##},rewardExp:0b,maxUses:9999999
-                },
+                },rewardExp:0b,maxUses:9999999
             },
 			{
                 buy:{
