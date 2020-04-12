@@ -32,7 +32,7 @@ scoreboard players remove @a[tag=knight,scores={fine_hp.tmp0=1}] mana.mana 600
 # Start the lift motion
 execute as @e[tag=cast_pound] at @s run tag @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=knight] add pound_start
 scoreboard players set @a[tag=pound_start] spell.9.time 6
-effect give @a[tag=pound_start] minecraft:levitation 1 22
+effect give @a[tag=pound_start] minecraft:levitation 1 22 true
 tag @a[tag=pound_start] add pound
 tag @a[tag=pound_start] remove pound_start
 scoreboard players set @a[tag=pound] fine_hp.invul 5
@@ -82,14 +82,15 @@ tag @e[tag=thrown_trident,nbt={inGround:1b}] add hit_trident
 tag @e[tag=thrown_trident,nbt={DealtDamage:1b}] add hit_trident
 tag @e[tag=thrown_trident,nbt={DealtDamage:1b}] add hit_mob_trident  
 # Depths curse check loop
-execute at @e[tag=hit_trident,tag=depths_curse] run effect give @e[team=Enemies,distance=0..4] minecraft:slowness 10 0
+execute at @e[tag=hit_trident,tag=depths_curse] run effect give @e[team=Enemies,distance=0..4] minecraft:slowness 10 0 true
 execute as @e[tag=hit_trident,tag=depths_curse] at @s run scoreboard players operation @e[team=Enemies,distance=0..4] fine_hp.mdmg += @s spell.7.power
 execute at @e[tag=hit_trident,tag=depths_curse] run particle minecraft:splash ~ ~0.25 ~ 1.5 0.25 1.5 0 200
 execute at @e[tag=hit_trident,tag=depths_curse] run particle minecraft:bubble_pop ~ ~0.25 ~ 1.5 0.25 1.5 0 200  
 # Mob hook check loop
 scoreboard players add @e[tag=mob_hook] fine_hp.tmp2 1
 execute at @e[tag=hit_mob_trident,tag=mob_hook] run tag @e[team=Enemies,distance=0..3] add hooked
-effect give @e[tag=hooked] minecraft:slowness 2 4
+effect give @e[tag=hooked] minecraft:slowness 2 9 true
+effect give @e[tag=hooked] minecraft:jump_boost 2 200 true
 execute at @e[tag=hooked] run particle block iron_block ~ ~1 ~ 0.25 0.5 0.25 0.1 100
 execute as @e[tag=hit_mob_trident,tag=mob_hook] run scoreboard players operation @s fine_hp.tmp0 *= @s fine_hp.tmp2
 execute as @e[tag=hit_mob_trident,tag=mob_hook] run scoreboard players operation @s fine_hp.tmp1 *= @s fine_hp.tmp2

@@ -5,7 +5,8 @@ execute at @p[tag=mage,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..
 scoreboard players remove @a[tag=mage,scores={fine_hp.tmp0=1}] mana.mana 400 
 execute at @s[tag=discharge_cast] run playsound minecraft:entity.blaze.ambient master @a[distance=0..8] ~ ~ ~
 execute at @s[tag=discharge_cast] run effect give @p[distance=0..8] minecraft:strength 5 0
-execute at @s[tag=discharge_cast] run effect give @e[team=Enemies,distance=0..6] minecraft:slowness 1 3
+execute at @s[tag=discharge_cast] run effect give @e[team=Enemies,distance=0..6] minecraft:slowness 1 9 true
+execute at @s[tag=discharge_cast] run effect give @e[team=Enemies,distance=0..6] minecraft:jump_boost 1 200 true
 execute at @s[tag=discharge_cast] at @e[team=Enemies,distance=0..4] run particle minecraft:large_smoke ~ ~1 ~ 0.25 1 0.25 0 50
 execute at @s[tag=discharge_cast] at @e[team=Enemies,distance=0..4] run particle minecraft:instant_effect ~ ~1 ~ 0.5 1 0.5 0 50
 execute at @s[tag=discharge_cast] run particle minecraft:flame ~ ~ ~ 0.25 1 0.25 0.1 50
