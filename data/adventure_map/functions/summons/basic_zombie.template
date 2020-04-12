@@ -22,4 +22,5 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     Attributes:[{Name:"generic.maxHealth",Base:200.0f},{Name:"generic.attackDamage",Base:20.0f},
                 {Name:"generic.followRange",Base:256.0f}]
   }
+function adventure_map:summons/enemy_aggro
 function adventure_map:summons/enemy_common

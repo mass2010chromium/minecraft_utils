@@ -124,6 +124,7 @@ files = [   "fine_damage/loop",
             "summons/dummy",
             
             "summons/enemy_common",
+            "summons/enemy_aggro",
         
             "adventure/adventure_setup", 
         
