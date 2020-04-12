@@ -1,7 +1,7 @@
 # Splash melee
 tag @a[tag=mage,scores={use.golden_hoe=1}] add mage_splash
 execute as @a[tag=mage_splash] at @s positioned ^ ^ ^2 anchored eyes run 
-    scoreboard players operation @e[distance=0..3,type=!minecraft:player,scores={fine_hp.hp=1..},limit=3,sort=nearest] ##magic_damage## 
+    scoreboard players operation @e[distance=0..4,type=!minecraft:player,scores={fine_hp.hp=1..},limit=4,sort=nearest] ##magic_damage## 
         += @s ##mage_attack_splash_power##
 tag @a remove mage_splash
 scoreboard players set @a[tag=mage,scores={use.golden_hoe=1}] ##t0## 5
@@ -119,6 +119,15 @@ execute at @e[tag=zephyr_boost,scores={##t0##=3}] run effect give @a[distance=0.
 execute at @e[tag=zephyr_boost,scores={##t0##=4}] run effect give @a[distance=0..8] minecraft:speed 5 4
 
 
+
+# Discharge spell
+execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:##mage_discharge_1_name##}}}}] at @s store success score @s replenish_ok run 
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage] container.2 ##mage_discharge_1_item##
+
+execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:[##mage_discharge_spell##]}}}},scores={replenish_ok=1}] at @s run
+    function adventure_map:spells/mage/discharge
+
+
 # Arcane Explosion spell
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:##mage_repulse_1_name##}}}}] at @s store success score @s replenish_ok run 
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage] container.2 ##mage_repulse_1_item##
@@ -202,9 +211,14 @@ scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_repulse_boost_1##]}}}]}] ##mage_repulse_power## 1
 
 scoreboard players set @a[tag=mage] ##mage_zephyr_power## 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_zephyr_power##]}}}]}] ##mage_zephyr_power## 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_zephyr_power##]}}}]}] ##mage_zephyr_power## 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_zephyr_power##]}}}]}] ##mage_zephyr_power## 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_zephyr_boost_1##]}}}]}] ##mage_zephyr_power## 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_zephyr_boost_1##]}}}]}] ##mage_zephyr_power## 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_zephyr_boost_1##]}}}]}] ##mage_zephyr_power## 1
+
+scoreboard players set @a[tag=mage] ##mage_discharge_power## 15
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_discharge_boost_1##]}}}]}] ##mage_discharge_power## 10
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_discharge_boost_1##]}}}]}] ##mage_discharge_power## 10
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_discharge_boost_1##]}}}]}] ##mage_discharge_power## 10
 
 scoreboard players set @a[tag=mage] ##mage_attack_splash_power## 2
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_splash_power_boost_2##]}}}]}] ##mage_attack_splash_power## 2

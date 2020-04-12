@@ -29,7 +29,7 @@ summon villager ~ ~ ~ {
                     id:sunflower,Count:4,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:melon,Count:1,tag:{##food_melon_1_nbt##}
+                    id:melon_slice,Count:1,tag:{##food_melon_1_nbt##}
                 },rewardExp:0b,maxUses:9999999
             }
         ]

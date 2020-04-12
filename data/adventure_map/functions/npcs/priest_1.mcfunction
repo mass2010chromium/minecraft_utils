@@ -1,0 +1,1 @@
+summon villager ~ ~1 ~ { VillagerData:{ profession:cleric,level:2,type:plains }, Team:Friendlies, Invulnerable:1, PersistenceRequired:1, Offers:{ Recipes:[ { buy:{  }, sell:{  },rewardExp:0b,maxUses:0 }, { buy:{  }, sell:{  },rewardExp:0b,maxUses:0 } ] }, Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Priest Jon (NPC)"',CustomNameVisible:1}

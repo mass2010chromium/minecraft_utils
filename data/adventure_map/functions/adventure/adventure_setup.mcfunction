@@ -11,13 +11,14 @@ scoreboard objectives add current_region dummy
 scoreboard objectives add persistence dummy 
 scoreboard objectives add replenish_ok dummy 
 scoreboard objectives add spell.1.power dummy
+scoreboard objectives add spell.4.power dummy
 scoreboard objectives add spell.0.power dummy
 scoreboard objectives add spell.3.power dummy
 scoreboard objectives add spell.2.power dummy 
-scoreboard objectives add spell.5.power dummy 
-scoreboard objectives add spell.6.power dummy
-scoreboard objectives add spell.8.power dummy
-scoreboard objectives add spell.8.time dummy 
+scoreboard objectives add spell.6.power dummy 
+scoreboard objectives add spell.7.power dummy
+scoreboard objectives add spell.9.power dummy
+scoreboard objectives add spell.9.time dummy 
 scoreboard objectives add use.golden_hoe minecraft.used:minecraft.golden_hoe
 scoreboard objectives add use.stone_sword minecraft.used:minecraft.stone_sword 
 gamerule mobGriefing false

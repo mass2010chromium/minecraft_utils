@@ -1,6 +1,6 @@
 # Splash melee
 tag @a[tag=mage,scores={use.golden_hoe=1}] add mage_splash
-execute as @a[tag=mage_splash] at @s positioned ^ ^ ^2 anchored eyes run scoreboard players operation @e[distance=0..3,type=!minecraft:player,scores={fine_hp.hp=1..},limit=3,sort=nearest] fine_hp.mdmg += @s spell.0.power
+execute as @a[tag=mage_splash] at @s positioned ^ ^ ^2 anchored eyes run scoreboard players operation @e[distance=0..4,type=!minecraft:player,scores={fine_hp.hp=1..},limit=4,sort=nearest] fine_hp.mdmg += @s spell.0.power
 tag @a remove mage_splash
 scoreboard players set @a[tag=mage,scores={use.golden_hoe=1}] fine_hp.tmp0 5
 execute as @a[tag=mage,scores={use.golden_hoe=1}] run scoreboard players operation @s fine_hp.tmp0 *= @s mana.mana_regen
@@ -60,7 +60,7 @@ execute as @e[tag=mage_fireball] at @s run scoreboard players operation @e[dista
 tag @e[tag=unprocessed] remove unprocessed
 tag @a[tag=fireball_summoner] remove fireball_summoner  
 # Zephyr spell
-execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:'{"text":"Zephyr 1","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage] container.2 minecraft:magma_cream{Enchantments:[{}],display:{Name:'{"text":"Zephyr 1","italic":false}',Lore:['{"text":"Grant Speed II and Strength I to caster for 5 seconds.","color":"white","italic":false}','{"text":"Grant Speed I to caster and allies for 80 seconds.","color":"white","italic":false}','{"text":"Cost: 500MP","color":"blue","italic":false}', '"Mage: Secondary Spell"', '"Mage: Zephyr Spell"']}} 1 
+execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:'{"text":"Zephyr 1","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage] container.2 minecraft:magma_cream{Enchantments:[{}],display:{Name:'{"text":"Zephyr 1","italic":false}',Lore:['{"text":"Grant Speed II to caster for 5 seconds.","color":"white","italic":false}','{"text":"Grant Strength I to caster and allies for 5 seconds.Grant Speed I to caster and allies for 80 seconds.","color":"white","italic":false}','{"text":"Cost: 500MP","color":"blue","italic":false}', '"Mage: Secondary Spell"', '"Mage: Zephyr Spell"']}} 1 
 scoreboard players set @a[tag=mage] fine_hp.tmp0 0
 # Tag with zephyr speed boost, and remove mana from player
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:['"Mage: Zephyr Spell"']}}}},scores={replenish_ok=1}] run execute at @s run execute at @p[tag=mage,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=500..}] store success score @p[tag=mage,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=500..}] fine_hp.tmp0 run tag @s add zephyr_boost
@@ -72,7 +72,10 @@ execute at @e[tag=zephyr_boost] run effect give @a[distance=0..8] minecraft:stre
 execute at @e[tag=zephyr_boost,scores={fine_hp.tmp0=1}] run effect give @a[distance=0..8] minecraft:speed 5 1
 execute at @e[tag=zephyr_boost,scores={fine_hp.tmp0=2}] run effect give @a[distance=0..8] minecraft:speed 5 2
 execute at @e[tag=zephyr_boost,scores={fine_hp.tmp0=3}] run effect give @a[distance=0..8] minecraft:speed 5 3
-execute at @e[tag=zephyr_boost,scores={fine_hp.tmp0=4}] run effect give @a[distance=0..8] minecraft:speed 5 4  
+execute at @e[tag=zephyr_boost,scores={fine_hp.tmp0=4}] run effect give @a[distance=0..8] minecraft:speed 5 4   
+# Discharge spell
+execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:'{"text":"Discharge 1","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage] container.2 minecraft:end_rod{Enchantments:[{}], display:{ Name:'{"text":"Discharge 1","italic":false}', Lore:[ '{"text":"Deal 15 magic damage and slow nearby enemies temporarily.","color":"white","italic":false}','{"text":"Grant Strength I to caster for 5 seconds.","color":"white","italic":false}','{"text":"Cost: 500MP","color":"blue","italic":false}',  '"Mage: Secondary Spell"',  '"Mage: Discharge Spell"' ] }} 1 
+execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:['"Mage: Discharge Spell"']}}}},scores={replenish_ok=1}] at @s run function adventure_map:spells/mage/discharge  
 # Arcane Explosion spell
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:'{"text":"Arcane Explosion 1","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage] container.2 minecraft:nether_star{Enchantments:[{}],display:{Name:'{"text":"Arcane Explosion 1","italic":false}',Lore:['{"text":"Push enemies away.","color":"white","italic":false}','{"text":"Cost: 400MP","color":"blue","italic":false}', '"Mage: Secondary Spell"', '"Mage: Arcane Explosion Spell"']}} 1 
 scoreboard players set @a[tag=mage] fine_hp.tmp0 0
@@ -136,9 +139,13 @@ scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Arcane Explosion Magic Damage"']}}}]}] spell.2.power 1
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Arcane Explosion Magic Damage"']}}}]}] spell.2.power 1 
 scoreboard players set @a[tag=mage] spell.3.power 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[spell.3.power]}}}]}] spell.3.power 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[spell.3.power]}}}]}] spell.3.power 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[spell.3.power]}}}]}] spell.3.power 1 
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Zephyr Speed"']}}}]}] spell.3.power 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Zephyr Speed"']}}}]}] spell.3.power 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Zephyr Speed"']}}}]}] spell.3.power 1 
+scoreboard players set @a[tag=mage] spell.4.power 15
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+10 Discharge damage"']}}}]}] spell.4.power 10
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+10 Discharge damage"']}}}]}] spell.4.power 10
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+10 Discharge damage"']}}}]}] spell.4.power 10 
 scoreboard players set @a[tag=mage] spell.0.power 2
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+2 Melee Splash Damage"']}}}]}] spell.0.power 2
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+2 Melee Splash Damage"']}}}]}] spell.0.power 2

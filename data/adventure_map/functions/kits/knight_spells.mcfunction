@@ -26,21 +26,21 @@ execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:['"Knight: Ground Po
 scoreboard players remove @a[tag=knight,scores={fine_hp.tmp0=1}] mana.mana 600
 # Start the lift motion
 execute as @e[tag=cast_pound] at @s run tag @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=knight] add pound_start
-scoreboard players set @a[tag=pound_start] spell.8.time 6
+scoreboard players set @a[tag=pound_start] spell.9.time 6
 effect give @a[tag=pound_start] minecraft:levitation 1 22
 tag @a[tag=pound_start] add pound
 tag @a[tag=pound_start] remove pound_start
 scoreboard players set @a[tag=pound] fine_hp.invul 5
 # Decrement lift time
-scoreboard players remove @a[scores={spell.8.time=1..}] spell.8.time 1
-effect clear @a[scores={spell.8.time=..1}] minecraft:levitation
+scoreboard players remove @a[scores={spell.9.time=1..}] spell.9.time 1
+effect clear @a[scores={spell.9.time=..1}] minecraft:levitation
 # Pound if we hit the ground
-tag @a[tag=pound,nbt={OnGround:1b},scores={spell.8.time=0}] add grounded
+tag @a[tag=pound,nbt={OnGround:1b},scores={spell.9.time=0}] add grounded
 tag @a[tag=grounded] remove pound
 execute at @a[tag=grounded] run particle minecraft:explosion_emitter ~ ~ ~
 execute at @a[tag=grounded] run playsound minecraft:block.anvil.place master @a[distance=0..12] ~ ~ ~
 execute at @a[tag=grounded] run tag @e[team=Enemies,distance=0..4] add pounded
-execute as @a[tag=grounded] at @s run scoreboard players operation @e[tag=pounded] fine_hp.dmg += @s spell.8.power
+execute as @a[tag=grounded] at @s run scoreboard players operation @e[tag=pounded] fine_hp.dmg += @s spell.9.power
 tag @a[tag=grounded] remove grounded 
 execute at @e[tag=pounded] run particle minecraft:block iron_block ~ ~1 ~ 0.25 0.5 0.25 0 100
 execute as @e[tag=pounded] run data modify entity @s Motion[1] set value 0.8
@@ -54,7 +54,7 @@ tag @e[tag=depths_curse] add thrown_trident
 kill @e[tag=replenish_3,scores={replenish_ok=1},tag=!thrown_trident] 
 # Remove mana if successful
 scoreboard players remove @a[tag=knight,scores={fine_hp.tmp0=1}] mana.mana 400 
-execute as @e[tag=knight,scores={fine_hp.tmp0=1}] at @s run scoreboard players operation @e[tag=depths_curse,sort=nearest,limit=1,tag=!processed] spell.6.power = @s spell.6.power 
+execute as @e[tag=knight,scores={fine_hp.tmp0=1}] at @s run scoreboard players operation @e[tag=depths_curse,sort=nearest,limit=1,tag=!processed] spell.7.power = @s spell.7.power 
 # Itemify tridents
 execute as @e[tag=replenish_3,tag=!depths_curse,nbt={Trident:{tag:{display:{Name:'{"text":"Depths\' Curse 1","italic":false}'}}}}] at @s run summon item ~ ~ ~ {Item:{id:trident,Count:1b,tag:{Unbreakable:1b, Enchantments:[{}], display:{ Name:'{"text":"Depths\' Curse 1","italic":false}', Lore:[ '{"text":"Spear deals physical damage to whatever it hits.","color":"white","italic":false}','{"text":"Deals 6 magic damage to enemies within 4 blocks","color":"white","italic":false}','{"text":"  and applies 10 seconds of slowness.","color":"white","italic":false}','{"text":"Cost: 400MP","color":"blue","italic":false}', '"Knight: Spear"', '"Knight: Depths\' Curse"' ] },AttributeModifiers:[]}}} 
 execute as @e[tag=thrown_trident] run data modify entity @s pickup set value 0b
@@ -65,7 +65,7 @@ tag @e[tag=thrown_trident,nbt={DealtDamage:1b}] add hit_trident
 tag @e[tag=thrown_trident,nbt={DealtDamage:1b}] add hit_mob_trident
 execute as @e[tag=depths_curse,tag=!processed] run data modify entity @s SoundEvent set value "minecraft:entity.slime.attack" 
 execute at @e[tag=hit_trident,tag=depths_curse] run effect give @e[team=Enemies,distance=0..4] minecraft:slowness 10 0
-execute as @e[tag=hit_trident,tag=depths_curse] at @s run scoreboard players operation @e[team=Enemies,distance=0..4] fine_hp.mdmg += @s spell.6.power
+execute as @e[tag=hit_trident,tag=depths_curse] at @s run scoreboard players operation @e[team=Enemies,distance=0..4] fine_hp.mdmg += @s spell.7.power
 execute at @e[tag=hit_trident,tag=depths_curse] run particle minecraft:splash ~ ~0.25 ~ 1.5 0.25 1.5 0 200
 execute at @e[tag=hit_trident,tag=depths_curse] run particle minecraft:bubble_pop ~ ~0.25 ~ 1.5 0.25 1.5 0 200
 kill @e[tag=hit_trident]  
@@ -79,11 +79,11 @@ tag @e[tag=replenish_2] remove replenish_2
 tag @e[tag=replenish_3] remove replenish_3
 tag @a remove replenish_fail 
 # Apply buffs and such
-scoreboard players set @a[tag=knight] spell.8.power 20
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.8.power 15
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.8.power 15
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.8.power 15 
-scoreboard players set @a[tag=knight] spell.6.power 6
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+6 Depths\' Curse Magic Damage"']}}}]}] spell.6.power 6
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+6 Depths\' Curse Magic Damage"']}}}]}] spell.6.power 6
-scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+6 Depths\' Curse Magic Damage"']}}}]}] spell.6.power 6
+scoreboard players set @a[tag=knight] spell.9.power 20
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.9.power 15
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.9.power 15
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Ground Pound Power"']}}}]}] spell.9.power 15 
+scoreboard players set @a[tag=knight] spell.7.power 6
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+6 Depths\' Curse Magic Damage"']}}}]}] spell.7.power 6
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+6 Depths\' Curse Magic Damage"']}}}]}] spell.7.power 6
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+6 Depths\' Curse Magic Damage"']}}}]}] spell.7.power 6

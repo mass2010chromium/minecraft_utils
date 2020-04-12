@@ -1,6 +1,6 @@
 summon villager ~ ~ ~ {
     VillagerData:{
-        profession:shepherd,level:2,type:plains
+        profession:cleric,level:2,type:plains
     },
     Team:##friendlies##,
     Tags:["shops"],
@@ -26,4 +26,4 @@ summon villager ~ ~ ~ {
             }
         ]
     },
-    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Archer Shop"',CustomNameVisible:1}
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Potion Shop"',CustomNameVisible:1}

@@ -1,4 +1,5 @@
 give @s ##mage_basic_staff_item##
+give @s ##mage_bigger_staff_item##
 give @s ##mage_fireball_staff_item##
 give @s ##mage_whirlwind_staff_item##
 
@@ -7,3 +8,4 @@ give @s ##mage_fireball_2_item##
 
 give @s ##mage_zephyr_1_item##
 give @s ##mage_repulse_1_item##
+give @s ##mage_discharge_1_item##

@@ -107,11 +107,30 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_repulse_1_item"] = """minecraft:nether_star{##mage_repulse_1_nbt##} 1"""
 
     subs["mage_zephyr_spell"] = '\'"Mage: Zephyr Spell"\'';
-    subs["mage_zephyr_extra"] = make_description_text([ "Grant Speed II and Strength I to caster for 5 seconds.", 
-                                                        "Grant Speed I to caster and allies for 80 seconds."
+    subs["mage_zephyr_extra"] = make_description_text([ "Grant Speed II to caster for 5 seconds.", 
+                                                        "Grant Strength I to caster and allies for 5 seconds."
+                                                        "Grant Speed I to caster and allies for 80 seconds.",
                                                         ]) + "," + make_cost("Cost: 500MP")
     subs["mage_zephyr_boost_1"] = '\'"+1 Zephyr Speed"\''
     subs["mage_zephyr_power"] = "spell.{}.power".format(spell_id())
     subs["mage_zephyr_1_name"] = make_name("Zephyr 1")
     subs["mage_zephyr_1_nbt"] = """Enchantments:[{}],display:{Name:##mage_zephyr_1_name##,Lore:[##mage_zephyr_extra##, ##mage_secondary##, ##mage_zephyr_spell##]}"""
     subs["mage_zephyr_1_item"] = """minecraft:magma_cream{##mage_zephyr_1_nbt##} 1"""
+
+    subs["mage_discharge_spell"] = '\'"Mage: Discharge Spell"\'';
+    subs["mage_discharge_extra"] = make_description_text([  "Deal 15 magic damage and slow nearby enemies temporarily.", 
+                                                            "Grant Strength I to caster for 5 seconds."
+                                                        ]) + "," + make_cost("Cost: 500MP")
+    subs["mage_discharge_boost_1"] = '\'"+10 Discharge damage"\''
+    subs["mage_discharge_power"] = "spell.{}.power".format(spell_id())
+    subs["mage_discharge_1_name"] = make_name("Discharge 1")
+    subs["mage_discharge_1_nbt"] =   """Enchantments:[{}],
+                                        display:{
+                                          Name:##mage_discharge_1_name##,
+                                          Lore:[
+                                            ##mage_discharge_extra##, 
+                                            ##mage_secondary##, 
+                                            ##mage_discharge_spell##
+                                          ]
+                                        }"""
+    subs["mage_discharge_1_item"] = """minecraft:end_rod{##mage_discharge_1_nbt##} 1"""
