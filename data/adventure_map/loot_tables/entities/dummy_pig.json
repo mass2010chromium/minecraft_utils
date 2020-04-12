@@ -9,7 +9,7 @@
                "functions":[
                   {
                      "function":"minecraft:set_nbt",
-                     "tag":"{Name:{'\"text\":\"Healing Potion 1\",\"italic\":\"false\"'},Lore:[{'\"text\":\"+10 HP\",\"color\":\"red\",\"italic\":\"false\"'}]}"
+                     "tag":"{Enchantments:[{}],display:{Name:'{\"text\":\"Healing Potion 1\",\"italic\":false}',Lore:['{\"text\":\"+10 HP\",\"color\":\"red\",\"italic\":false}','{\"text\":\"predrop\"}']}}"
                   },
                   {
                      "function":"minecraft:set_count",
