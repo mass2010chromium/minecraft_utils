@@ -1,0 +1,1 @@
+summon villager ~ ~ ~ { VillagerData:{ profession:cleric,level:2,type:jungle }, Team:Friendlies, Invulnerable:1, PersistenceRequired:1, Offers:{ Recipes:[ { buy:{  }, sell:{  },rewardExp:0b,maxUses:0 }, { buy:{  }, sell:{  },rewardExp:0b,maxUses:0 } ] }, Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Hidden Cave Hermit (NPC)"',CustomNameVisible:1,Tags:["npc"]}
