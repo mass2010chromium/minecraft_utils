@@ -1,4 +1,4 @@
-summon minecraft:spider ~ ~ ~ {Tags:["unprocessed"],Team:Enemies}
+summon minecraft:spider ~ ~ ~ {DeathLootTable:"adventure_map:entities/basic_spider",Tags:["unprocessed"],Team:Enemies}
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.hp 30
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.mh 30
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.prev_hp 30

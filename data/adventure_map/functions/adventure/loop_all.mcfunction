@@ -1,3 +1,6 @@
+tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"predrop"']}}}}] add processed
+execute as @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"predrop"']}}}},tag=processed] run data remove entity @s Item.tag.display.Lore[-1]
+
 function adventure_map:kits/mage_spells
 function adventure_map:kits/archer_spells
 function adventure_map:kits/knight_spells

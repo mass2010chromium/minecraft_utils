@@ -1,4 +1,4 @@
-summon minecraft:zombie ~ ~ ~ {Tags:["unprocessed"],Team:Enemies}
+summon minecraft:zombie ~ ~ ~ {DeathLootTable:"adventure_map:entities/armored_zombie",Tags:["unprocessed"],Team:Enemies}
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.hp 25
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.mh 25
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] fine_hp.prev_hp 25

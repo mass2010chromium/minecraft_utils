@@ -1,4 +1,4 @@
-summon minecraft:zombie ~ ~ ~ {Tags:["unprocessed"],Team:##enemies##}
+summon minecraft:zombie ~ ~ ~ {DeathLootTable:"adventure_map:entities/well_zombie",Tags:["unprocessed"],Team:##enemies##}
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 40
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 40
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 40
