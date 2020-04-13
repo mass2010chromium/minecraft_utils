@@ -96,6 +96,9 @@ subs["persistence"] = "persistence"
 subs["enemies"] = "Enemies"
 subs["friendlies"] = "Friendlies"
 
+subs["blaze_magic_damage"] = "blaze.m_splash"
+subs["blaze_physical_damage"] = "blaze.p_splash"
+
 files = [   "fine_damage/loop", 
             "fine_damage/init", 
             "fine_damage/add_player", 
@@ -123,6 +126,9 @@ files = [   "fine_damage/loop",
             "summons/dummy_pig",
             "summons/dummy",
             
+            "summons/mountain_path_zombie", 
+            "summons/mountain_blaze",
+            
             "summons/enemy_common",
             "summons/enemy_aggro",
         
@@ -130,6 +136,9 @@ files = [   "fine_damage/loop",
         
             "spells/mage/discharge",
             "spells/mage/fireball",
+            
+            "spells/mobs/blaze",
+            "spells/mobs/blaze_fireball",
             
             "kits/mage", 
             "kits/mage_spells", 

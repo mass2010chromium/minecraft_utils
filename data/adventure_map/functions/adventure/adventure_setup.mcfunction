@@ -20,6 +20,8 @@ scoreboard objectives add spell.7.power dummy
 scoreboard objectives add spell.8.power dummy 
 scoreboard objectives add spell.9.power dummy
 scoreboard objectives add spell.9.time dummy 
+scoreboard objectives add blaze.m_splash dummy
+scoreboard objectives add blaze.p_splash dummy 
 scoreboard objectives add use.golden_hoe minecraft.used:minecraft.golden_hoe
 scoreboard objectives add use.stone_sword minecraft.used:minecraft.stone_sword 
 gamerule mobGriefing false
