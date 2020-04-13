@@ -22,5 +22,6 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     Attributes:[{Name:"generic.maxHealth",Base:200.0f},{Name:"generic.attackDamage",Base:15.0f},
                 {Name:"generic.movementSpeed",Base:0.4f},{Name:"generic.followRange",Base:256.0f}]
   }
-function adventure_map:summons/enemy_common
+function adventure_map:summons/enemy_aggro
 execute positioned ~ ~2.25 ~ run tp @e[tag=aggro_snowball,limit=1,sort=nearest] ~ ~-1 ~
+function adventure_map:summons/enemy_common

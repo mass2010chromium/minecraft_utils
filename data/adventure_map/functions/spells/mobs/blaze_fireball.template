@@ -1,0 +1,5 @@
+scoreboard players operation @e[tag=blaze_fireball,sort=nearest,limit=1,tag=unprocessed] ##blaze_magic_damage## = @s ##blaze_magic_damage##
+scoreboard players operation @e[tag=blaze_fireball,sort=nearest,limit=1,tag=unprocessed] ##blaze_physical_damage## = @s ##blaze_physical_damage##
+scoreboard players set @e[tag=blaze_fireball,sort=nearest,limit=1,tag=unprocessed] ##t0## 40
+tag @e[tag=blaze_fireball,sort=nearest,limit=1,tag=unprocessed] add processed
+tag @e[tag=blaze_fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed

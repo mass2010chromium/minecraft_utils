@@ -5,10 +5,10 @@ scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 0
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist_base## 0
 data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
-    CustomName:'"Mountain Goat"',
-    CustomNameVisible:1,
+    CustomName:'{"text":"Mountain Goat","color":"white"}',
+	CustomNameVisible:1b,
     HandItems:[
-        {}, {}
+        {id:"minecraft:stone",Count:1b}, {}
     ],
     ArmorItems:[
         {},
