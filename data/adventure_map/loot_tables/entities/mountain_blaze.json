@@ -15,8 +15,26 @@
 						{
 							"function": "minecraft:set_count",
 							"count": {
-								"min": 2,
-								"max": 3
+								"min": 0,
+								"max": 2
+							}
+						}
+					]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:blaze_powder",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{display:{Name:'{\"text\":\"Mountain Blaze Powder\",\"italic\":false}',
+                                        Lore:['\"Junk Item\"']}}"
+						},
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 0,
+								"max": 1
 							}
 						}
 					]
