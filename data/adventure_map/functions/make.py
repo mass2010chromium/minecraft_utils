@@ -128,6 +128,8 @@ files = [   "fine_damage/loop",
             
             "summons/mountain_path_zombie", 
             "summons/mountain_blaze",
+            "summons/armored_zombie2",
+            "summons/gravel_guard",
             
             "summons/enemy_common",
 			"summons/enemy_aggro",
