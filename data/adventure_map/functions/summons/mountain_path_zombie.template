@@ -12,13 +12,13 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     ],
     ArmorItems:[
         {id:"minecraft:leather_helmet",Count:1b,tag:{Unbreakable:1b,AttributeModifiers:[],
-            Enchantments:[{id:minecraft:projectile_protection,lvl:3}]}},
+            Enchantments:[{id:projectile_protection,lvl:3}]}},
         {id:"minecraft:leather_helmet",Count:1b,tag:{Unbreakable:1b,AttributeModifiers:[],
-            Enchantments:[{id:minecraft:projectile_protection,lvl:3}]}},
+            Enchantments:[{id:projectile_protection,lvl:3}]}},
         {id:"minecraft:leather_helmet",Count:1b,tag:{Unbreakable:1b,AttributeModifiers:[],
-            Enchantments:[{id:minecraft:projectile_protection,lvl:3}]}},
+            Enchantments:[{id:projectile_protection,lvl:3}]}},
         {id:"minecraft:leather_helmet",Count:1b,tag:{Unbreakable:1b,AttributeModifiers:[],
-            Enchantments:[{id:minecraft:projectile_protection,lvl:3}]}}
+            Enchantments:[{id:projectile_protection,lvl:3}]}}
     ],
     HandDropChances:[0.0f,0.0f],
     ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],
