@@ -33,8 +33,8 @@ scoreboard players remove @e[tag=mage_fireball] fine_hp.tmp3 1
 kill @e[tag=mage_fireball,scores={fine_hp.tmp3=0}] 
 execute at @e[tag=mage_fireball] run particle flame ~ ~ ~ 0 0 0 0.05 5 
 execute at @e[tag=mage_fireball] run kill @e[tag=mage_fireball_tracker,limit=1,sort=nearest]
-execute as @e[tag=mage_fireball_tracker] at @s run scoreboard players operation @e[distance=0..3] fine_hp.mdmg += @s spell.1.power
-execute as @e[tag=mage_fireball_tracker] at @s run scoreboard players operation @e[distance=0..5] fine_hp.mdmg += @s spell.1.power
+execute as @e[tag=mage_fireball_tracker] at @s run scoreboard players operation @e[distance=0..3,tag=!archer,tag=!knight] fine_hp.mdmg += @s spell.1.power
+execute as @e[tag=mage_fireball_tracker] at @s run scoreboard players operation @e[distance=0..5,tag=!archer,tag=!knight] fine_hp.mdmg += @s spell.1.power
 execute at @e[tag=mage_fireball_tracker] run particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force
 execute at @e[tag=mage_fireball_tracker] run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.8 0.7 
 execute at @e[tag=mage_fireball] run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:2s,Tags:["mage_fireball_tracker"]}
