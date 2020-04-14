@@ -125,6 +125,7 @@ files = [   "fine_damage/loop",
             "summons/basic_spider", 
             "summons/dummy_pig",
             "summons/dummy",
+			"summons/town_guard",
             
             "summons/mountain_path_zombie", 
             "summons/mountain_blaze",
@@ -166,7 +167,8 @@ files = [   "fine_damage/loop",
 			
 			"npcs/librarian_1",
 			"npcs/priest_1",
-			"npcs/hiddencave_hermit"
+			"npcs/hiddencave_hermit",
+			"npcs/gardener_1"
         ]
 
 for k, v in subs.items():

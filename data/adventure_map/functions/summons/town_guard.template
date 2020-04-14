@@ -1,0 +1,27 @@
+summon minecraft:iron_golem ~ ~ ~ {DeathLootTable:"adventure_map:entities/empty",Team:##friendlies##,Tags:["unprocessed"],Invulnerable:1,PersistenceRequired:1}
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 300
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 300
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 300
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 40
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist_base## 5
+data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
+    CustomName:'{"text":"Townsburg Guard"}',
+	CustomNameVisible:1b,
+    HandItems:[
+        {id:"minecraft:stone",Count:1b}, {}
+    ],
+    ArmorItems:[
+        {},
+        {},
+        {},
+        {}
+    ],
+    HandDropChances:[0.0f,0.0f],
+    ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],
+    Health:200.0f,
+    Attributes:[{Name:"generic.maxHealth",Base:200.0f},
+                {Name:"generic.followRange",Base:256.0f},
+				{Name:"generic.movementSpeed",Base:.15f}]
+  }
+tag @e[tag=unprocessed,sort=nearest,limit=1] add ##tracker##
+tag @e[tag=unprocessed,sort=nearest,limit=1] remove unprocessed

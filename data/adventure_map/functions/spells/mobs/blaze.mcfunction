@@ -7,7 +7,8 @@ execute as @e[tag=blaze_fireball_tracker] at @s run scoreboard players operation
 execute as @e[tag=blaze_fireball_tracker] at @s run scoreboard players operation @a[distance=0..4] fine_hp.mdmg += @s blaze.m_splash
 execute as @e[tag=blaze_fireball_tracker] at @s run scoreboard players operation @a[distance=0..2] fine_hp.dmg += @s blaze.p_splash
 execute as @e[tag=blaze_fireball_tracker] at @s run scoreboard players operation @a[distance=0..4] fine_hp.dmg += @s blaze.p_splash
-execute at @e[tag=blaze_fireball_tracker] run particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force 
+execute at @e[tag=blaze_fireball_tracker] run particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force
+execute at @e[tag=blaze_fireball_tracker] run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.8 0.7 
 execute at @e[tag=blaze_fireball] run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:2s,Tags:["blaze_fireball_tracker"]}
 execute as @e[tag=blaze_fireball] at @s run scoreboard players operation @e[distance=0..2,sort=nearest,tag=blaze_fireball_tracker] blaze.m_splash = @s blaze.m_splash
 execute as @e[tag=blaze_fireball] at @s run scoreboard players operation @e[distance=0..2,sort=nearest,tag=blaze_fireball_tracker] blaze.p_splash = @s blaze.p_splash 

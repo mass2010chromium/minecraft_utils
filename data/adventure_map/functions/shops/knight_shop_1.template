@@ -1,6 +1,6 @@
 summon villager -179.5 65 22.5 {
     VillagerData:{
-        profession:weaponsmith,level:2,type:plains
+        profession:weaponsmith,level:50,type:plains
     },
     Team:##friendlies##,
     Tags:["shops"],

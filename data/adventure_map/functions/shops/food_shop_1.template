@@ -1,6 +1,6 @@
 summon villager ~ ~ ~ {
     VillagerData:{
-        profession:shepherd,level:2,type:plains
+        profession:shepherd,level:50,type:plains
     },
     Team:##friendlies##,
     Tags:["shops"],

@@ -1,6 +1,6 @@
 summon villager -138.5 65 23.5 {
     VillagerData:{
-        profession:fletcher,level:2,type:plains
+        profession:fletcher,level:50,type:plains
     },
     Team:##friendlies##,
     Tags:["shops"],
