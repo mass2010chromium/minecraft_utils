@@ -29,7 +29,6 @@ def add_mage_items(subs, spell_id, get_uuid):
                                         Lore:[
                                           ##mage_bigger_staff_extra##,
                                           ##mage_melee##,
-                                          ##mage_splash_power_boost_2##
                                         ]
                                       }"""
     subs["mage_bigger_staff_item"] =  """minecraft:golden_hoe{##mage_bigger_staff_nbt##} 1"""

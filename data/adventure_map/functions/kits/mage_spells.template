@@ -27,6 +27,10 @@ execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:##mage_basic_staff_n
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 ##mage_basic_staff_item##
 execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:##mage_fireball_staff_name##}}}}] at @s store success score @s replenish_ok run 
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 ##mage_fireball_staff_item##
+execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:##mage_whirlwind_staff_name##}}}}] at @s store success score @s replenish_ok run 
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 ##mage_whirlwind_staff_item##
+execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:##mage_bigger_staff_name##}}}}] at @s store success score @s replenish_ok run 
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 ##mage_bigger_staff_item##
 
 
 # Fireball spell
