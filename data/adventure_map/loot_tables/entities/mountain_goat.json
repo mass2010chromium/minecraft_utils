@@ -19,7 +19,12 @@
 							}
 						}
 					]
-                },
+                }
+            ]
+        },
+		{
+			"rolls": 1,
+			"entries": [
 				{
                     "type": "item",
                     "name": "minecraft:mutton",
@@ -28,15 +33,14 @@
 							"function": "minecraft:set_count",
 							"count": {
 								"n": 2,
-								"p": 0.02,
+								"p": 0.225,
 								"type": "minecraft:binomial"
 							}
 						}
 					]
                 }
-            ]
-
-        }
+			]
+		}
 
     ]
 

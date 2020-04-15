@@ -168,7 +168,8 @@ files = [   "fine_damage/loop",
 			"npcs/librarian_1",
 			"npcs/priest_1",
 			"npcs/hiddencave_hermit",
-			"npcs/gardener_1"
+			"npcs/gardener_1",
+			"npcs/cave_hermit"
         ]
 
 for k, v in subs.items():
