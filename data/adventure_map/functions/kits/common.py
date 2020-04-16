@@ -8,6 +8,13 @@ def add_common_items(subs, spell_id, get_uuid):
     subs["potion_heal_1_nbt"] = """Enchantments:[{}],display:{Name:##potion_heal_1_name##,Lore:[##effect_heal_1##]}"""
     subs["potion_heal_1_item"] = """minecraft:dragon_breath{##potion_heal_1_nbt##}"""
     subs["potion_heal_1_tag"] = "spell.{}.tag".format(spell_id())
+    subs["effect_heal_2"] = make_description_text(["+15 HP"],color="red")
+    subs["effect_heal_2_tag"] = "spell.{}.tag".format(spell_id())
+    subs["potion_heal_2_name"] = make_name("Healing Potion 2")
+    subs["potion_heal_2_nbt"] = """Enchantments:[{}],display:{Name:##potion_heal_2_name##,Lore:[##effect_heal_2##]}"""
+    subs["potion_heal_2_item"] = """minecraft:dragon_breath{##potion_heal_2_nbt##}"""
+    subs["potion_heal_2_tag"] = "spell.{}.tag".format(spell_id())
+
     
 def add_food_items(subs, spell_id, get_uuid):
     subs["food_biscuit_nbt"] = "display:{Name:"+make_name("Biscuit")+",Lore:["+make_name("Made of hardtack")+"]}"

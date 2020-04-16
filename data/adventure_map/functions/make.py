@@ -169,11 +169,15 @@ files = [   "fine_damage/loop",
             "shops/food_shop_1",
             "shops/potion_shop_1",
 			
+			"shops/armor_shop_3",
+			"shops/potion_shop_3",
+			
 			"npcs/librarian_1",
 			"npcs/priest_1",
 			"npcs/hiddencave_hermit",
 			"npcs/gardener_1",
-			"npcs/cave_hermit"
+			"npcs/cave_hermit",
+			"npcs/john"
         ]
 
 for k, v in subs.items():

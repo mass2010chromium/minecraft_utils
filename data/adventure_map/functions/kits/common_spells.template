@@ -10,3 +10,13 @@ execute at @s[tag=##effect_heal_1_tag##] run scoreboard players add @p ##fast_re
 execute as @s[tag=##effect_heal_1_tag##] run particle heart ~ ~ ~ 0.25 0.25 0.25 0 5 force
 tag @s remove ##effect_heal_1_tag##
 
+tag @s[type=minecraft:item,nbt={Item:{tag:{display:{Name:##potion_heal_2_name##}}}}] add ##potion_heal_2_tag##
+tag @s[tag=##potion_heal_2_tag##] add ##effect_heal_2_tag##
+tag @s[tag=##potion_heal_2_tag##,nbt={Item:{Count:1b}}] add ##mob_death##
+execute as @s[tag=##potion_heal_2_tag##,tag=!##mob_death##] store result score @s ##t0## run data get entity @s Item.Count
+scoreboard players remove @s[tag=##potion_heal_2_tag##,tag=!##mob_death##] ##t0## 1
+execute as @s[tag=##potion_heal_2_tag##,tag=!##mob_death##] store result entity @s Item.Count byte 1 run scoreboard players get @s ##t0##
+
+execute at @s[tag=##effect_heal_2_tag##] run scoreboard players add @p ##fast_regen_ticks## 15
+execute as @s[tag=##effect_heal_2_tag##] run particle heart ~ ~ ~ 0.25 0.25 0.25 0 5 force
+tag @s remove ##effect_heal_2_tag##

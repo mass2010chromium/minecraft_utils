@@ -1,8 +1,8 @@
-summon minecraft:husk ~ ~ ~ {DeathLootTable:"adventure_map:entities/empty",Tags:["unprocessed"],Team:##enemies##}
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 45
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 45
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 45
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 0
+summon minecraft:husk ~ ~ ~ {DeathLootTable:"adventure_map:entities/region_3",Tags:["unprocessed"],Team:##enemies##}
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 42
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 42
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 42
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 05
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist_base## 40
 data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     CustomName:'"Rock Elemental"',
@@ -19,8 +19,8 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     HandDropChances:[0.0f,0.0f],
     ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],
     Health:200.0f,
-    Attributes:[{Name:"generic.maxHealth",Base:200.0f},{Name:"generic.attackDamage",Base:30.0f},
-                {Name:"generic.movementSpeed",Base:0.37f},{Name:"generic.followRange",Base:256.0f}]
+    Attributes:[{Name:"generic.maxHealth",Base:200.0f},{Name:"generic.attackDamage",Base:27.0f},
+                {Name:"generic.movementSpeed",Base:0.32f},{Name:"generic.followRange",Base:256.0f}]
   }
 function adventure_map:summons/enemy_aggro
 function adventure_map:summons/enemy_common

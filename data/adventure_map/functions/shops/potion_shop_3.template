@@ -1,0 +1,29 @@
+summon villager ~ ~ ~ {
+    VillagerData:{
+        profession:cleric,level:50,type:plains
+    },
+    Team:##friendlies##,
+    Tags:["shops"],
+    Invulnerable:1,
+    PersistenceRequired:1,
+    Offers:{
+        Recipes:[
+            {
+                buy:{
+                    id:sunflower,Count:8,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:dragon_breath,Count:1,tag:{##potion_heal_2_nbt##}
+                },rewardExp:0b,maxUses:9999999
+            },
+			{
+                buy:{
+                    id:dragon_breath,Count:1,tag:{##potion_heal_2_nbt##}
+                },
+                sell:{
+                    id:sunflower,Count:6,tag:{display:{Name:"\"Gold Coin\""}}
+                },rewardExp:0b,maxUses:9999999
+            }
+        ]
+    },
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Potion Shop"',CustomNameVisible:1}

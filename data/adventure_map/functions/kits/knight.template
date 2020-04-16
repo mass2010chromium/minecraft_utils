@@ -12,10 +12,10 @@ scoreboard players set @s ##melee_mp## 20
 scoreboard players set @s ##melee_mp_cooldown## 0
 scoreboard players set @s ##magic_resist_base## 0
 scoreboard players set @s ##physical_resist_base## 20
-replaceitem entity @s armor.head minecraft:iron_helmet{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Helmet"'}} 1
-replaceitem entity @s armor.chest minecraft:chainmail_chestplate{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Mail"'}} 1
-replaceitem entity @s armor.legs minecraft:chainmail_leggings{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Leggings"'}} 1
-replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Sabatons"'}} 1
+replaceitem entity @s armor.head minecraft:iron_helmet{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Helmet"'}} 1
+replaceitem entity @s armor.chest minecraft:chainmail_chestplate{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Mail"'}} 1
+replaceitem entity @s armor.legs minecraft:chainmail_leggings{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Leggings"'}} 1
+replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Sabatons"'}} 1
 replaceitem entity @s container.0 ##knight_basic_sword_item##
 replaceitem entity @s container.1 ##knight_groundPound_1_item##
 replaceitem entity @s container.2 ##knight_depthsCurse_1_item##

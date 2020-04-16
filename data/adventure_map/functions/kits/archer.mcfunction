@@ -12,10 +12,10 @@ scoreboard players set @s mana.mana_steal 0
 scoreboard players set @s mana.mscd 0
 scoreboard players set @s fine_hp.mdmgrb 0
 scoreboard players set @s fine_hp.dmgrb 0
-replaceitem entity @s armor.head minecraft:leather_helmet{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:projectile_protection,lvl:1}],display:{Name:'"Archer\'s Cap"'}} 1
-replaceitem entity @s armor.chest minecraft:leather_chestplate{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:projectile_protection,lvl:1},{}],display:{Name:'"Archer\'s Shirt"'}} 1
-replaceitem entity @s armor.legs minecraft:leather_leggings{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:projectile_protection,lvl:1}],display:{Name:'"Archer\'s Pants"'}} 1
-replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1,Enchantments:[{id:"minecraft:binding_curse",lvl:1},{id:projectile_protection,lvl:1}],display:{Name:'"Archer\'s Boots"'}} 1
+replaceitem entity @s armor.head minecraft:leather_helmet{Unbreakable:1,Enchantments:[{id:projectile_protection,lvl:1}],display:{Name:'"Archer\'s Cap"'}} 1
+replaceitem entity @s armor.chest minecraft:leather_chestplate{Unbreakable:1,Enchantments:[{id:projectile_protection,lvl:1},{}],display:{Name:'"Archer\'s Shirt"'}} 1
+replaceitem entity @s armor.legs minecraft:leather_leggings{Unbreakable:1,Enchantments:[{id:projectile_protection,lvl:1}],display:{Name:'"Archer\'s Pants"'}} 1
+replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1,Enchantments:[{id:projectile_protection,lvl:1}],display:{Name:'"Archer\'s Boots"'}} 1
 replaceitem entity @s container.0 minecraft:iron_axe{Unbreakable:1,Enchantments:[{id:knockback,lvl:3}],display:{Name:'{"text":"Basic Axe","italic":false}',Lore:['"Archer: Axe"']}} 1
 replaceitem entity @s container.1 minecraft:bow{Unbreakable:1,Enchantments:[{id:infinity,lvl:1},{id:power,lvl:3}],display:{Name:'{"text":"Basic Bow","italic":false}',Lore:['"Archer: Bow"']}} 1
 replaceitem entity @s container.2 minecraft:crossbow{display:{ Name:'{"text":"Windwalk 1","italic":false}', Lore:[ '{"text":"Fire an arrow, dealing 5 magic damage","color":"white","italic":false}','{"text":"  and knocking opponents airborne.","color":"white","italic":false}','{"text":"Grants speed II to caster for 5s.","color":"white","italic":false}','{"text":"Grants speed I to caster and allies for 20s.","color":"white","italic":false}','{"text":"Cost: 400MP","color":"blue","italic":false}', '"Archer: Active Spell"', '"Archer: Windwalk Spell"' ] }, Charged:1b} 1
