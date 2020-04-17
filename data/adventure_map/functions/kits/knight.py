@@ -23,7 +23,7 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_castironsword_sword_name"] = make_name("Cast-Iron Sword")
     subs["knight_castironsword_sword_nbt"] = """Unbreakable:1,
                                                 Enchantments:[
-                                                  {id:"minecraft:sharpness",lvl:6},{id:"minecraft:sweeping",lvl:1}
+                                                  {id:"minecraft:sharpness",lvl:7},{id:"minecraft:sweeping",lvl:1}
                                                 ],
                                                 display:{
                                                   Name:##knight_castironsword_sword_name##,
@@ -31,7 +31,7 @@ def add_knight_items(subs, spell_id, get_uuid):
                                                     ##knight_melee##
                                                   ]
                                                 }"""
-    subs["knight_castironsword_sword_item"] = """minecraft:iron_sword{##knight_castironsword_sword_nbt##} 1"""
+    subs["knight_castironsword_sword_item"] = """minecraft:stone_sword{##knight_castironsword_sword_nbt##} 1"""
     
     #Knight Spear 1
     subs["knight_depthsCurse_spell"] = '\'"Knight: Depths\\\' Curse"\''

@@ -88,6 +88,7 @@ add_archer_items(subs, spell_id, get_uuid)
 add_knight_items(subs, spell_id, get_uuid)
 add_common_items(subs, spell_id, get_uuid)
 add_food_items(subs, spell_id, get_uuid)
+add_armor_items(subs, spell_id, get_uuid)
 
 subs["current_region"] = "current_region"
 subs["globals"] = "[GLOBALS]"

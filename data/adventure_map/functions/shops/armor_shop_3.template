@@ -10,20 +10,20 @@ summon villager ~ ~ ~ {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:1,tag:{display:{Name:"\"Token of Thanks\""}}
                 },
                 sell:{
-                    id:dragon_breath,Count:1,tag:{##potion_heal_2_nbt##}
+                    id:chainmail_chestplate,Count:1,tag:{##strong_mail_nbt##}
                 },rewardExp:0b,maxUses:9999999
             },
 			{
                 buy:{
-                    id:dragon_breath,Count:1,tag:{##potion_heal_2_nbt##}
+                    id:sunflower,Count:1,tag:{display:{Name:"\"Token of Thanks\""}}
                 },
                 sell:{
-                    id:sunflower,Count:6,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:leather_boots,Count:1,tag:{##speedy_sabatons_nbt##}
                 },rewardExp:0b,maxUses:9999999
             }
         ]
     },
-    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Potion Shop"',CustomNameVisible:1}
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Armor Shop"',CustomNameVisible:1}
