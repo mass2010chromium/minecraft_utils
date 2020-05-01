@@ -118,7 +118,7 @@ files = [   "fine_damage/loop",
             "rng/rng_init", 
             "rng/rng", 
             
-            "summons/basic_zombie", 
+            "summons/basic_zombie", ###region 1 (pre-townsburg forest)
             "summons/well_zombie", 
             "summons/armored_zombie", 
             "summons/forest_goon", 
@@ -126,27 +126,38 @@ files = [   "fine_damage/loop",
             "summons/basic_spider", 
             "summons/dummy_pig",
             "summons/dummy",
-			"summons/town_guard",
-            
-            "summons/mountain_path_zombie", 
+			"summons/town_guard", ###Iron Golems are weird
+			"summons/townsburg_civilian",
+            "summons/mountain_path_zombie", ###region 2 (post-townsburg mountain)
             "summons/mountain_path_zombie2", 
             "summons/mountain_blaze",
             "summons/armored_zombie2",
-            "summons/gravel_guard",
+            "summons/gravel_guard", ###region 3 (mountain wasteland)
             "summons/gravel_guard2",
             "summons/rock_elemental",
             "summons/starving_corpse",
-            
+            "summons/trail_bandit",
+			"summons/mountain_goat",
+			"summons/skinny_animal",
+			"summons/well_hydrated_pundit", ###region 4 (desert)
+			"summons/thirsty_camel",
+			"summons/tomb_scarab",
+			"summons/khorsonah_bat", ###region 5 (sewer)
+			"summons/sewer_rat",
+			"summons/animated_fecal_matter",
+			"summons/khorsonah_guard",
+			"summons/khorsonah_civilian", ###region 6 (Khors Onah)
+			
             "summons/enemy_common",
 			"summons/enemy_aggro",
 			
-			"summons/trail_bandit",
-			"summons/mountain_goat",
+			
         
             "adventure/adventure_setup", 
         
             "spells/mage/discharge",
             "spells/mage/fireball",
+			"spells/dev/blink",
             
             "spells/mobs/blaze",
             "spells/mobs/blaze_fireball",
@@ -178,7 +189,8 @@ files = [   "fine_damage/loop",
 			"npcs/hiddencave_hermit",
 			"npcs/gardener_1",
 			"npcs/cave_hermit",
-			"npcs/john"
+			"npcs/john",
+			"npcs/smalloasis_hermit"
         ]
 
 for k, v in subs.items():

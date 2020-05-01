@@ -3,6 +3,7 @@
         {
             "rolls": 1,
             "entries": [
+
                 {
                     "type": "item",
                     "name": "minecraft:sunflower",
@@ -10,6 +11,31 @@
 						{
 							"function": "minecraft:set_nbt",
 							"tag": "{display:{Name:'\"Gold Coin\"'}}"
+						},
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"n": 2,
+								"p": 0.1,
+								"type": "minecraft:binomial"
+							}
+						}
+					]
+                }
+            ]
+
+        },
+		{
+            "rolls": 1,
+            "entries": [
+
+                {
+                    "type": "item",
+                    "name": "minecraft:gunpowder",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{display:{Name:'{\"text\":\"Cremated Ashes\",\"italic\":false}'}}"
 						},
 						{
 							"function": "minecraft:set_count",
@@ -22,31 +48,8 @@
 					]
                 }
             ]
-        },
-		{
-		"rolls": 1,
-		"entries": [
-				{
-                    "type": "item",
-                    "name": "minecraft:dragon_breath",
-					"functions": [
-						{
-							"function":"minecraft:set_nbt",
-							"tag":"{Enchantments:[{}],display:{Name:'{\"text\":\"Healing Potion 2\",\"italic\":false}',Lore:['{\"text\":\"+15 HP\",\"color\":\"red\",\"italic\":false}','\"predrop\"']}}"
-						},
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"n": 1,
-								"p": 0.08,
-								"type": "minecraft:binomial"
-							}
-						}
-					]	
-				}
-			]
-		}
 
+        }
     ]
 
 }

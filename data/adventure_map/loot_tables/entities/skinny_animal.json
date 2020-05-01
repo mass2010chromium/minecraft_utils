@@ -5,18 +5,17 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "minecraft:sunflower",
+                    "name": "minecraft:rabbit_foot",
 					"functions": [
 						{
 							"function": "minecraft:set_nbt",
-							"tag": "{display:{Name:'\"Gold Coin\"'}}"
+							"tag": "{display:{Name:'{\"text\":\"Animal Meat\",\"italic\":false}'}}"
 						},
 						{
 							"function": "minecraft:set_count",
 							"count": {
-								"n": 3,
-								"p": 0.35,
-								"type": "minecraft:binomial"
+								"min": 1,
+								"max": 2
 							}
 						}
 					]
@@ -32,13 +31,13 @@
 					"functions": [
 						{
 							"function":"minecraft:set_nbt",
-							"tag":"{Enchantments:[{}],display:{Name:'{\"text\":\"Healing Potion 2\",\"italic\":false}',Lore:['{\"text\":\"+15 HP\",\"color\":\"red\",\"italic\":false}','\"predrop\"']}}"
+                     "tag":"{Enchantments:[{}],display:{Name:'{\"text\":\"Healing Potion 2\",\"italic\":false}',Lore:['{\"text\":\"+15 HP\",\"color\":\"red\",\"italic\":false}','\"predrop\"']}}"
 						},
 						{
 							"function": "minecraft:set_count",
 							"count": {
 								"n": 1,
-								"p": 0.08,
+								"p": 0.04,
 								"type": "minecraft:binomial"
 							}
 						}

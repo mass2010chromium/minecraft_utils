@@ -3,6 +3,7 @@
         {
             "rolls": 1,
             "entries": [
+
                 {
                     "type": "item",
                     "name": "minecraft:sunflower",
@@ -14,25 +15,27 @@
 						{
 							"function": "minecraft:set_count",
 							"count": {
-								"n": 3,
-								"p": 0.35,
+								"n": 2,
+								"p": 0.05,
 								"type": "minecraft:binomial"
 							}
 						}
 					]
                 }
             ]
+
         },
 		{
-		"rolls": 1,
-		"entries": [
-				{
+            "rolls": 1,
+            "entries": [
+
+                {
                     "type": "item",
-                    "name": "minecraft:dragon_breath",
+                    "name": "minecraft:mutton",
 					"functions": [
 						{
-							"function":"minecraft:set_nbt",
-							"tag":"{Enchantments:[{}],display:{Name:'{\"text\":\"Healing Potion 2\",\"italic\":false}',Lore:['{\"text\":\"+15 HP\",\"color\":\"red\",\"italic\":false}','\"predrop\"']}}"
+							"function": "minecraft:set_nbt",
+							"tag": "{display:{Name:'{\"text\":\"Llama Meat\",\"italic\":false}'}}"
 						},
 						{
 							"function": "minecraft:set_count",
@@ -42,11 +45,11 @@
 								"type": "minecraft:binomial"
 							}
 						}
-					]	
-				}
-			]
-		}
+					]
+                }
+            ]
 
+        }
     ]
 
 }

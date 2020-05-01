@@ -3,12 +3,21 @@
         {
             "rolls": 1,
             "entries": [
-
                 {
-                 
+                    "type": "item",
+                    "name": "minecraft:stone",
+					"functions":[
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"n": 1,
+								"p": 0.00,
+								"type": "minecraft:binomial"
+							}
+						}
+					]
                 }
             ]
-
         }
 
     ]

@@ -1,6 +1,6 @@
 summon villager ~ ~ ~ {
     VillagerData:{
-        profession:cleric,level:2,type:plains
+        profession:nitwit,level:2,type:desert
     },
     Team:##friendlies##,
     Invulnerable:1,
@@ -11,4 +11,4 @@ summon villager ~ ~ ~ {
             }
         ]
     },
-    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"John (NPC)"',CustomNameVisible:1,Tags:["npc"]}
+    Attributes:[{Name:"generic.movementSpeed",Base:0.43f}],CustomName:'"Townsburg Civilian"',CustomNameVisible:1}

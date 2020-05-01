@@ -1,0 +1,1 @@
+summon villager ~ ~ ~ { VillagerData:{ profession:nitwit,level:2,type:plains }, Team:Friendlies, Invulnerable:1, PersistenceRequired:1, Offers:{ Recipes:[ { } ] }, Attributes:[{Name:"generic.movementSpeed",Base:0.43f}],CustomName:'"Townsburg Civilian"',CustomNameVisible:1}

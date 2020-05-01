@@ -28,3 +28,4 @@ gamerule mobGriefing false
 gamerule doMobSpawning false
 gamerule doWeatherCycle false
 gamerule doLimitedCrafting true
+gamerule keepInventory true
