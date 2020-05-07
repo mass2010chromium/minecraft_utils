@@ -11,11 +11,11 @@ scoreboard players set @s mana.mana_regb 1
 scoreboard players set @s mana.mana_steal 20
 scoreboard players set @s mana.mscd 0
 scoreboard players set @s fine_hp.mdmgrb 0
-scoreboard players set @s fine_hp.dmgrb 20
-replaceitem entity @s armor.head minecraft:iron_helmet{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Helmet"'}} 1
-replaceitem entity @s armor.chest minecraft:chainmail_chestplate{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Mail"'}} 1
-replaceitem entity @s armor.legs minecraft:chainmail_leggings{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Leggings"'}} 1
-replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Sabatons"'}} 1
+scoreboard players set @s fine_hp.dmgrb 35
+replaceitem entity @s armor.head minecraft:iron_helmet{Unbreakable:1, AttributeModifiers:[],display:{Name:'{"text":"Knight\'s Helmet","italic":false}'}} 1
+replaceitem entity @s armor.chest minecraft:chainmail_chestplate{Unbreakable:1, AttributeModifiers:[],display:{Name:'{"text":"Knight\'s Mail","italic":false}'}} 1
+replaceitem entity @s armor.legs minecraft:chainmail_leggings{Unbreakable:1, AttributeModifiers:[],display:{Name:'{"text":"Knight\'s Leggings","italic":false}'}} 1
+replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1, AttributeModifiers:[],display:{Name:'{"text":"Knight\'s Sabatons","italic":false}'}} 1
 replaceitem entity @s container.0 minecraft:stone_sword{Unbreakable:1, Enchantments:[ {id:"minecraft:sharpness",lvl:5},{id:"minecraft:sweeping",lvl:1} ], display:{ Name:'{"text":"Basic Sword","italic":false}', Lore:[ '"Knight: Sword"' ] }} 1
 replaceitem entity @s container.1 minecraft:anvil{Enchantments:[{}], display:{ Name:'{"text":"Ground Pound 1","italic":false}', Lore:[ '{"text":"Leap in the air and slam back down,","color":"white","italic":false}','{"text":"  launching nearby enemies airborne and","color":"white","italic":false}','{"text":"  dealing 20 physical damage.","color":"white","italic":false}','{"text":"Grants temporary invulnerability while leaping.","color":"white","italic":false}','{"text":"Cost: 600MP","color":"blue","italic":false}', '"Knight: Active Spell"', '"Knight: Ground Pound Spell"' ] }} 1
 replaceitem entity @s container.2 minecraft:trident{Unbreakable:1b, Enchantments:[{}], display:{ Name:'{"text":"Depths\' Curse 1","italic":false}', Lore:[ '{"text":"Spear deals physical damage to whatever it hits.","color":"white","italic":false}','{"text":"Deals 6 magic damage to enemies within 4 blocks","color":"white","italic":false}','{"text":"  and applies 10 seconds of slowness.","color":"white","italic":false}','{"text":"Cost: 400MP","color":"blue","italic":false}', '"Knight: Spear"', '"Knight: Depths\' Curse"' ] },AttributeModifiers:[]} 1
@@ -24,3 +24,4 @@ replaceitem entity @s container.7 minecraft:written_book{pages:['{"text":"Day 1:
 replaceitem entity @p container.8 minecraft:written_book{pages:['["",{"text":"Main Quest:","bold":true},{"text":" Wash your hands in the holy sink to ward off the plague!\\n \\u0020Status: ","color":"reset"},{"text":"Incomplete","bold":true,"color":"red"},{"text":"\\n","color":"reset"},{"text":"Current Objective:","bold":true},{"text":" \\u0020Complete the Tutorial.","color":"reset"}]'],title:"Quest Book",author:"",display:{Lore:["This is your quest book. Check this book often for objectives."]}}
 tellraw @s "You have selected the knight class."
 tag @s add knight
+execute as @s run function adventure_map:fine_damage/add_player

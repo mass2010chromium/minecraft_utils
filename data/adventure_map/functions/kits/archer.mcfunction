@@ -10,12 +10,12 @@ scoreboard players set @s mana.mana 0
 scoreboard players set @s mana.mana_regb 4
 scoreboard players set @s mana.mana_steal 0
 scoreboard players set @s mana.mscd 0
-scoreboard players set @s fine_hp.mdmgrb 0
-scoreboard players set @s fine_hp.dmgrb 0
-replaceitem entity @s armor.head minecraft:leather_helmet{Unbreakable:1,Enchantments:[{id:projectile_protection,lvl:1}],display:{Name:'"Archer\'s Cap"'}} 1
-replaceitem entity @s armor.chest minecraft:leather_chestplate{Unbreakable:1,Enchantments:[{id:projectile_protection,lvl:1},{}],display:{Name:'"Archer\'s Shirt"'}} 1
-replaceitem entity @s armor.legs minecraft:leather_leggings{Unbreakable:1,Enchantments:[{id:projectile_protection,lvl:1}],display:{Name:'"Archer\'s Pants"'}} 1
-replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1,Enchantments:[{id:projectile_protection,lvl:1}],display:{Name:'"Archer\'s Boots"'}} 1
+scoreboard players set @s fine_hp.mdmgrb 5
+scoreboard players set @s fine_hp.dmgrb 5
+replaceitem entity @s armor.head minecraft:leather_helmet{Unbreakable:1, AttributeModifiers:[],display:{Name:'{"text":"Archer\'s Cap","italic":false}'}} 1
+replaceitem entity @s armor.chest minecraft:leather_chestplate{Unbreakable:1, AttributeModifiers:[],display:{Name:'{"text":"Archer\'s Shirt","italic":false}'}} 1
+replaceitem entity @s armor.legs minecraft:leather_leggings{Unbreakable:1, AttributeModifiers:[],display:{Name:'{"text":"Archer\'s Pants","italic":false}'}} 1
+replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1, AttributeModifiers:[],display:{Name:'{"text":"Archer\'s Boots","italic":false}'}} 1
 replaceitem entity @s container.0 minecraft:iron_axe{Unbreakable:1,Enchantments:[{id:knockback,lvl:3}],display:{Name:'{"text":"Basic Axe","italic":false}',Lore:['"Archer: Axe"']}} 1
 replaceitem entity @s container.1 minecraft:bow{Unbreakable:1,Enchantments:[{id:infinity,lvl:1},{id:power,lvl:3}],display:{Name:'{"text":"Basic Bow","italic":false}',Lore:['"Archer: Bow"']}} 1
 replaceitem entity @s container.2 minecraft:crossbow{display:{ Name:'{"text":"Windwalk 1","italic":false}', Lore:[ '{"text":"Fire an arrow, dealing 5 magic damage","color":"white","italic":false}','{"text":"  and knocking opponents airborne.","color":"white","italic":false}','{"text":"Grants speed II to caster for 5s.","color":"white","italic":false}','{"text":"Grants speed I to caster and allies for 20s.","color":"white","italic":false}','{"text":"Cost: 400MP","color":"blue","italic":false}', '"Archer: Active Spell"', '"Archer: Windwalk Spell"' ] }, Charged:1b} 1
@@ -25,3 +25,4 @@ replaceitem entity @s container.7 minecraft:written_book{pages:['{"text":"Day 1:
 replaceitem entity @p container.8 minecraft:written_book{pages:['["",{"text":"Main Quest:","bold":true},{"text":" Wash your hands in the holy sink to ward off the plague!\\n \\u0020Status: ","color":"reset"},{"text":"Incomplete","bold":true,"color":"red"},{"text":"\\n","color":"reset"},{"text":"Current Objective:","bold":true},{"text":" \\u0020Complete the Tutorial.","color":"reset"}]'],title:"Quest Book",author:"",display:{Lore:["This is your quest book. Check this book often for objectives."]}}
 tellraw @s "You have selected the archer class."
 tag @s add archer
+execute as @s run function adventure_map:fine_damage/add_player

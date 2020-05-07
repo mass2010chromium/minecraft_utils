@@ -11,11 +11,15 @@ scoreboard players set @s ##mp_regen_base## 1
 scoreboard players set @s ##melee_mp## 20
 scoreboard players set @s ##melee_mp_cooldown## 0
 scoreboard players set @s ##magic_resist_base## 0
-scoreboard players set @s ##physical_resist_base## 20
-replaceitem entity @s armor.head minecraft:iron_helmet{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Helmet"'}} 1
-replaceitem entity @s armor.chest minecraft:chainmail_chestplate{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Mail"'}} 1
-replaceitem entity @s armor.legs minecraft:chainmail_leggings{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Leggings"'}} 1
-replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1,Enchantments:[{id:blast_protection,lvl:1}],display:{Name:'"Knight\'s Sabatons"'}} 1
+scoreboard players set @s ##physical_resist_base## 35
+replaceitem entity @s armor.head minecraft:iron_helmet{Unbreakable:1,
+                                    AttributeModifiers:[],display:{Name:'{"text":"Knight\'s Helmet","italic":false}'}} 1
+replaceitem entity @s armor.chest minecraft:chainmail_chestplate{Unbreakable:1,
+                                    AttributeModifiers:[],display:{Name:'{"text":"Knight\'s Mail","italic":false}'}} 1
+replaceitem entity @s armor.legs minecraft:chainmail_leggings{Unbreakable:1,
+                                    AttributeModifiers:[],display:{Name:'{"text":"Knight\'s Leggings","italic":false}'}} 1
+replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1,
+                                    AttributeModifiers:[],display:{Name:'{"text":"Knight\'s Sabatons","italic":false}'}} 1
 replaceitem entity @s container.0 ##knight_basic_sword_item##
 replaceitem entity @s container.1 ##knight_groundPound_1_item##
 replaceitem entity @s container.2 ##knight_depthsCurse_1_item##
@@ -24,3 +28,4 @@ replaceitem entity @s container.7 minecraft:written_book{pages:['{"text":"Day 1:
 replaceitem entity @p container.8 minecraft:written_book{pages:['["",{"text":"Main Quest:","bold":true},{"text":" Wash your hands in the holy sink to ward off the plague!\\n \\u0020Status: ","color":"reset"},{"text":"Incomplete","bold":true,"color":"red"},{"text":"\\n","color":"reset"},{"text":"Current Objective:","bold":true},{"text":" \\u0020Complete the Tutorial.","color":"reset"}]'],title:"Quest Book",author:"",display:{Lore:["This is your quest book. Check this book often for objectives."]}}
 tellraw @s "You have selected the knight class."
 tag @s add knight
+execute as @s run function adventure_map:fine_damage/add_player

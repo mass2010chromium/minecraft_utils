@@ -3,6 +3,15 @@
 scoreboard players add @s[scores={##fast_regen_ticks##=1..}] ##health## 1
 scoreboard players remove @s[scores={##fast_regen_ticks##=1..}] ##fast_regen_ticks## 1
 
+# ------------------------------------------
+# Max health boost from armor
+scoreboard players operation @s ##max_health## = @s ##max_health_base##
+scoreboard players add @s[nbt={Inventory:[{Slot:100b,tag:{display:{Lore:[##health_boost_20##]}}}]}] ##max_health## 20
+scoreboard players add @s[nbt={Inventory:[{Slot:101b,tag:{display:{Lore:[##health_boost_20##]}}}]}] ##max_health## 20
+scoreboard players add @s[nbt={Inventory:[{Slot:102b,tag:{display:{Lore:[##health_boost_20##]}}}]}] ##max_health## 20
+scoreboard players add @s[nbt={Inventory:[{Slot:103b,tag:{display:{Lore:[##health_boost_20##]}}}]}] ##max_health## 20
+# ------------------------------------------
+
 
 # ------------------------------------------
 # Handle player regen

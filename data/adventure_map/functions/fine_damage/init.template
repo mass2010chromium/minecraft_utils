@@ -19,6 +19,7 @@ scoreboard objectives add ##last_health## dummy
 scoreboard objectives add ##skeleton_last_base_hp## dummy
 
 scoreboard objectives add ##max_health## dummy
+scoreboard objectives add ##max_health_base## dummy
 
 scoreboard objectives add ##invulnerable_ticks## dummy
 
