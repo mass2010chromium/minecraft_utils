@@ -1,6 +1,14 @@
  # Potion regen
 scoreboard players add @s[scores={fine_hp.potreg=1..}] fine_hp.hp 1
-scoreboard players remove @s[scores={fine_hp.potreg=1..}] fine_hp.potreg 1  
+scoreboard players remove @s[scores={fine_hp.potreg=1..}] fine_hp.potreg 1 
+# ------------------------------------------
+# Max health boost from armor
+scoreboard players operation @s fine_hp.mh = @s fine_hp.mh_base
+scoreboard players add @s[nbt={Inventory:[{Slot:100b,tag:{display:{Lore:['"Max Health Boost: +20"']}}}]}] fine_hp.mh 20
+scoreboard players add @s[nbt={Inventory:[{Slot:101b,tag:{display:{Lore:['"Max Health Boost: +20"']}}}]}] fine_hp.mh 20
+scoreboard players add @s[nbt={Inventory:[{Slot:102b,tag:{display:{Lore:['"Max Health Boost: +20"']}}}]}] fine_hp.mh 20
+scoreboard players add @s[nbt={Inventory:[{Slot:103b,tag:{display:{Lore:['"Max Health Boost: +20"']}}}]}] fine_hp.mh 20
+# ------------------------------------------  
 # ------------------------------------------
 # Handle player regen
 # If hunger is above 18, increment
