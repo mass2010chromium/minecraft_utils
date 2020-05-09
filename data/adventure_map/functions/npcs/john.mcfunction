@@ -1,1 +1,1 @@
-summon villager ~ ~ ~ { VillagerData:{ profession:cleric,level:2,type:plains }, Team:Friendlies, Invulnerable:1, PersistenceRequired:1, Offers:{ Recipes:[ { } ] }, Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"John (NPC)"',CustomNameVisible:1,Tags:["npc"]}
+summon villager ~ ~ ~ { VillagerData:{ profession:cleric,level:2,type:plains }, Team:Friendlies, Invulnerable:1, PersistenceRequired:1, Offers:{ Recipes:[ { } ] }, Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"John (NPC)"',CustomNameVisible:1,Tags:["npc","TheJohn","John0"]}
