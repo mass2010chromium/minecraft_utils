@@ -1,5 +1,10 @@
 kill @e[tag=##mob_death##]
 
+scoreboard players set @a[tag=##tracker##] ##t0## 1
+execute as @a[tag=##tracker##] run scoreboard players operation @s ##t0## = @s ##max_health_base##
+tellraw @a[tag=##tracker##,scores={##t0##=0}] "Invalid fine_hp registration, kicking"
+tag @a[tag=##tracker##,scores={##t0##=0}] remove ##tracker##
+
 execute as @e[tag=##tracker##] run function adventure_map:fine_damage/common_healthbar
 execute as @a[tag=##tracker##] run function adventure_map:fine_damage/player_healthbar
 execute as @e[type=!minecraft:player, tag=##tracker##] run function adventure_map:fine_damage/mob_healthbar
