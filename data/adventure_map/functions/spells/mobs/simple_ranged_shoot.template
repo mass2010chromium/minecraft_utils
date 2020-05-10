@@ -25,7 +25,7 @@ execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] ru
 
 scoreboard players set @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] ##ranged_tick## 25
 
-execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] run me hi
+# execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] run me hi
 execute as @e[tag=##ranged_projectile##] at @s run tp @s ~ ~1.5 ~
 execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] store result entity @s Motion[1] double 0.001 run scoreboard players get @s ##t1##
 tag @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] add processed
