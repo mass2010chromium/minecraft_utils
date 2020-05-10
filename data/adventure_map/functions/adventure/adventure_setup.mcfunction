@@ -22,6 +22,12 @@ scoreboard objectives add spell.9.power dummy
 scoreboard objectives add spell.9.time dummy 
 scoreboard objectives add blaze.m_splash dummy
 scoreboard objectives add blaze.p_splash dummy 
+scoreboard objectives add rangedCDBase dummy
+scoreboard objectives add rangedCooldown dummy
+scoreboard objectives add rangedPD dummy
+scoreboard objectives add rangedMD dummy 
+scoreboard objectives add blink minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add _blink trigger 
 scoreboard objectives add use.golden_hoe minecraft.used:minecraft.golden_hoe
 scoreboard objectives add use.stone_sword minecraft.used:minecraft.stone_sword 
 gamerule mobGriefing false

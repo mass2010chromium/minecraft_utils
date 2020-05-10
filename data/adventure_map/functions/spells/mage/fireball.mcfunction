@@ -24,6 +24,6 @@ execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] run data m
 scoreboard players set @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] fine_hp.tmp3 10 
 execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] at @s run tp @s ~ ~1.5 ~
 execute as @e[tag=unprocessed,tag=mage_fireball,sort=nearest,limit=1] store result entity @s direction[1] double 0.02 run scoreboard players get @s fine_hp.tmp1
-execute as @s[tag=fireball_summon] run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] add processed
-execute as @s[tag=fireball_summon] run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed
+execute as @s[tag=fireball_summon] at @s run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] add processed
+execute as @s[tag=fireball_summon] at @s run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed
 tag @p[tag=fireball_summoner] remove fireball_summoner

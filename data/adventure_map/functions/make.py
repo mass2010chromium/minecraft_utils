@@ -53,6 +53,14 @@ subs["mob_death"] = "fine_hp.isdead"
 subs["initialized"] = "fine_hp.init" # unused
 subs["health_fraction"] = "fine_hp.hp_frac"
 
+subs["ranged_mob"] = "rangedTag"
+subs["ranged_projectile"] = "rangedMissile"
+subs["ranged_tick"] = "rangedCDBase"
+subs["ranged_hit"] = "rangedHit"
+subs["ranged_freq"] = "rangedCooldown"
+subs["ranged_physical"] = "rangedPD"
+subs["ranged_magic"] = "rangedMD"
+
 subs["t0"] = "fine_hp.tmp0"
 subs["t1"] = "fine_hp.tmp1"
 subs["t2"] = "fine_hp.tmp2"
@@ -148,11 +156,10 @@ files = [   "fine_damage/loop",
 			"summons/animated_fecal_matter",
 			"summons/khorsonah_guard",
 			"summons/khorsonah_civilian", ###region 6 (Khors Onah)
+            "summons/ranged_test",
 			
             "summons/enemy_common",
 			"summons/enemy_aggro",
-			
-			
         
             "adventure/adventure_setup", 
         
@@ -162,6 +169,11 @@ files = [   "fine_damage/loop",
             
             "spells/mobs/blaze",
             "spells/mobs/blaze_fireball",
+            
+            "spells/mobs/simple_ranged",
+            "spells/mobs/simple_ranged_shoot",
+            "spells/mobs/simple_ranged_hit",
+            "spells/mobs/ranged_generic_loop",
             
             "kits/mage", 
             "kits/mage_spells", 

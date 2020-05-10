@@ -1,0 +1,32 @@
+summon minecraft:armor_stand ^ ^ ^1 {Tags:["##ranged_projectile##","unprocessed","MissileSimple"],OnGround:0b,Invulnerable:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:cobblestone",Count:1b}],DisabledSlots:2039583}
+
+# Record source x,y,z, and assign damage
+execute store result score @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] ##t1## run 
+        data get entity @s Pos[0] 1000
+execute store result score @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] ##t2## run 
+        data get entity @s Pos[1] 1000
+execute store result score @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] ##t3## run 
+        data get entity @s Pos[2] 1000
+scoreboard players operation @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] ##ranged_physical## = @s ##ranged_physical##
+scoreboard players operation @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] ##ranged_magic## = @s ##ranged_magic##
+
+
+# Start doing vector math
+# t0, t1, t2 are dx, dy, dz
+execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] store result score @s ##t0## run data get entity @s Pos[0] 1000
+execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] run scoreboard players operation @s ##t0## -= @s ##t1##
+execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] store result score @s ##t1## run data get entity @s Pos[1] 1000
+execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] run scoreboard players operation @s ##t1## -= @s ##t2##
+# Extra y velocity
+scoreboard players add @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] ##t1## 100
+execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] store result score @s ##t2## run data get entity @s Pos[2] 1000
+execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] run scoreboard players operation @s ##t2## -= @s ##t3##
+# Finally store back into entity data.
+
+scoreboard players set @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] ##ranged_tick## 25
+
+execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] run me hi
+execute as @e[tag=##ranged_projectile##] at @s run tp @s ~ ~1.5 ~
+execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] store result entity @s Motion[1] double 0.001 run scoreboard players get @s ##t1##
+tag @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] add processed
+tag @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] remove unprocessed

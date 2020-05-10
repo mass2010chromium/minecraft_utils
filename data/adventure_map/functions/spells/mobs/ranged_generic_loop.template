@@ -1,0 +1,14 @@
+# Spam set velocity because
+execute as @e[tag=##ranged_projectile##] store result entity @s Motion[0] double 0.001 run scoreboard players get @s ##t0##
+execute as @e[tag=##ranged_projectile##] store result entity @s Motion[2] double 0.001 run scoreboard players get @s ##t2##
+
+execute as @e[tag=##ranged_projectile##] at @s run execute at @p[distance=0..1.5] run tag @s add ##ranged_hit##
+
+scoreboard players remove @e[tag=##ranged_projectile##] ##ranged_tick## 1
+tag @e[tag=##ranged_projectile##,scores={##ranged_tick##=0}] add ##ranged_hit##
+
+tag @e[tag=##ranged_projectile##,nbt={OnGround:0b},tag=!leftGround] add leftGround
+tag @e[tag=##ranged_projectile##,nbt={OnGround:1b},tag=leftGround] add ##ranged_hit##
+tag @e[tag=##ranged_projectile##,tag=##ranged_hit##] add ##mob_death##
+
+execute as @e[tag=MissileSimple,tag=##ranged_hit##] at @s run function adventure_map:spells/mobs/simple_ranged_hit

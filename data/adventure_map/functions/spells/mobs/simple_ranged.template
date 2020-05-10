@@ -1,0 +1,7 @@
+scoreboard players remove @s ##ranged_tick## 1
+
+execute as @e[tag=##ranged_mob##,scores={##ranged_tick##=0..4}] at @s run tp @s ~ ~ ~ facing entity @p
+
+execute as @s[scores={##ranged_tick##=0}] at @s run function adventure_map:spells/mobs/simple_ranged_shoot
+
+scoreboard players operation @s[scores={##ranged_tick##=0}] ##ranged_tick## = @s ##ranged_freq##

@@ -31,6 +31,14 @@ scoreboard objectives add ##knight_groundPound_riseTime## dummy
 scoreboard objectives add ##blaze_magic_damage## dummy
 scoreboard objectives add ##blaze_physical_damage## dummy
 
+scoreboard objectives add ##ranged_tick## dummy
+scoreboard objectives add ##ranged_freq## dummy
+scoreboard objectives add ##ranged_physical## dummy
+scoreboard objectives add ##ranged_magic## dummy
+
+scoreboard objectives add blink minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add _blink trigger
+
 scoreboard objectives add use.golden_hoe minecraft.used:minecraft.golden_hoe
 scoreboard objectives add use.stone_sword minecraft.used:minecraft.stone_sword
 

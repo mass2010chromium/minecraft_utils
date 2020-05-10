@@ -1,0 +1,5 @@
+
+scoreboard players operation @a[distance=0..1.5] ##physical_damage## += @s ##ranged_physical##
+scoreboard players operation @a[distance=0..1.5] ##magic_damage## += @s ##ranged_magic##
+particle minecraft:explosion ~ ~ ~ 0 0 0 0 1 force
+playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.4 1
