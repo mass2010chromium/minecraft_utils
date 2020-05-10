@@ -11,4 +11,4 @@ summon villager ~ ~ ~ {
             }
         ]
     },
-    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"John (NPC)"',CustomNameVisible:1,Tags:["npc"]}
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"John (NPC)"',CustomNameVisible:1,Tags:["npc","TheJohn","John0"]}
