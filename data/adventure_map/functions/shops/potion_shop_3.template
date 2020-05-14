@@ -10,7 +10,7 @@ summon villager ~ ~ ~ {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:8,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:5,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
                     id:dragon_breath,Count:1,tag:{##potion_heal_2_nbt##}

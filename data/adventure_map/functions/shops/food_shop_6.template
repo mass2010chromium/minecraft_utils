@@ -1,0 +1,37 @@
+summon villager ~ ~ ~ {
+    VillagerData:{
+        profession:shepherd,level:50,type:desert
+    },
+    Team:##friendlies##,
+    Tags:["shops"],
+    Invulnerable:1,
+    PersistenceRequired:1,
+    Offers:{
+        Recipes:[
+            {
+                buy:{
+                    id:sunflower,Count:1,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:cookie,Count:1,tag:{##food_cookie_1_nbt##},rewardExp:0b,maxUses:9999999
+                },rewardExp:0b,maxUses:9999999
+            },
+			{
+                buy:{
+                    id:sunflower,Count:1,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:potato,Count:1,tag:{##food_potato_1_nbt##}
+                },rewardExp:0b,maxUses:9999999
+            },
+			{
+                buy:{
+                    id:sunflower,Count:2,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:melon_slice,Count:1,tag:{##food_melon_1_nbt##}
+                },rewardExp:0b,maxUses:9999999
+            }
+        ]
+    },
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Food Shop"',CustomNameVisible:1}
