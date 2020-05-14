@@ -204,6 +204,7 @@ files = [   "fine_damage/loop",
 			"shops/mage_shop_6",			
 			"shops/food_shop_6",
 			"shops/potion_shop_6",
+			"shops/butcher_6",
 			
 			"npcs/librarian_1",
 			"npcs/priest_1",

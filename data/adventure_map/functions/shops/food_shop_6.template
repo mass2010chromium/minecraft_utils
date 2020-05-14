@@ -13,23 +13,23 @@ summon villager ~ ~ ~ {
                     id:sunflower,Count:1,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:cookie,Count:1,tag:{##food_cookie_1_nbt##},rewardExp:0b,maxUses:9999999
+                    id:beetroot,Count:1,tag:{##food_beet_6_nbt##},rewardExp:0b,maxUses:9999999
                 },rewardExp:0b,maxUses:9999999
             },
 			{
                 buy:{
-                    id:sunflower,Count:1,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:3,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:potato,Count:1,tag:{##food_potato_1_nbt##}
+                    id:carrot,Count:1,tag:{##food_carrot_6_nbt##}
                 },rewardExp:0b,maxUses:9999999
             },
 			{
                 buy:{
-                    id:sunflower,Count:2,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:5,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:melon_slice,Count:1,tag:{##food_melon_1_nbt##}
+                    id:baked_potato,Count:1,tag:{##food_potato_6_nbt##}
                 },rewardExp:0b,maxUses:9999999
             }
         ]

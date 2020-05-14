@@ -38,6 +38,18 @@ def add_food_items(subs, spell_id, get_uuid):
     
     subs["food_potato_1_nbt"] = "display:{Name:"+make_name("Imported potato")+",Lore:["+make_name("Potatoes are good for you!")+"]}"
     subs["food_potato_1_item"] = """minecraft:potato{##food_potato_1_nbt##}"""
+ 
+    subs["food_porkchop_6_nbt"] = "display:{Name:"+make_name("Raw Pork")+",Lore:["+make_name("A nice portion of red meat.")+"]}"
+    subs["food_porkchop_6_item"] = """minecraft:porkchop{##food_potato_1_nbt##}"""
+
+    subs["food_beet_6_nbt"] = "display:{Name:"+make_name("Beet")+",Lore:["+make_name("Nice and red.")+"]}"
+    subs["food_beet_6_item"] = """minecraft:beetroot{##food_beet_6_nbt##}"""
+
+    subs["food_carrot_6_nbt"] = "display:{Name:"+make_name("Fresh Carrot")+",Lore:["+make_name("Looks like an orange stick.")+"]}"
+    subs["food_carrot_6_item"] = """minecraft:carrot{##food_carrot_6_nbt##}"""
+
+    subs["food_potato_6_nbt"] = "display:{Name:"+make_name("Hot Potato")+",Lore:["+make_name("Don\\'t hold it for too long.")+"]}"
+    subs["food_potato_6_item"] = """minecraft:baked_potato{##food_potato_6_nbt##}"""
   
 def add_armor_items(subs, spell_id, get_uuid):
 	subs["speedy_sabatons_name"] = make_name("Speedy Sabatons")

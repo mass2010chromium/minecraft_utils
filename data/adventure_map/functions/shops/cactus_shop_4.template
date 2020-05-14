@@ -10,7 +10,7 @@ summon villager ~ ~ ~ {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:8,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:10,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
                     id:suspicious_stew,Count:1,tag:{display:{Name:'{"text":"Cactus Soup","italic":false}'}}
