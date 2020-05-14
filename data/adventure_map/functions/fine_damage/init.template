@@ -61,6 +61,10 @@ scoreboard objectives add ##health_fraction## dummy
 scoreboard objectives remove ##name_reset_ticks##
 scoreboard objectives add ##name_reset_ticks## dummy
 
+scoreboard objectives remove ##entity_linker##
+scoreboard objectives add ##entity_linker## dummy
+scoreboard players set ##globals## ##entity_linker## 0
+
 scoreboard objectives remove ##t0##
 scoreboard objectives add ##t0## dummy
 

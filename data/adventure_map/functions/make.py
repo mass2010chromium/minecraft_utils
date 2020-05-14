@@ -18,6 +18,8 @@ def get_uuid():
 subs["health_item_name"] = '\'"HP indicator"\''
 subs["health_item_lore"] = '[\'"Helps modify your health."\']'
 
+subs["entity_linker"] = "linkID"
+
 subs["health_stat"] = "stat.health"
 subs["hunger"] = "stat.hunger"
 subs["player_world_damage"] = "damage_blocked"
@@ -30,6 +32,7 @@ subs["has_died"] = "fine_hp.die"
 subs["damage_tick"] = "fine_hp.dt"
 
 subs["mob_base_hp"] = "200"
+subs["invisible_mob"] = "needInvisBar"
 subs["skeleton_base_hp"] = "500"
 subs["skeleton_last_base_hp"] = "fine_hp.skhack"
 subs["name_reset_ticks"] = "fine_hp.dispT"
@@ -159,6 +162,8 @@ files = [   "fine_damage/loop",
 			"summons/khorsonah_guard",
 			"summons/khorsonah_civilian", ###region 6 (Khors Onah)
             "summons/ranged_test",
+            
+            "summons/basic_invis",
 			
             "summons/enemy_common",
 			"summons/enemy_aggro",

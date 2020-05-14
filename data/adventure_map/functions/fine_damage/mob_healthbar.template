@@ -16,6 +16,7 @@ scoreboard players add @s ##name_reset_ticks## 1
 scoreboard players remove @s ##name_reset_ticks## 1
 
 execute as @s[scores={##t1##=1..,##name_reset_ticks##=0}] run data modify entity @s ##name_swap_space## set from entity @s CustomName
+
 effect give @s[scores={##t1##=1..}] minecraft:instant_damage 1 0
 effect give @s[scores={##t1##=1..}] minecraft:instant_health 1 0
 effect give @s[scores={##t1##=1..}] minecraft:resistance 1 4 true
@@ -33,3 +34,11 @@ scoreboard players remove @s[scores={##name_reset_ticks##=1..}] ##name_reset_tic
 data modify entity @s Health set value ##mob_base_hp##
 data modify entity @s Invulnerable set value 0b
 data modify entity @s[scores={##invulnerable_ticks##=1..}] Invulnerable set value 1b
+
+execute as @s[tag=##invisible_mob##] run scoreboard players operation ##globals## ##t0## = @s ##entity_linker##
+execute at @s[tag=##invisible_mob##] positioned ~ ~1.9 ~ as @e[type=armor_stand] if score @s ##entity_linker## = ##globals## ##t0## run 
+    tag @s add invis_link_tag
+data modify entity @e[tag=invis_link_tag,limit=1] CustomName set from entity @s CustomName
+execute at @s run tp @e[tag=invis_link_tag] ~ ~1.9 ~
+tag @e[tag=invis_link_tag] remove ##mob_death##
+tag @e[tag=invis_link_tag] remove invis_link_tag
