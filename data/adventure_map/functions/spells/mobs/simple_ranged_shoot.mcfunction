@@ -17,7 +17,7 @@ execute as @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] store resu
 execute as @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] run scoreboard players operation @s fine_hp.tmp2 -= @s fine_hp.tmp3
 # Finally store back into entity data. 
 scoreboard players set @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] rangedCDBase 25 
-execute as @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] run me hi
+# execute as @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] run me hi
 execute as @e[tag=rangedMissile] at @s run tp @s ~ ~1.5 ~
 execute as @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] store result entity @s Motion[1] double 0.001 run scoreboard players get @s fine_hp.tmp1
 tag @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] add processed

@@ -151,6 +151,7 @@ files = [   "fine_damage/loop",
 			"summons/well_hydrated_pundit", ###region 4 (desert)
 			"summons/thirsty_camel",
 			"summons/tomb_scarab",
+			"summons/sand_slinger",
 			"summons/khorsonah_bat", ###region 5 (sewer)
 			"summons/sewer_rat",
 			"summons/animated_fecal_matter",
@@ -188,14 +189,20 @@ files = [   "fine_damage/loop",
             "kits/all_foods", 
             "kits/heal_pots", 
             
-            "shops/archer_shop_1",
+            "shops/archer_shop_1", ###Townsburg
             "shops/knight_shop_1",
             "shops/mage_shop_1",
             "shops/food_shop_1",
             "shops/potion_shop_1",
-			
-			"shops/armor_shop_3",
+			"shops/armor_shop_3", ###Wastelands
 			"shops/potion_shop_3",
+			"shops/cactus_shop_4", ###Desert
+			"shops/armor_shop_6", ###Khors Onah
+			"shops/archer_shop_6",
+			"shops/knight_shop_6",
+			"shops/mage_shop_6",			
+			"shops/food_shop_6",
+			"shops/potion_shop_6",
 			
 			"npcs/librarian_1",
 			"npcs/priest_1",
