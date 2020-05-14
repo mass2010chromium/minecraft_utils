@@ -55,9 +55,9 @@ subs["health_fraction"] = "fine_hp.hp_frac"
 
 subs["ranged_mob"] = "rangedTag"
 subs["ranged_projectile"] = "rangedMissile"
-subs["ranged_tick"] = "rangedCDBase"
+subs["ranged_tick"] = "rangedCooldown"
 subs["ranged_hit"] = "rangedHit"
-subs["ranged_freq"] = "rangedCooldown"
+subs["ranged_freq"] = "rangedCDBase"
 subs["ranged_physical"] = "rangedPD"
 subs["ranged_magic"] = "rangedMD"
 
