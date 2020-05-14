@@ -6,9 +6,11 @@ execute at @p[distance=0..1.5] run tag @s add ##ranged_hit##
 
 scoreboard players remove @s ##ranged_tick## 1
 tag @s[scores={##ranged_tick##=0}] add ##ranged_hit##
+execute as @s[scores={##ranged_tick##=0}] run me timeout
 
 tag @s[nbt={OnGround:0b},tag=!leftGround] add leftGround
 tag @s[nbt={OnGround:1b},tag=leftGround] add ##ranged_hit##
+execute as @s[nbt={OnGround:1b},tag=leftGround] if block ~ ~-1 ~ air run tag @s remove ##ranged_hit##
 tag @s[tag=##ranged_hit##] add ##mob_death##
 
 execute as @s[tag=##ranged_hit##] run function adventure_map:spells/mobs/simple_ranged_hit
