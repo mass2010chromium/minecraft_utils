@@ -1,0 +1,32 @@
+summon villager ~ ~ ~ {
+    VillagerData:{
+        profession:cleric,level:50,type:desert
+    },
+    Team:##friendlies##,
+    Tags:["shops"],
+    Invulnerable:1,
+    PersistenceRequired:1,
+    Offers:{
+        Recipes:[
+            {
+                buy:{
+                    id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+				buyB:{
+					id:golden_hoe,Count:1,tag:{##mage_basic_staff_nbt##},
+				},
+                sell:{
+                    id:golden_hoe,Count:1,tag:{##mage_bigger_staff_nbt##}
+                },rewardExp:0b,maxUses:9999999
+            },
+			{
+                buy:{
+                    id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:end_rod,Count:1,tag:{##mage_discharge_1_nbt##}
+                },rewardExp:0b,maxUses:9999999
+            }
+        ]
+    },
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Mage Shop"',CustomNameVisible:1}

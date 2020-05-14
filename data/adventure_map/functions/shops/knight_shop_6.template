@@ -1,0 +1,29 @@
+summon villager -179.5 65 22.5 {
+    VillagerData:{
+        profession:weaponsmith,level:50,type:desert
+    },
+    Team:##friendlies##,
+    Tags:["shops"],
+    Invulnerable:1,
+    PersistenceRequired:1,
+    Offers:{
+        Recipes:[
+            {
+                buy:{
+                    id:sunflower,Count:30,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:golden_sword,Count:1,tag:{##knight_sandesitesword_sword_nbt##}
+                },rewardExp:0b,maxUses:9999999
+            },
+			{
+                buy:{
+                    id:sunflower,Count:25,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:trident,Count:1,tag:{##knight_mobHook_1_nbt##}
+                },rewardExp:0b,maxUses:9999999
+            }
+        ]
+    },
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Knight Shop"',CustomNameVisible:1}

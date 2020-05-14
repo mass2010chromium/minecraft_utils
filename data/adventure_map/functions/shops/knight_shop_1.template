@@ -12,19 +12,8 @@ summon villager -179.5 65 22.5 {
                 buy:{
                     id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
                 },
-				buyB:{
-					id:stone_sword,Count:1,tag:{##knight_basic_sword_nbt##},
-				},
                 sell:{
                     id:stone_sword,Count:1,tag:{##knight_castironsword_sword_nbt##}
-                },rewardExp:0b,maxUses:9999999
-            },
-			{
-                buy:{
-                    id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
-                },
-                sell:{
-                    id:trident,Count:1,tag:{##knight_mobHook_1_nbt##}
                 },rewardExp:0b,maxUses:9999999
             }
         ]

@@ -4,6 +4,9 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_melee"] = '\'"Mage: Staff"\''
     subs["mage_primary"] = '\'"Mage: Primary Spell"\''
     subs["mage_secondary"] = '\'"Mage: Secondary Spell"\''
+    subs["mage_1"] = '\'"Mage: Slot 1"\''
+    subs["mage_2"] = '\'"Mage: Slot 2"\''
+    subs["mage_3"] = '\'"Mage: Slot 3"\''
 
     subs["mage_attack_splash_power"] = "spell.{}.power".format(spell_id())
     subs["mage_splash_power_boost_2"] = '\'"+2 Melee Splash Damage"\''
@@ -14,7 +17,7 @@ def add_mage_items(subs, spell_id, get_uuid):
                                         {id:"minecraft:sharpness",lvl:3}
                                       ],
                                       display:{
-                                        Name:##mage_basic_staff_name##,Lore:[##mage_melee##]
+                                        Name:##mage_basic_staff_name##,Lore:[##mage_melee##,##mage_1##]
                                       }"""
     subs["mage_basic_staff_item"] =  """minecraft:golden_hoe{##mage_basic_staff_nbt##} 1"""
     
@@ -29,6 +32,7 @@ def add_mage_items(subs, spell_id, get_uuid):
                                         Lore:[
                                           ##mage_bigger_staff_extra##,
                                           ##mage_melee##,
+                                          ##mage_1##
                                         ]
                                       }"""
     subs["mage_bigger_staff_item"] =  """minecraft:golden_hoe{##mage_bigger_staff_nbt##} 1"""
@@ -40,7 +44,8 @@ def add_mage_items(subs, spell_id, get_uuid):
                                               Name:##mage_fireball_staff_name##,
                                               Lore:[
                                                 ##mage_melee##, 
-                                                ##mage_fireball_boost_1##
+                                                ##mage_fireball_boost_1##,
+                                                ##mage_1##
                                               ]
                                             }"""
     subs["mage_fireball_staff_item"] = """minecraft:golden_hoe{##mage_fireball_staff_nbt##} 1"""
@@ -55,7 +60,8 @@ def add_mage_items(subs, spell_id, get_uuid):
                                                 ##mage_whirlwind_staff_extra##,
                                                 ##mage_melee##, 
                                                 ##mage_zephyr_boost_1##, 
-                                                ##mage_splash_power_boost_2##
+                                                ##mage_splash_power_boost_2##,
+                                                ##mage_1##
                                               ]
                                             },
                                             AttributeModifiers:[
@@ -80,7 +86,8 @@ def add_mage_items(subs, spell_id, get_uuid):
                                           Lore:[
                                             ##mage_fireball_extra##,
                                             ##mage_primary##,
-                                            ##mage_fireball_spell##
+                                            ##mage_fireball_spell##,
+                                            ##mage_2##
                                           ]
                                         }"""
     subs["mage_fireball_1_item"] = """minecraft:blaze_rod{##mage_fireball_1_nbt##} 1"""
@@ -92,7 +99,8 @@ def add_mage_items(subs, spell_id, get_uuid):
                                             ##mage_fireball_extra##,
                                             ##mage_primary##, 
                                             ##mage_fireball_spell##, 
-                                            ##mage_fireball_boost_1##
+                                            ##mage_fireball_boost_1##,
+                                            ##mage_2##
                                           ]
                                         }"""
     subs["mage_fireball_2_item"] = """minecraft:blaze_rod{##mage_fireball_2_nbt##} 1"""
@@ -102,7 +110,7 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_repulse_boost_1"] = '\'"+1 Arcane Explosion Magic Damage"\''
     subs["mage_repulse_power"] = "spell.{}.power".format(spell_id())
     subs["mage_repulse_1_name"] = make_name("Arcane Explosion 1")
-    subs["mage_repulse_1_nbt"] = """Enchantments:[{}],display:{Name:##mage_repulse_1_name##,Lore:[##mage_repulse_extra##, ##mage_secondary##, ##mage_repulse_spell##]}"""
+    subs["mage_repulse_1_nbt"] = """Enchantments:[{}],display:{Name:##mage_repulse_1_name##,Lore:[##mage_repulse_extra##, ##mage_secondary##, ##mage_repulse_spell##,##mage_3##]}"""
     subs["mage_repulse_1_item"] = """minecraft:nether_star{##mage_repulse_1_nbt##} 1"""
 
     subs["mage_zephyr_spell"] = '\'"Mage: Zephyr Spell"\'';
@@ -113,7 +121,7 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_zephyr_boost_1"] = '\'"+1 Zephyr Speed"\''
     subs["mage_zephyr_power"] = "spell.{}.power".format(spell_id())
     subs["mage_zephyr_1_name"] = make_name("Zephyr 1")
-    subs["mage_zephyr_1_nbt"] = """Enchantments:[{}],display:{Name:##mage_zephyr_1_name##,Lore:[##mage_zephyr_extra##, ##mage_secondary##, ##mage_zephyr_spell##]}"""
+    subs["mage_zephyr_1_nbt"] = """Enchantments:[{}],display:{Name:##mage_zephyr_1_name##,Lore:[##mage_zephyr_extra##, ##mage_secondary##, ##mage_zephyr_spell##,##mage_3##]}"""
     subs["mage_zephyr_1_item"] = """minecraft:magma_cream{##mage_zephyr_1_nbt##} 1"""
 
     subs["mage_discharge_spell"] = '\'"Mage: Discharge Spell"\'';
@@ -129,7 +137,8 @@ def add_mage_items(subs, spell_id, get_uuid):
                                           Lore:[
                                             ##mage_discharge_extra##, 
                                             ##mage_secondary##, 
-                                            ##mage_discharge_spell##
+                                            ##mage_discharge_spell##,
+                                            ##mage_3##
                                           ]
                                         }"""
     subs["mage_discharge_1_item"] = """minecraft:end_rod{##mage_discharge_1_nbt##} 1"""

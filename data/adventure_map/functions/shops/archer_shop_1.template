@@ -12,19 +12,8 @@ summon villager -138.5 65 23.5 {
                 buy:{
                     id:sunflower,Count:18,tag:{display:{Name:'"Gold Coin"'}}	
 				},
-				buyB:{
-					id:bow,Count:1,tag:{##archer_basic_bow_nbt##},
-				},
                 sell:{
                     id:bow,Count:1,tag:{##archer_longbow_bow_nbt##}
-                },rewardExp:0b,maxUses:9999999
-            },
-			{
-                buy:{
-                    id:sunflower,Count:18,tag:{display:{Name:'"Gold Coin"'}}
-                },
-                sell:{
-                    id:crossbow,Count:1,tag:{##archer_piercingArrow_1_nbt##}
                 },rewardExp:0b,maxUses:9999999
             }
         ]

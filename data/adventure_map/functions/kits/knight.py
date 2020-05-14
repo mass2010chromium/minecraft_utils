@@ -4,7 +4,10 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_melee"] = '\'"Knight: Sword"\''
     subs["knight_spear"] = '\'"Knight: Spear"\''
     subs["knight_spell"] = '\'"Knight: Active Spell"\''
-
+    subs["knight_1"] = '\'"Knight: Slot 1"\''
+    subs["knight_2"] = '\'"Knight: Slot 2"\''
+    subs["knight_3"] = '\'"Knight: Slot 3"\''
+    
     #Knight Basic(T0) Sword
     subs["knight_basic_sword_name"] = make_name("Basic Sword")
     subs["knight_basic_sword_nbt"] = """Unbreakable:1,
@@ -14,7 +17,8 @@ def add_knight_items(subs, spell_id, get_uuid):
                                         display:{
                                           Name:##knight_basic_sword_name##,
                                           Lore:[
-                                            ##knight_melee##
+                                            ##knight_melee##,
+                                            ##knight_1##
                                           ]
                                         }"""
     subs["knight_basic_sword_item"] = """minecraft:stone_sword{##knight_basic_sword_nbt##} 1"""
@@ -28,7 +32,8 @@ def add_knight_items(subs, spell_id, get_uuid):
                                                 display:{
                                                   Name:##knight_castironsword_sword_name##,
                                                   Lore:[
-                                                    ##knight_melee##
+                                                    ##knight_melee##,
+                                                    ##knight_1##
                                                   ]
                                                 }"""
     subs["knight_castironsword_sword_item"] = """minecraft:stone_sword{##knight_castironsword_sword_nbt##} 1"""
@@ -50,7 +55,8 @@ def add_knight_items(subs, spell_id, get_uuid):
                                       Lore:[
                                         ##knight_depthsCurse_extra##,
                                         ##knight_spear##,
-                                        ##knight_depthsCurse_spell##
+                                        ##knight_depthsCurse_spell##,
+                                        ##knight_3##
                                       ]
                                     },AttributeModifiers:[]"""
     subs["knight_depthsCurse_1_item"] = """minecraft:trident{##knight_depthsCurse_1_nbt##} 1"""
@@ -70,7 +76,8 @@ def add_knight_items(subs, spell_id, get_uuid):
                                               Lore:[
                                                 ##knight_mobHook_extra##,
                                                 ##knight_spear##,
-                                                ##knight_mobHook_spell##
+                                                ##knight_mobHook_spell##,
+                                                ##knight_3##
                                               ]
                                             },AttributeModifiers:[]"""
     subs["knight_mobHook_1_item"] = """minecraft:trident{##knight_mobHook_1_nbt##} 1"""
@@ -94,7 +101,23 @@ def add_knight_items(subs, spell_id, get_uuid):
                                               Lore:[
                                                 ##knight_groundPound_extra##,
                                                 ##knight_spell##,
-                                                ##knight_groundPound_spell##
+                                                ##knight_groundPound_spell##,
+                                                ##knight_2##
                                               ]
                                             }"""
     subs["knight_groundPound_1_item"] = """minecraft:anvil{##knight_groundPound_1_nbt##} 1"""
+    
+    #Knight T2 Sword
+    subs["knight_sandesitesword_sword_name"] = make_name("Sandesite Sword")
+    subs["knight_sandesitesword_sword_nbt"] = """Unbreakable:1,
+                                                Enchantments:[
+                                                  {id:"minecraft:sharpness",lvl:10},{id:"minecraft:sweeping",lvl:2}
+                                                ],
+                                                display:{
+                                                  Name:##knight_sandesitesword_sword_name##,
+                                                  Lore:[
+                                                    ##knight_melee##,
+                                                    ##knight_1##
+                                                  ]
+                                                }"""
+    subs["knight_sandesitesword_sword_item"] = """minecraft:golden_sword{##knight_castironsword_sword_nbt##} 1"""
