@@ -37,6 +37,9 @@ scoreboard objectives remove fine_hp.hp_frac
 scoreboard objectives add fine_hp.hp_frac dummy 
 scoreboard objectives remove fine_hp.dispT
 scoreboard objectives add fine_hp.dispT dummy 
+scoreboard objectives remove linkID
+scoreboard objectives add linkID dummy
+scoreboard players set [GLOBALS] linkID 0 
 scoreboard objectives remove fine_hp.tmp0
 scoreboard objectives add fine_hp.tmp0 dummy 
 scoreboard objectives remove fine_hp.tmp1

@@ -1,4 +1,5 @@
 kill @e[tag=fine_hp.isdead] 
+tag @e[type=armor_stand,tag=hp_display] add fine_hp.isdead 
 scoreboard players set @a[tag=fine_hp.tracker] fine_hp.tmp0 1
 execute as @a[tag=fine_hp.tracker] run scoreboard players operation @s fine_hp.tmp0 = @s fine_hp.mh_base
 tellraw @a[tag=fine_hp.tracker,scores={fine_hp.tmp0=0}] "Invalid fine_hp registration, kicking"

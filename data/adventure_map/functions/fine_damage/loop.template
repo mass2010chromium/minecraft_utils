@@ -1,5 +1,7 @@
 kill @e[tag=##mob_death##]
 
+tag @e[type=armor_stand,tag=hp_display] add ##mob_death##
+
 scoreboard players set @a[tag=##tracker##] ##t0## 1
 execute as @a[tag=##tracker##] run scoreboard players operation @s ##t0## = @s ##max_health_base##
 tellraw @a[tag=##tracker##,scores={##t0##=0}] "Invalid fine_hp registration, kicking"

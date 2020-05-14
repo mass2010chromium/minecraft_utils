@@ -18,6 +18,8 @@ def get_uuid():
 subs["health_item_name"] = '\'"HP indicator"\''
 subs["health_item_lore"] = '[\'"Helps modify your health."\']'
 
+subs["entity_linker"] = "linkID"
+
 subs["health_stat"] = "stat.health"
 subs["hunger"] = "stat.hunger"
 subs["player_world_damage"] = "damage_blocked"
@@ -161,7 +163,7 @@ files = [   "fine_damage/loop",
 			"summons/khorsonah_civilian", ###region 6 (Khors Onah)
             "summons/ranged_test",
             
-            "summons/basic_invis"
+            "summons/basic_invis",
 			
             "summons/enemy_common",
 			"summons/enemy_aggro",
