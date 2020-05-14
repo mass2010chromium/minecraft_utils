@@ -16,7 +16,7 @@ def add_common_items(subs, spell_id, get_uuid):
     subs["potion_heal_2_item"] = """minecraft:dragon_breath{##potion_heal_2_nbt##}"""
     subs["potion_heal_2_tag"] = "spell.{}.tag".format(spell_id())
     
-	subs["effect_heal_3"] = make_description_text(["+20 HP"],color="red")
+    subs["effect_heal_3"] = make_description_text(["+20 HP"],color="red")
     subs["effect_heal_3_tag"] = "spell.{}.tag".format(spell_id())
     subs["potion_heal_3_name"] = make_name("Healing Potion 3")
     subs["potion_heal_3_nbt"] = """Enchantments:[{}],display:{Name:##potion_heal_3_name##,Lore:[##effect_heal_3##]}"""

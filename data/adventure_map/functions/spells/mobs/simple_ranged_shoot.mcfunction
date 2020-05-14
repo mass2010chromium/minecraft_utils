@@ -43,10 +43,8 @@ execute as @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed,tag=randomi
 scoreboard players remove @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed,tag=randomize] random 400
 execute as @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed,tag=randomize] run scoreboard players operation @s fine_hp.tmp2 += @s random 
 # Finally store back into entity data. 
-scoreboard players set @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] rangedCDBase 25 
-# execute as @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] run me hi
-execute as @e[tag=rangedMissile] at @s run tp @s ~ ~1.5 ~
-
+scoreboard players set @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] rangedCooldown 25 
+execute as @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] at @s run tp @s ~ ~1.5 ~
 execute as @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] store result entity @s Motion[1] double 0.001 run scoreboard players get @s fine_hp.tmp1
 tag @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] add processed
 tag @e[tag=rangedMissile,sort=nearest,limit=1,tag=unprocessed] remove unprocessed

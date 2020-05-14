@@ -152,6 +152,7 @@ files = [   "fine_damage/loop",
 			"summons/thirsty_camel",
 			"summons/tomb_scarab",
 			"summons/sand_slinger",
+			"summons/desert_scorpion",
 			"summons/khorsonah_bat", ###region 5 (sewer)
 			"summons/sewer_rat",
 			"summons/animated_fecal_matter",
