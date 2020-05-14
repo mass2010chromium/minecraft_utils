@@ -16,6 +16,9 @@ scoreboard players add @s ##name_reset_ticks## 1
 scoreboard players remove @s ##name_reset_ticks## 1
 
 execute as @s[scores={##t1##=1..,##name_reset_ticks##=0}] run data modify entity @s ##name_swap_space## set from entity @s CustomName
+
+data modify entity @s CustomName set from block 5 40 -10 Text1
+
 effect give @s[scores={##t1##=1..}] minecraft:instant_damage 1 0
 effect give @s[scores={##t1##=1..}] minecraft:instant_health 1 0
 effect give @s[scores={##t1##=1..}] minecraft:resistance 1 4 true
@@ -33,3 +36,7 @@ scoreboard players remove @s[scores={##name_reset_ticks##=1..}] ##name_reset_tic
 data modify entity @s Health set value ##mob_base_hp##
 data modify entity @s Invulnerable set value 0b
 data modify entity @s[scores={##invulnerable_ticks##=1..}] Invulnerable set value 1b
+
+execute at @s[tag=##invisible_mob##] run summon minecraft:area_effect_cloud ~ ~2 ~ {Duration:2s,Tags:["invis_untag"],CustomNameVisible:1b}
+execute at @s[tag=##invisible_mob##] positioned ~ ~2 ~ run 
+    data modify entity @e[type=area_effect_cloud,limit=1,sort=nearest] CustomName set from entity @s CustomName
