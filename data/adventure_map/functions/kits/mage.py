@@ -107,8 +107,8 @@ def add_mage_items(subs, spell_id, get_uuid):
     
     subs["mage_windspear_spell"] = '\'"Mage: Cyclone Spear Spell"\'';
     subs["mage_windspear_extra"] = make_description_text([
-                                                            "Shoot a straight projectile, dealing 25 damage",
-                                                            "  to enemies hit.",
+                                                            "Shoot a straight projectile, dealing 25 damage.",
+                                                            "Can be stopped by thick crowds.",
                                                             ]) + "," + make_cost("Cost: 500MP")
     subs["mage_windspear_boost_1"] = '\'"+25 Cyclone Spear damage"\''
     subs["mage_windspear_power"] = "spell.{}.power".format(spell_id())
