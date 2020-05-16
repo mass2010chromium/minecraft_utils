@@ -1,6 +1,6 @@
 particle minecraft:poof ~ ~ ~ 0.5 0.5 0.5 0.1 10 force
 particle minecraft:poof ~ ~ ~ 0.5 0.5 0.5 1 10 force
-particle minecraft:lava ~ ~ ~ 0.5 0.5 0.5 0.1 10 force
+particle minecraft:end_rod ~ ~ ~ 0.5 0.5 0.5 0.1 10 force
 particle minecraft:flash ~ ~ ~ 0.5 0.5 0.5 0.1 1 force
 scoreboard players add @s fine_hp.tmp0 1
 scoreboard players operation @s fine_hp.tmp1 = @s fine_hp.tmp0

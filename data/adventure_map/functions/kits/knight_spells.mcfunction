@@ -5,8 +5,13 @@ execute as @a[tag=knight_mana_steal] run scoreboard players set @s mana.mscd 10
 scoreboard players set @a use.stone_sword 0
 tag @a remove knight_mana_steal 
 # Class restriction
-effect give @a[tag=!knight,nbt={SelectedItem:{tag:{display:{Lore:['"Knight: Sword"']}}}}] slowness 1 9
-effect give @a[tag=!knight,nbt={SelectedItem:{tag:{display:{Lore:['"Knight: Sword"']}}}}] weakness 1 9 
+effect give @a[tag=!knight,nbt={SelectedItem:{tag:{display:{Lore:['"Knight: Sword"']}}}}] slowness 3 9
+effect give @a[tag=!knight,nbt={SelectedItem:{tag:{display:{Lore:['"Knight: Sword"']}}}}] weakness 3 9
+tag @a[tag=knight,nbt={SelectedItem:{tag:{display:{Lore:['"Knight: Sword"']}}}}] add holdingWeapon
+tag @a[tag=knight,nbt={SelectedItemSlot:0}] remove holdingWeapon
+effect give @a[tag=knight,tag=holdingWeapon] slowness 3 9
+effect give @a[tag=knight,tag=holdingWeapon] weakness 3 9
+tag @a[tag=knight] remove holdingWeapon 
 # Replenish items
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Knight: Sword"']}}}},tag=!processed] add replenish_0
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Knight: Spear"']}}}},tag=!processed] add replenish_1

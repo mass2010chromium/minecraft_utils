@@ -7,8 +7,13 @@ execute as @a[tag=mage,scores={use.golden_hoe=1}] run scoreboard players operati
 execute as @a[tag=mage,scores={use.golden_hoe=1}] run scoreboard players operation @s mana.mana += @s fine_hp.tmp0
 scoreboard players set @a use.golden_hoe 0 
 # Class restriction
-effect give @a[tag=!mage,nbt={SelectedItem:{tag:{display:{Lore:['"Mage: Staff"']}}}}] slowness 1 9
-effect give @a[tag=!mage,nbt={SelectedItem:{tag:{display:{Lore:['"Mage: Staff"']}}}}] weakness 1 9 
+effect give @a[tag=!mage,nbt={SelectedItem:{tag:{display:{Lore:['"Mage: Staff"']}}}}] slowness 3 9
+effect give @a[tag=!mage,nbt={SelectedItem:{tag:{display:{Lore:['"Mage: Staff"']}}}}] weakness 3 9
+tag @a[tag=mage,nbt={SelectedItem:{tag:{display:{Lore:['"Mage: Staff"']}}}}] add holdingWeapon
+tag @a[tag=mage,nbt={SelectedItemSlot:0}] remove holdingWeapon
+effect give @a[tag=mage,tag=holdingWeapon] slowness 3 9
+effect give @a[tag=mage,tag=holdingWeapon] weakness 3 9
+tag @a[tag=mage] remove holdingWeapon 
 # Replenish items
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Mage: Staff"']}}}},tag=!processed] add replenish_0
 tag @e[type=minecraft:item,nbt={Item:{tag:{display:{Lore:['"Mage: Primary Spell"']}}}},tag=!processed] add replenish_1
