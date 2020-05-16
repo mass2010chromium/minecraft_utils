@@ -5,10 +5,4 @@ summon villager ~ ~ ~ {
     Team:##friendlies##,
     Invulnerable:1,
     PersistenceRequired:1,
-    Offers:{
-        Recipes:[
-            {
-            }
-        ]
-    },
-    Attributes:[{Name:"generic.movementSpeed",Base:0.43f}],CustomName:'"Townsburg Civilian"',CustomNameVisible:1}
+    Attributes:[{Name:"generic.movementSpeed",Base:0.43f}],CustomName:'"Khors Onah Citizen"',CustomNameVisible:1}
