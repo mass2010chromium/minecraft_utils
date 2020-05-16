@@ -169,6 +169,9 @@ files = [   "fine_damage/loop",
 			"summons/enemy_aggro",
         
             "adventure/adventure_setup", 
+            
+            "spells/lightning",
+            "spells/lightning_recurse",
         
             "spells/mage/discharge",
             "spells/mage/fireball",
