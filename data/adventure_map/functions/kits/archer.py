@@ -72,10 +72,10 @@ def add_archer_items(subs, spell_id, get_uuid):
     subs["archer_piercingArrow_1_item"] = """minecraft:crossbow{##archer_piercingArrow_1_nbt##} 1"""
     
     #T2 Axe
-    subs["archer_basic_axe_name"] = make_name("Basic Axe")
-    subs["archer_basic_axe_nbt"] = """Unbreakable:1,Enchantments:[{id:knockback,lvl:3}],display:{Name:##archer_basic_axe_name##,Lore:[##archer_melee##,##archer_1##]}"""
-    subs["archer_basic_axe_item"] = """minecraft:iron_axe{##archer_basic_axe_nbt##} 1"""
+    subs["archer_small_dagger_name"] = make_name("Small Dagger")
+    subs["archer_small_dagger_nbt"] = """Unbreakable:1,Enchantments:[{id:sharpness,lvl:10}],display:{Name:##archer_small_dagger_name##,Lore:[##archer_melee##,##archer_1##]}"""
+    subs["archer_small_dagger_item"] = """minecraft:flint{##archer_small_dagger_nbt##} 1"""
     #T2 Bow
-    subs["archer_basic_bow_name"] = make_name("Basic Bow")
-    subs["archer_basic_bow_nbt"] = """Unbreakable:1,Enchantments:[{id:infinity,lvl:1},{id:power,lvl:3}],display:{Name:##archer_basic_bow_name##,Lore:[##archer_bow##,##archer_2##]}"""
-    subs["archer_basic_bow_item"] = """minecraft:bow{##archer_basic_bow_nbt##} 1"""
+    subs["archer_cactus_fiber_bow_name"] = make_name("Cactus Fiber")
+    subs["archer_cactus_fiber_bow_nbt"] = """Unbreakable:1,Enchantments:[{id:infinity,lvl:1},{id:power,lvl:5}],display:{Name:##archer_cactus_fiber_bow_name##,Lore:[##archer_bow##,##archer_2##]}"""
+    subs["archer_cactus_fiber_bow_item"] = """minecraft:bow{##archer_cactus_fiber_bow_nbt##} 1"""

@@ -1,4 +1,4 @@
-summon villager -138.5 65 23.5 {
+summon villager ~ ~ ~ {
     VillagerData:{
         profession:fletcher,level:50,type:desert
     },
@@ -13,7 +13,15 @@ summon villager -138.5 65 23.5 {
                     id:sunflower,Count:30,tag:{display:{Name:'"Gold Coin"'}}	
 				},
                 sell:{
-                    id:bow,Count:1,tag:{##archer_longbow_bow_nbt##}
+                    id:flint,Count:1,tag:{##archer_small_dagger_nbt##}
+                },rewardExp:0b,maxUses:9999999
+            },
+            {
+                buy:{
+                    id:sunflower,Count:30,tag:{display:{Name:'"Gold Coin"'}}	
+				},
+                sell:{
+                    id:bow,Count:1,tag:{##archer_cactus_fiber_bow_nbt##}
                 },rewardExp:0b,maxUses:9999999
             },
 			{
