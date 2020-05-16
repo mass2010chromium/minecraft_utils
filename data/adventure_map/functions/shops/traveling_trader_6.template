@@ -1,0 +1,24 @@
+summon villager ~ ~ ~ {
+    VillagerData:{
+        profession:mason,level:50,type:snow
+    },
+    Team:##friendlies##,
+    Tags:["shops"],
+    Invulnerable:1,
+    PersistenceRequired:1,
+    Offers:{
+        Recipes:[
+            {
+                buy:{
+                    id:sunflower,Count:6,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                buyB:{
+                    id:sunflower,Count:6,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:porkchop,Count:1,tag:{##food_porkchop_6_nbt##},rewardExp:0b,maxUses:9999999
+                },rewardExp:0b,maxUses:9999999
+            }
+        ]
+    },
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Traveling Trader"',CustomNameVisible:1}
