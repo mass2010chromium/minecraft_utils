@@ -23,12 +23,13 @@ execute as @e[tag=replenish_1] at @s run tag @a[distance=0..4,nbt={Inventory:[{S
 execute as @e[tag=replenish_2] at @s run tag @a[distance=0..4,nbt={Inventory:[{Slot:2b}]},tag=mage] add replenish_fail 
 # Weapon drop protection
 execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'{"text":"Basic Staff","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 minecraft:golden_hoe{Unbreakable:1, Enchantments:[ {id:"minecraft:sharpness",lvl:3} ], display:{ Name:'{"text":"Basic Staff","italic":false}',Lore:['"Mage: Staff"','"Mage: Slot 1"'] }} 1
-execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'{"text":"Fiery Staff","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 minecraft:golden_hoe{Unbreakable:1, Enchantments:[{}], display:{ Name:'{"text":"Fiery Staff","italic":false}', Lore:[ '"Mage: Staff"',  '"+10 Fireball Magic Damage"', '"Mage: Slot 1"' ] }} 1
+execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'{"text":"Fiery Staff","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 minecraft:golden_hoe{Unbreakable:1, Enchantments:[{}], display:{ Name:'{"text":"Fiery Staff","italic":false}', Lore:[ '"Mage: Staff"',  '"+8 Fireball Magic Damage"', '"Mage: Slot 1"' ] }} 1
 execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'{"text":"Whirlwind Staff","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 minecraft:golden_hoe{Unbreakable:1, Enchantments:[{id:"minecraft:sharpness",lvl:1}], display:{ Name:'{"text":"Whirlwind Staff","italic":false}', Lore:[ '{"text":"Attacks faster.","color":"white","italic":false}', '"Mage: Staff"',  '"+1 Zephyr Speed"',  '"+2 Melee Splash Damage"', '"Mage: Slot 1"' ] }, AttributeModifiers:[ {AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:4,Operation:0,UUIDLeast:595046,UUIDMost:291484,Slot:"mainhand"} ]} 1
-execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'{"text":"Embiggened Staff","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 minecraft:golden_hoe{Unbreakable:1, Enchantments:[ {id:"minecraft:sharpness",lvl:4} ], display:{ Name:'{"text":"Embiggened Staff","italic":false}', Lore:[ '{"text":"Is bigger. Apparently.","color":"white","italic":false}', '"Mage: Staff"', '"Mage: Slot 1"' ] }} 1  
+execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:'{"text":"Embiggened Staff","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=mage] container.0 minecraft:golden_hoe{Unbreakable:1, Enchantments:[ {id:"minecraft:sharpness",lvl:5} ], display:{ Name:'{"text":"Embiggened Staff","italic":false}', Lore:[ '{"text":"Is bigger. Apparently.","color":"white","italic":false}', '"Mage: Staff"', '"Mage: Slot 1"' ] }} 1  
 # Fireball spell
-execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'{"text":"Fireball 1","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 minecraft:blaze_rod{Enchantments:[{}], display:{ Name:'{"text":"Fireball 1","italic":false}', Lore:[ '{"text":"Shoot a fireball that explodes on contact or after 0.5s,","color":"white","italic":false}','{"text":"  dealing 3 physical damage and 10 magic damage.","color":"white","italic":false}','{"text":"Damage decreases with distance from explosion center.","color":"white","italic":false}','{"text":"A direct hit does even more damage.","color":"white","italic":false}','{"text":"Can hurt self and allies!","color":"white","italic":false}','{"text":"Cost: 200MP","color":"blue","italic":false}', '"Mage: Primary Spell"', '"Mage: Fireball Spell"', '"Mage: Slot 2"' ] }} 1
-execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'{"text":"Fireball 2","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 minecraft:blaze_rod{Enchantments:[{}], display:{ Name:'{"text":"Fireball 2","italic":false}', Lore:[ '{"text":"Shoot a fireball that explodes on contact or after 0.5s,","color":"white","italic":false}','{"text":"  dealing 3 physical damage and 10 magic damage.","color":"white","italic":false}','{"text":"Damage decreases with distance from explosion center.","color":"white","italic":false}','{"text":"A direct hit does even more damage.","color":"white","italic":false}','{"text":"Can hurt self and allies!","color":"white","italic":false}','{"text":"Cost: 200MP","color":"blue","italic":false}', '"Mage: Primary Spell"',  '"Mage: Fireball Spell"',  '"+10 Fireball Magic Damage"', '"Mage: Slot 2"' ] }} 1 
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'{"text":"Fireball 1","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 minecraft:blaze_rod{Enchantments:[{}], display:{ Name:'{"text":"Fireball 1","italic":false}', Lore:[ '{"text":"Shoot a fireball that explodes on contact or after 0.5s,","color":"white","italic":false}','{"text":"  dealing 3 physical damage and 8 magic damage.","color":"white","italic":false}','{"text":"Damage decreases with distance from explosion center.","color":"white","italic":false}','{"text":"A direct hit does even more damage.","color":"white","italic":false}','{"text":"Can hurt self and allies!","color":"white","italic":false}','{"text":"Cost: 200MP","color":"blue","italic":false}', '"Mage: Primary Spell"', '"Mage: Fireball Spell"', '"Mage: Slot 2"' ] }} 1
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'{"text":"Fireball 2","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 minecraft:blaze_rod{Enchantments:[{}], display:{ Name:'{"text":"Fireball 2","italic":false}', Lore:[ '{"text":"Shoot a fireball that explodes on contact or after 0.5s,","color":"white","italic":false}','{"text":"  dealing 3 physical damage and 8 magic damage.","color":"white","italic":false}','{"text":"Damage decreases with distance from explosion center.","color":"white","italic":false}','{"text":"A direct hit does even more damage.","color":"white","italic":false}','{"text":"Can hurt self and allies!","color":"white","italic":false}','{"text":"Cost: 200MP","color":"blue","italic":false}', '"Mage: Primary Spell"',  '"Mage: Fireball Spell"',  '"+8 Fireball Magic Damage"', '"Mage: Slot 2"' ] }} 1
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'{"text":"Cyclone Spear 1","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 minecraft:feather{Enchantments:[{}], display:{ Name:'{"text":"Cyclone Spear 1","italic":false}', Lore:[ '{"text":"Shoot a straight projectile, dealing 25 damage","color":"white","italic":false}','{"text":"  to enemies hit.","color":"white","italic":false}','{"text":"Cost: 500MP","color":"blue","italic":false}', '"Mage: Primary Spell"', '"Mage: Cyclone Spear Spell"', '"Mage: Slot 2"' ] }} 1 
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Lore:['"Mage: Fireball Spell"']}}}},scores={replenish_ok=1}] at @s run function adventure_map:spells/mage/fireball 
 # Loop stuff for mage fireball
 # X and Y velocity always being set
@@ -44,13 +45,41 @@ execute at @e[tag=mage_fireball_tracker] run particle minecraft:explosion_emitte
 execute at @e[tag=mage_fireball_tracker] run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.8 0.7 
 execute at @e[tag=mage_fireball] run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:2s,Tags:["mage_fireball_tracker"]}
 execute as @e[tag=mage_fireball] at @s run scoreboard players operation @e[distance=0..2,sort=nearest,tag=mage_fireball_tracker] spell.1.power = @s spell.1.power  
+# Cyclone Spear spell
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:'{"text":"Cyclone Spear 1","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 minecraft:feather{Enchantments:[{}], display:{ Name:'{"text":"Cyclone Spear 1","italic":false}', Lore:[ '{"text":"Shoot a straight projectile, dealing 25 damage","color":"white","italic":false}','{"text":"  to enemies hit.","color":"white","italic":false}','{"text":"Cost: 500MP","color":"blue","italic":false}', '"Mage: Primary Spell"', '"Mage: Cyclone Spear Spell"', '"Mage: Slot 2"' ] }} 1 
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Lore:['"Mage: Cyclone Spear Spell"']}}}},scores={replenish_ok=1}] at @s run function adventure_map:spells/mage/wind_spear 
+# Loop stuff for mage wind spear
+# X and Y and Z velocity always being set
+execute as @e[tag=mage_wind_spear] store result entity @s Motion[0] double 0.03 run scoreboard players get @s fine_hp.tmp0
+execute as @e[tag=mage_wind_spear] store result entity @s Motion[1] double 0.03 run scoreboard players get @s fine_hp.tmp1
+execute as @e[tag=mage_wind_spear] store result entity @s Motion[2] double 0.03 run scoreboard players get @s fine_hp.tmp2 
+execute at @e[tag=mage_wind_spear] run particle end_rod ~ ~ ~ 0 0 0 0.05 5
+execute at @e[tag=mage_wind_spear] run particle sneeze ~ ~ ~ 0 0 0 0.05 5
+execute at @e[tag=mage_wind_spear] run playsound minecraft:block.bamboo.place master @a 
+execute as @e[tag=mage_wind_spear] at @s run scoreboard players operation @e[distance=0..2,team=Enemies,tag=windSpeared] fine_hp.tmp0 = @s fine_hp.tmp4
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=Enemies,tag=windSpeared] run scoreboard players operation @s fine_hp.tmp0 -= @s spell.2.power
+execute as @e[tag=mage_wind_spear] at @s run scoreboard players operation @e[distance=0..2,team=Enemies,tag=windSpeared,scores={fine_hp.tmp0=1..}] fine_hp.mdmg += @s spell.2.power
+execute as @e[tag=mage_wind_spear] at @s run execute at @e[distance=0..2,team=Enemies,tag=windSpeared,scores={fine_hp.tmp0=1..}] run scoreboard players remove @s fine_hp.tmp3 1
+execute as @e[tag=mage_wind_spear] at @s run scoreboard players operation @e[distance=0..2,team=Enemies] spell.2.power = @s fine_hp.tmp4
+execute as @e[tag=mage_wind_spear] at @s run scoreboard players operation @e[distance=0..2,team=Enemies,tag=!windSpeared] fine_hp.mdmg += @s spell.2.power
+execute as @e[tag=mage_wind_spear] at @s run execute at @e[distance=0..2,team=Enemies,tag=!windSpeared] run scoreboard players remove @s fine_hp.tmp3 1
+execute as @e[tag=mage_wind_spear] at @s run tag @e[distance=0..2,team=Enemies,tag=!windSpeared] add windSpeared 
+scoreboard players remove @e[tag=mage_wind_spear] fine_hp.tmp3 1
+kill @e[tag=mage_wind_spear,scores={fine_hp.tmp3=..0}] 
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=Enemies] store result score @s fine_hp.tmp0 run data get entity @s Motion[0] 500
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=Enemies] store result score @s fine_hp.tmp2 run data get entity @s Motion[2] 500
+execute as @e[tag=mage_wind_spear] at @s run scoreboard players operation @e[distance=0..2,team=Enemies] fine_hp.tmp0 += @s fine_hp.tmp0
+execute as @e[tag=mage_wind_spear] at @s run scoreboard players operation @e[distance=0..2,team=Enemies] fine_hp.tmp2 += @s fine_hp.tmp2
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=Enemies] store result entity @s Motion[0] double 0.002 run scoreboard players get @s fine_hp.tmp0
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=Enemies] run data modify entity @s Motion[1] set value 0.25
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=Enemies] store result entity @s Motion[2] double 0.002 run scoreboard players get @s fine_hp.tmp2 
 # Zephyr spell
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:'{"text":"Zephyr 1","italic":false}'}}}}] at @s store success score @s replenish_ok run replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=mage] container.2 minecraft:magma_cream{Enchantments:[{}],display:{Name:'{"text":"Zephyr 1","italic":false}',Lore:['{"text":"Grant Speed II to caster for 5 seconds.","color":"white","italic":false}','{"text":"Grant Strength I to caster and allies for 5 seconds.","color":"white","italic":false}','{"text":"Grant Speed I to caster and allies for 80 seconds.","color":"white","italic":false}','{"text":"Cost: 500MP","color":"blue","italic":false}', '"Mage: Secondary Spell"', '"Mage: Zephyr Spell"','"Mage: Slot 3"']}} 1 
 scoreboard players set @a[tag=mage] fine_hp.tmp0 0
 # Tag with zephyr speed boost, and remove mana from player
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:['"Mage: Zephyr Spell"']}}}},scores={replenish_ok=1}] run execute at @s run execute at @p[tag=mage,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=500..}] store success score @p[tag=mage,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=500..}] fine_hp.tmp0 run tag @s add zephyr_boost
 scoreboard players remove @a[tag=mage,scores={fine_hp.tmp0=1}] mana.mana 500 
-execute as @e[tag=zephyr_boost] at @s run scoreboard players operation @s fine_hp.tmp0 = @p[distance=0..4,scores={fine_hp.tmp0=1},tag=mage] spell.3.power 
+execute as @e[tag=zephyr_boost] at @s run scoreboard players operation @s fine_hp.tmp0 = @p[distance=0..4,scores={fine_hp.tmp0=1},tag=mage] spell.4.power 
 execute at @e[tag=zephyr_boost] run playsound minecraft:block.beacon.power_select master @a[distance=0..8] ~ ~ ~
 execute at @e[tag=zephyr_boost] run effect give @a[distance=0..8] minecraft:speed 80 0
 execute at @e[tag=zephyr_boost] run effect give @a[distance=0..8] minecraft:strength 5 0
@@ -67,7 +96,7 @@ scoreboard players set @a[tag=mage] fine_hp.tmp0 0
 # Tag with arcane explosion, and remove mana from player
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:['"Mage: Arcane Explosion Spell"']}}}},scores={replenish_ok=1}] run execute at @s run execute at @p[tag=mage,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=400..}] store success score @p[tag=mage,nbt={SelectedItemSlot:2},tag=!replenish_fail,distance=0..4,scores={mana.mana=400..}] fine_hp.tmp0 run tag @s add arcane_explode
 scoreboard players remove @a[tag=mage,scores={fine_hp.tmp0=1}] mana.mana 400 
-execute as @e[tag=arcane_explode] at @s run scoreboard players operation @s fine_hp.tmp0 = @p[distance=0..4,scores={fine_hp.tmp0=1},tag=mage] spell.2.power 
+execute as @e[tag=arcane_explode] at @s run scoreboard players operation @s fine_hp.tmp0 = @p[distance=0..4,scores={fine_hp.tmp0=1},tag=mage] spell.3.power 
 execute at @e[tag=arcane_explode] run playsound minecraft:entity.wither.spawn master @a[distance=0..8] ~ ~ ~
 execute at @e[tag=arcane_explode] run particle minecraft:end_rod ~ ~ ~ 0 0 0 1 150 
 # Record source x and z, and deal damage
@@ -116,21 +145,25 @@ tag @e[tag=replenish_2] remove replenish_2
 tag @a remove replenish_fail 
 # Apply buffs
 scoreboard players set @a[tag=mage] spell.1.power 4
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+10 Fireball Magic Damage"']}}}]}] spell.1.power 5
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+10 Fireball Magic Damage"']}}}]}] spell.1.power 5
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+10 Fireball Magic Damage"']}}}]}] spell.1.power 5 
-scoreboard players set @a[tag=mage] spell.2.power 0
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Arcane Explosion Magic Damage"']}}}]}] spell.2.power 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Arcane Explosion Magic Damage"']}}}]}] spell.2.power 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Arcane Explosion Magic Damage"']}}}]}] spell.2.power 1 
-scoreboard players set @a[tag=mage] spell.3.power 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Zephyr Speed"']}}}]}] spell.3.power 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Zephyr Speed"']}}}]}] spell.3.power 1
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Zephyr Speed"']}}}]}] spell.3.power 1 
-scoreboard players set @a[tag=mage] spell.4.power 0
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+2 Discharge damage"']}}}]}] spell.4.power 2
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+2 Discharge damage"']}}}]}] spell.4.power 2
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+2 Discharge damage"']}}}]}] spell.4.power 2 
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+8 Fireball Magic Damage"']}}}]}] spell.1.power 4
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+8 Fireball Magic Damage"']}}}]}] spell.1.power 4
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+8 Fireball Magic Damage"']}}}]}] spell.1.power 4 
+scoreboard players set @a[tag=mage] spell.2.power 25
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+25 Cyclone Spear damage"']}}}]}] spell.2.power 25
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+25 Cyclone Spear damage"']}}}]}] spell.2.power 25
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+25 Cyclone Spear damage"']}}}]}] spell.2.power 25 
+scoreboard players set @a[tag=mage] spell.3.power 0
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Arcane Explosion Magic Damage"']}}}]}] spell.3.power 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Arcane Explosion Magic Damage"']}}}]}] spell.3.power 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Arcane Explosion Magic Damage"']}}}]}] spell.3.power 1 
+scoreboard players set @a[tag=mage] spell.4.power 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+1 Zephyr Speed"']}}}]}] spell.4.power 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+1 Zephyr Speed"']}}}]}] spell.4.power 1
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+1 Zephyr Speed"']}}}]}] spell.4.power 1 
+scoreboard players set @a[tag=mage] spell.5.power 0
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+2 Discharge damage"']}}}]}] spell.5.power 2
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+2 Discharge damage"']}}}]}] spell.5.power 2
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:['"+2 Discharge damage"']}}}]}] spell.5.power 2 
 scoreboard players set @a[tag=mage] spell.0.power 2
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:['"+2 Melee Splash Damage"']}}}]}] spell.0.power 2
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:['"+2 Melee Splash Damage"']}}}]}] spell.0.power 2

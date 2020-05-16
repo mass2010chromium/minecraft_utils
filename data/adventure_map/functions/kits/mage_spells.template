@@ -43,6 +43,8 @@ execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##mage_fireball_1_na
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 ##mage_fireball_1_item##
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##mage_fireball_2_name##}}}}] at @s store success score @s replenish_ok run 
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 ##mage_fireball_2_item##
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##mage_windspear_1_name##}}}}] at @s store success score @s replenish_ok run 
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 ##mage_windspear_1_item##
 
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Lore:[##mage_fireball_spell##]}}}},scores={replenish_ok=1}] at @s run
     function adventure_map:spells/mage/fireball
@@ -67,6 +69,57 @@ execute at @e[tag=mage_fireball] run summon minecraft:area_effect_cloud ~ ~ ~ {D
 execute as @e[tag=mage_fireball] at @s run 
     scoreboard players operation @e[distance=0..2,sort=nearest,tag=mage_fireball_tracker] ##mage_fireball_power## = @s ##mage_fireball_power##
 
+
+# Cyclone Spear spell
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##mage_windspear_1_name##}}}}] at @s store success score @s replenish_ok run 
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=mage] container.1 ##mage_windspear_1_item##
+
+execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Lore:[##mage_windspear_spell##]}}}},scores={replenish_ok=1}] at @s run
+    function adventure_map:spells/mage/wind_spear
+
+# Loop stuff for mage wind spear
+# X and Y and Z velocity always being set
+execute as @e[tag=mage_wind_spear] store result entity @s Motion[0] double 0.03 run scoreboard players get @s ##t0##
+execute as @e[tag=mage_wind_spear] store result entity @s Motion[1] double 0.03 run scoreboard players get @s ##t1##
+execute as @e[tag=mage_wind_spear] store result entity @s Motion[2] double 0.03 run scoreboard players get @s ##t2##
+
+execute at @e[tag=mage_wind_spear] run particle end_rod ~ ~ ~ 0 0 0 0.05 5
+execute at @e[tag=mage_wind_spear] run particle sneeze ~ ~ ~ 0 0 0 0.05 5
+execute at @e[tag=mage_wind_spear] run playsound minecraft:block.bamboo.place master @a
+
+execute as @e[tag=mage_wind_spear] at @s run 
+    scoreboard players operation @e[distance=0..2,team=##enemies##,tag=windSpeared] ##t0## = @s ##t4##
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=##enemies##,tag=windSpeared] run
+    scoreboard players operation @s ##t0## -= @s ##mage_windspear_power##
+execute as @e[tag=mage_wind_spear] at @s run 
+    scoreboard players operation @e[distance=0..2,team=##enemies##,tag=windSpeared,scores={##t0##=1..}] ##magic_damage## += @s ##mage_windspear_power##
+execute as @e[tag=mage_wind_spear] at @s run 
+    execute at @e[distance=0..2,team=##enemies##,tag=windSpeared,scores={##t0##=1..}] run scoreboard players remove @s ##t3## 1
+execute as @e[tag=mage_wind_spear] at @s run 
+    scoreboard players operation @e[distance=0..2,team=##enemies##] ##mage_windspear_power## = @s ##t4##
+execute as @e[tag=mage_wind_spear] at @s run 
+    scoreboard players operation @e[distance=0..2,team=##enemies##,tag=!windSpeared] ##magic_damage## += @s ##mage_windspear_power##
+execute as @e[tag=mage_wind_spear] at @s run 
+    execute at @e[distance=0..2,team=##enemies##,tag=!windSpeared] run scoreboard players remove @s ##t3## 1
+execute as @e[tag=mage_wind_spear] at @s run 
+    tag @e[distance=0..2,team=##enemies##,tag=!windSpeared] add windSpeared
+
+scoreboard players remove @e[tag=mage_wind_spear] ##t3## 1
+kill @e[tag=mage_wind_spear,scores={##t3##=..0}]
+    
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=##enemies##] store result score @s ##t0## run
+    data get entity @s Motion[0] 500
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=##enemies##] store result score @s ##t2## run
+    data get entity @s Motion[2] 500
+execute as @e[tag=mage_wind_spear] at @s run 
+    scoreboard players operation @e[distance=0..2,team=##enemies##] ##t0## += @s ##t0##
+execute as @e[tag=mage_wind_spear] at @s run 
+    scoreboard players operation @e[distance=0..2,team=##enemies##] ##t2## += @s ##t2##
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=##enemies##] store result entity @s Motion[0] double 0.002 run
+    scoreboard players get @s ##t0##
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=##enemies##] run data modify entity @s Motion[1] set value 0.25
+execute as @e[tag=mage_wind_spear] at @s run execute as @e[distance=0..2,team=##enemies##] store result entity @s Motion[2] double 0.002 run
+    scoreboard players get @s ##t2##
 
 # Zephyr spell
 execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:##mage_zephyr_1_name##}}}}] at @s store success score @s replenish_ok run 
@@ -176,9 +229,14 @@ tag @a remove replenish_fail
 
 # Apply buffs
 scoreboard players set @a[tag=mage] ##mage_fireball_power## 4
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 5
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 5
-scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 5
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 4
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 4
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_fireball_boost_1##]}}}]}] ##mage_fireball_power## 4
+
+scoreboard players set @a[tag=mage] ##mage_windspear_power## 25
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_windspear_boost_1##]}}}]}] ##mage_windspear_power## 25
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##mage_windspear_boost_1##]}}}]}] ##mage_windspear_power## 25
+scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##mage_windspear_boost_1##]}}}]}] ##mage_windspear_power## 25
 
 scoreboard players set @a[tag=mage] ##mage_repulse_power## 0
 scoreboard players add @a[tag=mage,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##mage_repulse_boost_1##]}}}]}] ##mage_repulse_power## 1

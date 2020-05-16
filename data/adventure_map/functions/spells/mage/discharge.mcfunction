@@ -10,4 +10,4 @@ execute at @s[tag=discharge_cast] run effect give @e[team=Enemies,distance=0..6]
 execute at @s[tag=discharge_cast] at @e[team=Enemies,distance=0..4] run particle minecraft:large_smoke ~ ~1 ~ 0.25 1 0.25 0 50
 execute at @s[tag=discharge_cast] at @e[team=Enemies,distance=0..4] run particle minecraft:instant_effect ~ ~1 ~ 0.5 1 0.5 0 50
 execute at @s[tag=discharge_cast] run particle minecraft:flame ~ ~ ~ 0.25 1 0.25 0.1 50
-execute at @s[tag=discharge_cast] run scoreboard players operation @e[team=Enemies,distance=0..6] fine_hp.mdmg += @p[distance=0..4,scores={fine_hp.tmp0=1},tag=mage] spell.4.power
+execute at @s[tag=discharge_cast] run scoreboard players operation @e[team=Enemies,distance=0..6] fine_hp.mdmg += @p[distance=0..4,scores={fine_hp.tmp0=1},tag=mage] spell.5.power
