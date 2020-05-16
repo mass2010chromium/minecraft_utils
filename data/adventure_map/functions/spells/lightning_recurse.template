@@ -1,16 +1,17 @@
 particle minecraft:poof ~ ~ ~ 0.5 0.5 0.5 0.1 10 force
 particle minecraft:poof ~ ~ ~ 0.5 0.5 0.5 1 10 force
-particle minecraft:lava ~ ~ ~ 0.5 0.5 0.5 0.1 10 force
+particle minecraft:end_rod ~ ~ ~ 0.5 0.5 0.5 0.1 10 force
 particle minecraft:flash ~ ~ ~ 0.5 0.5 0.5 0.1 1 force
 scoreboard players add @s ##t0## 1
 scoreboard players operation @s ##t1## = @s ##t0##
 scoreboard players operation @s ##t1## %= @s ##t5##
-scoreboard players add @s[scores={##t1##=0}] ##random## 2
-scoreboard players operation @s[scores={##t1##=0}] ##random## %= @s ##t3##
-tp @s[scores={##random##=0}] ~ ~1 ~
-tp @s[scores={##random##=1}] ~0.3 ~1 ~
-tp @s[scores={##random##=2}] ~ ~1 ~-0.3
-tp @s[scores={##random##=3}] ~-0.3 ~1 ~
-tp @s[scores={##random##=4}] ~ ~1 ~0.3
+scoreboard players operation @s[scores={##t1##=0}] ##random## *= @s ##t2##
+scoreboard players operation @s[scores={##t1##=0}] ##t4## = @s ##random##
+scoreboard players operation @s[scores={##t1##=0}] ##t4## %= @s ##t3##
+tp @s[scores={##t4##=0}] ~ ~1 ~
+tp @s[scores={##t4##=1}] ~0.3 ~1 ~
+tp @s[scores={##t4##=2}] ~ ~1 ~-0.3
+tp @s[scores={##t4##=3}] ~-0.3 ~1 ~
+tp @s[scores={##t4##=4}] ~ ~1 ~0.3
 kill @s[scores={##t0##=100}]
 execute as @s[scores={##t0##=0..100}] at @s run function adventure_map:spells/lightning_recurse

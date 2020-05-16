@@ -1,0 +1,42 @@
+scoreboard players set @a[tag=mage] ##t0## 0
+# Trigger fireball summon, and remove mana from player
+
+scoreboard players add ##globals## ##mage_windspear_power## 1
+
+execute at @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={##mp##=500..}] 
+    store success score @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={##mp##=500..}] ##t0##
+    run tag @s add windspear_summon
+    
+tag @p[tag=mage,scores={##t0##=1}] add windspear_summoner
+scoreboard players remove @p[tag=windspear_summoner] ##mp## 500
+execute as @p[tag=windspear_summoner] at @s run 
+    summon minecraft:armor_stand ^ ^ ^0.1 {Tags:["unprocessed","mage_wind_spear"],Small:1b,Invisible:1b,Invulnerable:1b}
+execute at @p[tag=windspear_summoner] run playsound minecraft:entity.skeleton.shoot master @a
+
+# Record source x,y,z, and assign damage
+execute as @p[tag=windspear_summoner] at @s store result score @e[tag=mage_wind_spear,sort=nearest,limit=1,tag=unprocessed] ##t1## run 
+        data get entity @s Pos[0] 1000
+execute as @p[tag=windspear_summoner] at @s store result score @e[tag=mage_wind_spear,sort=nearest,limit=1,tag=unprocessed] ##t2## run 
+        data get entity @s Pos[1] 1000
+execute as @p[tag=windspear_summoner] at @s store result score @e[tag=mage_wind_spear,sort=nearest,limit=1,tag=unprocessed] ##t3## run 
+        data get entity @s Pos[2] 1000
+execute as @p[tag=windspear_summoner] at @s run 
+    scoreboard players operation @e[tag=mage_wind_spear,sort=nearest,limit=1,tag=unprocessed] ##mage_windspear_power## = @s ##mage_windspear_power##
+
+# Start doing vector math
+# t0, t1, t2 are dx, dy, dz
+execute as @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] store result score @s ##t0## run data get entity @s Pos[0] 1000
+execute as @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] run scoreboard players operation @s ##t0## -= @s ##t1##
+execute as @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] store result score @s ##t1## run data get entity @s Pos[1] 1000
+execute as @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] run scoreboard players operation @s ##t1## -= @s ##t2##
+execute as @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] store result score @s ##t2## run data get entity @s Pos[2] 1000
+execute as @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] run scoreboard players operation @s ##t2## -= @s ##t3##
+
+# Set life ticks.
+scoreboard players set @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] ##t3## 10
+
+execute as @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] at @s run tp @s ~ ~1.5 ~
+scoreboard players operation @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] ##t4## = ##globals## ##mage_windspear_power##
+execute as @s[tag=windspear_summon] at @s run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] add processed
+execute as @s[tag=windspear_summon] at @s run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed
+tag @p[tag=windspear_summoner] remove windspear_summoner

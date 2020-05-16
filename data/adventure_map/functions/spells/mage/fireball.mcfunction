@@ -4,7 +4,7 @@ execute at @p[tag=mage,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..
 tag @p[tag=mage,scores={fine_hp.tmp0=1}] add fireball_summoner
 scoreboard players remove @p[tag=fireball_summoner] mana.mana 200
 execute as @p[tag=fireball_summoner] at @s run summon minecraft:fireball ^ ^ ^0.1 {direction:[0.0,0.0,0.0],ExplosionPower:0,Tags:["unprocessed","mage_fireball"]}
-execute at @p[tag=fireball_summoner] run playsound minecraft:entity.blaze.shoot master @a[distance=0..8] ~ ~ ~ 
+execute at @p[tag=fireball_summoner] run playsound minecraft:entity.blaze.shoot master @a 
 # Record source x,y,z, and assign damage
 execute as @p[tag=fireball_summoner] at @s store result score @e[tag=mage_fireball,sort=nearest,limit=1,tag=unprocessed] fine_hp.tmp1 run data get entity @s Pos[0] 1000
 execute as @p[tag=fireball_summoner] at @s store result score @e[tag=mage_fireball,sort=nearest,limit=1,tag=unprocessed] fine_hp.tmp2 run data get entity @s Pos[1] 1000

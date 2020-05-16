@@ -25,7 +25,7 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_bigger_staff_extra"] = make_description_text(["Is bigger. Apparently."])
     subs["mage_bigger_staff_nbt"] = """Unbreakable:1,
                                       Enchantments:[
-                                        {id:"minecraft:sharpness",lvl:4}
+                                        {id:"minecraft:sharpness",lvl:5}
                                       ],
                                       display:{
                                         Name:##mage_bigger_staff_name##,
@@ -72,12 +72,12 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_fireball_spell"] = '\'"Mage: Fireball Spell"\'';
     subs["mage_fireball_extra"] = make_description_text([
                                                             "Shoot a fireball that explodes on contact or after 0.5s,",
-                                                            "  dealing 3 physical damage and 10 magic damage.",
+                                                            "  dealing 3 physical damage and 8 magic damage.",
                                                             "Damage decreases with distance from explosion center.",
                                                             "A direct hit does even more damage.",
                                                             "Can hurt self and allies!"
                                                             ]) + "," + make_cost("Cost: 200MP")
-    subs["mage_fireball_boost_1"] = '\'"+10 Fireball Magic Damage"\''
+    subs["mage_fireball_boost_1"] = '\'"+8 Fireball Magic Damage"\''
     subs["mage_fireball_power"] = "spell.{}.power".format(spell_id())
     subs["mage_fireball_1_name"] = make_name("Fireball 1")
     subs["mage_fireball_1_nbt"] =    """Enchantments:[{}],
@@ -104,6 +104,26 @@ def add_mage_items(subs, spell_id, get_uuid):
                                           ]
                                         }"""
     subs["mage_fireball_2_item"] = """minecraft:blaze_rod{##mage_fireball_2_nbt##} 1"""
+    
+    subs["mage_windspear_spell"] = '\'"Mage: Cyclone Spear Spell"\'';
+    subs["mage_windspear_extra"] = make_description_text([
+                                                            "Shoot a straight projectile, dealing 25 damage.",
+                                                            "Can be stopped by thick crowds.",
+                                                            ]) + "," + make_cost("Cost: 500MP")
+    subs["mage_windspear_boost_1"] = '\'"+25 Cyclone Spear damage"\''
+    subs["mage_windspear_power"] = "spell.{}.power".format(spell_id())
+    subs["mage_windspear_1_name"] = make_name("Cyclone Spear 1")
+    subs["mage_windspear_1_nbt"] =    """Enchantments:[{}],
+                                        display:{
+                                          Name:##mage_windspear_1_name##,
+                                          Lore:[
+                                            ##mage_windspear_extra##,
+                                            ##mage_primary##,
+                                            ##mage_windspear_spell##,
+                                            ##mage_2##
+                                          ]
+                                        }"""
+    subs["mage_windspear_1_item"] = """minecraft:feather{##mage_windspear_1_nbt##} 1"""
 
     subs["mage_repulse_spell"] = '\'"Mage: Arcane Explosion Spell"\'';
     subs["mage_repulse_extra"] = make_description_text(["Push enemies away."]) + "," + make_cost("Cost: 400MP")

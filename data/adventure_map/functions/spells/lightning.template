@@ -3,7 +3,9 @@ summon lightning_bolt ~ 255 ~
 
 summon armor_stand ~ ~ ~ {Tags:["lightning_tracker"],Marker:1b,Invisible:1b}
 execute as @e[type=armor_stand,sort=nearest,limit=1,tag=lightning_tracker] run scoreboard players set @s ##t3## 5
+execute as @e[type=armor_stand,sort=nearest,limit=1,tag=lightning_tracker] run scoreboard players set @s ##t2## 17
 execute as @e[type=armor_stand,sort=nearest,limit=1,tag=lightning_tracker] run scoreboard players set @s ##t5## 20
 execute as @e[type=armor_stand,sort=nearest,limit=1,tag=lightning_tracker] run function adventure_map:rng/rng
-execute as @e[type=armor_stand,sort=nearest,limit=1,tag=lightning_tracker] run scoreboard players operation @s ##random## %= @s ##t3##
+execute as @e[type=armor_stand,sort=nearest,limit=1,tag=lightning_tracker] run scoreboard players operation @s ##t4## = @s ##random##
+execute as @e[type=armor_stand,sort=nearest,limit=1,tag=lightning_tracker] run scoreboard players operation @s ##t4## %= @s ##t3##
 execute as @e[type=armor_stand,sort=nearest,limit=1,tag=lightning_tracker] at @s run function adventure_map:spells/lightning_recurse

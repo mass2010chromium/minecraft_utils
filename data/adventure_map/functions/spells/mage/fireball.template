@@ -9,7 +9,7 @@ tag @p[tag=mage,scores={##t0##=1}] add fireball_summoner
 scoreboard players remove @p[tag=fireball_summoner] ##mp## 200
 execute as @p[tag=fireball_summoner] at @s run 
     summon minecraft:fireball ^ ^ ^0.1 {direction:[0.0,0.0,0.0],ExplosionPower:0,Tags:["unprocessed","mage_fireball"]}
-execute at @p[tag=fireball_summoner] run playsound minecraft:entity.blaze.shoot master @a[distance=0..8] ~ ~ ~
+execute at @p[tag=fireball_summoner] run playsound minecraft:entity.blaze.shoot master @a
 
 # Record source x,y,z, and assign damage
 execute as @p[tag=fireball_summoner] at @s store result score @e[tag=mage_fireball,sort=nearest,limit=1,tag=unprocessed] ##t1## run 

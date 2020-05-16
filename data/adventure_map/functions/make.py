@@ -175,6 +175,7 @@ files = [   "fine_damage/loop",
         
             "spells/mage/discharge",
             "spells/mage/fireball",
+            "spells/mage/wind_spear",
 			"spells/dev/blink",
             
             "spells/mobs/blaze",
