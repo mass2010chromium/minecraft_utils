@@ -1,1 +1,1 @@
-summon villager ~ ~ ~ { VillagerData:{ profession:nitwit,level:2,type:desert }, Team:Friendlies, Invulnerable:1, PersistenceRequired:1, Attributes:[{Name:"generic.movementSpeed",Base:0.43f}],CustomName:'"Khors Onah Citizen"',CustomNameVisible:1}
+summon villager ~ ~ ~ { VillagerData:{ profession:nitwit,level:2,type:desert }, Team:Friendlies, Invulnerable:1, PersistenceRequired:1, Attributes:[{Name:"generic.movementSpeed",Base:0.43f}],CustomName:'"Khors Onah Citizen"',CustomNameVisible:1,Tags:["reset"]}

@@ -11,7 +11,7 @@ scoreboard players set @s mana.mana_regb 6
 scoreboard players set @s mana.mana_steal 0
 scoreboard players set @s mana.mscd 0
 scoreboard players set @s fine_hp.mdmgrb 20
-scoreboard players set @s fine_hp.dmgrb 15
+scoreboard players set @s fine_hp.dmgrb 5
 replaceitem entity @s armor.head minecraft:golden_helmet{Unbreakable:1,display:{Name:'{"text":"Mage\'s Thinking Cap","italic":false}'}, AttributeModifiers:[]} 1
 replaceitem entity @s armor.chest minecraft:leather_chestplate{Unbreakable:1,display:{Name:'{"text":"Mage\'s Robes","italic":false}'}, AttributeModifiers:[]} 1
 replaceitem entity @s armor.legs minecraft:iron_leggings{Unbreakable:1,display:{Name:'{"text":"Mage\'s Greaves","italic":false}'}, AttributeModifiers:[]} 1

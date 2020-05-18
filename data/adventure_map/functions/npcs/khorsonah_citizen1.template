@@ -1,0 +1,8 @@
+summon villager ~ ~ ~ {
+    VillagerData:{
+        profession:librarian,level:2,type:desert
+    },
+    Team:##friendlies##,
+    Invulnerable:1,
+    PersistenceRequired:1,
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Khors Onah Citizen (NPC)"',CustomNameVisible:1,Tags:["reset"]}    

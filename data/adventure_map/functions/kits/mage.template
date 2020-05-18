@@ -11,7 +11,7 @@ scoreboard players set @s ##mp_regen_base## 6
 scoreboard players set @s ##melee_mp## 0
 scoreboard players set @s ##melee_mp_cooldown## 0
 scoreboard players set @s ##magic_resist_base## 20
-scoreboard players set @s ##physical_resist_base## 15
+scoreboard players set @s ##physical_resist_base## 5
 replaceitem entity @s armor.head minecraft:golden_helmet{Unbreakable:1,display:{Name:'{"text":"Mage\'s Thinking Cap","italic":false}'},
                                     AttributeModifiers:[]} 1
 replaceitem entity @s armor.chest minecraft:leather_chestplate{Unbreakable:1,display:{Name:'{"text":"Mage\'s Robes","italic":false}'},

@@ -11,7 +11,7 @@ scoreboard players set @s mana.mana_regb 4
 scoreboard players set @s mana.mana_steal 0
 scoreboard players set @s mana.mscd 0
 scoreboard players set @s fine_hp.mdmgrb 5
-scoreboard players set @s fine_hp.dmgrb 5
+scoreboard players set @s fine_hp.dmgrb 15
 replaceitem entity @s armor.head minecraft:leather_helmet{Unbreakable:1, AttributeModifiers:[],display:{Name:'{"text":"Archer\'s Cap","italic":false}'}} 1
 replaceitem entity @s armor.chest minecraft:leather_chestplate{Unbreakable:1, AttributeModifiers:[],display:{Name:'{"text":"Archer\'s Shirt","italic":false}'}} 1
 replaceitem entity @s armor.legs minecraft:leather_leggings{Unbreakable:1, AttributeModifiers:[],display:{Name:'{"text":"Archer\'s Pants","italic":false}'}} 1

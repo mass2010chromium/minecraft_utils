@@ -159,7 +159,9 @@ files = [   "fine_damage/loop",
 			"summons/khorsonah_bat", ###region 5 (sewer)
 			"summons/sewer_rat",
 			"summons/animated_fecal_matter",
+            "summons/sludge_trudger",
 			"summons/khorsonah_guard",
+            "summons/sick_bum",
 			"summons/khorsonah_civilian", ###region 6 (Khors Onah)
             "summons/ranged_test",
             
@@ -223,7 +225,10 @@ files = [   "fine_damage/loop",
 			"npcs/gardener_1",
 			"npcs/cave_hermit",
 			"npcs/john",
-			"npcs/smalloasis_hermit"
+			"npcs/smalloasis_hermit",
+            "npcs/khorsonah_citizen1",
+            "npcs/khorsonah_citizen2",
+            "npcs/khorsonah_citizen3"
         ]
 
 for k, v in subs.items():
