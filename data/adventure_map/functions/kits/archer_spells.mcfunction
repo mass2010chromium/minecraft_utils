@@ -8,7 +8,12 @@ tag @a[tag=archer,nbt={SelectedItemSlot:0}] remove holdingWeapon
 effect give @a[tag=archer,tag=holdingWeapon] slowness 3 9
 effect give @a[tag=archer,tag=holdingWeapon] weakness 3 9
 tag @a[tag=archer] remove holdingWeapon  
-# No replenish mechanics for archer  
+# Arrow replenish mechanics for archer
+clear @a arrow
+clear @a tipped_arrow
+tag @a[tag=archer,nbt={Inventory:[{Slot:-106b}]}] add offhandOccupied 
+replaceitem entity @a[tag=archer,tag=!offhandOccupied,nbt={SelectedItemSlot:1,SelectedItem:{tag:{display:{Lore:['"Archer: Normal Arrows"']}}}}] weapon.offhand arrow 1 
+tag @a[tag=archer] remove offhandOccupied  
 # Piercing arrow spell
 tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:'{"text":"Piercing Arrow 1","italic":false}'}}}]}] add pa_1
 scoreboard players set @a[tag=pa_1] spell.7.power 10 
