@@ -6,23 +6,6 @@ summon villager ~ ~1 ~ {
     Invulnerable:1,
     PersistenceRequired:1,
     Offers:{
-        Recipes:[
-            {
-                buy:{
-                    
-                },
-                sell:{
-                    
-                },rewardExp:0b,maxUses:0
-            },
-			{
-                buy:{
-                    
-                },
-                sell:{
-                    
-                },rewardExp:0b,maxUses:0
-            }
-        ]
+        
     },
     Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Priest Jon (NPC)"',CustomNameVisible:1,Tags:["npc"]}

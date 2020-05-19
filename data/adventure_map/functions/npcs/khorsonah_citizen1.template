@@ -5,4 +5,6 @@ summon villager ~ ~ ~ {
     Team:##friendlies##,
     Invulnerable:1,
     PersistenceRequired:1,
-    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'"Khors Onah Citizen (NPC)"',CustomNameVisible:1,Tags:["reset"]}    
+    Offers:{
+    },
+    Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'{"text":"Citizen (NPC)","color":"white"}',CustomNameVisible:1,Tags:["reset","khorsonah_1","d0"]}    
