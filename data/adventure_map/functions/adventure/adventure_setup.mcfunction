@@ -30,7 +30,10 @@ scoreboard objectives add rangedMD dummy
 scoreboard objectives add blink minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add _blink trigger 
 scoreboard objectives add use.golden_hoe minecraft.used:minecraft.golden_hoe
-scoreboard objectives add use.stone_sword minecraft.used:minecraft.stone_sword 
+scoreboard objectives add use.stone_sword minecraft.used:minecraft.stone_sword
+scoreboard objectives add use.golden_sword minecraft.used:minecraft.golden_sword
+scoreboard objectives add use.iron_sword minecraft.used:minecraft.iron_sword
+scoreboard objectives add use.diam_sword minecraft.used:minecraft.diam_sword 
 gamerule mobGriefing false
 gamerule doMobSpawning false
 gamerule doWeatherCycle false

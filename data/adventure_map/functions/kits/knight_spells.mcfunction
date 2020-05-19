@@ -1,8 +1,14 @@
 # Splash melee
 tag @a[tag=knight,scores={use.stone_sword=1,mana.mscd=0}] add knight_mana_steal
+tag @a[tag=knight,scores={use.golden_sword=1,mana.mscd=0}] add knight_mana_steal
+tag @a[tag=knight,scores={use.iron_sword=1,mana.mscd=0}] add knight_mana_steal
+tag @a[tag=knight,scores={use.diam_sword=1,mana.mscd=0}] add knight_mana_steal
 execute as @a[tag=knight_mana_steal] run scoreboard players operation @s mana.mana += @s mana.mana_steal
 execute as @a[tag=knight_mana_steal] run scoreboard players set @s mana.mscd 10
 scoreboard players set @a use.stone_sword 0
+scoreboard players set @a use.golden_sword 0
+scoreboard players set @a use.iron_sword 0
+scoreboard players set @a use.diam_sword 0
 tag @a remove knight_mana_steal 
 # Class restriction
 effect give @a[tag=!knight,nbt={SelectedItem:{tag:{display:{Lore:['"Knight: Sword"']}}}}] slowness 3 9
