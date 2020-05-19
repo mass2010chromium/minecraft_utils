@@ -12,7 +12,14 @@ effect give @a[tag=archer,tag=holdingWeapon] weakness 3 9
 tag @a[tag=archer] remove holdingWeapon
 
 
-# No replenish mechanics for archer
+# Arrow replenish mechanics for archer
+clear @a arrow
+clear @a tipped_arrow
+tag @a[tag=archer,nbt={Inventory:[{Slot:-106b}]}] add offhandOccupied
+
+replaceitem entity @a[tag=archer,tag=!offhandOccupied,nbt={SelectedItemSlot:1,SelectedItem:{tag:{display:{Lore:[##archer_normal_arrows##]}}}}] weapon.offhand arrow 1
+
+tag @a[tag=archer] remove offhandOccupied
 
 
 # Piercing arrow spell
