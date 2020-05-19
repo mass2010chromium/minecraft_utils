@@ -1,8 +1,8 @@
 summon minecraft:silverfish ~ ~ ~ {DeathLootTable:"adventure_map:entities/empty",Tags:["unprocessed"],Team:##enemies##}
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 25
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 25
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 25
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 8
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 30
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 30
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 30
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 0
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist_base## 20
 data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
     CustomName:'"Sewer Rat"',
@@ -11,7 +11,7 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
         {id:"minecraft:stone",Count:1b}, {}
     ],
     ArmorItems:[
-        {id:"leather_boots",Count:1b,tag:{display:{color:6040847},Unbreakable:1b,Enchantments:[{id:depth_strider,lvl:3}]}},
+        {},
 		{},
 		{},
 		{}
