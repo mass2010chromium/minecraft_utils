@@ -1,9 +1,9 @@
 summon minecraft:zombie ~ ~ ~ {DeathLootTable:"adventure_map:entities/empty",Tags:["unprocessed","##ranged_mob##"],IsBaby:1b,Team:##enemies##}
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 30
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 30
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 30
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 5
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist_base## 8
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 35
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 35
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 35
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##physical_resist_base## 0
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##magic_resist_base## 0
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##ranged_magic## 0
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##ranged_physical## 6
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##ranged_freq## 60
@@ -15,9 +15,9 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
         {id:"minecraft:soul_sand",Count:1b}, {id:"minecraft:soul_sand",Count:1b}
     ],
     ArmorItems:[
-        {id:"leather_boots",Count:1b,tag:{display:{color:6040847},Unbreakable:1b,Enchantments:[{id:depth_strider,lvl:3}]}},
-		{id:"leather_leggings",Count:1b,tag:{display:{color:6040847},Unbreakable:1b}},
-		{id:"leather_chestplate",Count:1b,tag:{display:{color:6040847},Unbreakable:1b}},
+        {id:"leather_boots",Count:1b,tag:{display:{color:6040847},Unbreakable:1b,AttributeModifiers:[]}},
+		{id:"leather_leggings",Count:1b,tag:{display:{color:6040847},Unbreakable:1b,AttributeModifiers:[]}},
+		{id:"leather_chestplate",Count:1b,tag:{display:{color:6040847},Unbreakable:1b,AttributeModifiers:[]}},
 		{id:"minecraft:podzol",Count:1b}
     ],
     HandDropChances:[0.0f,0.0f],
