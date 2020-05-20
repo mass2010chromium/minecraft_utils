@@ -1,4 +1,4 @@
-scoreboard players remove @s ##ranged_tick## 1
+execute if entity @p[distance=..20] run scoreboard players remove @s ##ranged_tick## 1
 
 execute as @e[tag=##ranged_mob##,scores={##ranged_tick##=0..1}] at @s run tp @s ~ ~ ~ facing entity @p
 

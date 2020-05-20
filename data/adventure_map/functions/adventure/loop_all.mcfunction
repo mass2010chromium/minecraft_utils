@@ -6,7 +6,7 @@ function adventure_map:kits/archer_spells
 function adventure_map:kits/knight_spells
 function adventure_map:spells/dev/blink
 function adventure_map:spells/mobs/blaze
-execute as @e[tag=rangedTag] at @s run function adventure_map:spells/mobs/simple_ranged
+execute as @e[tag=rangedTag] at @s run function adventure_map:spells/mobs/ranged_mob_loop
 execute as @e[tag=rangedMissile] at @s run function adventure_map:spells/mobs/ranged_generic_loop
 execute as @e[type=item,tag=!processed] run function adventure_map:kits/common_spells
 function adventure_map:mana/loop

@@ -1,0 +1,7 @@
+execute if entity @p[distance=0..20] run scoreboard players remove @s ##ranged_tick## 1
+
+tp @s[scores={##ranged_tick##=0..1}] ~ ~ ~ facing entity @p
+
+execute as @s[scores={##ranged_tick##=0},tag=simpleRanged] at @s run function adventure_map:spells/mobs/simple_ranged_shoot
+
+scoreboard players operation @s[scores={##ranged_tick##=0}] ##ranged_tick## = @s ##ranged_freq##
