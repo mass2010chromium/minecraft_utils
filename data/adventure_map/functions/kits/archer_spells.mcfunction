@@ -61,3 +61,4 @@ tag @e[type=spectral_arrow] add processed
 execute at @e[type=minecraft:spectral_arrow] run effect clear @e[team=Enemies,distance=0..4] minecraft:glowing 
 # Kill spell arrows that are in ground
 kill @e[type=minecraft:spectral_arrow,nbt={inGround:1b}]
+kill @e[type=minecraft:arrow,nbt={inGround:1b}]

@@ -183,7 +183,7 @@ files = [   "fine_damage/loop",
             "spells/mobs/blaze",
             "spells/mobs/blaze_fireball",
             
-            "spells/mobs/simple_ranged",
+            "spells/mobs/ranged_mob_loop",
             "spells/mobs/simple_ranged_shoot",
             "spells/mobs/simple_ranged_hit",
             "spells/mobs/ranged_generic_loop",
