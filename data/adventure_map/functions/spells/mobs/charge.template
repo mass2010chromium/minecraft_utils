@@ -51,7 +51,7 @@ scoreboard players operation @s ##t5## -= @s ##t2##
 # Extra y velocity
 scoreboard players operation @s ##t5## += @s ##t0##
 scoreboard players add @s ##t5## 500
-execute if entity @p[distance=0..5] run scoreboard players remove @s ##t5## 500
+# execute if entity @p[distance=0..4] run scoreboard players remove @s ##t5## 500
 
 execute store result score @s ##charge_vz## run data get entity @e[tag=chargeTMP,sort=nearest,limit=1] Pos[2] 1000
 scoreboard players operation @s ##charge_vz## -= @s ##t3##

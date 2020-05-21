@@ -1,8 +1,9 @@
 give @s ##archer_basic_axe_item##
+give @s ##archer_small_dagger_item##
 
 give @s ##archer_basic_bow_item##
 give @s ##archer_longbow_bow_item##
+give @s ##archer_cactus_fiber_bow_item##
 
 give @s ##archer_windwalk_1_item##
-
 give @s ##archer_piercingArrow_1_item##

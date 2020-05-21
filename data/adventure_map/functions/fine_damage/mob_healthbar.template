@@ -1,6 +1,13 @@
 scoreboard players add @s ##regen_tick## 1
 effect clear @s minecraft:resistance
 
+execute at @s if entity @p[distance=0..5] run tag @s add short_sighted
+execute at @s[tag=short_sighted] if entity @p[distance=0..5] run tag @s add nearby_tmp
+data modify entity @s[tag=short_sighted,tag=!nearby_tmp] Attributes[{Name:"generic.followRange"}].Base set value 200
+tag @s[tag=short_sighted,tag=!nearby_tmp] remove short_sighted
+data modify entity @s[tag=short_sighted] Attributes[{Name:"generic.followRange"}].Base set value 6
+tag @s remove nearby_tmp
+
 scoreboard players operation @s ##health## < @s ##max_health##
 
 execute as @s store result score @s ##t0## run data get entity @s Health
