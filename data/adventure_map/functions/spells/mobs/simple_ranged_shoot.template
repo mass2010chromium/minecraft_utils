@@ -1,7 +1,7 @@
 summon minecraft:armor_stand ^ ^ ^1 {
     Tags:[
         "##ranged_projectile##","unprocessed","MissileSimple"
-    ],OnGround:0b,Invulnerable:1b,Invisible:1b,DisabledSlots:2039583}
+    ],OnGround:0b,Invulnerable:1b,Invisible:1b,DisabledSlots:2039583,IsBaby:1b}
 
 data modify entity @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] Rotation set from entity @s Rotation
 data modify entity @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] ArmorItems[3] set from entity @s HandItems[0]
@@ -43,8 +43,9 @@ scoreboard players operation @e[tag=##ranged_projectile##,sort=nearest,limit=1,t
 # t0, t1, t2 are dx, dy, dz
 execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] store result score @s ##t0## run data get entity @s Pos[0] 1000
 execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] run scoreboard players operation @s ##t0## -= @s ##t1##
-execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] run function adventure_map:rng/rng
+
 # +/- 1 block mini spread
+execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed,tag=randomize] run function adventure_map:rng/rng
 scoreboard players set @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed,tag=randomize] ##t4## 800
 execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed,tag=randomize] run 
     scoreboard players operation @s ##random## %= @s ##t4##
@@ -59,7 +60,9 @@ scoreboard players operation @e[tag=##ranged_projectile##,sort=nearest,limit=1,t
 
 execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] store result score @s ##t2## run data get entity @s Pos[2] 1000
 execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed] run scoreboard players operation @s ##t2## -= @s ##t3##
+
 # +/- 1 block mini spread
+execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed,tag=randomize] run function adventure_map:rng/rng
 execute as @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed,tag=randomize] run 
     scoreboard players operation @s ##random## %= @s ##t4##
 scoreboard players remove @e[tag=##ranged_projectile##,sort=nearest,limit=1,tag=unprocessed,tag=randomize] ##random## 400

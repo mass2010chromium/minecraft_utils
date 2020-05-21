@@ -27,6 +27,12 @@ scoreboard objectives add rangedCooldown dummy
 scoreboard objectives add rangedCDBase dummy
 scoreboard objectives add rangedPD dummy
 scoreboard objectives add rangedMD dummy 
+scoreboard objectives add chargeCooldown dummy
+scoreboard objectives add chargeCDBase dummy
+scoreboard objectives add chargePD dummy
+scoreboard objectives add chargeMD dummy
+scoreboard objectives add chargeVY dummy
+scoreboard objectives add chargeVX dummy 
 scoreboard objectives add blink minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add _blink trigger 
 scoreboard objectives add use.stone_hoe minecraft.used:minecraft.stone_hoe
