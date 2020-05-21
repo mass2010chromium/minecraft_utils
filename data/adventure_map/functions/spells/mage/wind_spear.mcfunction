@@ -23,6 +23,6 @@ execute as @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] run scor
 scoreboard players set @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] fine_hp.tmp3 10 
 execute as @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] at @s run tp @s ~ ~1.5 ~
 scoreboard players operation @e[tag=unprocessed,tag=mage_wind_spear,sort=nearest,limit=1] fine_hp.tmp4 = [GLOBALS] spell.2.power
-execute as @s[tag=windspear_summon] at @s run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] add processed
-execute as @s[tag=windspear_summon] at @s run tag @e[type=minecraft:fireball,sort=nearest,limit=1,tag=unprocessed] remove unprocessed
+execute as @s[tag=windspear_summon] at @s run tag @e[tag=mage_wind_spear,sort=nearest,limit=1,tag=unprocessed] add processed
+execute as @s[tag=windspear_summon] at @s run tag @e[tag=mage_wind_spear,sort=nearest,limit=1,tag=unprocessed] remove unprocessed
 tag @p[tag=windspear_summoner] remove windspear_summoner

@@ -4,17 +4,17 @@ execute if entity @p[distance=..20] run scoreboard players remove @s[tag=!chargi
 scoreboard players set @s[tag=charging] ##invulnerable_ticks## 5
 tag @s[nbt={OnGround:1b},tag=charging] add charge_hit
 
-execute if entity @s[tag=charging] if entity @p[distance=0..4] run tag @s add charge_hit
+execute if entity @s[tag=charging] if entity @p[distance=0..3] run tag @s add charge_hit
 
 execute if entity @s[tag=charge_hit] run particle explosion_emitter ~ ~ ~
 execute if entity @s[tag=charge_hit] run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.8 0.7
 data modify entity @s[tag=charge_hit] Attributes[{Name:"generic.followRange"}].Base set value 200
+#execute if entity @s[tag=charge_hit] run scoreboard players operation @a[distance=0..2] ##physical_damage## += @s ##charge_physical##
+#execute if entity @s[tag=charge_hit] run scoreboard players operation @a[distance=0..2] ##magic_damage## += @s ##charge_magic##
 execute if entity @s[tag=charge_hit] run scoreboard players operation @a[distance=0..3] ##physical_damage## += @s ##charge_physical##
 execute if entity @s[tag=charge_hit] run scoreboard players operation @a[distance=0..3] ##magic_damage## += @s ##charge_magic##
 execute if entity @s[tag=charge_hit] run scoreboard players operation @a[distance=0..4] ##physical_damage## += @s ##charge_physical##
 execute if entity @s[tag=charge_hit] run scoreboard players operation @a[distance=0..4] ##magic_damage## += @s ##charge_magic##
-execute if entity @s[tag=charge_hit] run scoreboard players operation @a[distance=0..5] ##physical_damage## += @s ##charge_physical##
-execute if entity @s[tag=charge_hit] run scoreboard players operation @a[distance=0..5] ##magic_damage## += @s ##charge_magic##
 
 scoreboard players set @s[tag=charge_hit] ##charge_vx## 0
 scoreboard players set @s[tag=charge_hit] ##charge_vz## 0

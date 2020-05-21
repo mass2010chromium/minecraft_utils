@@ -34,7 +34,7 @@ scoreboard players operation @s fine_hp.tmp5 -= @s fine_hp.tmp2
 # Extra y velocity
 scoreboard players operation @s fine_hp.tmp5 += @s fine_hp.tmp0
 scoreboard players add @s fine_hp.tmp5 500
-execute if entity @p[distance=0..5] run scoreboard players remove @s fine_hp.tmp5 500 
+# execute if entity @p[distance=0..4] run scoreboard players remove @s fine_hp.tmp5 500 
 execute store result score @s chargeVX run data get entity @e[tag=chargeTMP,sort=nearest,limit=1] Pos[2] 1000
 scoreboard players operation @s chargeVX -= @s fine_hp.tmp3 
 # # +/- 1 block mini spread
