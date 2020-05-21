@@ -28,6 +28,7 @@ def add_archer_items(subs, spell_id, get_uuid):
                                       }"""
     subs["archer_basic_bow_item"] = """minecraft:bow{##archer_basic_bow_nbt##} 1"""
     #T1 Bow
+    subs["archer_longbow_bow_extra"] = make_description_text(["It\\'s a longer bow!"])
     subs["archer_longbow_bow_name"] = make_name("Longbow")
     subs["archer_longbow_bow_nbt"] = """Unbreakable:1,
                                         Enchantments:[
@@ -36,7 +37,7 @@ def add_archer_items(subs, spell_id, get_uuid):
                                         display:{
                                           Name:##archer_longbow_bow_name##,
                                           Lore:[
-                                            '"It\\'s a longer bow!"',
+                                            ##archer_longbow_bow_extra##,
                                             ##archer_bow##,
                                             ##archer_normal_arrows##,
                                             ##archer_2##
