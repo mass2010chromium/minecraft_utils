@@ -13,7 +13,7 @@ summon villager -179.5 65 22.5 {
                     id:sunflower,Count:18,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
-                    id:stone_sword,Count:1,tag:{##knight_castironsword_sword_nbt##}
+                    id:iron_sword,Count:1,tag:{##knight_castironsword_sword_nbt##}
                 },rewardExp:0b,maxUses:9999999
             }
         ]
