@@ -1,4 +1,4 @@
-summon minecraft:zombie ~ ~ ~ {DeathLootTable:"adventure_map:entities/empty",Tags:["unprocessed","##ranged_mob##"],IsBaby:1b,Team:##enemies##}
+summon minecraft:zombie ~ ~ ~ {DeathLootTable:"adventure_map:entities/empty",Tags:["unprocessed","##ranged_mob##","simpleRanged"],IsBaby:1b,Team:##enemies##}
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 35
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 35
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 35

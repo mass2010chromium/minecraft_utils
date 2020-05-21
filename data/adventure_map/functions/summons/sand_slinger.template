@@ -1,4 +1,4 @@
-summon minecraft:husk ~ ~ ~ {DeathLootTable:"adventure_map:entities/region_4",Tags:["unprocessed","##ranged_mob##"],Team:##enemies##,isBaby:1b}
+summon minecraft:husk ~ ~ ~ {DeathLootTable:"adventure_map:entities/region_4",Tags:["unprocessed","##ranged_mob##","simpleRanged"],Team:##enemies##,isBaby:1b}
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##health## 30
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##max_health## 30
 scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##last_health## 30
