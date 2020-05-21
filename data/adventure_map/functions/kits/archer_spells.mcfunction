@@ -12,7 +12,8 @@ tag @a[tag=archer] remove holdingWeapon
 clear @a arrow
 clear @a tipped_arrow
 tag @a[tag=archer,nbt={Inventory:[{Slot:-106b}]}] add offhandOccupied 
-replaceitem entity @a[tag=archer,tag=!offhandOccupied,nbt={SelectedItemSlot:1,SelectedItem:{tag:{display:{Lore:['"Archer: Normal Arrows"']}}}}] weapon.offhand arrow 1 
+replaceitem entity @a[tag=archer,tag=!offhandOccupied,nbt={SelectedItemSlot:1,SelectedItem:{tag:{display:{Lore:['"Archer: Normal Arrows"']}}}}] weapon.offhand arrow 1
+stopsound @a player minecraft:item.armor.equip_generic
 tag @a[tag=archer] remove offhandOccupied  
 # Piercing arrow spell
 tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:'{"text":"Piercing Arrow 1","italic":false}'}}}]}] add pa_1

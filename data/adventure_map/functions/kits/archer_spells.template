@@ -18,7 +18,7 @@ clear @a tipped_arrow
 tag @a[tag=archer,nbt={Inventory:[{Slot:-106b}]}] add offhandOccupied
 
 replaceitem entity @a[tag=archer,tag=!offhandOccupied,nbt={SelectedItemSlot:1,SelectedItem:{tag:{display:{Lore:[##archer_normal_arrows##]}}}}] weapon.offhand arrow 1
-
+stopsound @a player minecraft:item.armor.equip_generic
 tag @a[tag=archer] remove offhandOccupied
 
 
