@@ -37,6 +37,13 @@ scoreboard objectives add ##ranged_freq## dummy
 scoreboard objectives add ##ranged_physical## dummy
 scoreboard objectives add ##ranged_magic## dummy
 
+scoreboard objectives add ##charge_tick## dummy
+scoreboard objectives add ##charge_freq## dummy
+scoreboard objectives add ##charge_physical## dummy
+scoreboard objectives add ##charge_magic## dummy
+scoreboard objectives add ##charge_vx## dummy
+scoreboard objectives add ##charge_vz## dummy
+
 scoreboard objectives add blink minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add _blink trigger
 

@@ -215,6 +215,7 @@ execute as @e[tag=repulsed] run scoreboard players operation @s ##t1## > @s ##t2
 execute as @e[tag=repulsed] store result entity @s Motion[0] double 0.001 run scoreboard players get @s ##t0##
 execute as @e[tag=repulsed] run data modify entity @s Motion[1] set value 0.5
 execute as @e[tag=repulsed] store result entity @s Motion[2] double 0.001 run scoreboard players get @s ##t1##
+tag @e[tag=repulsed,tag=charging] add blocked
 tag @e[tag=repulsed] remove repulsed
 
 kill @e[scores={replenish_ok=1}]

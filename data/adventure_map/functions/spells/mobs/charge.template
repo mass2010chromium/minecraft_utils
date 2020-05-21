@@ -1,7 +1,71 @@
-execute if entity @p[distance=..20] run scoreboard players remove @s ##ranged_tick## 1
+summon minecraft:armor_stand ^ ^ ^0.6 {
+    Tags:[
+        "chargeTMP"
+    ],OnGround:0b,Invulnerable:1b,Invisible:1b,DisabledSlots:2039583}
 
-execute as @e[tag=##ranged_mob##,scores={##ranged_tick##=0..1}] at @s run tp @s ~ ~ ~ facing entity @p
+#function adventure_map:rng/rng
+#scoreboard players set @s ##t0## 4
+#scoreboard players operation @s ##random## %= @s ##t0##
+#execute as @s[scores={##random##=0..0}] run tag @e[tag=chargeTMP,sort=nearest,limit=1] add randomize
 
-execute as @s[scores={##ranged_tick##=0}] at @s run function adventure_map:spells/mobs/simple_ranged_shoot
+# Increase y velocity factor
+execute store result score @s ##t0## run 
+        data get entity @p Pos[0] 1000
+execute store result score @s ##t1## run 
+        data get entity @p Pos[2] 1000
+execute store result score @s ##t2## run 
+        data get entity @s Pos[0] 1000
+execute store result score @s ##t3## run 
+        data get entity @s Pos[2] 1000
+scoreboard players operation @s ##t0## -= @s ##t2##
+scoreboard players operation @s ##t1## -= @s ##t3##
 
-scoreboard players operation @s[scores={##ranged_tick##=0}] ##ranged_tick## = @s ##ranged_freq##
+scoreboard players operation @s ##t0## *= @s ##t0##
+scoreboard players operation @s ##t1## *= @s ##t1##
+scoreboard players operation @s ##t0## += @s ##t1##
+scoreboard players set @s ##t1## 800000
+scoreboard players operation @s ##t0## /= @s ##t1##
+
+# Record source x,y,z, and assign damage
+execute store result score @s ##t1## run 
+        data get entity @s Pos[0] 1000
+execute store result score @s ##t2## run 
+        data get entity @s Pos[1] 1000
+execute store result score @s ##t3## run 
+        data get entity @s Pos[2] 1000
+
+
+# Start doing vector math
+# t0, t1, t2 are dx, dy, dz
+execute store result score @s ##charge_vx## run data get entity @e[tag=chargeTMP,sort=nearest,limit=1] Pos[0] 1000
+scoreboard players operation @s ##charge_vx## -= @s ##t1##
+# # +/- 1 block mini spread
+#function adventure_map:rng/rng
+#scoreboard players set @s ##t4## 800
+#scoreboard players operation @s ##random## %= @s ##t4##
+#scoreboard players remove @s ##random## 400
+#scoreboard players operation @s ##charge_vx## += @s ##random##
+    
+execute store result score @s ##t5## run data get entity @e[tag=chargeTMP,sort=nearest,limit=1] Pos[1] 1000
+scoreboard players operation @s ##t5## -= @s ##t2##
+# Extra y velocity
+scoreboard players operation @s ##t5## += @s ##t0##
+scoreboard players add @s ##t5## 500
+execute if entity @p[distance=0..5] run scoreboard players remove @s ##t5## 500
+
+execute store result score @s ##charge_vz## run data get entity @e[tag=chargeTMP,sort=nearest,limit=1] Pos[2] 1000
+scoreboard players operation @s ##charge_vz## -= @s ##t3##
+
+# # +/- 1 block mini spread
+#function adventure_map:rng/rng
+#scoreboard players operation @s ##random## %= @s ##t4##
+#scoreboard players remove @s ##random## 400
+#scoreboard players operation @s ##charge_vz## += @s ##random##
+    
+# Finally store back into entity data.
+execute store result entity @s Motion[1] double 0.001 run scoreboard players get @s ##t5##
+
+tag @s add charging
+data modify entity @s Attributes[{Name:"generic.followRange"}].Base set value 5
+
+kill @e[tag=chargeTMP]

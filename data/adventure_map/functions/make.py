@@ -64,6 +64,14 @@ subs["ranged_freq"] = "rangedCDBase"
 subs["ranged_physical"] = "rangedPD"
 subs["ranged_magic"] = "rangedMD"
 
+subs["charge_mob"] = "chargeTag"
+subs["charge_tick"] = "chargeCooldown"
+subs["charge_freq"] = "chargeCDBase"
+subs["charge_physical"] = "chargePD"
+subs["charge_magic"] = "chargeMD"
+subs["charge_vx"] = "chargeVY"
+subs["charge_vz"] = "chargeVX"
+
 subs["t0"] = "fine_hp.tmp0"
 subs["t1"] = "fine_hp.tmp1"
 subs["t2"] = "fine_hp.tmp2"
@@ -163,8 +171,10 @@ files = [   "fine_damage/loop",
 			"summons/khorsonah_guard",
             "summons/sick_bum",
 			"summons/khorsonah_civilian", ###region 6 (Khors Onah)
-            "summons/ranged_test",
             
+            
+            "summons/ranged_test",
+            "summons/charging_test",
             "summons/basic_invis",
 			
             "summons/enemy_common",
@@ -187,6 +197,9 @@ files = [   "fine_damage/loop",
             "spells/mobs/simple_ranged_shoot",
             "spells/mobs/simple_ranged_hit",
             "spells/mobs/ranged_generic_loop",
+            
+            "spells/mobs/charge",
+            "spells/mobs/charge_loop",
             
             "kits/mage", 
             "kits/mage_spells", 
