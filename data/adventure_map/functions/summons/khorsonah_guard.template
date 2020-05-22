@@ -1,6 +1,6 @@
 summon minecraft:husk ~ ~ ~ {DeathLootTable:"adventure_map:entities/khorsonah_guard",Tags:["unprocessed","##charge_mob##","TheBub"],Team:##enemies##}
-scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##t0## 80
-execute as @a run scoreboard players add @e[tag=unprocessed,sort=nearest,limit=1] ##t0## 70
+scoreboard players set @e[tag=unprocessed,sort=nearest,limit=1] ##t0## 110
+execute as @a run scoreboard players add @e[tag=unprocessed,sort=nearest,limit=1] ##t0## 90
 execute as @e[tag=unprocessed,sort=nearest,limit=1] run scoreboard players operation @s ##health## = @s ##t0##
 execute as @e[tag=unprocessed,sort=nearest,limit=1] run scoreboard players operation @s ##max_health## = @s ##t0##
 execute as @e[tag=unprocessed,sort=nearest,limit=1] run scoreboard players operation @s ##last_health## = @s ##t0##
@@ -20,7 +20,7 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
         {id:"minecraft:iron_boots",Count:1b,tag:{Unbreakable:1b,AttributeModifiers:[],Enchantments:[{id:depth_strider,lvl:3},{id:projectile_protection,lvl:4}]}},
         {id:"minecraft:iron_leggings",Count:1b,tag:{Unbreakable:1b,AttributeModifiers:[]}},
         {id:"minecraft:iron_chestplate",Count:1b,tag:{Unbreakable:1b,AttributeModifiers:[]}},
-        {id:"player_head",Count:1b,tag:{SkullOwner:"hppeng",Enchantments:[{id:projectile_protection,lvl:4}]}}
+        {id:"player_head",Count:1b,tag:{SkullOwner:"hppeng",Enchantments:[]}}
     ],
     HandDropChances:[0.0f,0.0f],
     ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],
