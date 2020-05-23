@@ -34,10 +34,6 @@
                     "name": "minecraft:glass_bottle",
 					"functions": [
 						{
-							"function": "minecraft:set_nbt",
-							"tag": "{display:{Name:'{\"text\":\"Empty Water Bottle\",\"italic\":false}'}}"
-						},
-						{
 							"function": "minecraft:set_count",
 							"count": {
 								"n": 1,
@@ -60,7 +56,7 @@
 					"functions": [
 						{
 							"function": "minecraft:set_nbt",
-							"tag": "{Potion:\"minecraft:water\",display:{Name:'{\"text\":\"Glass of Water\",\"italic\":false}'}}"
+							"tag": "{Potion:\"minecraft:water\"}"
 						},
 						{
 							"function": "minecraft:set_count",
