@@ -29,7 +29,7 @@ summon villager ~ ~ ~ {
             },
 			{
                 buy:{
-                    id:sunflower,Count:25,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:30,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
                     id:end_rod,Count:1,tag:{##mage_discharge_1_nbt##}

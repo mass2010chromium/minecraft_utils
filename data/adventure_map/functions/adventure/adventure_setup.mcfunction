@@ -21,6 +21,9 @@ scoreboard objectives add spell.8.power dummy
 scoreboard objectives add spell.9.power dummy 
 scoreboard objectives add spell.10.power dummy
 scoreboard objectives add spell.10.time dummy 
+scoreboard objectives add spell.11.power dummy
+scoreboard objectives add spell.11.uses dummy
+scoreboard objectives add spell.11.time dummy 
 scoreboard objectives add blaze.m_splash dummy
 scoreboard objectives add blaze.p_splash dummy 
 scoreboard objectives add rangedCooldown dummy
@@ -43,6 +46,7 @@ scoreboard objectives add use.stone_sword minecraft.used:minecraft.stone_sword
 scoreboard objectives add use.golden_sword minecraft.used:minecraft.golden_sword
 scoreboard objectives add use.iron_sword minecraft.used:minecraft.iron_sword
 scoreboard objectives add use.diam_sword minecraft.used:minecraft.diamond_sword 
+scoreboard objectives add shield_used minecraft.custom:minecraft.damage_blocked_by_shield 
 gamerule mobGriefing false
 gamerule doMobSpawning false
 gamerule doWeatherCycle false

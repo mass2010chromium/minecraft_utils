@@ -145,9 +145,9 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_zephyr_1_item"] = """minecraft:magma_cream{##mage_zephyr_1_nbt##} 1"""
 
     subs["mage_discharge_spell"] = '\'"Mage: Discharge Spell"\'';
-    subs["mage_discharge_extra"] = make_description_text([  "Stun nearby enemies temporarily.", 
-                                                            "Grant Strength I to caster for 5 seconds."
-                                                        ]) + "," + make_cost("Cost: 400MP")
+    subs["mage_discharge_extra"] = make_description_text([  "Deal 3 magic damage and Stun nearby enemies.", 
+                                                            "Grant Strength I to nearby players for 5 seconds."
+                                                        ]) + "," + make_cost("Cost: 500MP")
     subs["mage_discharge_boost_1"] = '\'"+2 Discharge damage"\''
     subs["mage_discharge_power"] = "spell.{}.power".format(spell_id())
     subs["mage_discharge_1_name"] = make_name("Discharge 1")

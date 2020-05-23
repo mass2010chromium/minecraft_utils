@@ -107,6 +107,33 @@ def add_knight_items(subs, spell_id, get_uuid):
                                             }"""
     subs["knight_groundPound_1_item"] = """minecraft:anvil{##knight_groundPound_1_nbt##} 1"""
     
+    #Knight Shield 1
+    subs["knight_shield_spell"] = '\'"Knight: Shield Spell"\''
+    subs["knight_shield_extra"] = make_description_text([
+                                                        "Grants a shield that blocks 4 melee hits, lasting 20s.",
+                                                        "Slows nearby enemies when the shield is used."
+                                                        "Can\\'t block ranged projectiles or area attacks."
+                                                        ]) + "," + make_cost("Cost: 300MP")
+    knight_shield_spellID = spell_id()
+    subs["knight_shield_boost_1"] = '\'"+2 Shield uses"\''
+    subs["knight_shield_power"] = "spell.{}.power".format(knight_shield_spellID)
+    subs["knight_shield_uses"] = "spell.{}.uses".format(knight_shield_spellID)
+    subs["knight_shield_used"] = "shield_used"
+    subs["knight_shield_time"] = "spell.{}.time".format(knight_shield_spellID)
+    subs["knight_shield_1_name"] = make_name("Shield 1")
+    subs["knight_shield_1_nbt"] =    """Enchantments:[{}],
+                                            display:{
+                                              Name:##knight_shield_1_name##,
+                                              Lore:[
+                                                ##knight_shield_extra##,
+                                                ##knight_spell##,
+                                                ##knight_shield_spell##,
+                                                ##knight_2##
+                                              ]
+                                            }"""
+    subs["knight_shield_1_item"] = """minecraft:iron_door{##knight_shield_1_nbt##} 1"""
+    
+    
     #Knight T2 Sword
     subs["knight_sandesitesword_sword_name"] = make_name("Sandesite Sword")
     subs["knight_sandesitesword_sword_nbt"] = """Unbreakable:1,

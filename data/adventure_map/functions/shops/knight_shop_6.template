@@ -18,7 +18,15 @@ summon villager ~ ~ ~ {
             },
 			{
                 buy:{
-                    id:sunflower,Count:25,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:30,tag:{display:{Name:"\"Gold Coin\""}}
+                },
+                sell:{
+                    id:iron_door,Count:1,tag:{##knight_shield_1_nbt##}
+                },rewardExp:0b,maxUses:9999999
+            },
+			{
+                buy:{
+                    id:sunflower,Count:30,tag:{display:{Name:"\"Gold Coin\""}}
                 },
                 sell:{
                     id:trident,Count:1,tag:{##knight_mobHook_1_nbt##}

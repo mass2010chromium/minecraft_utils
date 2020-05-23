@@ -38,13 +38,18 @@ execute as @e[tag=replenish_3] at @s run tag @a[distance=0..4,nbt={Inventory:[{S
 # Weapon drop protection
 execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:##knight_basic_sword_name##}}}}] at @s store success score @s replenish_ok run 
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=knight] container.0 ##knight_basic_sword_item##
+execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:##knight_castironsword_sword_name##}}}}] at @s store success score @s replenish_ok run 
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=knight] container.0 ##knight_castironsword_sword_item##
+execute as @e[tag=replenish_0,nbt={Item:{tag:{display:{Name:##knight_sandesitesword_sword_name##}}}}] at @s store success score @s replenish_ok run 
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:0},tag=!replenish_fail,tag=knight] container.0 ##knight_sandesitesword_sword_item##
+
 
 # Trident drop protection
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##knight_depthsCurse_1_name##}}}}] at @s store success score @s replenish_ok run 
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=knight] container.2 ##knight_depthsCurse_1_item##
-    
 execute as @e[tag=replenish_1,nbt={Item:{tag:{display:{Name:##knight_mobHook_1_name##}}}}] at @s store success score @s replenish_ok run 
     replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:2},tag=!replenish_fail,tag=knight] container.2 ##knight_mobHook_1_item##
+
 
 
 # Ground Pound spell
@@ -84,6 +89,41 @@ execute at @e[tag=pounded] run particle minecraft:block iron_block ~ ~1 ~ 0.25 0
 execute as @e[tag=pounded] run data modify entity @s Motion[1] set value 0.8
 tag @e[tag=pounded] remove pounded
 
+
+# Shield Spell continuous commands
+scoreboard players set @a[tag=!knight] ##knight_shield_uses## 0
+clear @a[scores={##knight_shield_uses##=0},gamemode=adventure] shield
+
+scoreboard players remove @a[scores={##knight_shield_used##=1..}] ##knight_shield_uses## 1
+execute at @a[scores={##knight_shield_used##=1..}] run effect give @e[distance=0..3,team=##enemies##] slowness 5
+replaceitem entity @a[scores={##knight_shield_uses##=8}] weapon.offhand shield{Damage:1,Enchantments:[{id:unbreaking,lvl:400}]}
+replaceitem entity @a[scores={##knight_shield_uses##=7}] weapon.offhand shield{Damage:42,Enchantments:[{id:unbreaking,lvl:400}]}
+replaceitem entity @a[scores={##knight_shield_uses##=6}] weapon.offhand shield{Damage:83,Enchantments:[{id:unbreaking,lvl:400}]}
+replaceitem entity @a[scores={##knight_shield_uses##=5}] weapon.offhand shield{Damage:124,Enchantments:[{id:unbreaking,lvl:400}]}
+replaceitem entity @a[scores={##knight_shield_uses##=4}] weapon.offhand shield{Damage:165,Enchantments:[{id:unbreaking,lvl:400}]}
+replaceitem entity @a[scores={##knight_shield_uses##=3}] weapon.offhand shield{Damage:206,Enchantments:[{id:unbreaking,lvl:400}]}
+replaceitem entity @a[scores={##knight_shield_uses##=2}] weapon.offhand shield{Damage:247,Enchantments:[{id:unbreaking,lvl:400}]}
+replaceitem entity @a[scores={##knight_shield_uses##=1}] weapon.offhand shield{Damage:288,Enchantments:[{id:unbreaking,lvl:400}]}
+scoreboard players set @a ##knight_shield_used## 0
+
+scoreboard players remove @a[scores={##knight_shield_time##=1..}] ##knight_shield_time## 1
+scoreboard players set @a[scores={##knight_shield_uses##=0}] ##knight_shield_time## 0
+scoreboard players set @a[scores={##knight_shield_time##=0}] ##knight_shield_uses## 0
+
+# Shield Spell trigger
+execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Name:##knight_shield_1_name##}}}}] at @s store success score @s replenish_ok run 
+    replaceitem entity @p[distance=0..4,nbt={SelectedItemSlot:1},tag=!replenish_fail,tag=knight] container.1 ##knight_shield_1_item##
+# Set up spell success temp var
+scoreboard players set @a[tag=knight] ##t0## 0
+execute as @e[tag=replenish_2,nbt={Item:{tag:{display:{Lore:[##knight_shield_spell##]}}}},scores={replenish_ok=1}] run
+    execute at @s run tag @p[tag=knight,nbt={SelectedItemSlot:1},tag=!replenish_fail,distance=0..4,scores={##mp##=300..}] add cast_shield
+# Remove mana if successful
+scoreboard players remove @a[tag=cast_shield] ##mp## 300
+scoreboard players set @a[tag=cast_shield] ##knight_shield_time## 400
+execute as @a[tag=cast_shield] run scoreboard players operation @s ##knight_shield_uses## = @s ##knight_shield_power##
+
+
+tag @a[tag=cast_shield] remove cast_shield
 
 
 # Trident throwing (TODO)
@@ -170,8 +210,6 @@ execute as @e[tag=hooked] at @s store result entity @s Motion[2] double 0.001 ru
     scoreboard players get @e[tag=hit_mob_trident,tag=mob_hook,sort=nearest,limit=1] ##t1##
 execute as @e[tag=hooked] run data modify entity @s Motion[1] set value 0.5
 tag @e[tag=hooked] remove hooked
-    
-
 
 
 kill @e[tag=hit_trident]
@@ -192,6 +230,11 @@ scoreboard players set @a[tag=knight] ##knight_groundPound_power## 20
 scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##knight_groundPound_boost_1##]}}}]}] ##knight_groundPound_power## 15
 scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##knight_groundPound_boost_1##]}}}]}] ##knight_groundPound_power## 15
 scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##knight_groundPound_boost_1##]}}}]}] ##knight_groundPound_power## 15
+
+scoreboard players set @a[tag=knight] ##knight_shield_power## 4
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##knight_shield_boost_1##]}}}]}] ##knight_shield_power## 2
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:1b,tag:{display:{Lore:[##knight_shield_boost_1##]}}}]}] ##knight_shield_power## 2
+scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:2b,tag:{display:{Lore:[##knight_shield_boost_1##]}}}]}] ##knight_shield_power## 2
 
 scoreboard players set @a[tag=knight] ##knight_depthsCurse_power## 6
 scoreboard players add @a[tag=knight,nbt={Inventory:[{Slot:0b,tag:{display:{Lore:[##knight_depthsCurse_boost_1##]}}}]}] ##knight_depthsCurse_power## 6
