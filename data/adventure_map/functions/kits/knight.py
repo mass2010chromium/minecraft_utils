@@ -111,7 +111,7 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_shield_spell"] = '\'"Knight: Shield Spell"\''
     subs["knight_shield_extra"] = make_description_text([
                                                         "Grants a shield that blocks 4 melee hits, lasting 20s.",
-                                                        "Slows nearby enemies when the shield is used."
+                                                        "Slows nearby enemies when the shield is used.",
                                                         "Can\\'t block ranged projectiles or area attacks."
                                                         ]) + "," + make_cost("Cost: 300MP")
     knight_shield_spellID = spell_id()
