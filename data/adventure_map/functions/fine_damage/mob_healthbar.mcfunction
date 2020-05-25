@@ -1,6 +1,6 @@
 scoreboard players add @s fine_hp.regt 1
 effect clear @s minecraft:resistance 
-execute at @s[type=Zombie] if entity @p[distance=0..5] run tag @s add short_sighted
+execute at @s[type=zombie] if entity @p[distance=0..5] run tag @s add short_sighted
 execute at @s[tag=short_sighted] if entity @p[distance=0..5] run tag @s add nearby_tmp
 data modify entity @s[tag=short_sighted,tag=!nearby_tmp] Attributes[{Name:"generic.followRange"}].Base set value 200
 tag @s[tag=short_sighted,tag=!nearby_tmp] remove short_sighted
