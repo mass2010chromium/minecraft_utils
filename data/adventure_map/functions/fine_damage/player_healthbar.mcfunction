@@ -8,6 +8,10 @@ scoreboard players add @s[nbt={Inventory:[{Slot:100b,tag:{display:{Lore:['"Max H
 scoreboard players add @s[nbt={Inventory:[{Slot:101b,tag:{display:{Lore:['"Max Health Boost: +20"']}}}]}] fine_hp.mh 20
 scoreboard players add @s[nbt={Inventory:[{Slot:102b,tag:{display:{Lore:['"Max Health Boost: +20"']}}}]}] fine_hp.mh 20
 scoreboard players add @s[nbt={Inventory:[{Slot:103b,tag:{display:{Lore:['"Max Health Boost: +20"']}}}]}] fine_hp.mh 20
+scoreboard players add @s[nbt={Inventory:[{Slot:100b,tag:{display:{Lore:['"Max Health Boost: +5"']}}}]}] fine_hp.mh 5
+scoreboard players add @s[nbt={Inventory:[{Slot:101b,tag:{display:{Lore:['"Max Health Boost: +5"']}}}]}] fine_hp.mh 5
+scoreboard players add @s[nbt={Inventory:[{Slot:102b,tag:{display:{Lore:['"Max Health Boost: +5"']}}}]}] fine_hp.mh 5
+scoreboard players add @s[nbt={Inventory:[{Slot:103b,tag:{display:{Lore:['"Max Health Boost: +5"']}}}]}] fine_hp.mh 5
 # ------------------------------------------  
 # ------------------------------------------
 # Handle player regen

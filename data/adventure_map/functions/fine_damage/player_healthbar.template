@@ -10,6 +10,10 @@ scoreboard players add @s[nbt={Inventory:[{Slot:100b,tag:{display:{Lore:[##healt
 scoreboard players add @s[nbt={Inventory:[{Slot:101b,tag:{display:{Lore:[##health_boost_20##]}}}]}] ##max_health## 20
 scoreboard players add @s[nbt={Inventory:[{Slot:102b,tag:{display:{Lore:[##health_boost_20##]}}}]}] ##max_health## 20
 scoreboard players add @s[nbt={Inventory:[{Slot:103b,tag:{display:{Lore:[##health_boost_20##]}}}]}] ##max_health## 20
+scoreboard players add @s[nbt={Inventory:[{Slot:100b,tag:{display:{Lore:[##health_boost_5##]}}}]}] ##max_health## 5
+scoreboard players add @s[nbt={Inventory:[{Slot:101b,tag:{display:{Lore:[##health_boost_5##]}}}]}] ##max_health## 5
+scoreboard players add @s[nbt={Inventory:[{Slot:102b,tag:{display:{Lore:[##health_boost_5##]}}}]}] ##max_health## 5
+scoreboard players add @s[nbt={Inventory:[{Slot:103b,tag:{display:{Lore:[##health_boost_5##]}}}]}] ##max_health## 5
 # ------------------------------------------
 
 

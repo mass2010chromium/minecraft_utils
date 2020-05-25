@@ -147,4 +147,4 @@ def add_knight_items(subs, spell_id, get_uuid):
                                                     ##knight_1##
                                                   ]
                                                 }"""
-    subs["knight_sandesitesword_sword_item"] = """minecraft:golden_sword{##knight_castironsword_sword_nbt##} 1"""
+    subs["knight_sandesitesword_sword_item"] = """minecraft:golden_sword{##knight_sandesitesword_sword_nbt##} 1"""

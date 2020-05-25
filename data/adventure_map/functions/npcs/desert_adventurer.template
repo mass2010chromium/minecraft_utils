@@ -1,10 +1,11 @@
 summon villager ~ ~ ~ {
     VillagerData:{
-        profession:fisherman,level:2,type:desert
+        profession:fisherman,level:50,type:desert
     },
     Team:##friendlies##,
     Invulnerable:1,
     PersistenceRequired:1,
     Offers:{
+        Recipes:[]
     },
     Attributes:[{Name:"generic.movementSpeed",Base:0.0f}],CustomName:'{"text":"Desert Adventurer (NPC)","color":"white"}',CustomNameVisible:1,Tags:["reset","d0"]}    

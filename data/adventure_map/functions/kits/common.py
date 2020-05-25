@@ -22,9 +22,10 @@ def add_common_items(subs, spell_id, get_uuid):
     subs["potion_heal_3_nbt"] = """Enchantments:[{}],display:{Name:##potion_heal_3_name##,Lore:[##effect_heal_3##]}"""
     subs["potion_heal_3_item"] = """minecraft:dragon_breath{##potion_heal_3_nbt##}"""
     subs["potion_heal_3_tag"] = "spell.{}.tag".format(spell_id())
-	
+    
     subs["boost_speed_15"] = """'"Walk Speed Boost: +15%"'"""
     subs["health_boost_20"] = """'"Max Health Boost: +20"'"""
+    subs["health_boost_5"] = """'"Max Health Boost: +5"'"""
 
     
 def add_food_items(subs, spell_id, get_uuid):
@@ -52,11 +53,11 @@ def add_food_items(subs, spell_id, get_uuid):
     subs["food_potato_6_item"] = """minecraft:baked_potato{##food_potato_6_nbt##}"""
   
 def add_armor_items(subs, spell_id, get_uuid):
-	subs["speedy_sabatons_name"] = make_name("Speedy Sabatons")
-	subs["speedy_sabatons_lore"] = make_description_text(["The wind flows through these boots, ", "causing your stride to flow like the wind."],color = "white")
-	subs["speedy_sabatons_item"] = """minecraft:leather_boots{##speedy_sabatons_nbt##}"""
-	subs["speedy_sabatons_tag"] = "spell.{}.tag".format(spell_id())
-	subs["speedy_sabatons_nbt"] =    """Unbreakable:1,
+    subs["speedy_sabatons_name"] = make_name("Speedy Sabatons")
+    subs["speedy_sabatons_lore"] = make_description_text(["The wind flows through these boots, ", "causing your stride to flow like the wind."],color = "white")
+    subs["speedy_sabatons_item"] = """minecraft:leather_boots{##speedy_sabatons_nbt##}"""
+    subs["speedy_sabatons_tag"] = "spell.{}.tag".format(spell_id())
+    subs["speedy_sabatons_nbt"] =    """Unbreakable:1,
                                         display:{
                                             Name:##speedy_sabatons_name##, 
                                             Lore:[
@@ -70,17 +71,74 @@ def add_armor_items(subs, spell_id, get_uuid):
                                                 Name:"generic.movementSpeed",Amount:0.15,Operation:1,"""+get_uuid()+""",Slot:"feet"
                                             }
                                         ]"""
-	
-	subs["strong_mail_name"] = make_name("Strong Mail")
-	subs["strong_mail_lore"] = make_description_text(["Good at protecting you."],color = "white")
-	subs["strong_mail_item"] = """minecraft:chainmail_chestplate{##strong_mail##}"""
-	subs["strong_mail_tag"] = "spell.{}.tag".format(spell_id())
-	subs["strong_mail_nbt"] =    """Unbreakable:1,
+    
+    subs["strong_mail_name"] = make_name("Strong Mail")
+    subs["strong_mail_lore"] = make_description_text(["Good at protecting you."],color = "white")
+    subs["strong_mail_item"] = """minecraft:chainmail_chestplate{##strong_mail_nbt##}"""
+    subs["strong_mail_tag"] = "spell.{}.tag".format(spell_id())
+    subs["strong_mail_nbt"] =    """Unbreakable:1,
                                     display:{
                                         Name:##strong_mail_name##,
                                         Lore:[
                                             ##strong_mail_lore##,
                                             ##health_boost_20##
+                                        ]
+                                    },
+                                    AttributeModifiers:[]"""
+
+    subs["ventilating_cap_name"] = make_name("Ventilating Cap")
+    subs["ventilating_cap_lore"] = make_description_text(["Allows the desert breeze to cool your noggin."],color = "white")
+    subs["ventilating_cap_item"] = """minecraft:chainmail_helmet{##ventilating_cap_nbt##}"""
+    subs["ventilating_cap"] = "spell.{}.tag".format(spell_id())
+    subs["ventilating_cap_nbt"] =    """Unbreakable:1,
+                                    display:{
+                                        Name:##ventilating_cap_name##,
+                                        Lore:[
+                                            ##ventilating_cap_lore##,
+                                            ##health_boost_5##
+                                        ]
+                                    },
+                                    AttributeModifiers:[]"""
+
+    subs["fair_tunic_name"] = make_name("Fair Tunic")
+    subs["fair_tunic_lore"] = make_description_text(["This tunic looks aesthetically pleasing."],color = "white")
+    subs["fair_tunic_item"] = """minecraft:leather_chestplate##fair_tunic_nbt##}"""
+    subs["fair_tunic_tag"] = "spell.{}.tag".format(spell_id())
+    subs["fair_tunic_nbt"] =    """Unbreakable:1,
+                                    display:{
+                                        Name:##fair_tunic_name##,
+                                        Lore:[
+                                            ##fair_tunic_lore##,
+                                            ##health_boost_5##
+                                        ],
+                                        color:15650592
+                                    },
+                                    AttributeModifiers:[]"""
+
+    subs["iron_plated_trousers_name"] = make_name("Iron Plated Trousers")
+    subs["iron_plated_trousers_lore"] = make_description_text(["This looks more like army gear than clothing."],color = "white")
+    subs["iron_plated_trousers_item"] = """minecraft:iron_leggings{##iron_plated_trousers_nbt##}"""
+    subs["iron_plated_trousers_tag"] = "spell.{}.tag".format(spell_id())
+    subs["iron_plated_trousers_nbt"] =    """Unbreakable:1,
+                                    display:{
+                                        Name:##iron_plated_trousers_name##,
+                                        Lore:[
+                                            ##iron_plated_trousers_lore##,
+                                            ##health_boost_5##
+                                        ]
+                                    },
+                                    AttributeModifiers:[]"""
+
+    subs["tin_toed_tiptoes_name"] = make_name("Tin Toed Tiptoes")
+    subs["tin_toed_tiptoes_lore"] = make_description_text(["These are some hefty boots."],color = "white")
+    subs["tin_toed_tiptoes_item"] = """minecraft:iron_boots{##tin_toed_tiptoes_nbt##}"""
+    subs["tin_toed_tiptoes_tag"] = "spell.{}.tag".format(spell_id())
+    subs["tin_toed_tiptoes_nbt"] =    """Unbreakable:1,
+                                    display:{
+                                        Name:##tin_toed_tiptoes_name##,
+                                        Lore:[
+                                            ##tin_toed_tiptoes_lore##,
+                                            ##health_boost_5##
                                         ]
                                     },
                                     AttributeModifiers:[]"""
