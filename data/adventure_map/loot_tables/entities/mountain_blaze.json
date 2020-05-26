@@ -10,7 +10,7 @@
 					"functions": [
 						{
 							"function": "minecraft:set_nbt",
-							"tag": "{display:{Name:'\"Gold Coin\"'}}"
+							"tag": "{display:{Name:'{\"italic\":false,\"text\":\"Gold Coin\"}'}}"
 						},
 						{
 							"function": "minecraft:set_count",
@@ -27,8 +27,8 @@
 					"functions": [
 						{
 							"function": "minecraft:set_nbt",
-							"tag": "{display:{Name:'{\"text\":\"Mountain Blaze Powder\",\"italic\":false}',
-                                        Lore:['\"Junk Item\"']}}"
+							"tag": "{display:{Name:'{\"italic\":false,\"text\":\"Mountain Blaze Powder\"}',
+                                        Lore:['{\"text\":\"Junk Item\"']}}"
 						},
 						{
 							"function": "minecraft:set_count",

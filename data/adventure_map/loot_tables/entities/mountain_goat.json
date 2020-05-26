@@ -9,7 +9,7 @@
 					"functions": [
 						{
 							"function": "minecraft:set_nbt",
-							"tag": "{display:{Name:'{\"text\":\"Goat Skin\",\"italic\":false}'}}"
+							"tag": "{display:{Name:'{\"italic\":false,\"text\":\"Goat Skin\"}'}}"
 						},
 						{
 							"function": "minecraft:set_count",

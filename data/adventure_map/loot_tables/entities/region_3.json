@@ -9,7 +9,7 @@
 					"functions": [
 						{
 							"function": "minecraft:set_nbt",
-							"tag": "{display:{Name:'\"Gold Coin\"'}}"
+							"tag": "{display:{Name:'{\"italic\":false,\"text\":\"Gold Coin\"}'}}"
 						},
 						{
 							"function": "minecraft:set_count",
@@ -32,7 +32,7 @@
 					"functions": [
 						{
 							"function":"minecraft:set_nbt",
-							"tag":"{Enchantments:[{}],display:{Name:'{\"text\":\"Healing Potion 2\",\"italic\":false}',Lore:['{\"text\":\"+15 HP\",\"color\":\"red\",\"italic\":false}','\"predrop\"']}}"
+                            "tag":"{Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}],HideFlags:1,display:{Name:'{\"italic\":false,\"text\":\"Healing Potion 2\"}',Lore:['{\"italic\":false,\"color\":\"red\",\"text\":\"+15 HP\"}','{\"text\":\"predrop\"}']}}"
 						},
 						{
 							"function": "minecraft:set_count",

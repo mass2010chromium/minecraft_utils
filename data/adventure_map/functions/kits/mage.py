@@ -53,7 +53,7 @@ def add_mage_items(subs, spell_id, get_uuid):
     
     subs["mage_whirlwind_staff_name"] = make_name("Whirlwind Staff")
     subs["mage_whirlwind_staff_extra"] = make_description_text(["Attacks faster."])
-    subs["mage_whirlwind_staff_nbt"] =   """Unbreakable:1,HideFlags:4,
+    subs["mage_whirlwind_staff_nbt"] =  ("""Unbreakable:1,HideFlags:6,
                                             Enchantments:[{id:"minecraft:sharpness",lvl:1}],
                                             display:{
                                               Name:##mage_whirlwind_staff_name##,
@@ -62,12 +62,14 @@ def add_mage_items(subs, spell_id, get_uuid):
                                                 ##mage_melee##, 
                                                 ##mage_zephyr_boost_1##, 
                                                 ##mage_splash_power_boost_2##,
-                                                ##mage_1##
+                                                ##mage_1##,"""
+                                                + make_speed_damage_text(8, 2) +
+                                                """
                                               ]
                                             },
                                             AttributeModifiers:[
                                               {AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:4,Operation:0,"""+get_uuid()+""",Slot:"mainhand"}
-                                            ]"""
+                                            ]""")
     subs["mage_whirlwind_staff_item"] = """minecraft:golden_hoe{##mage_whirlwind_staff_nbt##} 1"""
 
     subs["mage_fireball_spell"] = """'{"text":"Mage: Fireball Spell"}'"""
@@ -81,7 +83,7 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_fireball_boost_1"] = """'{"text":"+8 Fireball Magic Damage"}'"""
     subs["mage_fireball_power"] = "spell.{}.power".format(spell_id())
     subs["mage_fireball_1_name"] = make_name("Fireball 1")
-    subs["mage_fireball_1_nbt"] =    """HideFlags:4,
+    subs["mage_fireball_1_nbt"] =    """HideFlags:1,
                                         Enchantments:[{id:"minecraft:unbreaking",lvl:1}],
                                         display:{
                                           Name:##mage_fireball_1_name##,
@@ -94,7 +96,7 @@ def add_mage_items(subs, spell_id, get_uuid):
                                         }"""
     subs["mage_fireball_1_item"] = """minecraft:blaze_rod{##mage_fireball_1_nbt##} 1"""
     subs["mage_fireball_2_name"] = make_name("Fireball 2")
-    subs["mage_fireball_2_nbt"] =    """HideFlags:4,
+    subs["mage_fireball_2_nbt"] =    """HideFlags:1,
                                         Enchantments:[{id:"minecraft:unbreaking",lvl:1}],
                                         display:{
                                           Name:##mage_fireball_2_name##,
@@ -116,7 +118,7 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_windspear_boost_1"] = """'{"text":"+25 Cyclone Spear damage"}'"""
     subs["mage_windspear_power"] = "spell.{}.power".format(spell_id())
     subs["mage_windspear_1_name"] = make_name("Cyclone Spear 1")
-    subs["mage_windspear_1_nbt"] =    """HideFlags:4,
+    subs["mage_windspear_1_nbt"] =    """HideFlags:1,
                                         Enchantments:[{id:"minecraft:unbreaking",lvl:1}],
                                         display:{
                                           Name:##mage_windspear_1_name##,
@@ -134,7 +136,7 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_repulse_boost_1"] = """'{"text":"+1 Arcane Explosion Magic Damage"}'"""
     subs["mage_repulse_power"] = "spell.{}.power".format(spell_id())
     subs["mage_repulse_1_name"] = make_name("Arcane Explosion 1")
-    subs["mage_repulse_1_nbt"] = """HideFlags:4,
+    subs["mage_repulse_1_nbt"] = """HideFlags:1,
                                     Enchantments:[{id:"minecraft:unbreaking",lvl:1}],
                                     display:{
                                       Name:##mage_repulse_1_name##,
@@ -155,7 +157,7 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_zephyr_boost_1"] = """'{"text":"+1 Zephyr Speed"}'"""
     subs["mage_zephyr_power"] = "spell.{}.power".format(spell_id())
     subs["mage_zephyr_1_name"] = make_name("Zephyr 1")
-    subs["mage_zephyr_1_nbt"] = """HideFlags:4,
+    subs["mage_zephyr_1_nbt"] = """HideFlags:1,
                                    Enchantments:[{id:"minecraft:unbreaking",lvl:1}],
                                    display:{
                                      Name:##mage_zephyr_1_name##,
@@ -175,7 +177,7 @@ def add_mage_items(subs, spell_id, get_uuid):
     subs["mage_discharge_boost_1"] = """'{"text":"+2 Discharge damage"}'"""
     subs["mage_discharge_power"] = "spell.{}.power".format(spell_id())
     subs["mage_discharge_1_name"] = make_name("Discharge 1")
-    subs["mage_discharge_1_nbt"] =   """HideFlags:4,
+    subs["mage_discharge_1_nbt"] =   """HideFlags:1,
                                         Enchantments:[{id:"minecraft:unbreaking",lvl:1}],
                                         display:{
                                           Name:##mage_discharge_1_name##,

@@ -10,7 +10,7 @@
 					"functions": [
 						{
 							"function": "minecraft:set_nbt",
-							"tag": "{display:{Name:'\"Gold Coin\"'}}"
+							"tag": "{display:{Name:'{\"italic\":false,\"text\":\"Gold Coin\"}'}}"
 						},
 						{
 							"function": "minecraft:set_count",
@@ -35,7 +35,7 @@
 					"functions": [
 						{
 							"function": "minecraft:set_nbt",
-							"tag": "{display:{Name:'{\"text\":\"Llama Meat\",\"italic\":false}'}}"
+							"tag": "{display:{Name:'{\"italic\":false,\"text\":\"Llama Meat\"}'}}"
 						},
 						{
 							"function": "minecraft:set_count",
