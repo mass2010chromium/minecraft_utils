@@ -12,7 +12,7 @@ summon villager ~ ~ ~ {
                     id:potion,Count:1,tag:{Potion:"\"minecraft:water\""}
                 },
                 sell:{
-                    id:sunflower,Count:2,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:2,tag:{##gold_coin_nbt##}
                 },rewardExp:0b,maxUses:9999999
             },
 			{
@@ -20,7 +20,7 @@ summon villager ~ ~ ~ {
                     id:glass_bottle,Count:1
                 },
                 sell:{
-                    id:sunflower,Count:1,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:1,tag:{##gold_coin_nbt##}
                 },rewardExp:0b,maxUses:9999999
             }
         ]

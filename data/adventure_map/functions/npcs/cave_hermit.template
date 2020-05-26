@@ -9,10 +9,10 @@ summon villager ~ ~1 ~ {
         Recipes:[
             {
                 buy:{
-                    id:rotten_flesh,Count:6,tag:{display:{Name:'{"text":"Goat Skin","italic":false}'}}
+                    id:rotten_flesh,Count:6,tag:{display:{Name:'{"italic":false,"text":"Goat Skin"}'}}
 				},
                 sell:{
-                    id:paper,Count:1,tag:{display:{Name:'{"text":"Permit of the Hermit","italic":false}'}}
+                    id:paper,Count:1,tag:{display:{Name:'{"italic":false,"text":"Permit of the Hermit"}'}}
                 },rewardExp:0b,maxUses:1
             }
         ]
