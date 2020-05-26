@@ -10,7 +10,7 @@ summon villager ~ ~ ~ {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:1,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:1,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:beetroot,Count:1,tag:{##food_beet_6_nbt##},rewardExp:0b,maxUses:9999999
@@ -18,7 +18,7 @@ summon villager ~ ~ ~ {
             },
 			{
                 buy:{
-                    id:sunflower,Count:3,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:3,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:carrot,Count:1,tag:{##food_carrot_6_nbt##}
@@ -26,7 +26,7 @@ summon villager ~ ~ ~ {
             },
 			{
                 buy:{
-                    id:sunflower,Count:5,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:5,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:baked_potato,Count:1,tag:{##food_potato_6_nbt##}

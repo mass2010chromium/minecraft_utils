@@ -10,10 +10,10 @@ summon villager ~ ~ ~ {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:6,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:6,tag:{##gold_coin_nbt##}
                 },
                 buyB:{
-                    id:sunflower,Count:6,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:6,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:porkchop,Count:1,tag:{##food_porkchop_6_nbt##},rewardExp:0b,maxUses:9999999
@@ -21,10 +21,10 @@ summon villager ~ ~ ~ {
             },
             {
                 buy:{
-                    id:sunflower,Count:2,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:2,tag:{##gold_coin_nbt##}
                 },
                 sell:{
-                    id:potion,Count:1,tag:{CustomPotionEffects:[{Id:9,Duration:800}],CustomPotionColor:9267484,display:{Name:'{"text":"Mead","italic":"false"}'}},rewardExp:0b,maxUses:9999999
+                    id:potion,Count:1,tag:{CustomPotionEffects:[{Id:9,Duration:800}],CustomPotionColor:9267484,display:{Name:'{"italic":"false","text":"Mead"}'}},rewardExp:0b,maxUses:9999999
                 },rewardExp:0b,maxUses:9999999
             }
         ]

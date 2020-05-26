@@ -10,7 +10,7 @@ summon villager ~ ~ ~ {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:6,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:6,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:porkchop,Count:1,tag:{##food_porkchop_6_nbt##},rewardExp:0b,maxUses:9999999

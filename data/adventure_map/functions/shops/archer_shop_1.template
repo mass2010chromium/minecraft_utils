@@ -10,7 +10,7 @@ summon villager -138.5 65 23.5 {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:18,tag:{display:{Name:'"Gold Coin"'}}	
+                    id:sunflower,Count:18,tag:{##gold_coin_nbt##}	
 				},
                 sell:{
                     id:bow,Count:1,tag:{##archer_longbow_bow_nbt##}

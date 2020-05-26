@@ -10,7 +10,7 @@ summon villager ~ ~ ~ {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:15,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:15,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:chainmail_helmet,Count:1,tag:{##ventilating_cap_nbt##},rewardExp:0b,maxUses:9999999
@@ -18,7 +18,7 @@ summon villager ~ ~ ~ {
             },
             {
                 buy:{
-                    id:sunflower,Count:15,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:15,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:leather_chestplate,Count:1,tag:{##fair_tunic_nbt##},rewardExp:0b,maxUses:9999999
@@ -26,7 +26,7 @@ summon villager ~ ~ ~ {
             },
             {
                 buy:{
-                    id:sunflower,Count:15,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:15,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:iron_leggings,Count:1,tag:{##iron_plated_trousers_nbt##},rewardExp:0b,maxUses:9999999
@@ -34,7 +34,7 @@ summon villager ~ ~ ~ {
             },
             {
                 buy:{
-                    id:sunflower,Count:15,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:15,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:iron_boots,Count:1,tag:{##tin_toed_tiptoes_nbt##},rewardExp:0b,maxUses:9999999

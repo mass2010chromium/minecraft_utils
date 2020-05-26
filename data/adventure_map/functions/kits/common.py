@@ -1,7 +1,9 @@
 from utils import *
 
 def add_common_items(subs, spell_id, get_uuid):
-
+    
+    subs["gold_coin_nbt"] = """display:{Name:'{"italic":false,"text":"Gold Coin"}'}"""
+    
     subs["effect_heal_1"] = make_description_text(["+10 HP"],color="red")
     subs["effect_heal_1_tag"] = "spell.{}.tag".format(spell_id())
     subs["potion_heal_1_name"] = make_name("Healing Potion 1")
@@ -23,9 +25,9 @@ def add_common_items(subs, spell_id, get_uuid):
     subs["potion_heal_3_item"] = """minecraft:dragon_breath{##potion_heal_3_nbt##}"""
     subs["potion_heal_3_tag"] = "spell.{}.tag".format(spell_id())
     
-    subs["boost_speed_15"] = """'"Walk Speed Boost: +15%"'"""
-    subs["health_boost_20"] = """'"Max Health Boost: +20"'"""
-    subs["health_boost_5"] = """'"Max Health Boost: +5"'"""
+    subs["boost_speed_15"] = """'{"text":"Walk Speed Boost: +15%"}'"""
+    subs["health_boost_20"] = """'{"text":"Max Health Boost: +20"}'"""
+    subs["health_boost_5"] = """'{"text":"Max Health Boost: +5"}'"""
 
     
 def add_food_items(subs, spell_id, get_uuid):

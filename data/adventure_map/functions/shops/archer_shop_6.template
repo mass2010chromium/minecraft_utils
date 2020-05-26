@@ -10,7 +10,7 @@ summon villager ~ ~ ~ {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:30,tag:{display:{Name:'"Gold Coin"'}}	
+                    id:sunflower,Count:30,tag:{##gold_coin_nbt##}	
 				},
                 sell:{
                     id:flint,Count:1,tag:{##archer_small_dagger_nbt##}
@@ -18,7 +18,7 @@ summon villager ~ ~ ~ {
             },
             {
                 buy:{
-                    id:sunflower,Count:30,tag:{display:{Name:'"Gold Coin"'}}	
+                    id:sunflower,Count:30,tag:{##gold_coin_nbt##}	
 				},
                 sell:{
                     id:bow,Count:1,tag:{##archer_cactus_fiber_bow_nbt##}
@@ -26,7 +26,7 @@ summon villager ~ ~ ~ {
             },
 			{
                 buy:{
-                    id:sunflower,Count:30,tag:{display:{Name:'"Gold Coin"'}}
+                    id:sunflower,Count:30,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:crossbow,Count:1,tag:{##archer_piercingArrow_1_nbt##}

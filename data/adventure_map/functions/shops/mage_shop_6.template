@@ -10,10 +10,10 @@ summon villager ~ ~ ~ {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:30,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:30,tag:{##gold_coin_nbt##}
                 },
                 buyB:{
-                    id:magma_cream,Count:1,tag:{display:{Lore:['"Ingredient item"']}}
+                    id:magma_cream,Count:1,tag:{display:{Lore:['{"text":"Ingredient item"}']}}
                 },
                 sell:{
                     id:golden_hoe,Count:1,tag:{##mage_fireball_staff_nbt##}
@@ -21,7 +21,7 @@ summon villager ~ ~ ~ {
             },
             {
                 buy:{
-                    id:sunflower,Count:30,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:30,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:feather,Count:1,tag:{##mage_windspear_1_nbt##}
@@ -29,7 +29,7 @@ summon villager ~ ~ ~ {
             },
 			{
                 buy:{
-                    id:sunflower,Count:30,tag:{display:{Name:"\"Gold Coin\""}}
+                    id:sunflower,Count:30,tag:{##gold_coin_nbt##}
                 },
                 sell:{
                     id:end_rod,Count:1,tag:{##mage_discharge_1_nbt##}

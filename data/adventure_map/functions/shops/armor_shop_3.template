@@ -10,7 +10,7 @@ summon villager ~ ~ ~ {
         Recipes:[
             {
                 buy:{
-                    id:sunflower,Count:1,tag:{display:{Name:'{"text":"Token of Thanks","italic":false}'}}
+                    id:sunflower,Count:1,tag:{display:{Name:'{"italic":false,"text":"Token of Thanks"}'}}
                 },
                 sell:{
                     id:chainmail_chestplate,Count:1,tag:{##strong_mail_nbt##}
@@ -18,7 +18,7 @@ summon villager ~ ~ ~ {
             },
 			{
                 buy:{
-                    id:sunflower,Count:1,tag:{display:{Name:'{"text":"Token of Thanks","italic":false}'}}
+                    id:sunflower,Count:1,tag:{display:{Name:'{"italic":false,"text":"Token of Thanks"}'}}
                 },
                 sell:{
                     id:leather_boots,Count:1,tag:{##speedy_sabatons_nbt##}

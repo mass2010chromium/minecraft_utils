@@ -1,47 +1,49 @@
 # Apply buffs
 # None rn  
 # Class restriction
-effect give @a[tag=!archer,nbt={SelectedItem:{tag:{display:{Lore:['"Archer: Melee"']}}}}] slowness 3 9
-effect give @a[tag=!archer,nbt={SelectedItem:{tag:{display:{Lore:['"Archer: Melee"']}}}}] weakness 3 9
-tag @a[tag=archer,nbt={SelectedItem:{tag:{display:{Lore:['"Archer: Melee"']}}}}] add holdingWeapon
+effect give @a[tag=!archer,nbt={SelectedItem:{tag:{display:{Lore:['{"text":"Archer: Melee"}']}}}}] slowness 3 9
+effect give @a[tag=!archer,nbt={SelectedItem:{tag:{display:{Lore:['{"text":"Archer: Melee"}']}}}}] weakness 3 9
+tag @a[tag=archer,nbt={SelectedItem:{tag:{display:{Lore:['{"text":"Archer: Melee"}']}}}}] add holdingWeapon
 tag @a[tag=archer,nbt={SelectedItemSlot:0}] remove holdingWeapon
 effect give @a[tag=archer,tag=holdingWeapon] slowness 3 9
 effect give @a[tag=archer,tag=holdingWeapon] weakness 3 9
 tag @a[tag=archer] remove holdingWeapon  
 # Arrow replenish mechanics for archer
-clear @a arrow
-clear @a tipped_arrow
+clear @a[gamemode=adventure] arrow
+clear @a[gamemode=adventure] tipped_arrow
+clear @a[gamemode=adventure] spectral_arrow
 tag @a[tag=archer,nbt={Inventory:[{Slot:-106b}]}] add offhandOccupied 
-replaceitem entity @a[tag=archer,tag=!offhandOccupied,nbt={SelectedItemSlot:1,SelectedItem:{tag:{display:{Lore:['"Archer: Normal Arrows"']}}}}] weapon.offhand arrow 1
+replaceitem entity @a[tag=archer,tag=!offhandOccupied,nbt={SelectedItemSlot:1,SelectedItem:{tag:{display:{Lore:['{"text":"Archer: Normal Arrows"}']}}}}] weapon.offhand arrow 1
+replaceitem entity @a[tag=archer,tag=!offhandOccupied,nbt={SelectedItemSlot:1,SelectedItem:{tag:{display:{Lore:['{"text":"Archer: Piercing Arrows 1"}']}}}}] weapon.offhand tipped_arrow 1
 stopsound @a player minecraft:item.armor.equip_generic
 tag @a[tag=archer] remove offhandOccupied  
 # Piercing arrow spell
-tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:'{"text":"Piercing Arrow 1","italic":false}'}}}]}] add pa_1
+tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:'{"italic":false,"text":"Piercing Arrow 1"}'}}}]}] add pa_1
 scoreboard players set @a[tag=pa_1] spell.7.power 10 
 # Different tiers
-replaceitem entity @a[tag=pa_1,scores={mana.mana=..599}] container.2 minecraft:crossbow{display:{ Name:'{"text":"Piercing Arrow 1","italic":false}', Lore:[ '{"text":"Fire an arrow that pierces 7 enemies,","color":"white","italic":false}','{"text":"  dealing 10 magic damage and 7-10 physical damage.","color":"white","italic":false}','{"text":"Cost: 600MP","color":"blue","italic":false}', '"Archer: Active Spell"', '"Archer: Piercing Arrow Spell"', '"Archer: Slot 3"' ] }, Charged:1b} 1
-replaceitem entity @a[tag=!pa_1,tag=archer,nbt={SelectedItem:{tag:{display:{Name:'{"text":"Piercing Arrow 1","italic":false}'}}}}] weapon.mainhand minecraft:crossbow{display:{ Name:'{"text":"Piercing Arrow 1","italic":false}', Lore:[ '{"text":"Fire an arrow that pierces 7 enemies,","color":"white","italic":false}','{"text":"  dealing 10 magic damage and 7-10 physical damage.","color":"white","italic":false}','{"text":"Cost: 600MP","color":"blue","italic":false}', '"Archer: Active Spell"', '"Archer: Piercing Arrow Spell"', '"Archer: Slot 3"' ] }, Charged:1b} 1
-replaceitem entity @a[tag=archer,nbt={Inventory:[{Slot:-106b,tag:{display:{Name:'{"text":"Piercing Arrow 1","italic":false}'}}}]}] weapon.offhand minecraft:crossbow{display:{ Name:'{"text":"Piercing Arrow 1","italic":false}', Lore:[ '{"text":"Fire an arrow that pierces 7 enemies,","color":"white","italic":false}','{"text":"  dealing 10 magic damage and 7-10 physical damage.","color":"white","italic":false}','{"text":"Cost: 600MP","color":"blue","italic":false}', '"Archer: Active Spell"', '"Archer: Piercing Arrow Spell"', '"Archer: Slot 3"' ] }, Charged:1b} 1 
+replaceitem entity @a[tag=pa_1,scores={mana.mana=..599}] container.2 minecraft:crossbow{display:{ Name:'{"italic":false,"text":"Piercing Arrow 1"}', Lore:[ '{"italic":false,"color":"white","text":"Fire an arrow that pierces 7 enemies,"}','{"italic":false,"color":"white","text":"  dealing 10 magic damage and 7-10 physical damage."}','{"italic":false,"color":"blue","text":"Cost: 600MP"}', '{"text":"Archer: Active Spell"}', '{"text":"Archer: Piercing Arrow Spell"}', '{"text":"Archer: Slot 3"}' ] }, Charged:1b} 1
+replaceitem entity @a[tag=!pa_1,tag=archer,nbt={SelectedItem:{tag:{display:{Name:'{"italic":false,"text":"Piercing Arrow 1"}'}}}}] weapon.mainhand minecraft:crossbow{display:{ Name:'{"italic":false,"text":"Piercing Arrow 1"}', Lore:[ '{"italic":false,"color":"white","text":"Fire an arrow that pierces 7 enemies,"}','{"italic":false,"color":"white","text":"  dealing 10 magic damage and 7-10 physical damage."}','{"italic":false,"color":"blue","text":"Cost: 600MP"}', '{"text":"Archer: Active Spell"}', '{"text":"Archer: Piercing Arrow Spell"}', '{"text":"Archer: Slot 3"}' ] }, Charged:1b} 1
+replaceitem entity @a[tag=archer,nbt={Inventory:[{Slot:-106b,tag:{display:{Name:'{"italic":false,"text":"Piercing Arrow 1"}'}}}]}] weapon.offhand minecraft:crossbow{display:{ Name:'{"italic":false,"text":"Piercing Arrow 1"}', Lore:[ '{"italic":false,"color":"white","text":"Fire an arrow that pierces 7 enemies,"}','{"italic":false,"color":"white","text":"  dealing 10 magic damage and 7-10 physical damage."}','{"italic":false,"color":"blue","text":"Cost: 600MP"}', '{"text":"Archer: Active Spell"}', '{"text":"Archer: Piercing Arrow Spell"}', '{"text":"Archer: Slot 3"}' ] }, Charged:1b} 1 
 # All piercing arrow casts
-tag @a[tag=archer,nbt={SelectedItemSlot:2,SelectedItem:{tag:{Charged:0b,display:{Lore:['"Archer: Piercing Arrow Spell"']}}}}] add shotPierce
+tag @a[tag=archer,nbt={SelectedItemSlot:2,SelectedItem:{tag:{Charged:0b,display:{Lore:['{"text":"Archer: Piercing Arrow Spell"}']}}}}] add shotPierce
 scoreboard players remove @a[tag=shotPierce] mana.mana 600
 execute as @a[tag=shotPierce] at @s run scoreboard players operation @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] spell.7.power = @s spell.7.power
 execute as @a[tag=shotPierce] at @s run tag @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] add piercing_arrow 
 # Different tiers
-replaceitem entity @a[tag=pa_1,scores={mana.mana=600..}] container.2 minecraft:crossbow{Enchantments:[{}],ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],display:{ Name:'{"text":"Piercing Arrow 1","italic":false}', Lore:[ '{"text":"Fire an arrow that pierces 7 enemies,","color":"white","italic":false}','{"text":"  dealing 10 magic damage and 7-10 physical damage.","color":"white","italic":false}','{"text":"Cost: 600MP","color":"blue","italic":false}', '"Archer: Active Spell"', '"Archer: Piercing Arrow Spell"', '"Archer: Slot 3"' ] }, Charged:1b}
+replaceitem entity @a[tag=pa_1,scores={mana.mana=600..}] container.2 minecraft:crossbow{Enchantments:[{}],ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],display:{ Name:'{"italic":false,"text":"Piercing Arrow 1"}', Lore:[ '{"italic":false,"color":"white","text":"Fire an arrow that pierces 7 enemies,"}','{"italic":false,"color":"white","text":"  dealing 10 magic damage and 7-10 physical damage."}','{"italic":false,"color":"blue","text":"Cost: 600MP"}', '{"text":"Archer: Active Spell"}', '{"text":"Archer: Piercing Arrow Spell"}', '{"text":"Archer: Slot 3"}' ] }, Charged:1b}
 tag @a remove pa_1
 tag @a remove shotPierce 
 execute as @e[tag=piercing_arrow,tag=!processed] run data merge entity @s {SoundEvent:"minecraft:block.glass.break",PierceLevel:5b,damage:2.0f}
 execute as @e[tag=piercing_arrow] at @s run scoreboard players operation @e[team=Enemies,distance=0..4,nbt={ActiveEffects:[{Id:24b}]}] fine_hp.mdmg += @s spell.7.power   
 # Windwalk spell
-tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:'{"text":"Windwalk 1","italic":false}'}}}]}] add ww_1
+tag @a[tag=archer,nbt={Inventory:[{Slot:2b,tag:{display:{Name:'{"italic":false,"text":"Windwalk 1"}'}}}]}] add ww_1
 scoreboard players set @a[tag=ww_1] spell.6.power 5 
 # Different tiers
-replaceitem entity @a[tag=ww_1,scores={mana.mana=..399}] container.2 minecraft:crossbow{display:{ Name:'{"text":"Windwalk 1","italic":false}', Lore:[ '{"text":"Fire an arrow, dealing 5 magic damage","color":"white","italic":false}','{"text":"  and knocking opponents airborne.","color":"white","italic":false}','{"text":"Grants speed II to caster for 5s.","color":"white","italic":false}','{"text":"Grants speed I to caster and allies for 20s.","color":"white","italic":false}','{"text":"Cost: 400MP","color":"blue","italic":false}', '"Archer: Active Spell"', '"Archer: Windwalk Spell"', '"Archer: Slot 3"' ] }, Charged:1b} 1
-replaceitem entity @a[tag=!ww_1,tag=archer,nbt={SelectedItem:{tag:{display:{Name:'{"text":"Windwalk 1","italic":false}'}}}}] weapon.mainhand minecraft:crossbow{display:{ Name:'{"text":"Windwalk 1","italic":false}', Lore:[ '{"text":"Fire an arrow, dealing 5 magic damage","color":"white","italic":false}','{"text":"  and knocking opponents airborne.","color":"white","italic":false}','{"text":"Grants speed II to caster for 5s.","color":"white","italic":false}','{"text":"Grants speed I to caster and allies for 20s.","color":"white","italic":false}','{"text":"Cost: 400MP","color":"blue","italic":false}', '"Archer: Active Spell"', '"Archer: Windwalk Spell"', '"Archer: Slot 3"' ] }, Charged:1b} 1
-replaceitem entity @a[tag=archer,nbt={Inventory:[{Slot:-106b,tag:{display:{Name:'{"text":"Windwalk 1","italic":false}'}}}]}] weapon.offhand minecraft:crossbow{display:{ Name:'{"text":"Windwalk 1","italic":false}', Lore:[ '{"text":"Fire an arrow, dealing 5 magic damage","color":"white","italic":false}','{"text":"  and knocking opponents airborne.","color":"white","italic":false}','{"text":"Grants speed II to caster for 5s.","color":"white","italic":false}','{"text":"Grants speed I to caster and allies for 20s.","color":"white","italic":false}','{"text":"Cost: 400MP","color":"blue","italic":false}', '"Archer: Active Spell"', '"Archer: Windwalk Spell"', '"Archer: Slot 3"' ] }, Charged:1b} 1 
+replaceitem entity @a[tag=ww_1,scores={mana.mana=..399}] container.2 minecraft:crossbow{display:{ Name:'{"italic":false,"text":"Windwalk 1"}', Lore:[ '{"italic":false,"color":"white","text":"Fire an arrow, dealing 5 magic damage"}','{"italic":false,"color":"white","text":"  and knocking opponents airborne."}','{"italic":false,"color":"white","text":"Grants speed II to caster for 5s."}','{"italic":false,"color":"white","text":"Grants speed I to caster and allies for 20s."}','{"italic":false,"color":"blue","text":"Cost: 400MP"}', '{"text":"Archer: Active Spell"}', '{"text":"Archer: Windwalk Spell"}', '{"text":"Archer: Slot 3"}' ] }, Charged:1b} 1
+replaceitem entity @a[tag=!ww_1,tag=archer,nbt={SelectedItem:{tag:{display:{Name:'{"italic":false,"text":"Windwalk 1"}'}}}}] weapon.mainhand minecraft:crossbow{display:{ Name:'{"italic":false,"text":"Windwalk 1"}', Lore:[ '{"italic":false,"color":"white","text":"Fire an arrow, dealing 5 magic damage"}','{"italic":false,"color":"white","text":"  and knocking opponents airborne."}','{"italic":false,"color":"white","text":"Grants speed II to caster for 5s."}','{"italic":false,"color":"white","text":"Grants speed I to caster and allies for 20s."}','{"italic":false,"color":"blue","text":"Cost: 400MP"}', '{"text":"Archer: Active Spell"}', '{"text":"Archer: Windwalk Spell"}', '{"text":"Archer: Slot 3"}' ] }, Charged:1b} 1
+replaceitem entity @a[tag=archer,nbt={Inventory:[{Slot:-106b,tag:{display:{Name:'{"italic":false,"text":"Windwalk 1"}'}}}]}] weapon.offhand minecraft:crossbow{display:{ Name:'{"italic":false,"text":"Windwalk 1"}', Lore:[ '{"italic":false,"color":"white","text":"Fire an arrow, dealing 5 magic damage"}','{"italic":false,"color":"white","text":"  and knocking opponents airborne."}','{"italic":false,"color":"white","text":"Grants speed II to caster for 5s."}','{"italic":false,"color":"white","text":"Grants speed I to caster and allies for 20s."}','{"italic":false,"color":"blue","text":"Cost: 400MP"}', '{"text":"Archer: Active Spell"}', '{"text":"Archer: Windwalk Spell"}', '{"text":"Archer: Slot 3"}' ] }, Charged:1b} 1 
 # All windwalk arrow casts
-tag @a[tag=archer,nbt={SelectedItemSlot:2,SelectedItem:{tag:{Charged:0b,display:{Lore:['"Archer: Windwalk Spell"']}}}}] add shotWind
+tag @a[tag=archer,nbt={SelectedItemSlot:2,SelectedItem:{tag:{Charged:0b,display:{Lore:['{"text":"Archer: Windwalk Spell"}']}}}}] add shotWind
 scoreboard players remove @a[tag=shotWind] mana.mana 400
 execute as @a[tag=shotWind] at @s run scoreboard players operation @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] spell.6.power = @s spell.6.power
 execute as @a[tag=shotWind] at @s run tag @e[type=minecraft:spectral_arrow,tag=!processed,limit=1,sort=nearest] add windwalk_arrow
@@ -49,7 +51,7 @@ effect give @a[tag=shotWind,scores={spell.6.power=6..}] minecraft:speed 5 1
 effect give @a[tag=shotWind] minecraft:speed 20 0
 execute at @a[tag=shotWind] run effect give @a[distance=0..8] minecraft:speed 10 0 
 # Different tiers
-replaceitem entity @a[tag=ww_1,scores={mana.mana=400..}] container.2 minecraft:crossbow{Enchantments:[{}],ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],display:{ Name:'{"text":"Windwalk 1","italic":false}', Lore:[ '{"text":"Fire an arrow, dealing 5 magic damage","color":"white","italic":false}','{"text":"  and knocking opponents airborne.","color":"white","italic":false}','{"text":"Grants speed II to caster for 5s.","color":"white","italic":false}','{"text":"Grants speed I to caster and allies for 20s.","color":"white","italic":false}','{"text":"Cost: 400MP","color":"blue","italic":false}', '"Archer: Active Spell"', '"Archer: Windwalk Spell"', '"Archer: Slot 3"' ] }, Charged:1b}
+replaceitem entity @a[tag=ww_1,scores={mana.mana=400..}] container.2 minecraft:crossbow{Enchantments:[{}],ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],display:{ Name:'{"italic":false,"text":"Windwalk 1"}', Lore:[ '{"italic":false,"color":"white","text":"Fire an arrow, dealing 5 magic damage"}','{"italic":false,"color":"white","text":"  and knocking opponents airborne."}','{"italic":false,"color":"white","text":"Grants speed II to caster for 5s."}','{"italic":false,"color":"white","text":"Grants speed I to caster and allies for 20s."}','{"italic":false,"color":"blue","text":"Cost: 400MP"}', '{"text":"Archer: Active Spell"}', '{"text":"Archer: Windwalk Spell"}', '{"text":"Archer: Slot 3"}' ] }, Charged:1b}
 tag @a remove ww_1
 tag @a remove shotWind 
 execute as @e[tag=windwalk_arrow,tag=!processed] run data merge entity @s {SoundEvent:"minecraft:entity.arrow.shoot",PierceLevel:99b,damage:2.0f}
