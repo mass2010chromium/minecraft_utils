@@ -13,13 +13,13 @@ summon villager ~ ~1 ~ {
                         id:sunflower,Count:1,tag:{##gold_coin_nbt##}
                     },
                     sell:{
-                        id:paper,Count:1,tag:{display:{Name:'{"italic":false,"text":"Miniquest: Find the Librarian's keys."}'}}
+                        id:paper,Count:1,tag:{display:{Name:'{"italic":false,"text":"Miniquest: Find the Librarian\'s keys."}'}}
                     },
                     rewardExp:0b,maxUses:1
                 },
                 {
                     buy:{
-                        id:paper,Count:1,tag:{display:{Name:'{"italic":false,"text":"Miniquest: Find the Librarian's keys."}'}}
+                        id:paper,Count:1,tag:{display:{Name:'{"italic":false,"text":"Miniquest: Find the Librarian\'s keys."}'}}
                     },
                     buyB:{
                         id:tripwire_hook,Count:1,tag:{display:{Name:'{"text":"Librarian\'s keys"}'}}
