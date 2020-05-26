@@ -11,9 +11,9 @@ data merge entity @e[tag=unprocessed,sort=nearest,limit=1] {
         {id:"minecraft:podzol",Count:1b}, {id:"minecraft:deadbush",Count:1b}
     ],
     ArmorItems:[
-        {id:"leather_boots",Count:1b,tag:{display:{color:6040847},Unbreakable:1b,Enchantments:[{id:depth_strider,lvl:3}]}},
-		{id:"leather_leggings",Count:1b,tag:{display:{color:6040847},Unbreakable:1b}},
-		{id:"leather_chestplate",Count:1b,tag:{display:{color:6040847},Unbreakable:1b}},
+        {id:"leather_boots",Count:1b,tag:{display:{color:6040847},Unbreakable:1b,Enchantments:[{id:depth_strider,lvl:3}],AttributeModifiers:[]}},
+		{id:"leather_leggings",Count:1b,tag:{display:{color:6040847},Unbreakable:1b,AttributeModifiers:[]}},
+		{id:"leather_chestplate",Count:1b,tag:{display:{color:6040847},Unbreakable:1b,AttributeModifiers:[]}},
 		{id:"minecraft:soul_sand",Count:1b}
     ],
     HandDropChances:[0.0f,0.0f],
