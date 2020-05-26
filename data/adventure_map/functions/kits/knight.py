@@ -12,7 +12,7 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_basic_sword_name"] = make_name("Basic Sword")
     subs["knight_basic_sword_nbt"] = """Unbreakable:1,HideFlags:4,
                                         Enchantments:[
-                                          {id:"minecraft:sharpness",lvl:5},{id:"minecraft:sweeping",lvl:1}
+                                          {id:"minecraft:sharpness",lvl:5s},{id:"minecraft:sweeping",lvl:1s}
                                         ],
                                         display:{
                                           Name:##knight_basic_sword_name##,
@@ -27,7 +27,7 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_castironsword_sword_name"] = make_name("Cast-Iron Sword")
     subs["knight_castironsword_sword_nbt"] = """Unbreakable:1,HideFlags:4,
                                                 Enchantments:[
-                                                  {id:"minecraft:sharpness",lvl:5},{id:"minecraft:sweeping",lvl:1}
+                                                  {id:"minecraft:sharpness",lvl:5s},{id:"minecraft:sweeping",lvl:1s}
                                                 ],
                                                 display:{
                                                   Name:##knight_castironsword_sword_name##,
@@ -42,7 +42,7 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_sandesitesword_sword_name"] = make_name("Sandesite Sword")
     subs["knight_sandesitesword_sword_nbt"] = """Unbreakable:1,HideFlags:4,
                                                 Enchantments:[
-                                                  {id:"minecraft:sharpness",lvl:10},{id:"minecraft:sweeping",lvl:2}
+                                                  {id:"minecraft:sharpness",lvl:10s},{id:"minecraft:sweeping",lvl:2s}
                                                 ],
                                                 display:{
                                                   Name:##knight_sandesitesword_sword_name##,
@@ -65,7 +65,7 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_depthsCurse_power"] = "spell.{}.power".format(spell_id())
     subs["knight_depthsCurse_1_name"] = make_name("Depths\\' Curse 1")
     subs["knight_depthsCurse_1_nbt"] = """Unbreakable:1b,
-                                    Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:5,
+                                    Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:5,
                                     display:{
                                       Name:##knight_depthsCurse_1_name##,
                                       Lore:[
@@ -86,7 +86,7 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_mobHook_power"] = "spell.{}.power".format(spell_id())
     subs["knight_mobHook_1_name"] = make_name("Mob Hook 1")
     subs["knight_mobHook_1_nbt"] = """Unbreakable:1b,
-                                    Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:5,
+                                    Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:5,
                                     display:{
                                               Name:##knight_mobHook_1_name##,
                                               Lore:[
@@ -111,7 +111,7 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_groundPound_power"] = "spell.{}.power".format(knight_groundPound_spellID)
     subs["knight_groundPound_riseTime"] = "spell.{}.time".format(knight_groundPound_spellID)
     subs["knight_groundPound_1_name"] = make_name("Ground Pound 1")
-    subs["knight_groundPound_1_nbt"] =   """Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:5,
+    subs["knight_groundPound_1_nbt"] =   """Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:5,
                                             display:{
                                               Name:##knight_groundPound_1_name##,
                                               Lore:[
@@ -137,7 +137,7 @@ def add_knight_items(subs, spell_id, get_uuid):
     subs["knight_shield_used"] = "shield_used"
     subs["knight_shield_time"] = "spell.{}.time".format(knight_shield_spellID)
     subs["knight_shield_1_name"] = make_name("Shield 1")
-    subs["knight_shield_1_nbt"] =    """Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:5,
+    subs["knight_shield_1_nbt"] =    """Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:5,
                                               display:{
                                               Name:##knight_shield_1_name##,
                                               Lore:[

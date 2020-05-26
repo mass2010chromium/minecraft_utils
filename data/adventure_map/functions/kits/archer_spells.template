@@ -42,7 +42,7 @@ execute as @a[tag=shotPierce] at @s run tag @e[type=minecraft:spectral_arrow,tag
 
 # Different tiers
 replaceitem entity @a[tag=pa_1,scores={##mp##=600..}] container.2
-    minecraft:crossbow{Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:5,ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],##archer_piercingArrow_1_nbt##}
+    minecraft:crossbow{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:5,ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],##archer_piercingArrow_1_nbt##}
 tag @a remove pa_1
 tag @a remove shotPierce
 
@@ -72,7 +72,7 @@ execute at @a[tag=shotWind] run effect give @a[distance=0..8] minecraft:speed 10
 
 # Different tiers
 replaceitem entity @a[tag=ww_1,scores={##mp##=400..}] container.2
-    minecraft:crossbow{Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:5,ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],##archer_windwalk_1_nbt##}
+    minecraft:crossbow{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:5,ChargedProjectiles:[{id:"minecraft:spectral_arrow",Count:1b}],##archer_windwalk_1_nbt##}
 tag @a remove ww_1
 tag @a remove shotWind
 

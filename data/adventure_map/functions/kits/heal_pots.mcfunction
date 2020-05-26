@@ -1,1 +1,1 @@
-give @s minecraft:dragon_breath{Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:1,display:{Name:'{"italic":false,"text":"Healing Potion 1"}',Lore:['{"italic":false,"color":"red","text":"+10 HP"}']}} 64
+give @s minecraft:dragon_breath{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:1,display:{Name:'{"italic":false,"text":"Healing Potion 1"}',Lore:['{"italic":false,"color":"red","text":"+10 HP"}']}} 64

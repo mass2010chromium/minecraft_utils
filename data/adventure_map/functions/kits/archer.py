@@ -14,11 +14,11 @@ def add_archer_items(subs, spell_id, get_uuid):
     
     #T0 Axe
     subs["archer_basic_axe_name"] = make_name("Basic Axe")
-    subs["archer_basic_axe_nbt"] = """Unbreakable:1,Enchantments:[{id:knockback,lvl:3}],display:{Name:##archer_basic_axe_name##,Lore:[##archer_melee##,##archer_1##]}"""
+    subs["archer_basic_axe_nbt"] = """Unbreakable:1,Enchantments:[{id:"minecraft:knockback",lvl:3s}],display:{Name:##archer_basic_axe_name##,Lore:[##archer_melee##,##archer_1##]}"""
     subs["archer_basic_axe_item"] = """minecraft:iron_axe{##archer_basic_axe_nbt##} 1"""
     #T2 Axe
     subs["archer_small_dagger_name"] = make_name("Small Dagger")
-    subs["archer_small_dagger_nbt"] = ("""Enchantments:[{id:sharpness,lvl:10}],
+    subs["archer_small_dagger_nbt"] = ("""Enchantments:[{id:"minecraft:sharpness",lvl:10s}],
                                           display:{
                                             Name:##archer_small_dagger_name##,
                                             Lore:[
@@ -34,8 +34,8 @@ def add_archer_items(subs, spell_id, get_uuid):
     subs["archer_basic_bow_name"] = make_name("Basic Bow")
     subs["archer_basic_bow_nbt"] = """Unbreakable:1,HideFlags:4,
                                       Enchantments:[
-                                        {id:infinity,lvl:1},
-                                        {id:power,lvl:3}
+                                        {id:"minecraft:infinity",lvl:1s},
+                                        {id:"minecraft:power",lvl:3}
                                       ],
                                       display:{Name:##archer_basic_bow_name##,
                                         Lore:[
@@ -50,7 +50,7 @@ def add_archer_items(subs, spell_id, get_uuid):
     subs["archer_longbow_bow_name"] = make_name("Longbow")
     subs["archer_longbow_bow_nbt"] = """Unbreakable:1,HideFlags:4,
                                         Enchantments:[
-                                          {id:infinity,lvl:1},{id:power,lvl:5}
+                                          {id:"minecraft:infinity",lvl:1s},{id:"minecraft:power",lvl:5s}
                                         ],
                                         display:{
                                           Name:##archer_longbow_bow_name##,
@@ -65,7 +65,7 @@ def add_archer_items(subs, spell_id, get_uuid):
     #T2 Bow
     subs["archer_cactus_fiber_bow_name"] = make_name("Cactus Fiber")
     subs["archer_cactus_fiber_bow_nbt"] = """Unbreakable:1,HideFlags:4,
-                                             Enchantments:[{id:infinity,lvl:1},{id:power,lvl:5}],
+                                             Enchantments:[{id:"minecraft:infinity",lvl:1s},{id:"minecraft:power",lvl:5s}],
                                              display:{
                                                Name:##archer_cactus_fiber_bow_name##,
                                                Lore:[
